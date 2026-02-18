@@ -1,8 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { WaveDivider } from "@/components/ui/wave-divider";
-
-const signals = ["Suisse", "Allemagne", "France", "Belgique", "DACH", "B2B"];
+import { caseStudyLogos, enterpriseLogos, homeVisuals } from "@/lib/brand-assets";
 
 const process = [
   {
@@ -49,20 +49,6 @@ const faqs = [
   "Comment se passe le reporting hebdomadaire ?",
 ];
 
-function PlaceholderVisual({ label, dark = false }: { label: string; dark?: boolean }) {
-  return (
-    <div
-      className={`flex aspect-[16/10] w-full items-center justify-center rounded-lg border text-sm font-semibold ${
-        dark
-          ? "border-cyan-400/20 bg-gradient-to-br from-[#0f5b83] via-[#0d4a6a] to-[#072f46] text-cyan-50"
-          : "border-stroke bg-gradient-to-br from-[#d9e8f6] via-[#f3f7fb] to-[#e4ecf7] text-ink/80"
-      }`}
-    >
-      {label}
-    </div>
-  );
-}
-
 export function HomePage() {
   return (
     <>
@@ -93,8 +79,31 @@ export function HomePage() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-[#c7d9e7] bg-white p-4 shadow-soft">
-            <PlaceholderVisual label="Video / proof section" dark />
+          <div className="overflow-hidden rounded-xl border border-[#c7d9e7] bg-white p-4 shadow-soft">
+            <Image
+              src={homeVisuals.hero}
+              alt="Vue de l'academie devlo"
+              width={2028}
+              height={1268}
+              className="h-auto w-full rounded-lg object-cover"
+              priority
+            />
+            <div className="mt-4 flex items-center justify-between gap-4">
+              <Image
+                src={homeVisuals.academyCover}
+                alt="Apercu des modules outbound"
+                width={1016}
+                height={614}
+                className="h-14 w-auto object-contain"
+              />
+              <Image
+                src={homeVisuals.partnerBadge}
+                alt="Badge service partner"
+                width={2220}
+                height={852}
+                className="h-8 w-auto object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -102,9 +111,30 @@ export function HomePage() {
       <WaveDivider />
 
       <section className="bg-[#f3f4f6] py-4">
-        <div className="mx-auto flex w-full max-w-screen-xl flex-wrap items-center justify-center gap-5 px-6 text-xs font-semibold uppercase tracking-[0.16em] text-[#3d5668] lg:px-10">
-          {signals.map((signal) => (
-            <span key={signal}>{signal}</span>
+        <div className="mx-auto flex w-full max-w-screen-xl flex-wrap items-center justify-center gap-5 px-6 lg:px-10">
+          {caseStudyLogos.map((logo) => (
+            <div
+              key={logo.name}
+              className="flex h-12 w-[150px] items-center justify-center rounded-md border border-stroke bg-white px-3"
+            >
+              <Image src={logo.src} alt={logo.alt} width={220} height={80} className="max-h-8 w-auto object-contain" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-screen-xl px-6 py-12 lg:px-10">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.16em] text-[#4d6678]">
+          Entreprises deja accompagnees
+        </p>
+        <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+          {enterpriseLogos.map((logo) => (
+            <article
+              key={logo.name}
+              className="flex h-16 items-center justify-center rounded-md border border-stroke bg-white px-3 shadow-soft"
+            >
+              <Image src={logo.src} alt={logo.alt} width={200} height={70} className="max-h-10 w-auto object-contain" />
+            </article>
           ))}
         </div>
       </section>
@@ -163,8 +193,14 @@ export function HomePage() {
 
       <section className="mx-auto w-full max-w-screen-xl px-6 py-14 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="rounded-xl border border-stroke bg-white p-5 shadow-soft">
-            <PlaceholderVisual label="Case study video" dark />
+          <div className="overflow-hidden rounded-xl border border-stroke bg-white p-5 shadow-soft">
+            <Image
+              src={homeVisuals.caseVideo}
+              alt="Extrait etude de cas CareerLunch"
+              width={1440}
+              height={860}
+              className="h-auto w-full rounded-lg object-cover"
+            />
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.18em] text-[#4d6678]">Etudes de cas</p>
@@ -238,6 +274,15 @@ export function HomePage() {
           >
             Reserver un appel
           </Link>
+          <div className="mt-5 flex justify-center">
+            <Image
+              src={homeVisuals.partnerBadge}
+              alt="Top certified lemlist agency"
+              width={2220}
+              height={852}
+              className="h-10 w-auto object-contain"
+            />
+          </div>
         </div>
       </section>
 

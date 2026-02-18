@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { WaveDivider } from "@/components/ui/wave-divider";
 
@@ -7,6 +8,7 @@ type BlogPost = {
   excerpt: string;
   category: string;
   featured?: boolean;
+  image: string;
 };
 
 const posts: BlogPost[] = [
@@ -15,47 +17,56 @@ const posts: BlogPost[] = [
     excerpt: "Prospection commerciale B2B: comment prospecter via LinkedIn et email en 2023.",
     category: "Prospection",
     featured: true,
+    image: "/images/blog/cold-outreach.png",
   },
   {
     title: "Prospecter 20k entreprises facilement",
     excerpt: "Ciblage en masse et qualification rapide pour des campagnes outbound precises.",
     category: "Strategie",
     featured: true,
+    image: "/images/blog/getty.png",
   },
   {
     title: "Pourquoi le developpement de votre sequence email est la clef",
     excerpt: "Structure, angle, preuve sociale et call to action adapte a la cible.",
     category: "Emailing",
+    image: "/images/blog/screenshot-2021.png",
   },
   {
     title: "3 erreurs dans les introductions de campagne",
     excerpt: "Ce qui bloque les reponses et comment corriger rapidement vos messages.",
     category: "Copywriting",
+    image: "/images/blog/dominos.png",
   },
   {
     title: "Automatiser votre qualification initiale",
     excerpt: "Un framework simple pour trier les leads avant handover commercial.",
     category: "Operations",
+    image: "/images/blog/fishing.jpeg",
   },
   {
     title: "Prospection B2B: 8 questions avant de scaler",
     excerpt: "Checklist pour stabiliser un moteur d'acquisition durable.",
     category: "Methodologie",
+    image: "/images/blog/spearfishing.jpg",
   },
   {
     title: "Quel est l'indicateur principal a suivre ?",
     excerpt: "Taux de rendez-vous qualifies, vitesse de boucle et ratio compte actif.",
     category: "KPI",
+    image: "/images/blog/kpi.png",
   },
   {
     title: "Ce que 2023 nous a appris en sales",
     excerpt: "Lecons operationnelles sur le timing, le canal et les objections recurrentes.",
     category: "Retour terrain",
+    image: "/images/blog/mike-pregler.png",
   },
   {
     title: "Predictions prospection pour 2027",
     excerpt: "Comment l'IA et la personnalisation transforment les interactions outbound.",
     category: "Tendance",
+    image: "/images/blog/team.png",
   },
 ];
 
@@ -64,14 +75,14 @@ function PostCard({ post }: { post: BlogPost }) {
 
   return (
     <article className="rounded-lg border border-stroke bg-white p-4 shadow-soft">
-      <div
-        className={`flex w-full items-center justify-center rounded-md border text-xs font-semibold uppercase tracking-[0.15em] ${
-          isFeatured
-            ? "aspect-[16/9] border-[#b8d0df] bg-gradient-to-br from-[#1b6f9e] via-[#28598a] to-[#7a3b8d] text-white"
-            : "aspect-[16/10] border-stroke bg-gradient-to-br from-[#d8e5f2] via-[#eef3f8] to-[#dce6f2] text-[#5d7890]"
-        }`}
-      >
-        {post.category}
+      <div className={`overflow-hidden rounded-md border ${isFeatured ? "aspect-[16/9]" : "aspect-[16/10]"}`}>
+        <Image
+          src={post.image}
+          alt={post.title}
+          width={1080}
+          height={675}
+          className="h-full w-full object-cover"
+        />
       </div>
       <h2 className="mt-4 text-lg font-semibold leading-6 text-[#153a54]">{post.title}</h2>
       <p className="mt-2 text-sm leading-6 text-[#2d4c63]/80">{post.excerpt}</p>

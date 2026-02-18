@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { siteConfig } from "@/lib/site";
 
@@ -7,7 +8,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-[#d5dce5] bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-screen-xl items-center justify-between px-6 lg:px-10">
         <Link prefetch={false} href="/" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#12384f]">
-          <span className="text-base font-bold lowercase tracking-tight">{siteConfig.name}</span>
+          <Image src="/images/brand/devlo-logo.png" alt="devlo logo" width={96} height={34} className="h-7 w-auto object-contain" />
         </Link>
 
         <nav aria-label="Navigation principale" className="hidden items-center gap-5 lg:flex">

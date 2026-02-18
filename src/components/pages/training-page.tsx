@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { WaveDivider } from "@/components/ui/wave-divider";
+import { homeVisuals } from "@/lib/brand-assets";
 
 const phases = [
   "Planifier des demos et rendez-vous qualifies",
@@ -35,9 +37,13 @@ export function TrainingPage() {
           </Link>
         </div>
         <div className="rounded-xl border border-stroke bg-white p-4 shadow-soft">
-          <div className="flex aspect-[16/10] items-center justify-center rounded-lg bg-gradient-to-br from-[#16618b] via-[#0a4a6d] to-[#1f7ca8] text-sm font-semibold text-white">
-            Video de presentation
-          </div>
+          <Image
+            src={homeVisuals.academyGif}
+            alt="Presentation de l'academie devlo"
+            width={1920}
+            height={1080}
+            className="h-auto w-full rounded-lg object-cover"
+          />
         </div>
       </section>
 

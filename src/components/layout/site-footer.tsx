@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { siteConfig } from "@/lib/site";
 
@@ -21,7 +22,7 @@ export function SiteFooter() {
     <footer className="border-t border-stroke bg-[#f2f4f7] py-14">
       <div className="mx-auto grid w-full max-w-screen-xl gap-10 px-6 lg:grid-cols-[1.1fr_0.9fr_0.9fr] lg:px-10">
         <div>
-          <p className="text-xl font-semibold lowercase text-[#1d4d6b]">{siteConfig.name}</p>
+          <Image src="/images/brand/devlo-logo.png" alt="devlo logo" width={120} height={42} className="h-8 w-auto object-contain" />
           <p className="mt-3 max-w-sm text-sm leading-6 text-[#456177]">{siteConfig.description}</p>
           <div className="mt-5 space-y-2 text-sm text-[#34566d]">
             {siteConfig.footer.contact.map((item) => (
