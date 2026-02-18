@@ -3,21 +3,47 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --canvas: 245 247 251;
+  --surface: 255 255 255;
+  --paper: 255 255 255;
+  --ink: 16 23 42;
+  --stroke: 205 213 226;
+  --accent: 12 103 194;
+  --accent-strong: 9 86 161;
+  --radius-soft: 0.7rem;
+  --radius-panel: 1.05rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: rgb(var(--stroke));
+}
+
+html,
+body {
+  min-height: 100%;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 15% -10%, rgb(191 221 255 / 0.45), transparent 34%),
+    radial-gradient(circle at 85% 10%, rgb(206 255 236 / 0.28), transparent 35%),
+    rgb(var(--canvas));
+  color: rgb(var(--ink));
+  font-family: "Avenir Next", "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.2);
+}
+
+@layer components {
+  .section-pad {
+    @apply mx-auto w-full max-w-screen-xl px-6 py-16 lg:px-10 lg:py-20;
+  }
 }
 
 @layer utilities {
