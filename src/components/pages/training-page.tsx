@@ -59,6 +59,22 @@ export function TrainingPage() {
               </div>
             ))}
           </div>
+          <div className="mt-6 grid gap-4 lg:grid-cols-2">
+            <Image
+              src={homeVisuals.academyRoadmap}
+              alt="Roadmap de la methode outbound"
+              width={1120}
+              height={630}
+              className="h-auto w-full rounded-lg border border-stroke object-cover"
+            />
+            <Image
+              src={homeVisuals.academyMacbook}
+              alt="Visual academy sur ordinateur portable"
+              width={1920}
+              height={1080}
+              className="h-auto w-full rounded-lg border border-stroke object-cover"
+            />
+          </div>
         </div>
       </section>
 

@@ -37,3 +37,15 @@ When `Asset_*` files are added, use:
 
 - `identifyCompanyFromAssetName()` in `/Users/charlesperret/My Drive (charles@devlo.ch)/Onboarding/devlo-next/src/lib/brand-assets.ts`
 - This resolves known upload stems to their company names.
+
+## Additional visuals integrated
+
+- `Positivereplies` -> social proof collage (`/public/images/home/social/positive-replies.gif`)
+- `AcademyMacBook` -> academy visual (`/public/images/home/academy/academy-macbook.gif`)
+- `Table1` -> academy roadmap (`/public/images/home/academy/academy-roadmap.webp`)
+- `Tasks` -> process visual (`/public/images/home/academy/tasks.png`)
+- `Fabio-Oliva` -> testimonial profile image
+- `Jurica-Karlo` -> testimonial profile image
+- `Maxime-Dumont` -> testimonial profile image
+- `tanguy-coustaline-192d8ebd` -> testimonial profile image
+- `CharlesPERRET_devlo_light` -> testimonial/contact image

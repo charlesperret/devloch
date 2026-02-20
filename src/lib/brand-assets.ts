@@ -4,6 +4,13 @@ export type BrandLogo = {
   alt: string;
 };
 
+export type TestimonialProfile = {
+  name: string;
+  role: string;
+  image: string;
+  alt: string;
+};
+
 export const enterpriseLogos: BrandLogo[] = [
   { name: "ABB", src: "/images/home/logos/abb.png", alt: "ABB logo" },
   { name: "Adecco", src: "/images/home/logos/adecco.png", alt: "Adecco logo" },
@@ -44,9 +51,40 @@ export const homeVisuals = {
   hero: "/images/home/academy/web-showcase.jpg",
   academyCover: "/images/home/academy/cover-mac.png",
   academyGif: "/images/home/academy/academy.gif",
+  academyMacbook: "/images/home/academy/academy-macbook.gif",
+  academyRoadmap: "/images/home/academy/academy-roadmap.webp",
+  tasksBoard: "/images/home/academy/tasks.png",
   caseVideo: "/images/home/academy/careerlunch-banner.jpg",
+  positiveReplies: "/images/home/social/positive-replies.gif",
   partnerBadge: "/images/home/academy/partner-badge.webp",
 } as const;
+
+export const testimonialProfiles: TestimonialProfile[] = [
+  {
+    name: "Fabio Oliva",
+    role: "Temoignage client",
+    image: "/images/home/testimonials/fabio-oliva.jpg",
+    alt: "Portrait Fabio Oliva",
+  },
+  {
+    name: "Jurica Karlo",
+    role: "Temoignage client",
+    image: "/images/home/testimonials/jurica-karlo.jpg",
+    alt: "Portrait Jurica Karlo",
+  },
+  {
+    name: "Maxime Dumont",
+    role: "Temoignage client",
+    image: "/images/home/testimonials/maxime-dumont.jpg",
+    alt: "Portrait Maxime Dumont",
+  },
+  {
+    name: "Tanguy Coustaline",
+    role: "Temoignage client",
+    image: "/images/home/testimonials/tanguy-coustaline.jpg",
+    alt: "Portrait Tanguy Coustaline",
+  },
+];
 
 const explicitCompanyByFileStem: Record<string, string> = {
   logo_abb: "ABB",

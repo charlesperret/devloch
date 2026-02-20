@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { WaveDivider } from "@/components/ui/wave-divider";
-import { caseStudyLogos, enterpriseLogos, homeVisuals } from "@/lib/brand-assets";
+import { caseStudyLogos, enterpriseLogos, homeVisuals, testimonialProfiles } from "@/lib/brand-assets";
 
 const process = [
   {
@@ -164,6 +164,13 @@ export function HomePage() {
       <section className="mx-auto w-full max-w-screen-xl px-6 pb-14 lg:px-10">
         <div className="rounded-2xl bg-white p-8 shadow-panel lg:p-10">
           <p className="text-center text-xs uppercase tracking-[0.18em] text-[#4d6678]">Processus en 4 etapes</p>
+          <Image
+            src={homeVisuals.tasksBoard}
+            alt="Exemple de taches outbound organisees"
+            width={1366}
+            height={768}
+            className="mx-auto mt-6 h-auto w-full max-w-4xl rounded-lg border border-stroke object-cover"
+          />
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {process.map((item) => (
               <article key={item.title} className="rounded-lg border border-stroke bg-[#f8fafc] p-5">
@@ -220,6 +227,41 @@ export function HomePage() {
               </article>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-screen-xl px-6 pb-14 lg:px-10">
+        <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr]">
+          <article className="overflow-hidden rounded-xl border border-stroke bg-white p-5 shadow-soft">
+            <p className="text-xs uppercase tracking-[0.16em] text-[#4d6678]">Preuves sociales</p>
+            <h2 className="mt-3 text-2xl font-semibold text-[#173b55]">Des reponses positives, concretement.</h2>
+            <Image
+              src={homeVisuals.positiveReplies}
+              alt="Collage de reponses positives provenant de campagnes devlo"
+              width={1536}
+              height={1249}
+              className="mt-4 h-auto w-full rounded-lg border border-stroke object-cover"
+            />
+          </article>
+
+          <article className="rounded-xl border border-stroke bg-white p-5 shadow-soft">
+            <p className="text-xs uppercase tracking-[0.16em] text-[#4d6678]">Contacts et references</p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              {testimonialProfiles.map((profile) => (
+                <div key={profile.name} className="rounded-lg border border-stroke bg-[#f8fafc] p-3">
+                  <Image
+                    src={profile.image}
+                    alt={profile.alt}
+                    width={800}
+                    height={800}
+                    className="h-28 w-full rounded-md object-cover"
+                  />
+                  <p className="mt-3 text-sm font-semibold text-[#173b55]">{profile.name}</p>
+                  <p className="text-xs uppercase tracking-[0.12em] text-[#5e798d]">{profile.role}</p>
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 
