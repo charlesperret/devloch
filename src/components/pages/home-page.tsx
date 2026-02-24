@@ -17,13 +17,15 @@ import {
   Zap,
 } from "lucide-react";
 
+import { CaseStudiesCarousel } from "@/components/home/case-studies-carousel";
 import { WrittenTestimonialsCarousel } from "@/components/home/written-testimonials-carousel";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { AccordionSingle } from "@/components/ui/accordion-single";
 import { buttonClassName } from "@/components/ui/button";
 import { FadeInOnScroll } from "@/components/ui/fade-in-on-scroll";
+import { WaveDivider } from "@/components/ui/wave-divider";
 import { WistiaThumbnailTrigger } from "@/components/ui/wistia-thumbnail-trigger";
-import { homeContent } from "@/content/masterfile.fr";
+import { caseStudiesCards, homeContent } from "@/content/masterfile.fr";
 
 const noRecruitIcons = [Target, PiggyBank, Rocket] as const;
 const whyIcons = [
@@ -45,15 +47,18 @@ const methodIconMap = {
   CalendarCheck,
 } as const;
 
-function InfiniteLogoRail({ logos, pauseOnHover = false, reverse = false }: { logos: { src: string; alt: string }[]; pauseOnHover?: boolean; reverse?: boolean }) {
+function InfiniteLogoRail({ logos, pauseOnHover = false, reverse = false, duration = "normal" }: { logos: { src: string; alt: string }[]; pauseOnHover?: boolean; reverse?: boolean; duration?: "normal" | "slow" }) {
   const doubled = [...logos, ...logos];
+  const animClass = duration === "slow"
+    ? (reverse ? "animate-logo-scroll-slow-reverse" : "animate-logo-scroll-slow")
+    : (reverse ? "animate-logo-scroll-reverse" : "animate-logo-scroll");
 
   return (
     <div className="group py-1">
       <div
         className={[
-          "flex min-w-max items-center gap-10",
-          reverse ? "animate-logo-scroll-reverse" : "animate-logo-scroll",
+          "flex min-w-max items-center gap-10 will-change-transform",
+          animClass,
           pauseOnHover ? "group-hover:[animation-play-state:paused]" : "",
         ]
           .filter(Boolean)
@@ -91,7 +96,7 @@ export function HomePage() {
   return (
     <>
       <section className="bg-white pb-10 pt-12 md:pt-20 lg:pt-24">
-        <div className="mx-auto grid w-full max-w-[1200px] gap-10 px-6 md:px-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:gap-12">
+        <div className="mx-auto grid w-full max-w-[1400px] gap-10 px-6 md:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:gap-12">
           <div>
             <FadeInOnScroll>
               <p className="inline-flex items-center gap-2 rounded-full bg-devlo-100 px-4 py-1.5 text-sm font-semibold text-devlo-700">
@@ -155,16 +160,16 @@ export function HomePage() {
 
       <SectionWrapper background="white" className="py-[80px] md:py-[120px]">
         <FadeInOnScroll>
-          <h2 className="mx-auto max-w-[490px] text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl">{homeContent.rendezVousTitle}</h2>
+          <h2 className="text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl">{homeContent.rendezVousTitle}</h2>
         </FadeInOnScroll>
         <FadeInOnScroll delay={0.1}>
           <div className="relative mt-10 -mx-6 space-y-4 overflow-hidden md:-mx-12 lg:-mx-16">
             <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[8vw] bg-gradient-to-r from-white to-transparent" />
             <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[8vw] bg-gradient-to-l from-white to-transparent" />
-            <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(0, 17)} />
-            <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(17, 33)} reverse />
-            <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(33, 49)} />
-            <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(49)} reverse />
+            <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(0, 17)} duration="slow" />
+            <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(17, 33)} reverse duration="slow" />
+            <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(33, 49)} duration="slow" />
+            <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(49)} reverse duration="slow" />
           </div>
         </FadeInOnScroll>
       </SectionWrapper>
@@ -225,8 +230,6 @@ export function HomePage() {
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[8vw] bg-gradient-to-r from-white to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[8vw] bg-gradient-to-l from-white to-transparent" />
           <ClientsRail names={homeContent.clientsLogos} />
-          <ClientsRail names={homeContent.clientsLogos} reverse />
-          <ClientsRail names={homeContent.clientsLogos} />
         </div>
       </SectionWrapper>
 
@@ -256,25 +259,25 @@ export function HomePage() {
           <h2 className="text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl">{homeContent.methodTitle}</h2>
         </FadeInOnScroll>
 
-        <div className="mx-auto mt-12 max-w-[980px] space-y-6">
+        <div className="mx-auto mt-10 max-w-[980px] space-y-3">
           {methodSteps.map((step, index) => {
             const Icon = methodIconMap[step.icon];
             return (
-              <FadeInOnScroll key={step.title} delay={index * 0.2}>
-                <article className="relative rounded-2xl border border-neutral-200 bg-white p-6 shadow-soft">
+              <FadeInOnScroll key={step.title} delay={index * 0.1}>
+                <article className="relative rounded-2xl border border-neutral-200 bg-white p-4 md:p-5 shadow-soft">
                   {index < methodSteps.length - 1 ? (
-                    <div className="absolute left-[27px] top-[58px] h-[calc(100%+24px)] border-l-2 border-dashed border-devlo-100" />
+                    <div className="absolute left-[23px] top-[46px] h-[calc(100%+12px)] border-l-2 border-dashed border-devlo-100" />
                   ) : null}
                   <div className="flex items-start gap-4">
-                    <div className="relative z-10 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-devlo-800 text-sm font-bold text-white">
+                    <div className="relative z-10 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-devlo-800 text-xs font-bold text-white">
                       {String(index + 1).padStart(2, "0")}
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-3">
                         <Icon className="h-5 w-5 text-devlo-700" aria-hidden />
-                        <h3 className="text-2xl font-semibold text-devlo-900">{step.title}</h3>
+                        <h3 className="text-xl font-semibold text-devlo-900">{step.title}</h3>
                       </div>
-                      <p className="mt-3 text-base leading-7 text-neutral-600">{step.text}</p>
+                      <p className="mt-2 text-sm leading-6 text-neutral-600">{step.text}</p>
                     </div>
                   </div>
                 </article>
@@ -289,15 +292,15 @@ export function HomePage() {
           <h2 className="text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl">{homeContent.whyTitle}</h2>
         </FadeInOnScroll>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
           {whyCards.map((card, index) => {
             const Icon = whyIcons[index] ?? Globe;
             return (
-              <FadeInOnScroll key={card.title} delay={(index % 4) * 0.2}>
-                <article className="h-full rounded-2xl border border-devlo-100 bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-panel">
-                  <Icon className="h-7 w-7 text-devlo-700" aria-hidden />
-                  <h3 className="mt-4 text-2xl font-semibold text-devlo-900">{card.title}</h3>
-                  <p className="mt-3 text-base leading-7 text-neutral-600">{card.text}</p>
+              <FadeInOnScroll key={card.title} delay={(index % 4) * 0.15}>
+                <article className="h-full rounded-2xl border border-devlo-100 bg-white p-5 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-panel">
+                  <Icon className="h-6 w-6 text-devlo-700" aria-hidden />
+                  <h3 className="mt-3 text-xl font-semibold text-devlo-900">{card.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-neutral-600">{card.text}</p>
                 </article>
               </FadeInOnScroll>
             );
@@ -312,6 +315,14 @@ export function HomePage() {
         <WrittenTestimonialsCarousel testimonials={writtenTestimonials} />
       </SectionWrapper>
 
+      <SectionWrapper background="light" className="py-[80px] md:py-[120px]">
+        <FadeInOnScroll>
+          <h2 className="text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl">Nos études de cas</h2>
+        </FadeInOnScroll>
+        <CaseStudiesCarousel cards={caseStudiesCards} />
+      </SectionWrapper>
+
+      <WaveDivider variant="layered-top" />
       <SectionWrapper background="dark" className="py-[80px] text-white md:py-[120px]">
         <FadeInOnScroll>
           <h2 className="text-center text-3xl font-bold leading-[1.2] md:text-4xl">{homeContent.ctaMid.title}</h2>
@@ -333,6 +344,7 @@ export function HomePage() {
           </div>
         </FadeInOnScroll>
       </SectionWrapper>
+      <WaveDivider variant="layered-bottom" />
 
       <SectionWrapper background="white" className="py-[80px] md:py-[120px]">
         <FadeInOnScroll>

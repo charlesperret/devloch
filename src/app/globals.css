@@ -101,4 +101,20 @@ a {
   .animate-logo-scroll-reverse {
     animation: logo-scroll-reverse 45s linear infinite;
   }
+
+  .animate-logo-scroll-slow {
+    animation: logo-scroll 70s linear infinite;
+  }
+
+  .animate-logo-scroll-slow-reverse {
+    animation: logo-scroll-reverse 70s linear infinite;
+  }
+
+  .animate-testimonial-scroll {
+    animation: logo-scroll 40s linear infinite;
+  }
+
+  .animate-testimonial-scroll-reverse {
+    animation: logo-scroll-reverse 55s linear infinite;
+  }
 }

@@ -1,8 +1,35 @@
 type WaveDividerProps = {
   tone?: "light" | "dark";
+  variant?: "simple" | "layered-top" | "layered-bottom";
 };
 
-export function WaveDivider({ tone = "light" }: WaveDividerProps) {
+export function WaveDivider({ tone = "light", variant = "simple" }: WaveDividerProps) {
+  if (variant === "layered-top") {
+    return (
+      <div className="pointer-events-none -mb-1 h-16 w-full overflow-hidden sm:h-20">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="block h-full w-full" aria-hidden>
+          <path d="M0,50 C480,80 960,10 1440,50 L1440,80 L0,80 Z" fill="#1e6b9e" />
+          <path d="M0,58 C360,20 1080,70 1440,40 L1440,80 L0,80 Z" fill="#1a5f8a" opacity="0.85" />
+          <path d="M0,65 C400,35 1100,75 1440,55 L1440,80 L0,80 Z" fill="#154f74" opacity="0.7" />
+          <path d="M0,72 C320,50 1120,80 1440,65 L1440,80 L0,80 Z" fill="#0f3d5c" opacity="0.6" />
+        </svg>
+      </div>
+    );
+  }
+
+  if (variant === "layered-bottom") {
+    return (
+      <div className="pointer-events-none -mt-1 h-16 w-full overflow-hidden sm:h-20">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="block h-full w-full" aria-hidden>
+          <path d="M0,0 L1440,0 L1440,35 C960,70 480,10 0,40 Z" fill="#0f3d5c" opacity="0.6" />
+          <path d="M0,0 L1440,0 L1440,25 C1100,55 400,5 0,45 Z" fill="#154f74" opacity="0.7" />
+          <path d="M0,0 L1440,0 L1440,15 C1080,55 360,20 0,55 Z" fill="#1a5f8a" opacity="0.85" />
+          <path d="M0,0 L1440,0 L1440,10 C960,45 480,5 0,60 Z" fill="white" />
+        </svg>
+      </div>
+    );
+  }
+
   const fill = tone === "dark" ? "#0b5b86" : "#f3f4f6";
 
   return (

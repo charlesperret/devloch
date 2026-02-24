@@ -24,14 +24,14 @@ function FooterList({ title, links, columns = 1 }: { title: string; links: { lab
 export function SiteFooter() {
   return (
     <footer className="relative bg-devlo-900 pb-20 pt-16 text-white md:pt-20">
-      <div className="mx-auto grid w-full max-w-[1200px] gap-12 px-6 md:grid-cols-2 md:px-12 lg:grid-cols-[1fr_1fr_2fr_1fr]">
+      <div className="mx-auto grid w-full max-w-[1400px] gap-12 px-6 md:grid-cols-2 md:px-8 lg:grid-cols-[1fr_1fr_2fr_1fr]">
         <div>
           <Image
             src="/images/devlo-logo.webp"
             alt="devlo logo"
-            width={128}
-            height={42}
-            className="h-9 w-auto brightness-0 invert"
+            width={200}
+            height={66}
+            className="h-12 w-auto brightness-0 invert md:h-14"
             loading="lazy"
           />
 
@@ -52,7 +52,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="mt-6 flex items-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <Link
               href={footerContent.linkedin}
               target="_blank"
@@ -66,7 +66,7 @@ export function SiteFooter() {
               alt="Badge Lemlist 2025"
               width={211}
               height={91}
-              className="h-auto w-[150px]"
+              className="h-auto w-[130px]"
               loading="lazy"
             />
             <Image
@@ -74,43 +74,46 @@ export function SiteFooter() {
               alt="Badge Lemlist 2026"
               width={211}
               height={91}
-              className="h-auto w-[150px]"
+              className="h-auto w-[130px]"
               loading="lazy"
             />
           </div>
         </div>
 
-        <FooterList title="Navigation" links={footerContent.navigation} />
-        <FooterList title="Études de cas" links={footerContent.caseLinks} columns={2} />
+        <div className="lg:border-l lg:border-devlo-800 lg:pl-10">
+          <FooterList title="Navigation" links={footerContent.navigation} />
+        </div>
 
-        <div>
+        <div className="lg:border-l lg:border-devlo-800 lg:pl-10">
+          <FooterList title="Études de cas" links={footerContent.caseLinks} columns={2} />
+        </div>
+
+        <div className="lg:border-l lg:border-devlo-800 lg:pl-10">
           <p className="text-sm font-semibold uppercase tracking-[0.08em] text-white">Contact</p>
-          <ul className="mt-4 space-y-2.5 text-sm text-neutral-300">
-            <li>
-              <Link href="mailto:emea@devlo.ch" className="transition hover:text-white">
+          <div className="mt-4 space-y-4 text-sm text-neutral-300">
+            <div>
+              <p className="font-semibold text-white">EMEA</p>
+              <Link href="mailto:emea@devlo.ch" className="block transition hover:text-white">
                 emea@devlo.ch
               </Link>
-            </li>
-            <li>
-              <Link href="mailto:americas@devlo.ch" className="transition hover:text-white">
-                americas@devlo.ch
-              </Link>
-            </li>
-            <li>
-              <Link href="tel:+41797586403" className="transition hover:text-white">
+              <Link href="tel:+41797586403" className="block transition hover:text-white">
                 +41 79 758 64 03
               </Link>
-            </li>
-            <li>
-              <Link href="tel:+12342018019" className="transition hover:text-white">
+            </div>
+            <div>
+              <p className="font-semibold text-white">Americas</p>
+              <Link href="mailto:americas@devlo.ch" className="block transition hover:text-white">
+                americas@devlo.ch
+              </Link>
+              <Link href="tel:+12342018019" className="block transition hover:text-white">
                 +1 (234) 201-8019
               </Link>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="mx-auto mt-12 flex w-full max-w-[1200px] flex-col gap-3 border-t border-devlo-800 px-6 pt-8 text-xs text-neutral-400 md:flex-row md:items-center md:justify-between md:px-12">
+      <div className="mx-auto mt-12 flex w-full max-w-[1400px] flex-col gap-3 border-t border-devlo-800 px-6 pt-8 text-xs text-neutral-400 md:flex-row md:items-center md:justify-between md:px-8">
         <Link href={footerContent.bottomLink.href} className="transition hover:text-white">
           {footerContent.bottomLink.label}
         </Link>

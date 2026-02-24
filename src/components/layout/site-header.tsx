@@ -45,7 +45,7 @@ export function SiteHeader() {
         className={[
           "fixed inset-x-0 top-0 z-50 transition-all duration-200",
           transparentMode
-            ? "border-transparent bg-transparent"
+            ? "border-b border-white/20 bg-transparent"
             : "border-b border-neutral-200 bg-white/95 shadow-sm backdrop-blur-md",
         ].join(" ")}
       >

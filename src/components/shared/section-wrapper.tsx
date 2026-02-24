@@ -16,7 +16,7 @@ export function SectionWrapper({ children, className, background = "white", id }
 
   return (
     <section id={id} className={`${bgClass} py-16 md:py-24 lg:py-28 ${className ?? ""}`}>
-      <div className="mx-auto w-full max-w-7xl px-6 md:px-12 lg:px-16">{children}</div>
+      <div className="mx-auto w-full max-w-[1400px] px-6 md:px-8 lg:px-8">{children}</div>
     </section>
   );
 }
