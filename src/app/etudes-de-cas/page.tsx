@@ -6,6 +6,9 @@ import { caseStudiesSeo } from "@/content/masterfile.fr";
 export const metadata: Metadata = {
   title: caseStudiesSeo.title,
   description: caseStudiesSeo.description,
+  alternates: {
+    canonical: "/etudes-de-cas",
+  },
   openGraph: {
     title: caseStudiesSeo.title,
     description: caseStudiesSeo.description,

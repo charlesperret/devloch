@@ -262,43 +262,43 @@ export const kpiMetrics: MetricItem[] = [
 export const enterpriseTitle = "Certaines sociétés rencontrées avec succès";
 
 export const enterpriseLogos: LogoItem[] = [
-  { name: "LafargeHolcim", src: "/images/home/logos/lafargeholcim.png", alt: "LafargeHolcim" },
-  { name: "ABB", src: "/images/home/logos/abb.png", alt: "ABB logo" },
-  { name: "Hublot", src: "/images/home/logos/hublot.png", alt: "Hublot" },
-  { name: "Longines", src: "/images/home/logos/longines.png", alt: "Longines" },
-  { name: "Lombard Odier", src: "/images/home/logos/lombard-odier.png", alt: "Lombard Odier" },
-  { name: "BHP", src: "/images/home/logos/bhp.png", alt: "BHP" },
-  { name: "Adecco", src: "/images/home/logos/adecco.png", alt: "Adecco" },
-  { name: "Banque Cantonale de Fribourg", src: "/images/home/logos/bcf.png", alt: "Banque Cantonale de Fribourg" },
-  { name: "Merck", src: "/images/home/logos/merck.png", alt: "Merck" },
-  { name: "Apple", src: "/images/home/logos/apple.png", alt: "Apple" },
-  { name: "Implenia", src: "/images/home/logos/implenia.png", alt: "Implenia" },
+  { name: "LafargeHolcim", src: "/images/Logo_LafargeHolcim.webp", alt: "LafargeHolcim" },
+  { name: "ABB", src: "/images/Logo_ABB.webp", alt: "ABB logo" },
+  { name: "Hublot", src: "/images/Logo_Hublot.webp", alt: "Hublot" },
+  { name: "Longines", src: "/images/Logo_Longines.webp", alt: "Longines" },
+  { name: "Lombard Odier", src: "/images/Logo_Lombard_Odier.webp", alt: "Lombard Odier" },
+  { name: "BHP", src: "/images/Logo_BHP.webp", alt: "BHP" },
+  { name: "Adecco", src: "/images/Logo_Adecco.webp", alt: "Adecco" },
+  { name: "Banque Cantonale de Fribourg", src: "/images/Logo_BCF.webp", alt: "Banque Cantonale de Fribourg" },
+  { name: "Merck", src: "/images/Logo_Merck.webp", alt: "Merck" },
+  { name: "Apple", src: "/images/Logo_Apple.webp", alt: "Apple" },
+  { name: "Implenia", src: "/images/Logo_Implenia.webp", alt: "Implenia" },
 ];
 
 export const proofVideoId = "cr7dgltkvu";
 
 export const testimonials: TestimonialItem[] = [
   {
-    image: "/images/home/testimonials/contact-1633100946280.jpg",
+    image: "/images/Olivier-Eyries.webp",
     imageAlt: "Olivier",
     content:
       "Je pense que devlo est une organisation partenaire de rêve pour les start-ups qui cherchent à valider leur product-market fit et à obtenir le plus grand nombre possible de rendez-vous qualifiés avec très peu de temps et de ressources. En particulier, le professionnalisme de son fondateur Charles a fait que l’ensemble du processus, de la génération de prospects, à la structuration d’une campagne, jusqu’à l’obtention de rendez-vous, soit une collaboration très agréable et efficace. Pour donner un aperçu, notre première campagne avec devlo: 81% de taux d’ouverture, 54% de taux de réponse et 16% de prospects intéressés par une rencontre avec Saporo. C’est très efficace, surtout dans un secteur aussi complexe que la cybersécurité. Olivier Eyries – CEO – Saporo",
   },
   {
-    image: "/images/home/testimonials/tanguy-coustaline.jpg",
+    image: "/images/Tanguy-Coustaline.webp",
     imageAlt: "Tanguy",
     content:
       "Installer des ruches sur le toit de son entreprise ne vient pas spontanément à l’esprit ! C’est là que devlo est venu à notre rescousse ! Les connaissances et l’expérience de devlo en matière de développement des ventes sont ce dont nous avions besoin pour avancer rapidement et rencontrer des prospects qualifiés. A l’issue de notre première campagne, nous avons obtenu un taux de réponse de 39% et 13% des prospects contactés sont intéressés pour en savoir plus sur notre association. Il ne tient maintenant qu’à nous de transformer l’essai et de convaincre de nouveaux partenaires de soutenir la biodiversité avec APIDAE! Tanguy – Président – APIDAE",
   },
   {
-    image: "/images/home/testimonials/contact-1517028435372.jpeg",
+    image: "/images/Raphael-haut.webp",
     imageAlt: "Raphael",
     content:
       "Charles est l’un des experts en vente les plus créatifs et les plus enthousiastes que je connaisse. J’ai travaillé avec lui sur plusieurs campagnes. Il nous a aidés à mettre en place des campagnes de vente hyper-personnalisées, à atteindre des centaines de prospects et, finalement, à obtenir des rendez-vous commerciaux qualifiés. En outre, il nous a également conseillé afin d’affiner notre processus de vente, ce qui a été très utile pour l’ensemble du département des ventes. Je recommande vivement ses compétences et ses services à toutes les startups et PMEs qui souhaitent passer rapidement à la vitesse supérieure.",
     author: "Raphael - Head of Business Development & Marketing - CareerLunch",
   },
   {
-    image: "/images/home/testimonials/contact-1674375368600.jpeg",
+    image: "/images/Xavier_Leuthold.webp",
     imageAlt: "Xavier Leuthold",
     content:
       "Nous avons vraiment apprécié l’assiduité, la clarté de la communication et le dévouement de devlo. Sur 285 prospects, nous avons reçu 200 réponses, soit plus de 70%. L’un de nos défis était d’améliorer nos méthodes de prospection. Avec devlo, nous avons affiné notre ciblage et notre approche avec lemlist. Nous avons également identifié deux types d’Ideal Customer Profiles, des établissements d’enseignement privés et publics. Nous avons contacté les deux et validé l’ICP qui est le plus réceptif à notre offre.",

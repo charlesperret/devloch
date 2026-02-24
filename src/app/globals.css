@@ -95,10 +95,10 @@ a {
   }
 
   .animate-logo-scroll {
-    animation: logo-scroll 30s linear infinite;
+    animation: logo-scroll 45s linear infinite;
   }
 
   .animate-logo-scroll-reverse {
-    animation: logo-scroll-reverse 30s linear infinite;
+    animation: logo-scroll-reverse 45s linear infinite;
   }
 }

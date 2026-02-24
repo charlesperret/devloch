@@ -1,0 +1,124 @@
+{
+  "generated": "2026-02-24",
+  "source": "public/images/ (flat root)",
+  "totalFlatFiles": 223,
+  "groups": {
+    "devloBrand": [
+      "devlo_Logo_Name.webp",
+      "devlo_Logo.png",
+      "devlo-logo.webp"
+    ],
+    "caseStudyBanners": [
+      "Abacus_banner.webp", "Abacus_banner.png",
+      "APIDAE_banner.webp", "APIDAE_banner.jpg",
+      "CareerLunch_banner1.webp", "CareerLunch_banner1.jpg",
+      "Cegos_banner.webp", "Cegos_banner.jpg",
+      "Cortexia_banner.webp", "Cortexia_banner.jpg",
+      "HIAG_banner.webp", "HIAG_banner.jpg",
+      "Horus_banner.webp", "Horus_banner.png",
+      "IDDI_banner.webp", "IDDI_banner.jpg",
+      "LEMANVISIO_banner.webp", "LEMANVISIO_banner.jpg",
+      "Locky_banner.webp", "Locky_banner.png",
+      "Many-Ways_banner.webp", "Many-Ways_banner.png",
+      "Monizze_banner.webp", "Monizze_banner.png",
+      "Saporo_Banner.webp", "Saporo_Banner.png",
+      "SquareCo_banner.webp", "SquareCo_banner.jpg"
+    ],
+    "clientLogos": [
+      "Horus.webp",
+      "Monizze.png"
+    ],
+    "enterpriseLogos": [
+      "Logo_ABB.webp", "Logo_ABB.png",
+      "Logo_Adecco.webp", "Logo_Adecco.png",
+      "Logo_Apple.webp", "Logo_Apple.png",
+      "Logo_BCF.webp", "Logo_BCF.png",
+      "Logo_BHP.webp", "Logo_BHP.png",
+      "Logo_DPD.webp", "Logo_DPD.png",
+      "Logo_Hublot.webp", "Logo_Hublot.png",
+      "Logo_Implenia.webp", "Logo_Implenia.png",
+      "Logo_LafargeHolcim.webp", "Logo_LafargeHolcim.png",
+      "Logo_Lombard_Odier.webp", "Logo_Lombard_Odier.png",
+      "Logo_Longines.webp", "Logo_Longines.png",
+      "Logo_Merck.webp", "Logo_Merck.png"
+    ],
+    "testimonialPhotos": [
+      "Anthony_CREMER.webp", "Anthony_CREMER.jpg",
+      "Etienne_Auvillain.webp",
+      "Fabio_Oliva.webp", "Fabio_Oliva.jpeg",
+      "Jerome_Tailleur.webp",
+      "Jurica.webp", "Jurica.jpg",
+      "Maxime_Dumont.webp", "Maxime_Dumont.jpeg",
+      "Olivier-Eyries.webp",
+      "Raphael-haut.webp",
+      "Serge_Bodart.webp",
+      "Stephan_Nuzzolo.webp", "Stephan_Nuzzolo-2.webp",
+      "Tanguy-Coustaline.webp", "Tanguy_Coustaline.webp",
+      "Xavier_Leuthold.webp", "Xavier_Leuthold.jpg"
+    ],
+    "miscTools": [
+      "Email_from_Sequence.webp",
+      "Positivereplies.gif",
+      "TableContents.webp",
+      "academy-tutorial-0.webp",
+      "academy-tutorial-1.webp",
+      "academy-tutorial-2.webp",
+      "academy-tutorial-3.webp",
+      "academy-tutorial-4.webp",
+      "academy-tutorial-5.webp",
+      "service_badge_lemlist-1024x443.webp",
+      "service_badge_lemlist-1024x443.png",
+      "service_badge_lemlist_2026.webp"
+    ],
+    "rendezVousLogos": [
+      "Academic_Work.webp","Accor.webp","Accuray.webp","ADM.webp","Albinati_Aeronautics.webp",
+      "Amstein_+_Walthert.webp","Assura.webp","Banque_Heritage.webp","Bechtle.webp",
+      "Bedrock_Group.webp","Bio-Rad_Laboratories.webp","Biosensors_International_Group,_Ltd.webp",
+      "BNP_Paribas_Switzerland.webp","CBRE.webp","CHH_Microtechnique.webp","CSC_Costruzioni.webp",
+      "CSS.webp","Caisse_de_prévoyance_de_l'Etat_de_Genève_(CPEG).webp",
+      "Crédit_Agricole.webp","DENTSPLY_SIRONA.webp","Duracell_Inc..webp",
+      "Edmond_de_Rothschild.webp","Engelhart_Commodities_Trading_Partners.webp",
+      "Four_Seasons_Hotels_and_Resorts.webp","Franke_Group.webp",
+      "Graduate_Institute_of_International_and_Development_Studies.webp",
+      "Groupe_Gerofinance-Dunand.webp","Groupe_hôtelier_Sandoz_Foundation_Hotels.webp",
+      "Gucci.webp","Helvetia_Environnement.webp","HID_Global.webp","HR_Campus_AG.webp",
+      "HSBC.webp","International_SOS.webp","JLL.webp","Liip.webp","LunaJets.webp",
+      "Lunaphore_Technologies.webp","MKS_PAMP_GROUP_B.V..webp","MSC_Cruises.webp",
+      "Meggitt.webp","Merkle_DACH.webp","Nestlé_Nespresso.webp","Officine_Panerai.webp",
+      "Orange_Business_Services.webp","Oryx_Energies.webp","PHIDA_Groupe.webp",
+      "PROTECTAS_SA.webp","Piguet_Galland_&_Cie_SA.webp","Rothschild_&_Co.webp",
+      "SITA.webp","SUNSTAR_GLOBAL.webp","Siegfried_Holding_AG.webp","Sommet_Education.webp",
+      "Sonceboz.webp","Swatch_Group.webp","TAG_Heuer.webp","The_Adecco_Group.webp",
+      "Trelleborg_Sealing_Solutions.webp","UEFA.webp","Unisanté.webp","Vale.webp"
+    ],
+    "belgianClientLogos": [
+      "acurity_belgie.webp","aktual.webp","avient.webp","berney_associés.webp",
+      "blue_square.webp","confiserie_leonidas.webp","eght.webp","essity.webp",
+      "frisomat_group.webp","gemaco_piping.webp",
+      "imad_-_institution_genevoise_de_maintien_à_domicile.webp",
+      "juvah.webp","kandf_electro_techniek.webp","la_belgique_gourmande.webp",
+      "lommel_sk.webp","pacarbel.webp","percy_motors_automobiles.webp",
+      "soubry.webp","swaegers_and_co.webp","thalassa.webp","wilink.webp"
+    ],
+    "legacyAssets": {
+      "note": "52 legacy Asset files — unused, safe to archive",
+      "hyphenated": ["Asset-10.webp","Asset-21.webp","Asset-31.webp","Asset-41.webp","Asset-51.webp","Asset-61.webp","Asset-71.webp","Asset-81.webp","Asset-91.webp","Asset-101.webp","Asset-111.webp","Asset-121.webp","Asset-131.webp","Asset-141.webp","Asset-151.webp","Asset-161.webp","Asset-171.webp","Asset-181.webp","Asset-191.webp","Asset-201.webp","Asset-211.webp","Asset-221.webp","Asset-231.webp","Asset-241.webp","Asset-251.webp","Asset-11.webp"],
+      "underscored": ["Asset_10.webp","Asset_21.webp","Asset_31.webp","Asset_41.webp","Asset_51.webp","Asset_61.webp","Asset_71.webp","Asset_81.webp","Asset_91.webp","Asset_101.webp","Asset_111.webp","Asset_121.webp","Asset_131.webp","Asset_141.webp","Asset_151.webp","Asset_161.webp","Asset_171.webp","Asset_181.webp","Asset_191.webp","Asset_201.webp","Asset_211.webp","Asset_221.webp","Asset_231.webp","Asset_241.webp","Asset_251.webp","Asset_11.webp"]
+    }
+  },
+  "subfolders": {
+    "home/brands/": { "count": 11, "migrationStatus": "SUBFOLDER_WORKS — no flat equivalents, keep refs" },
+    "home/logos/": { "count": 12, "migrationStatus": "MIGRATED — flat Logo_*.webp at root" },
+    "home/testimonials/": { "count": 8, "migrationStatus": "MIGRATED — flat *.webp at root" },
+    "home/academy/": { "count": 17, "migrationStatus": "SUBFOLDER_WORKS — no flat equivalents" },
+    "home/process/": { "count": 6, "migrationStatus": "SUBFOLDER_WORKS — no flat equivalents" },
+    "home/social/": { "count": 1, "migrationStatus": "SUBFOLDER_WORKS — Positivereplies.gif exists at root but different name" },
+    "case-studies/heroes/": { "count": 14, "migrationStatus": "SUBFOLDER_WORKS — no flat equivalents" },
+    "case-studies/logos/": { "count": 24, "migrationStatus": "SUBFOLDER_WORKS — no flat equivalents" },
+    "case-studies/testimonials/": { "count": 1, "migrationStatus": "SUBFOLDER_WORKS — no flat equivalent" },
+    "blog/": { "count": 9, "migrationStatus": "SUBFOLDER_WORKS — no flat equivalents" },
+    "brand/": { "count": 1, "migrationStatus": "No code references found" },
+    "footer/": { "count": 2, "migrationStatus": "No code references found" },
+    "placeholders/": { "count": 1, "migrationStatus": "SUBFOLDER_WORKS — hero.svg in hero-section.tsx" }
+  }
+}

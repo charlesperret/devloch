@@ -12,26 +12,18 @@ export type TestimonialProfile = {
 };
 
 export const enterpriseLogos: BrandLogo[] = [
-  { name: "ABB", src: "/images/home/logos/abb.png", alt: "ABB logo" },
-  { name: "Adecco", src: "/images/home/logos/adecco.png", alt: "Adecco logo" },
-  { name: "Apple", src: "/images/home/logos/apple.png", alt: "Apple logo" },
-  { name: "BCF", src: "/images/home/logos/bcf.png", alt: "BCF logo" },
-  { name: "BHP", src: "/images/home/logos/bhp.png", alt: "BHP logo" },
-  { name: "DPD", src: "/images/home/logos/dpd.png", alt: "DPD logo" },
-  { name: "Hublot", src: "/images/home/logos/hublot.png", alt: "Hublot logo" },
-  { name: "Implenia", src: "/images/home/logos/implenia.png", alt: "Implenia logo" },
-  {
-    name: "LafargeHolcim",
-    src: "/images/home/logos/lafargeholcim.png",
-    alt: "LafargeHolcim logo",
-  },
-  {
-    name: "Lombard Odier",
-    src: "/images/home/logos/lombard-odier.png",
-    alt: "Lombard Odier logo",
-  },
-  { name: "Longines", src: "/images/home/logos/longines.png", alt: "Longines logo" },
-  { name: "Merck", src: "/images/home/logos/merck.png", alt: "Merck logo" },
+  { name: "ABB", src: "/images/Logo_ABB.webp", alt: "ABB logo" },
+  { name: "Adecco", src: "/images/Logo_Adecco.webp", alt: "Adecco logo" },
+  { name: "Apple", src: "/images/Logo_Apple.webp", alt: "Apple logo" },
+  { name: "BCF", src: "/images/Logo_BCF.webp", alt: "BCF logo" },
+  { name: "BHP", src: "/images/Logo_BHP.webp", alt: "BHP logo" },
+  { name: "DPD", src: "/images/Logo_DPD.webp", alt: "DPD logo" },
+  { name: "Hublot", src: "/images/Logo_Hublot.webp", alt: "Hublot logo" },
+  { name: "Implenia", src: "/images/Logo_Implenia.webp", alt: "Implenia logo" },
+  { name: "LafargeHolcim", src: "/images/Logo_LafargeHolcim.webp", alt: "LafargeHolcim logo" },
+  { name: "Lombard Odier", src: "/images/Logo_Lombard_Odier.webp", alt: "Lombard Odier logo" },
+  { name: "Longines", src: "/images/Logo_Longines.webp", alt: "Longines logo" },
+  { name: "Merck", src: "/images/Logo_Merck.webp", alt: "Merck logo" },
 ];
 
 export const caseStudyLogos: BrandLogo[] = [
@@ -63,25 +55,25 @@ export const testimonialProfiles: TestimonialProfile[] = [
   {
     name: "Fabio Oliva",
     role: "Temoignage client",
-    image: "/images/home/testimonials/fabio-oliva.jpg",
+    image: "/images/Fabio_Oliva.webp",
     alt: "Portrait Fabio Oliva",
   },
   {
     name: "Jurica Karlo",
     role: "Temoignage client",
-    image: "/images/home/testimonials/jurica-karlo.jpg",
+    image: "/images/Jurica.webp",
     alt: "Portrait Jurica Karlo",
   },
   {
     name: "Maxime Dumont",
     role: "Temoignage client",
-    image: "/images/home/testimonials/maxime-dumont.jpg",
+    image: "/images/Maxime_Dumont.webp",
     alt: "Portrait Maxime Dumont",
   },
   {
     name: "Tanguy Coustaline",
     role: "Temoignage client",
-    image: "/images/home/testimonials/tanguy-coustaline.jpg",
+    image: "/images/Tanguy-Coustaline.webp",
     alt: "Portrait Tanguy Coustaline",
   },
 ];

@@ -49,9 +49,7 @@ function InfiniteLogoRail({ logos, pauseOnHover = false, reverse = false }: { lo
   const doubled = [...logos, ...logos];
 
   return (
-    <div className="group relative overflow-hidden py-1">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent" />
+    <div className="group py-1">
       <div
         className={[
           "flex min-w-max items-center gap-10",
@@ -159,11 +157,15 @@ export function HomePage() {
         <FadeInOnScroll>
           <h2 className="mx-auto max-w-[490px] text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl">{homeContent.rendezVousTitle}</h2>
         </FadeInOnScroll>
-        <FadeInOnScroll delay={0.1} className="mt-10 space-y-4">
-          <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(0, 17)} />
-          <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(17, 33)} reverse />
-          <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(33, 49)} />
-          <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(49)} reverse />
+        <FadeInOnScroll delay={0.1}>
+          <div className="relative mt-10 -mx-6 space-y-4 overflow-hidden md:-mx-12 lg:-mx-16">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[8vw] bg-gradient-to-r from-white to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[8vw] bg-gradient-to-l from-white to-transparent" />
+            <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(0, 17)} />
+            <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(17, 33)} reverse />
+            <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(33, 49)} />
+            <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(49)} reverse />
+          </div>
         </FadeInOnScroll>
       </SectionWrapper>
 
@@ -172,7 +174,7 @@ export function HomePage() {
           <h2 className="text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl">{homeContent.videoTestimonials.title}</h2>
         </FadeInOnScroll>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
           {homeContent.videoTestimonials.items.map((item, index) => (
             <FadeInOnScroll key={item.title} delay={index * 0.2}>
               <article className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-panel">
@@ -186,9 +188,23 @@ export function HomePage() {
                 />
                 <div className="space-y-2 p-5">
                   <h3 className="text-xl font-semibold text-devlo-900">{item.title}</h3>
-                  <p className="text-sm text-neutral-600">
-                    {item.client} · {item.role}
-                  </p>
+                  <div className="flex items-center gap-3">
+                    {item.photo ? (
+                      <Image
+                        src={item.photo}
+                        alt={item.client}
+                        width={40}
+                        height={40}
+                        className="h-10 w-10 shrink-0 rounded-full object-cover"
+                        loading="lazy"
+                        sizes="40px"
+                      />
+                    ) : null}
+                    <div>
+                      <p className="text-sm font-semibold text-devlo-900">{item.client}</p>
+                      <p className="text-xs text-neutral-600">{item.role}</p>
+                    </div>
+                  </div>
                   <p className="text-sm leading-7 text-neutral-600">{item.metric}</p>
                   <Link href={item.href} className="inline-flex text-sm font-semibold text-devlo-700 hover:text-devlo-900">
                     {item.linkLabel}
@@ -205,10 +221,12 @@ export function HomePage() {
           <h2 className="text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl">{homeContent.clientsTitle}</h2>
         </FadeInOnScroll>
 
-        <div className="mt-10 space-y-4">
-          <ClientsRail names={homeContent.clientsLogos.slice(0, 9)} />
-          <ClientsRail names={homeContent.clientsLogos.slice(9, 18)} reverse />
-          <ClientsRail names={homeContent.clientsLogos.slice(18)} />
+        <div className="relative mt-10 -mx-6 space-y-4 overflow-hidden md:-mx-12 lg:-mx-16">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[8vw] bg-gradient-to-r from-white to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[8vw] bg-gradient-to-l from-white to-transparent" />
+          <ClientsRail names={homeContent.clientsLogos} />
+          <ClientsRail names={homeContent.clientsLogos} reverse />
+          <ClientsRail names={homeContent.clientsLogos} />
         </div>
       </SectionWrapper>
 

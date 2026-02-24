@@ -1,0 +1,112 @@
+old_url,new_url,status_code,note
+https://devlo.ch/,https://devlo.ch/,200,Homepage — same URL
+https://devlo.ch/consultation,https://devlo.ch/consultation,200,Same URL — verified
+https://devlo.ch/consultation-gratuite,https://devlo.ch/consultation,301,WP variant — redirect in next.config.mjs
+https://devlo.ch/strategie-gratuite,https://devlo.ch/consultation,301,WP variant — redirect added
+https://devlo.ch/etudes-de-cas,https://devlo.ch/etudes-de-cas,200,Same URL — verified
+https://devlo.ch/resultats-cas-etudes,https://devlo.ch/etudes-de-cas,301,Old Next.js listing page — redirect added
+https://devlo.ch/resultats_cas_etudes,https://devlo.ch/etudes-de-cas,301,Old WP variant — redirect added
+https://devlo.ch/cas-clients,https://devlo.ch/etudes-de-cas,301,WP variant — redirect added
+https://devlo.ch/nos-resultats,https://devlo.ch/etudes-de-cas,301,WP variant — redirect added
+https://devlo.ch/resultats-clients,https://devlo.ch/etudes-de-cas,301,WP variant — redirect added
+https://devlo.ch/nos-cas-clients,https://devlo.ch/etudes-de-cas,301,WP variant — redirect added
+https://devlo.ch/etudes-de-cas-clients,https://devlo.ch/etudes-de-cas,301,WP variant — redirect added
+https://devlo.ch/academy,https://devlo.ch/academy,200,Same URL — verified
+https://devlo.ch/formation,https://devlo.ch/academy,301,WP variant — redirect added
+https://devlo.ch/outbound-academy,https://devlo.ch/academy,301,WP variant — redirect added
+https://devlo.ch/formation-outbound,https://devlo.ch/academy,301,WP variant — redirect added
+https://devlo.ch/formation-prospection-b2b,https://devlo.ch/formation-prospection-b2b,200,Already exists in Next.js
+https://devlo.ch/contact,https://devlo.ch/contact,200,Already exists in Next.js
+https://devlo.ch/conditions,https://devlo.ch/conditions,200,Same URL
+https://devlo.ch/politique-confidentialite,https://devlo.ch/politique-confidentialite,200,Already exists in Next.js
+https://devlo.ch/agence,https://devlo.ch/,301,Redirect to homepage
+https://devlo.ch/a-propos,https://devlo.ch/,301,Redirect to homepage
+https://devlo.ch/services,https://devlo.ch/,301,Redirect to homepage
+https://devlo.ch/prospection-b2b,https://devlo.ch/,301,Redirect to homepage
+https://devlo.ch/resultats/[slug],https://devlo.ch/etudes-de-cas/[slug],301,Old Next.js route — wildcard redirect added
+https://devlo.ch/category/[slug],https://devlo.ch/,301,WordPress taxonomy — redirect added
+https://devlo.ch/tag/[slug],https://devlo.ch/,301,WordPress taxonomy — redirect added
+https://devlo.ch/author/[slug],https://devlo.ch/,301,WordPress author — redirect added
+https://devlo.ch/page/[num],https://devlo.ch/,301,WordPress pagination — redirect added
+https://devlo.ch/feed,https://devlo.ch/,301,WordPress RSS — redirect added
+https://devlo.ch/wp-admin,https://devlo.ch/,301,WordPress admin — redirect added
+https://devlo.ch/wp-login.php,https://devlo.ch/,301,WordPress login — redirect added
+https://devlo.ch/merci,NOINDEX,disallow,Post-conversion thank-you page — disallowed in robots.txt
+https://devlo.ch/merci-prise-de-contact,NOINDEX,disallow,Post-conversion page — disallowed in robots.txt
+https://devlo.ch/telephone,NOINDEX,disallow,Scheduling page — disallowed in robots.txt
+https://devlo.ch/notrerendez-vous,NOINDEX,disallow,Scheduling page — disallowed in robots.txt
+https://devlo.ch/academy-notre-appel,NOINDEX,disallow,Post-call page — disallowed in robots.txt
+https://devlo.ch/modele,NOINDEX,disallow,Internal template — disallowed in robots.txt
+https://devlo.ch/etudes-de-cas/cybersecurite-4500-entreprises,https://devlo.ch/etudes-de-cas/cybersecurite-4500-entreprises,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/hr-54-rendez-vous-dach,https://devlo.ch/etudes-de-cas/hr-54-rendez-vous-dach,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/logiciel-comptable-200k-ca,https://devlo.ch/etudes-de-cas/logiciel-comptable-200k-ca,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/proprete-urbaine-71-rendez-vous,https://devlo.ch/etudes-de-cas/proprete-urbaine-71-rendez-vous,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/biocarburants-52-rendez-vous,https://devlo.ch/etudes-de-cas/biocarburants-52-rendez-vous,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/formation-14-rendez-vous,https://devlo.ch/etudes-de-cas/formation-14-rendez-vous,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/audiovisuel-16-rendez-vous,https://devlo.ch/etudes-de-cas/audiovisuel-16-rendez-vous,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/biodiversite-70-rendez-vous,https://devlo.ch/etudes-de-cas/biodiversite-70-rendez-vous,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/mobilite-40-prospects,https://devlo.ch/etudes-de-cas/mobilite-40-prospects,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/merchandising-23-prospects,https://devlo.ch/etudes-de-cas/merchandising-23-prospects,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/immobilier-11-prospects,https://devlo.ch/etudes-de-cas/immobilier-11-prospects,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/immobilier-30-prospects,https://devlo.ch/etudes-de-cas/immobilier-30-prospects,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/monizze-120-rendez-vous,https://devlo.ch/etudes-de-cas/monizze-120-rendez-vous,200,Case study — canonical slug
+https://devlo.ch/etudes-de-cas/saporo-180-prospects-cybersecurite,https://devlo.ch/etudes-de-cas/cybersecurite-4500-entreprises,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/etudes-de-cas/careerlunch-54-rendez-vous-dach,https://devlo.ch/etudes-de-cas/hr-54-rendez-vous-dach,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/etudes-de-cas/horus-200k-contrats-belgique,https://devlo.ch/etudes-de-cas/logiciel-comptable-200k-ca,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/etudes-de-cas/cortexia-71-rendez-vous-decideurs-urbains,https://devlo.ch/etudes-de-cas/proprete-urbaine-71-rendez-vous,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/etudes-de-cas/squareco-52-prospects-interesses-biocarburants,https://devlo.ch/etudes-de-cas/biocarburants-52-rendez-vous,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/etudes-de-cas/cegos-45-taux-reponse,https://devlo.ch/etudes-de-cas/formation-14-rendez-vous,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/etudes-de-cas/lemanvisio-16-rendez-vous-architectes,https://devlo.ch/etudes-de-cas/audiovisuel-16-rendez-vous,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/etudes-de-cas/apidae-70-rendez-vous,https://devlo.ch/etudes-de-cas/biodiversite-70-rendez-vous,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/etudes-de-cas/locky-40-entreprises-interessees,https://devlo.ch/etudes-de-cas/mobilite-40-prospects,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/etudes-de-cas/many-ways-70-taux-reponse-merchandising,https://devlo.ch/etudes-de-cas/merchandising-23-prospects,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/etudes-de-cas/hiag-immeuble-commercial-winterthur,https://devlo.ch/etudes-de-cas/immobilier-11-prospects,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/etudes-de-cas/abacus-30-prospects-interesses,https://devlo.ch/etudes-de-cas/immobilier-30-prospects,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/etudes-de-cas/monizze-120-rendez-vous-qualifies-belgique,https://devlo.ch/etudes-de-cas/monizze-120-rendez-vous,301,Legacy Next.js slug — redirect via caseStudySlugRedirects
+https://devlo.ch/resultats/solution-de-cybersecurite-180-prospects-interesses-generation-de-prospects-b2b-et-prospection-a-froid/,https://devlo.ch/etudes-de-cas/cybersecurite-4500-entreprises,301,WP long permalink — specific redirect in next.config.mjs
+https://devlo.ch/resultats/limmobilier-et-la-prospection-commerciale-b2b-comment-cibler-et-demarcher-des-prospects-pour-la-location-de-surfaces-commerciales/,https://devlo.ch/etudes-de-cas/immobilier-11-prospects,301,WP long permalink — specific redirect in next.config.mjs
+https://devlo.ch/resultats/telemarketing-b2b-dans-limmobilier-commercial-30-prospects-interesses-pour-des-surfaces-de-bureaux/,https://devlo.ch/etudes-de-cas/immobilier-30-prospects,301,WP long permalink — specific redirect in next.config.mjs
+https://devlo.ch/en/,https://devlo.ch/,301,EN homepage — redirect to FR
+https://devlo.ch/en/casestudy/cybersecurity-4500-companies/,https://devlo.ch/etudes-de-cas/cybersecurite-4500-entreprises,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/hr-54-meetings-dach/,https://devlo.ch/etudes-de-cas/hr-54-rendez-vous-dach,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/accounting-200k-revenue/,https://devlo.ch/etudes-de-cas/logiciel-comptable-200k-ca,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/urban-cleaning-71-appointments/,https://devlo.ch/etudes-de-cas/proprete-urbaine-71-rendez-vous,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/biofuels-52-appointments/,https://devlo.ch/etudes-de-cas/biocarburants-52-rendez-vous,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/training-14-appointments/,https://devlo.ch/etudes-de-cas/formation-14-rendez-vous,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/audiovisual-16-appointments/,https://devlo.ch/etudes-de-cas/audiovisuel-16-rendez-vous,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/biodiversity-70-appointments/,https://devlo.ch/etudes-de-cas/biodiversite-70-rendez-vous,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/mobility-40-prospects/,https://devlo.ch/etudes-de-cas/mobilite-40-prospects,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/merchandising-23-prospects/,https://devlo.ch/etudes-de-cas/merchandising-23-prospects,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/real-estate-11-prospects/,https://devlo.ch/etudes-de-cas/immobilier-11-prospects,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/real-estate-30-prospects/,https://devlo.ch/etudes-de-cas/immobilier-30-prospects,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/monizze-120-appointments-belgium/,https://devlo.ch/etudes-de-cas/monizze-120-rendez-vous,301,EN case study — specific redirect
+https://devlo.ch/en/casestudy/[other-slug]/,https://devlo.ch/etudes-de-cas,301,EN case study fallback — wildcard redirect
+https://devlo.ch/en/b2b-sales-training-academy/,https://devlo.ch/academy,301,EN academy page — specific redirect
+https://devlo.ch/en/ultimate-sales-training-course/,https://devlo.ch/academy,301,EN academy page — specific redirect
+https://devlo.ch/en/free-consultation/,https://devlo.ch/consultation,301,EN consultation page — specific redirect
+https://devlo.ch/en/case-studies/,https://devlo.ch/etudes-de-cas,301,EN case studies listing — specific redirect
+https://devlo.ch/en/contact/,https://devlo.ch/contact,301,EN contact page — specific redirect
+https://devlo.ch/en/[other-path]/,https://devlo.ch/,301,EN catch-all — wildcard redirect
+https://devlo.ch/de/,https://devlo.ch/,301,DE homepage — redirect to FR
+https://devlo.ch/de/fallstudien/cybersicherheit-4500-unternehmen/,https://devlo.ch/etudes-de-cas/cybersecurite-4500-entreprises,301,DE case study — specific redirect
+https://devlo.ch/de/fallstudien/hr-54-termine-dach/,https://devlo.ch/etudes-de-cas/hr-54-rendez-vous-dach,301,DE case study — specific redirect
+https://devlo.ch/de/fallstudien/buchhaltungssoftware-200k-umsatz/,https://devlo.ch/etudes-de-cas/logiciel-comptable-200k-ca,301,DE case study — specific redirect
+https://devlo.ch/de/fallstudien/stadtreinigung-71-termine/,https://devlo.ch/etudes-de-cas/proprete-urbaine-71-rendez-vous,301,DE case study — specific redirect
+https://devlo.ch/de/fallstudien/biokraftstoffe-52-termine/,https://devlo.ch/etudes-de-cas/biocarburants-52-rendez-vous,301,DE case study — specific redirect
+https://devlo.ch/de/fallstudien/weiterbildung-14-termine/,https://devlo.ch/etudes-de-cas/formation-14-rendez-vous,301,DE case study — specific redirect
+https://devlo.ch/de/fallstudien/monizze-120-termine-belgien/,https://devlo.ch/etudes-de-cas/monizze-120-rendez-vous,301,DE case study — specific redirect
+https://devlo.ch/de/fallstudien/[other-slug]/,https://devlo.ch/etudes-de-cas,301,DE case study fallback — wildcard redirect
+https://devlo.ch/de/ausbildung-prospektion-b2b/,https://devlo.ch/formation-prospection-b2b,301,DE training page — specific redirect
+https://devlo.ch/de/ultimativer-verkaufstrainingskurs/,https://devlo.ch/academy,301,DE academy page — specific redirect
+https://devlo.ch/de/kostenlose-beratung/,https://devlo.ch/consultation,301,DE consultation page — specific redirect
+https://devlo.ch/de/fallstudien/,https://devlo.ch/etudes-de-cas,301,DE case studies listing — specific redirect
+https://devlo.ch/de/[other-path]/,https://devlo.ch/,301,DE catch-all — wildcard redirect
+https://devlo.ch/prospection-commerciale-b2b/,https://devlo.ch/,301,FR WP blog post — redirect to homepage
+https://devlo.ch/5-raisons-pour-lesquelles-la-prospection-commerciale-b2b-est-cruciale/,https://devlo.ch/,301,FR WP blog post — redirect to homepage
+https://devlo.ch/externaliser-le-developpement-des-ventes-b2b-comment-eviter-les-depenses-excessives/,https://devlo.ch/,301,FR WP blog post — redirect to homepage
+https://devlo.ch/developpement-ventes-b2b/,https://devlo.ch/,301,FR WP blog post — redirect to homepage
+https://devlo.ch/blog/[slug]/,https://devlo.ch/,301,FR WP blog posts — wildcard redirect to homepage
+TODO,TODO,TODO,Run node scripts/crawl-seo.mjs on devlo.ch to get full WP URL inventory
+TODO,TODO,TODO,Verify actual EN/DE WP slugs from crawl exports (sf-3xx.csv and sf-internal-html.csv)
+TODO,TODO,TODO,Add any additional /resultats/ WP long-slug redirects found in crawl
+TODO,TODO,TODO,Check GSC for any remaining indexed URLs not covered above

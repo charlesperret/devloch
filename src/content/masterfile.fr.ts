@@ -74,7 +74,7 @@ export const homeContent = {
     ctaPrimary: { label: "Planifier votre consultation gratuite →", href: "/consultation" },
     ctaSecondary: { label: "Voir nos résultats →", href: "/etudes-de-cas" },
     wistiaMediaId: "cr7dgltkvu",
-    posterSrc: "/images/home/academy/web-showcase.jpg",
+    posterSrc: "/images/Cegos_banner.webp",
     posterAlt: "Aperçu de la vidéo de présentation de devlo",
     videoTestimonial: {
       client: "Etienne Auvillain",
@@ -167,6 +167,7 @@ export const homeContent = {
         posterAlt: "Bannière de l'étude de cas Cegos en prospection B2B",
         client: "Etienne Auvillain",
         role: "Directeur Général",
+        photo: "/images/Etienne_Auvillain.webp",
         metric: "45% de taux de réponse grâce à notre approche multicanal personnalisée",
         linkLabel: "→ vers étude de cas Cegos",
         href: "/etudes-de-cas/formation-14-rendez-vous",
@@ -178,6 +179,7 @@ export const homeContent = {
         posterAlt: "Bannière de l'étude de cas Abacus en génération de leads immobiliers",
         client: "Stephan Nuzzolo",
         role: "Directeur",
+        photo: "/images/Stephan_Nuzzolo-2.webp",
         metric: "Plus de 30 prospects intéressés générés pour leur solution",
         linkLabel: "→ vers étude de cas Abacus",
         href: "/etudes-de-cas/immobilier-30-prospects",
@@ -189,6 +191,7 @@ export const homeContent = {
         posterAlt: "Bannière de l'étude de cas APIDAE sur la biodiversité",
         client: "Tanguy Coustaline",
         role: "Président",
+        photo: "/images/Tanguy-Coustaline.webp",
         metric: "70 rendez-vous qualifiés avec des marques prestigieuses",
         linkLabel: "→ vers étude de cas Apidae",
         href: "/etudes-de-cas/biodiversite-70-rendez-vous",
@@ -197,32 +200,22 @@ export const homeContent = {
   },
   clientsTitle: "Nos clients",
   clientsLogos: [
-    "Asset-10.webp",
-    "Asset-71.webp",
-    "Asset-11.webp",
-    "Asset-21.webp",
-    "Asset-31.webp",
-    "Asset-41.webp",
-    "Asset-51.webp",
-    "Asset-61.webp",
-    "Asset-81.webp",
-    "Asset-91.webp",
-    "Asset-101.webp",
-    "Asset-111.webp",
-    "Asset-121.webp",
-    "Asset-131.webp",
-    "Asset-141.webp",
-    "Asset-151.webp",
-    "Asset-161.webp",
-    "Asset-171.webp",
-    "Asset-181.webp",
-    "Asset-191.webp",
-    "Asset-201.webp",
-    "Asset-211.webp",
-    "Asset-221.webp",
-    "Asset-231.webp",
-    "Asset-241.webp",
-    "Asset-251.webp",
+    "home/brands/abacus.png",
+    "home/brands/apidae.png",
+    "home/brands/careerlunch.png",
+    "home/brands/cegos.png",
+    "home/brands/hiag.png",
+    "home/brands/lemanvisio.png",
+    "home/brands/locky.png",
+    "home/brands/many-ways.png",
+    "home/brands/saporo.png",
+    "home/brands/squareco.png",
+    "Monizze.png",
+    "Horus.webp",
+    "IDDI_banner.webp",
+    // TODO: add flat paths for StrongNetwork, Swiss Digital Network, Tune Insight,
+    // Und du, Urbantz, Webforce, FusionOne, Lane, Redguard, Referwell
+    // once files are placed in public/images/ root
   ],
   noRecruitTitle: "Développez votre chiffre d'affaires sans recruter",
   noRecruitCards: [
@@ -323,7 +316,7 @@ export const homeContent = {
       author: "Olivier Eyries",
       role: "CEO",
       company: "Saporo",
-      photo: "/images/Olivier-Eyries.jpg",
+      photo: "/images/Olivier-Eyries.webp",
     },
     {
       quote:
@@ -355,7 +348,7 @@ export const homeContent = {
       author: "Raphael Haut",
       role: "Head of Business Development & Marketing",
       company: "CareerLunch",
-      photo: "/images/Raphael-haut.jpg",
+      photo: "/images/Raphael-haut.webp",
     },
     {
       quote:
@@ -744,24 +737,62 @@ export const consultationSeo = {
 
 export const consultationContent = {
   h1: "Obtenez votre stratégie outbound gratuite et ultra-ciblée pour vos meilleurs clients B2B",
-  text: [
+
+  reassurance: [
+    "Gratuit et sans engagement",
+    "Réponse sous 24h",
+    "Top agence sur Outbound-experts.com",
+  ],
+
+  intro:
     "Partagez quelques détails sur votre Profil Client Idéal et nous construirons un plan de prospection personnalisé pour vous, avant même notre premier échange.",
-    "Sur la base de ce que vous indiquez ci-dessous, notre équipe préparera :",
+
+  deliverablesTitle: "Ce que vous recevez",
+  deliverables: [
+    {
+      icon: "🎯",
+      title: "Résumé ICP",
+      desc: "Vos meilleurs comptes cibles et intitulés de poste clairement définis pour cibler les bons prospects",
+    },
+    {
+      icon: "📨",
+      title: "Plan multicanal",
+      desc: "1 à 2 flux de prospection email, LinkedIn et téléphone entièrement adaptés à votre marché",
+    },
+    {
+      icon: "✍️",
+      title: "Accroches & CTA",
+      desc: "Idées concrètes d'objets d'emails, accroches et call-to-actions qui génèrent des réponses",
+    },
   ],
-  bullets: [
-    "Un résumé ICP clair avec vos meilleurs comptes cibles et intitulés de poste",
-    "1 à 2 flux de prospection multicanal (email, LinkedIn, téléphone) adaptés à votre marché",
-    "Des idées concrètes pour des objets d'email, accroches et call-to-actions qui génèrent des réponses",
+
+  proof: {
+    stat: "7%",
+    label: "de prospects intéressés en moyenne",
+    source: "Outbound-experts.com · 2025",
+  },
+
+  forWhoTitle: "Pour qui ?",
+  forWhoIntro: "Notre agence travaille exclusivement avec des entreprises B2B :",
+  forWho: [
+    "Éditeurs de logiciels et SaaS",
+    "Sociétés de cybersécurité",
+    "Prestataires de services professionnels et formation",
+    "Industriels, immobilier et associations B2B",
   ],
-  closing: [
-    "devlo est classée parmi les meilleures agences outbound sur Outbound-experts.com et nos campagnes atteignent en moyenne 7% de prospects intéressés pour nos clients en 2025.",
-    "Remplissez le formulaire, et nous vous recontacterons sous 24 heures avec votre stratégie outbound gratuite et sans engagement, puis nous vous la présenterons lors d'un appel.",
-  ],
+
+  formTitle: "Planifiez votre consultation gratuite",
+  formSubtitle:
+    "Notre équipe prépare votre stratégie outbound avant même notre premier appel.",
+
   hubspot: {
     portalId: "8082524",
     formId: "54090bd3-970d-4ad1-b3b3-1c81d54c291e",
     region: "na2",
   },
+
+  postForm:
+    "En soumettant ce formulaire, notre équipe vous contacte sous 24h avec votre stratégie outbound personnalisée.",
 };
 
 export const conditionsSeo = {

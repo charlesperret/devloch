@@ -1,0 +1,40 @@
+{
+  "generated": "2026-02-24",
+  "summary": {
+    "OK": 75,
+    "MIGRATED": 29,
+    "SUBFOLDER_WORKS": 68,
+    "BROKEN": 1
+  },
+  "broken": [
+    {
+      "file": "src/lib/seo/site-config.ts",
+      "line": 21,
+      "path": "/images/og-devlo.jpg",
+      "notes": "File missing everywhere. defaultOgImage not consumed by any component yet. Needs a 1200x630px OG image."
+    }
+  ],
+  "migrated": [
+    { "file": "src/lib/brand-assets.ts", "lines": "15-26", "from": "home/logos/*.png (12 entries)", "to": "Logo_*.webp" },
+    { "file": "src/lib/brand-assets.ts", "lines": "58-77", "from": "home/testimonials/*.jpg (4 entries)", "to": "flat *.webp" },
+    { "file": "src/content/home.fr.ts", "lines": "265-275", "from": "home/logos/*.png (11 entries)", "to": "Logo_*.webp" },
+    { "file": "src/content/home.fr.ts", "line": 282, "from": "home/testimonials/contact-1633100946280.jpg", "to": "/images/Olivier-Eyries.webp" },
+    { "file": "src/content/home.fr.ts", "line": 288, "from": "home/testimonials/tanguy-coustaline.jpg", "to": "/images/Tanguy-Coustaline.webp" },
+    { "file": "src/content/home.fr.ts", "line": 294, "from": "home/testimonials/contact-1517028435372.jpeg", "to": "/images/Raphael-haut.webp" },
+    { "file": "src/content/home.fr.ts", "line": 301, "from": "home/testimonials/contact-1674375368600.jpeg", "to": "/images/Xavier_Leuthold.webp" },
+    { "file": "src/content/masterfile.fr.ts", "line": 319, "from": "/images/Olivier-Eyries.jpg", "to": "/images/Olivier-Eyries.webp" },
+    { "file": "src/content/masterfile.fr.ts", "line": 351, "from": "/images/Raphael-haut.jpg", "to": "/images/Raphael-haut.webp" },
+    { "file": "src/content/masterfile.fr.ts", "lines": "clientsLogos", "action": "Removed 6 broken entries: StrongNetwork, Swiss_Digital_Network, Tune_Insight, Undu_du, Urbantz, Webforce" }
+  ],
+  "subfolder_works": [
+    { "subfolder": "home/brands/", "count": 11, "files": ["squareco.png","saporo.png","many-ways.png","locky.png","lemanvisio.png","hiag.png","cegos.png","careerlunch.png","apidae.png","abacus.png","saporo.webp"], "used_in": ["brand-assets.ts:30-39","home.fr.ts:105-114","masterfile.fr.ts:clientsLogos,508"] },
+    { "subfolder": "home/process/", "count": 6, "files": ["1-target.png","2-profile.png","3-write.png","4-lens.png","5-email.png","6-meeting.png"], "used_in": ["home.fr.ts:188-223"] },
+    { "subfolder": "home/academy/", "count": 8, "files": ["web-showcase.jpg","cover-mac.png","academy.gif","academy-macbook.gif","academy-roadmap.webp","tasks.png","careerlunch-banner.jpg","partner-badge.webp"], "used_in": ["brand-assets.ts:43-51","testimonials-carousel.tsx:16","hero-section-v2.tsx:57"] },
+    { "subfolder": "home/social/", "count": 1, "files": ["positive-replies.gif"], "used_in": ["brand-assets.ts:50"] },
+    { "subfolder": "case-studies/heroes/", "count": 14, "used_in": ["home.fr.ts:316-414","masterfile.fr.ts:467","case-studies.data.json (multiple)"] },
+    { "subfolder": "case-studies/logos/", "count": 12, "used_in": ["masterfile.fr.ts (multiple)","case-studies.data.json (multiple)"] },
+    { "subfolder": "case-studies/testimonials/", "count": 1, "files": ["mobilite-40-prospects-testimonial.webp"], "used_in": ["case-studies.data.json:1029"] },
+    { "subfolder": "placeholders/", "count": 1, "files": ["hero.svg"], "used_in": ["hero-section.tsx:38"] },
+    { "subfolder": "blog/", "count": 9, "files": ["cold-outreach.png","getty.png","screenshot-2021.png","dominos.png","fishing.jpeg","spearfishing.jpg","kpi.png","mike-pregler.png","team.png"], "used_in": ["blog-list-page.tsx:20-69"] }
+  ]
+}

@@ -6,6 +6,9 @@ import { homeSeo } from "@/content/masterfile.fr";
 export const metadata: Metadata = {
   title: homeSeo.title,
   description: homeSeo.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: homeSeo.ogTitle,
     description: homeSeo.ogDescription,

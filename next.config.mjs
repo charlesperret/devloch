@@ -50,14 +50,524 @@ const nextConfig = {
     ];
   },
   async redirects() {
-    const caseStudyRedirects = Object.entries(caseStudySlugRedirects).map(([legacySlug, canonicalSlug]) => ({
-      source: `/etudes-de-cas/${legacySlug}`,
-      destination: `/etudes-de-cas/${canonicalSlug}`,
-      permanent: true,
-    }));
+    // ─── Case study legacy slug redirects ──────────────────────────────────────
+    const caseStudyRedirects = Object.entries(caseStudySlugRedirects).map(
+      ([legacySlug, canonicalSlug]) => ({
+        source: `/etudes-de-cas/${legacySlug}`,
+        destination: `/etudes-de-cas/${canonicalSlug}`,
+        permanent: true,
+      }),
+    );
+
+    // ─── Specific WP /resultats/[long-slug] → canonical /etudes-de-cas/[slug] ──
+    // WordPress used long descriptive permalinks; without these, the wildcard below
+    // would create 404s (long WP slug ≠ short canonical slug).
+    // Must come BEFORE the wildcard resultatRedirects.
+    // TODO: Run `node scripts/crawl-seo.mjs` on devlo.ch (WordPress) and add any
+    //       additional /resultats/ URLs found in seo-crawl-exports/sf-3xx.csv.
+    const wpResultatRedirects = [
+      {
+        source:
+          "/resultats/solution-de-cybersecurite-180-prospects-interesses-generation-de-prospects-b2b-et-prospection-a-froid",
+        destination: "/etudes-de-cas/cybersecurite-4500-entreprises",
+        permanent: true,
+      },
+      {
+        source:
+          "/resultats/solution-de-cybersecurite-180-prospects-interesses-generation-de-prospects-b2b-et-prospection-a-froid/",
+        destination: "/etudes-de-cas/cybersecurite-4500-entreprises",
+        permanent: true,
+      },
+      {
+        source:
+          "/resultats/limmobilier-et-la-prospection-commerciale-b2b-comment-cibler-et-demarcher-des-prospects-pour-la-location-de-surfaces-commerciales",
+        destination: "/etudes-de-cas/immobilier-11-prospects",
+        permanent: true,
+      },
+      {
+        source:
+          "/resultats/limmobilier-et-la-prospection-commerciale-b2b-comment-cibler-et-demarcher-des-prospects-pour-la-location-de-surfaces-commerciales/",
+        destination: "/etudes-de-cas/immobilier-11-prospects",
+        permanent: true,
+      },
+      {
+        source:
+          "/resultats/telemarketing-b2b-dans-limmobilier-commercial-30-prospects-interesses-pour-des-surfaces-de-bureaux",
+        destination: "/etudes-de-cas/immobilier-30-prospects",
+        permanent: true,
+      },
+      {
+        source:
+          "/resultats/telemarketing-b2b-dans-limmobilier-commercial-30-prospects-interesses-pour-des-surfaces-de-bureaux/",
+        destination: "/etudes-de-cas/immobilier-30-prospects",
+        permanent: true,
+      },
+    ];
+
+    // ─── Legacy /resultats/* → /etudes-de-cas/* ───────────────────────────────
+    // The old Next.js site used /resultats/[slug]; keep for backlink preservation.
+    // Specific WP long-slug overrides are handled above (wpResultatRedirects).
+    const resultatRedirects = [
+      {
+        source: "/resultats/:slug*",
+        destination: "/etudes-de-cas/:slug*",
+        permanent: true,
+      },
+      {
+        source: "/resultats-cas-etudes",
+        destination: "/etudes-de-cas",
+        permanent: true,
+      },
+      {
+        source: "/resultats_cas_etudes",
+        destination: "/etudes-de-cas",
+        permanent: true,
+      },
+    ];
+
+    // ─── WordPress legacy URL patterns ────────────────────────────────────────
+    // These cover common WP URL structures that may be indexed on devlo.ch.
+    // TODO: Crawl the live devlo.ch (WordPress) site and verify/extend this list.
+    const wordpressRedirects = [
+      // WP system paths
+      { source: "/wp-admin", destination: "/", permanent: true },
+      { source: "/wp-admin/:path*", destination: "/", permanent: true },
+      { source: "/wp-login.php", destination: "/", permanent: true },
+      { source: "/wp-content/:path*", destination: "/", permanent: true },
+      { source: "/wp-includes/:path*", destination: "/", permanent: true },
+      // WP taxonomy / archive patterns
+      { source: "/category/:slug*", destination: "/", permanent: true },
+      { source: "/tag/:slug*", destination: "/", permanent: true },
+      { source: "/author/:slug*", destination: "/", permanent: true },
+      { source: "/page/:num", destination: "/", permanent: true },
+      // WP feed
+      { source: "/feed", destination: "/", permanent: true },
+      { source: "/feed/:type", destination: "/", permanent: true },
+    ];
+
+    // ─── EN language pages (/en/*) ────────────────────────────────────────────
+    // The WP devlo.ch was multilingual (FR root, /en/, /de/).
+    // The new Next.js site is FR-only. Redirect all indexed EN URLs to FR equivalents.
+    // Specific case study mappings come first; catch-all /en/:path* at the end.
+    const enRedirects = [
+      // EN case studies → canonical FR slugs (single-hop, no chain)
+      {
+        source: "/en/casestudy/cybersecurity-4500-companies",
+        destination: "/etudes-de-cas/cybersecurite-4500-entreprises",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/cybersecurity-4500-companies/",
+        destination: "/etudes-de-cas/cybersecurite-4500-entreprises",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/hr-54-meetings-dach",
+        destination: "/etudes-de-cas/hr-54-rendez-vous-dach",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/hr-54-meetings-dach/",
+        destination: "/etudes-de-cas/hr-54-rendez-vous-dach",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/accounting-200k-revenue",
+        destination: "/etudes-de-cas/logiciel-comptable-200k-ca",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/accounting-200k-revenue/",
+        destination: "/etudes-de-cas/logiciel-comptable-200k-ca",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/urban-cleaning-71-appointments",
+        destination: "/etudes-de-cas/proprete-urbaine-71-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/urban-cleaning-71-appointments/",
+        destination: "/etudes-de-cas/proprete-urbaine-71-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/biofuels-52-appointments",
+        destination: "/etudes-de-cas/biocarburants-52-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/biofuels-52-appointments/",
+        destination: "/etudes-de-cas/biocarburants-52-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/training-14-appointments",
+        destination: "/etudes-de-cas/formation-14-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/training-14-appointments/",
+        destination: "/etudes-de-cas/formation-14-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/audiovisual-16-appointments",
+        destination: "/etudes-de-cas/audiovisuel-16-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/audiovisual-16-appointments/",
+        destination: "/etudes-de-cas/audiovisuel-16-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/biodiversity-70-appointments",
+        destination: "/etudes-de-cas/biodiversite-70-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/biodiversity-70-appointments/",
+        destination: "/etudes-de-cas/biodiversite-70-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/mobility-40-prospects",
+        destination: "/etudes-de-cas/mobilite-40-prospects",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/mobility-40-prospects/",
+        destination: "/etudes-de-cas/mobilite-40-prospects",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/merchandising-23-prospects",
+        destination: "/etudes-de-cas/merchandising-23-prospects",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/merchandising-23-prospects/",
+        destination: "/etudes-de-cas/merchandising-23-prospects",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/real-estate-11-prospects",
+        destination: "/etudes-de-cas/immobilier-11-prospects",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/real-estate-11-prospects/",
+        destination: "/etudes-de-cas/immobilier-11-prospects",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/real-estate-30-prospects",
+        destination: "/etudes-de-cas/immobilier-30-prospects",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/real-estate-30-prospects/",
+        destination: "/etudes-de-cas/immobilier-30-prospects",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/monizze-120-appointments-belgium",
+        destination: "/etudes-de-cas/monizze-120-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/en/casestudy/monizze-120-appointments-belgium/",
+        destination: "/etudes-de-cas/monizze-120-rendez-vous",
+        permanent: true,
+      },
+      // EN casestudy fallback → listing page
+      {
+        source: "/en/casestudy/:slug*",
+        destination: "/etudes-de-cas",
+        permanent: true,
+      },
+      // EN key pages
+      {
+        source: "/en/b2b-sales-training-academy",
+        destination: "/academy",
+        permanent: true,
+      },
+      {
+        source: "/en/b2b-sales-training-academy/",
+        destination: "/academy",
+        permanent: true,
+      },
+      {
+        source: "/en/ultimate-sales-training-course",
+        destination: "/academy",
+        permanent: true,
+      },
+      {
+        source: "/en/ultimate-sales-training-course/",
+        destination: "/academy",
+        permanent: true,
+      },
+      {
+        source: "/en/free-consultation",
+        destination: "/consultation",
+        permanent: true,
+      },
+      {
+        source: "/en/free-consultation/",
+        destination: "/consultation",
+        permanent: true,
+      },
+      {
+        source: "/en/case-studies",
+        destination: "/etudes-de-cas",
+        permanent: true,
+      },
+      {
+        source: "/en/case-studies/",
+        destination: "/etudes-de-cas",
+        permanent: true,
+      },
+      {
+        source: "/en/contact",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/en/contact/",
+        destination: "/contact",
+        permanent: true,
+      },
+      // EN catch-all → homepage
+      { source: "/en", destination: "/", permanent: true },
+      { source: "/en/", destination: "/", permanent: true },
+      { source: "/en/:path*", destination: "/", permanent: true },
+    ];
+
+    // ─── DE language pages (/de/*) ────────────────────────────────────────────
+    const deRedirects = [
+      // DE case studies → canonical FR slugs (single-hop)
+      {
+        source: "/de/fallstudien/cybersicherheit-4500-unternehmen",
+        destination: "/etudes-de-cas/cybersecurite-4500-entreprises",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/cybersicherheit-4500-unternehmen/",
+        destination: "/etudes-de-cas/cybersecurite-4500-entreprises",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/hr-54-termine-dach",
+        destination: "/etudes-de-cas/hr-54-rendez-vous-dach",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/hr-54-termine-dach/",
+        destination: "/etudes-de-cas/hr-54-rendez-vous-dach",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/buchhaltungssoftware-200k-umsatz",
+        destination: "/etudes-de-cas/logiciel-comptable-200k-ca",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/buchhaltungssoftware-200k-umsatz/",
+        destination: "/etudes-de-cas/logiciel-comptable-200k-ca",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/stadtreinigung-71-termine",
+        destination: "/etudes-de-cas/proprete-urbaine-71-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/stadtreinigung-71-termine/",
+        destination: "/etudes-de-cas/proprete-urbaine-71-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/biokraftstoffe-52-termine",
+        destination: "/etudes-de-cas/biocarburants-52-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/biokraftstoffe-52-termine/",
+        destination: "/etudes-de-cas/biocarburants-52-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/weiterbildung-14-termine",
+        destination: "/etudes-de-cas/formation-14-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/weiterbildung-14-termine/",
+        destination: "/etudes-de-cas/formation-14-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/monizze-120-termine-belgien",
+        destination: "/etudes-de-cas/monizze-120-rendez-vous",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/monizze-120-termine-belgien/",
+        destination: "/etudes-de-cas/monizze-120-rendez-vous",
+        permanent: true,
+      },
+      // DE fallstudien fallback → listing page
+      {
+        source: "/de/fallstudien/:slug*",
+        destination: "/etudes-de-cas",
+        permanent: true,
+      },
+      // DE key pages
+      {
+        source: "/de/ausbildung-prospektion-b2b",
+        destination: "/formation-prospection-b2b",
+        permanent: true,
+      },
+      {
+        source: "/de/ausbildung-prospektion-b2b/",
+        destination: "/formation-prospection-b2b",
+        permanent: true,
+      },
+      {
+        source: "/de/ultimativer-verkaufstrainingskurs",
+        destination: "/academy",
+        permanent: true,
+      },
+      {
+        source: "/de/ultimativer-verkaufstrainingskurs/",
+        destination: "/academy",
+        permanent: true,
+      },
+      {
+        source: "/de/kostenlose-beratung",
+        destination: "/consultation",
+        permanent: true,
+      },
+      {
+        source: "/de/kostenlose-beratung/",
+        destination: "/consultation",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien",
+        destination: "/etudes-de-cas",
+        permanent: true,
+      },
+      {
+        source: "/de/fallstudien/",
+        destination: "/etudes-de-cas",
+        permanent: true,
+      },
+      // DE catch-all → homepage
+      { source: "/de", destination: "/", permanent: true },
+      { source: "/de/", destination: "/", permanent: true },
+      { source: "/de/:path*", destination: "/", permanent: true },
+    ];
+
+    // ─── FR blog posts (WordPress, no equivalent in new site) ─────────────────
+    // These WP blog posts had indexed URLs and some traffic.
+    // Redirect to homepage as no equivalent content exists.
+    const frBlogRedirects = [
+      {
+        source: "/prospection-commerciale-b2b",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/prospection-commerciale-b2b/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source:
+          "/5-raisons-pour-lesquelles-la-prospection-commerciale-b2b-est-cruciale",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source:
+          "/5-raisons-pour-lesquelles-la-prospection-commerciale-b2b-est-cruciale/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source:
+          "/externaliser-le-developpement-des-ventes-b2b-comment-eviter-les-depenses-excessives",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source:
+          "/externaliser-le-developpement-des-ventes-b2b-comment-eviter-les-depenses-excessives/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/developpement-ventes-b2b",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/developpement-ventes-b2b/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/blog",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/blog/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/blog/:slug*",
+        destination: "/",
+        permanent: true,
+      },
+    ];
+
+    // ─── Probable old devlo.ch page URL variants ──────────────────────────────
+    // Best guesses based on typical WP site naming conventions.
+    // TODO: Verify against the actual WordPress URL inventory (see docs/SEO_DATA_NEEDED.md).
+    const oldPageRedirects = [
+      // Consultation page variants
+      { source: "/consultation-gratuite", destination: "/consultation", permanent: true },
+      { source: "/strategie-gratuite", destination: "/consultation", permanent: true },
+      // Case studies variants
+      { source: "/cas-clients", destination: "/etudes-de-cas", permanent: true },
+      { source: "/nos-cas-clients", destination: "/etudes-de-cas", permanent: true },
+      { source: "/nos-resultats", destination: "/etudes-de-cas", permanent: true },
+      { source: "/resultats-clients", destination: "/etudes-de-cas", permanent: true },
+      { source: "/etudes-de-cas-clients", destination: "/etudes-de-cas", permanent: true },
+      // Academy variants
+      { source: "/formation", destination: "/academy", permanent: true },
+      { source: "/outbound-academy", destination: "/academy", permanent: true },
+      { source: "/formation-outbound", destination: "/academy", permanent: true },
+      // Home / generic
+      { source: "/agence", destination: "/", permanent: true },
+      { source: "/a-propos", destination: "/", permanent: true },
+      { source: "/services", destination: "/", permanent: true },
+      { source: "/prospection-b2b", destination: "/", permanent: true },
+    ];
 
     return [
       ...caseStudyRedirects,
+      ...wpResultatRedirects, // specific WP long slugs — must be before wildcard
+      ...resultatRedirects,
+      ...enRedirects,
+      ...deRedirects,
+      ...frBlogRedirects,
+      ...wordpressRedirects,
+      ...oldPageRedirects,
     ];
   },
 };
