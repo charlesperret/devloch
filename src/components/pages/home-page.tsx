@@ -17,6 +17,7 @@ import {
   Zap,
 } from "lucide-react";
 
+import { WrittenTestimonialsCarousel } from "@/components/home/written-testimonials-carousel";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { AccordionSingle } from "@/components/ui/accordion-single";
 import { buttonClassName } from "@/components/ui/button";
@@ -158,8 +159,11 @@ export function HomePage() {
         <FadeInOnScroll>
           <h2 className="mx-auto max-w-[490px] text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl">{homeContent.rendezVousTitle}</h2>
         </FadeInOnScroll>
-        <FadeInOnScroll delay={0.1} className="mt-10">
-          <InfiniteLogoRail logos={homeContent.rendezVousLogos} />
+        <FadeInOnScroll delay={0.1} className="mt-10 space-y-4">
+          <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(0, 17)} />
+          <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(17, 33)} reverse />
+          <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(33, 49)} />
+          <InfiniteLogoRail logos={homeContent.rendezVousLogos.slice(49)} reverse />
         </FadeInOnScroll>
       </SectionWrapper>
 
@@ -283,44 +287,11 @@ export function HomePage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper background="white" className="py-[80px] md:py-[120px]">
+      <SectionWrapper background=”white” className=”py-[80px] md:py-[120px]”>
         <FadeInOnScroll>
-          <h2 className="text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl">{homeContent.writtenTitle}</h2>
+          <h2 className=”text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl”>{homeContent.writtenTitle}</h2>
         </FadeInOnScroll>
-
-        <div className="mt-10 overflow-x-auto pb-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-          <div className="flex snap-x snap-mandatory gap-6">
-            {writtenTestimonials.map((testimonial, index) => (
-              <FadeInOnScroll key={`${testimonial.author}-${index}`} className="min-w-[88%] snap-start md:min-w-[48%] lg:min-w-[36%]">
-                <article className="h-full rounded-2xl border border-devlo-100 bg-white p-6 shadow-soft">
-                  <div className="flex items-center gap-1 text-accent-gold" aria-label="5 étoiles">
-                    {Array.from({ length: 5 }).map((_, starIndex) => (
-                      <span key={`${testimonial.author}-star-${starIndex}`}>★</span>
-                    ))}
-                  </div>
-                  <p className="mt-4 text-base italic leading-8 text-neutral-600">“{testimonial.quote}”</p>
-                  <div className="mt-6 flex items-center gap-4">
-                    <Image
-                      src={testimonial.photo}
-                      alt={testimonial.author}
-                      width={64}
-                      height={64}
-                      className="h-16 w-16 rounded-full object-cover"
-                      loading="lazy"
-                      sizes="64px"
-                      quality={74}
-                    />
-                    <div>
-                      <p className="text-base font-semibold text-devlo-900">{testimonial.author}</p>
-                      <p className="text-sm text-neutral-600">{testimonial.role}</p>
-                      <p className="text-sm font-semibold text-devlo-700">{testimonial.company}</p>
-                    </div>
-                  </div>
-                </article>
-              </FadeInOnScroll>
-            ))}
-          </div>
-        </div>
+        <WrittenTestimonialsCarousel testimonials={writtenTestimonials} />
       </SectionWrapper>
 
       <SectionWrapper background="dark" className="py-[80px] text-white md:py-[120px]">
