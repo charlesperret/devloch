@@ -112,23 +112,6 @@ export function SiteFooter() {
           </button>
         </div>
 
-        <details className="group fixed bottom-6 right-5 z-40">
-          <summary className="flex cursor-pointer list-none items-center gap-2 rounded-md bg-[#121316] px-3 py-2 text-xs text-white shadow-lg">
-            <span className="inline-block h-2.5 w-3.5 rounded-sm bg-[linear-gradient(#244aa5_0_33%,#fff_33%_66%,#dc1f26_66%)]" />
-            French
-          </summary>
-          <div className="absolute bottom-[calc(100%+8px)] right-0 min-w-[122px] rounded-md border border-[#2b2d31] bg-[#121316] p-1 text-xs text-white">
-            <Link href="https://devlo.ch/en/" className="block rounded px-2 py-1 hover:bg-white/10">
-              English
-            </Link>
-            <Link href="https://devlo.ch/de/" className="block rounded px-2 py-1 hover:bg-white/10">
-              German
-            </Link>
-            <Link href="https://devlo.ch/" className="block rounded px-2 py-1 hover:bg-white/10">
-              French
-            </Link>
-          </div>
-        </details>
       </footer>
     </>
   );

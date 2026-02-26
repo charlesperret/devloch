@@ -6,6 +6,8 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
+    // Add finer-grained responsive widths so small logos don't jump to 256/384px.
+    imageSizes: [16, 24, 32, 40, 48, 64, 72, 80, 96, 120, 128, 160, 192, 240, 256, 320, 384],
   },
   async headers() {
     return [
@@ -380,10 +382,8 @@ const nextConfig = {
         destination: "/contact",
         permanent: true,
       },
-      // EN catch-all → homepage
-      { source: "/en", destination: "/", permanent: true },
-      { source: "/en/", destination: "/", permanent: true },
-      { source: "/en/:path*", destination: "/", permanent: true },
+      // Lovalingo PATH mode uses /en/* localized URLs. Keep specific legacy /en/*
+      // redirects above, but do not blanket-redirect all /en paths to "/" anymore.
     ];
 
     // ─── DE language pages (/de/*) ────────────────────────────────────────────

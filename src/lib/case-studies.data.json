@@ -7,8 +7,8 @@
     "heroSubtitle": "Horus Software est l’un des éditeurs de logiciels les plus performants et à la croissance la plus rapide en Belgique, spécialisé dans les solutions pour experts-comptables et PMEs.",
     "client": "Horus",
     "sector": "Logiciel de comptabilité et de gestion post-comptable pour les experts-comptables et les PME",
-    "heroImageUrl": "/images/case-studies/heroes/logiciel-comptable-200k-ca-hero.webp",
-    "clientLogoUrl": "/images/case-studies/logos/logiciel-comptable-200k-ca-logo.webp",
+    "heroImageUrl": "/images/Horus.webp",
+    "clientLogoUrl": "/images/Horus_logo.webp",
     "heroStats": [
       {
         "value": "80",
@@ -140,8 +140,8 @@
     "heroSubtitle": "devlo a pris en charge la génération de leads, la prospection, la qualification et la prise de rendez-vous. Résultat : 516 prospects contactés et 54 réponses positives pour un rendez-vous.",
     "client": "CareerLunch",
     "sector": "HR-tech",
-    "heroImageUrl": "/images/case-studies/heroes/hr-54-rendez-vous-dach-hero.webp",
-    "clientLogoUrl": "/images/case-studies/logos/hr-54-rendez-vous-dach-logo.webp",
+    "heroImageUrl": "/images/CareerLunch_banner1.webp",
+    "clientLogoUrl": "/images/CareerLunch_logo.webp",
     "heroStats": [
       {
         "value": "516",
@@ -323,7 +323,7 @@
     "heroSubtitle": "Sur un échantillon de plus de 250 villes réparties sur 3 pays, devlo a identifié plus de 500 prospects qualifiés. Ces décideurs sont des élus politiques ou des responsables de la propreté urbaine. Les résultats obtenus sont spectaculaires: notre entreprise de prospection a fait rencontrer notre client plus de 24% des villes contactées.",
     "client": "Client confidentiel",
     "sector": "Nettoyage urbain, gestion des déchets, intelligence artificielle",
-    "heroImageUrl": "/images/case-studies/heroes/proprete-urbaine-71-rendez-vous-hero.webp",
+    "heroImageUrl": "/images/Cortexia_banner.webp",
     "clientLogoUrl": "",
     "heroStats": [
       {
@@ -437,8 +437,8 @@
     "heroSubtitle": "Notre client fournit des données et des rapports sur le marché des biocarburants via sa plateforme. Les Ideal Customer Profiles (ICP) varient entre tous les acteurs ayant un rôle à jouer dans les biocarburants : production, transport, commerce, consommation, etc.",
     "client": "Square Co",
     "sector": "Services pour les énergies renouvelables",
-    "heroImageUrl": "/images/case-studies/heroes/biocarburants-52-rendez-vous-hero.webp",
-    "clientLogoUrl": "/images/case-studies/logos/biocarburants-52-rendez-vous-logo.webp",
+    "heroImageUrl": "/images/SquareCo_banner.webp",
+    "clientLogoUrl": "/images/squareco.webp",
     "heroStats": [
       {
         "value": "52",
@@ -546,8 +546,8 @@
     "heroSubtitle": "Notre entreprise de prospection commerciale a défini les attributs des “Ideal Customer Profiles” (ICP) de ce client pour ensuite identifier toutes les entreprises qualifiées sur la base ces attributs. Puis devlo a recherché, sélectionné, démarché et qualifié les décideurs les plus pertinents au sein de chaque société. Au total 14 rendez-vous qualifiés ont été organisés suite à cette campagne de prospection commerciale B2B. L’objectif de notre client était de signer de nouveaux clients afin de supporter la croissance de leur entreprise.",
     "client": "Cegos",
     "sector": "Formation professionnelle, développement des compétences, coaching",
-    "heroImageUrl": "/images/case-studies/heroes/formation-14-rendez-vous-hero.webp",
-    "clientLogoUrl": "/images/case-studies/logos/formation-14-rendez-vous-logo.webp",
+    "heroImageUrl": "/images/Cegos_banner.webp",
+    "clientLogoUrl": "/images/Cegos_Logo.webp",
     "heroStats": [
       {
         "value": "73%",
@@ -656,8 +656,8 @@
     "heroSubtitle": "Cette campagne de prospection a permis de planifier 16 rendez-vous qualifiés avec des bureaux d’architectes et d’ingénieurs en Suisse.",
     "client": "Lemanvisio",
     "sector": "Intégration des outils informatiques et de conférence",
-    "heroImageUrl": "/images/case-studies/heroes/audiovisuel-16-rendez-vous-hero.webp",
-    "clientLogoUrl": "/images/case-studies/logos/audiovisuel-16-rendez-vous-logo.webp",
+    "heroImageUrl": "/images/LEMANVISIO_banner.webp",
+    "clientLogoUrl": "/images/Lemanvisio_Logo.webp",
     "heroStats": [
       {
         "value": "89%",
@@ -763,8 +763,8 @@
     "heroSubtitle": "Au cours de plus de 10 campagnes, devlo a identifié et préqualifié 4’500 entreprises en France, aux États-Unis, au Moyen-Orient, et dans les régions DACH et Benelux, puis a contacté les décideurs les plus pertinents (RSSI/CISO, responsables cybersécurité, responsables infrastructures informatiques) pour planifier des rendez-vous avec Saporo.",
     "client": "Saporo",
     "sector": "Cybersécurité",
-    "heroImageUrl": "/images/case-studies/heroes/cybersecurite-4500-entreprises-hero.webp",
-    "clientLogoUrl": "/images/case-studies/logos/cybersecurite-4500-entreprises-logo.webp",
+    "heroImageUrl": "/images/Saporo_Banner.webp",
+    "clientLogoUrl": "/images/Saporo_logo.webp",
     "testimonialPhotoUrl": "/images/Olivier-Eyries.webp",
     "testimonialPhotoAlt": "Photo de Olivier Eyries",
     "heroStats": [
@@ -923,8 +923,8 @@
     "heroSubtitle": "Plus de 500 entreprises de Suisse romande ont été démarchées par notre agence de prospection commerciale. L’objectif était de leur proposer l’installation de ruches d’abeilles sur leur site afin d’œuvrer pour la protection des abeilles et la biodiversité",
     "client": "Apidae",
     "sector": "Association d’utilité publique qui agit pour la protection de la biodiversité",
-    "heroImageUrl": "/images/case-studies/heroes/biodiversite-70-rendez-vous-hero.webp",
-    "clientLogoUrl": "/images/case-studies/logos/biodiversite-70-rendez-vous-logo.webp",
+    "heroImageUrl": "/images/APIDAE_banner.webp",
+    "clientLogoUrl": "/images/Apidae_log.webp",
     "heroStats": [
       {
         "value": "13%",
@@ -1024,8 +1024,8 @@
     "heroSubtitle": "En 2 mois, notre agence de prospection commerciale B2B a permis d’identifier 286 entreprises qualifiées par rapport à l’Ideal Customer Profil de notre client Locky qui opère dans le secteur de la mobilité. Parmis les 286 entreprises démarchées, 40 prospects ont été intéressées à en savoir plus sur le produit de notre client. Cette campagne de prospection commerciale a établi un nouveau record de 14% d’intérêt au sein de notre agence.",
     "client": "Locky",
     "sector": "Mobilité",
-    "heroImageUrl": "/images/case-studies/heroes/mobilite-40-prospects-hero.webp",
-    "clientLogoUrl": "/images/case-studies/logos/mobilite-40-prospects-logo.webp",
+    "heroImageUrl": "/images/Locky_banner.webp",
+    "clientLogoUrl": "/images/Locky_Logo.webp",
     "testimonialPhotoUrl": "/images/case-studies/testimonials/mobilite-40-prospects-testimonial.webp",
     "testimonialPhotoAlt": "Photo de Shady Catarella",
     "heroStats": [
@@ -1144,8 +1144,8 @@
     "heroSubtitle": "Cette société B2B suisse offre des services de merchandising textile et objets personnalisés. Notre agence de prospection commerciale a été mandatée pour prospecter leurs futurs clients. En premier lieu, nous avons identifié l’un des meilleurs de leurs ICPs (universités/facultés, écoles privées/internationales, et comités/associations d’étudiants), puis nous avons démarché ces prospects avec l’objectif de planifier des rendez-vous de ventes.",
     "client": "Many Ways",
     "sector": "Services de merchandising textile et objets personnalisés",
-    "heroImageUrl": "/images/case-studies/heroes/merchandising-23-prospects-hero.webp",
-    "clientLogoUrl": "/images/case-studies/logos/merchandising-23-prospects-logo.webp",
+    "heroImageUrl": "/images/Many-Ways_banner.webp",
+    "clientLogoUrl": "/images/Many_ways_logo.webp",
     "heroStats": [
       {
         "value": "8%",
@@ -1258,8 +1258,8 @@
     "heroSubtitle": "Notre client HIAG est l’un des principaux propriétaires, gestionnaires et promoteurs immobiliers suisses d’anciens sites industriels. L’un de leurs projets de construction est Fahrwerk Winterthur, un bâtiment de 10, 500 m2 réparti sur 4 étages, avec la particularité d’avoir une rampe d’accès pour les véhicules accédant à chaque étage. Notre équipe a été chargée d’identifier et de prospecter de potentiels locataires commerciaux.\n\nPremièrement, nous avons identifié 7’000 entreprises dans toute la Suisse. Après les avoir analyser une par une, notre équipe a retenu 600 entreprises préqualifiées pour lesquelles on a estimé qu’un espace commercial de ce bâtiment pouvait être intéressant. Deuxièmement, pour chacune de ces 600 entreprises, nous avons ensuite identifié les décideurs. Pour cela, nous avons à nouveau recherché une entreprise après l’autre le PDG, Directeur Général, responsable de succursales, sites, installations, etc.\n\nFinalement, nous les avons contactés via une séquence de prospection commerciale multicanal qui comprend des e-mails et des appels téléphoniques. Cette séquence était multilingue, en allemand et anglais.",
     "client": "HIAG",
     "sector": "Immobilier commercial",
-    "heroImageUrl": "/images/case-studies/heroes/immobilier-11-prospects-hero.webp",
-    "clientLogoUrl": "/images/case-studies/logos/immobilier-11-prospects-logo.webp",
+    "heroImageUrl": "/images/HIAG_banner.webp",
+    "clientLogoUrl": "/images/HIAG_logo.webp",
     "heroStats": [
       {
         "value": "11",
@@ -1372,8 +1372,8 @@
     "heroSubtitle": "Abacus a mis à profit l’expertise de notre agence de télémarketing et de notre équipe de génération de leads pour promouvoir sa solution auprès des agences immobilières en Suisse, acquérir des leads et signer de nouveaux contrats.",
     "client": "Abacus",
     "sector": "Solution ERP pour les agences immobilières suisses offrant des services de gestion locative",
-    "heroImageUrl": "/images/case-studies/heroes/immobilier-30-prospects-hero.webp",
-    "clientLogoUrl": "/images/case-studies/logos/immobilier-30-prospects-logo.webp",
+    "heroImageUrl": "/images/Abacus_banner.webp",
+    "clientLogoUrl": "/images/Abacus_logo.webp",
     "heroStats": [
       {
         "value": "6%",
@@ -1502,14 +1502,14 @@
     "client": "Monizze",
     "sector": "Employee benefits, meal vouchers",
     "heroImageUrl": "/images/Monizze_banner.webp",
-    "clientLogoUrl": "/images/Monizze.png",
+    "clientLogoUrl": "/images/Monizze_Logo.webp",
     "testimonialPhotoUrl": "/images/Anthony_CREMER.webp",
     "testimonialPhotoAlt": "Photo d'Anthony Crémer",
     "migrationStatus": "premium",
     "validationStatus": "unknown",
     "assetAudit": {
       "hero": "webp",
-      "logo": "legacy",
+      "logo": "webp",
       "testimonialPhoto": "webp"
     },
     "heroStats": [

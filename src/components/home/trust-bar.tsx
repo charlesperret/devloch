@@ -28,7 +28,7 @@ function LogoRail({ logos }: { logos: LogoItem[] }) {
             height={52}
             className="h-8 w-auto shrink-0 object-contain opacity-60 grayscale transition duration-200 hover:opacity-100 hover:grayscale-0 md:h-10"
             loading="lazy"
-            sizes="160px"
+            sizes="(max-width: 768px) 120px, 160px"
             quality={68}
           />
         ))}

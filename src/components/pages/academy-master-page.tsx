@@ -24,7 +24,7 @@ function LogosRail({ names }: { names: string[] }) {
             height={60}
             className="h-10 w-auto shrink-0 object-contain opacity-70 grayscale transition duration-200 hover:opacity-100 hover:grayscale-0"
             loading="lazy"
-            sizes="200px"
+            sizes="(max-width: 768px) 120px, 160px"
             quality={72}
           />
         ))}

@@ -40,6 +40,7 @@ export type CaseStudyCard = {
   sector: string;
   banner: string;
   logo?: string;
+  largeLogo?: boolean;
 };
 
 export const mainNav = {
@@ -458,7 +459,7 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "careerlunch-54-rendez-vous-dach",
     client: "CareerLunch",
     banner: "/images/CareerLunch_banner1.webp",
-    logo: "/images/case-studies/logos/hr-54-rendez-vous-dach-logo.webp",
+    logo: "/images/CareerLunch_logo.webp",
     title:
       "Comment notre agence de prospection B2B a aidé CareerLunch à obtenir 54 rendez-vous commerciaux dans la région DACH",
     metrics: ["71% ouverture", "29% clic", "19% réponse", "10% intérêt", "54 rendez-vous"],
@@ -478,7 +479,7 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "squareco-52-prospects-interesses-biocarburants",
     client: "SquareCo",
     banner: "/images/SquareCo_banner.webp",
-    logo: "/images/case-studies/logos/biocarburants-52-rendez-vous-logo.webp",
+    logo: "/images/squareco.webp",
     title:
       "Comment identifier les meilleurs Profils Clients Idéaux parmi plusieurs buyer personas grâce au cold outreach",
     metrics: ["74% ouverture", "37% réponse", "9% intérêt", "52 prospects intéressés"],
@@ -488,7 +489,7 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "cegos-45-taux-reponse",
     client: "Cegos",
     banner: "/images/Cegos_banner.webp",
-    logo: "/images/case-studies/logos/formation-14-rendez-vous-logo.webp",
+    logo: "/images/Cegos_Logo.webp",
     title:
       "Succès en prospection B2B : 50% de taux de réponse auprès des responsables Learning & Development en Suisse",
     metrics: ["73% ouverture", "45% réponse", "14 rendez-vous qualifiés"],
@@ -498,7 +499,8 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "lemanvisio-16-rendez-vous-architectes",
     client: "Lemanvisio",
     banner: "/images/LEMANVISIO_banner.webp",
-    logo: "/images/case-studies/logos/audiovisuel-16-rendez-vous-logo.webp",
+    logo: "/images/Lemanvisio_Logo.webp",
+    largeLogo: true,
     title:
       "Comment la prospection B2B a permis à un intégrateur audiovisuel de rencontrer 16 architectes et ingénieurs",
     metrics: ["89% ouverture", "69% réponse", "16 rendez-vous"],
@@ -508,7 +510,8 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "cybersecurite-4500-entreprises",
     client: "Saporo",
     banner: "/images/Saporo_Banner.webp",
-    logo: "/images/home/brands/saporo.webp",
+    logo: "/images/Saporo_logo.webp",
+    largeLogo: true,
     title:
       "Succès en génération de leads cybersécurité : 180 prospects qualifiés grâce à la téléprospection et au cold outreach B2B",
     metrics: ["79% ouverture", "26% réponse", "4.1% intérêt", "1ère campagne: 81% ouverture, 54% réponse, 16% intérêt"],
@@ -518,7 +521,8 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "many-ways-70-taux-reponse-merchandising",
     client: "Many Ways",
     banner: "/images/Many-Ways_banner.webp",
-    logo: "/images/case-studies/logos/merchandising-23-prospects-logo.webp",
+    logo: "/images/Many_ways_logo.webp",
+    largeLogo: true,
     title:
       "Comment la prospection B2B a permis à une entreprise de merchandising d'obtenir 70% de réponses et 8% de rendez-vous",
     metrics: ["70% réponse", "8% rendez-vous", "Rendez-vous dès le 1er jour"],
@@ -528,7 +532,8 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "apidae-70-rendez-vous",
     client: "APIDAE",
     banner: "/images/APIDAE_banner.webp",
-    logo: "/images/case-studies/logos/biodiversite-70-rendez-vous-logo.webp",
+    logo: "/images/Apidae_log.webp",
+    largeLogo: true,
     title:
       "Comment cette association a externalisé son acquisition client et généré 70 rendez-vous qualifiés avec des entreprises comme UEFA, TAG Heuer et Rothschild",
     metrics: ["40% réponse", "13% intérêt", "Dizaines de rendez-vous qualifiés"],
@@ -538,7 +543,8 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "locky-40-entreprises-interessees",
     client: "Locky",
     banner: "/images/Locky_banner.webp",
-    logo: "/images/case-studies/logos/mobilite-40-prospects-logo.webp",
+    logo: "/images/Locky_Logo.webp",
+    largeLogo: true,
     title: "+40 entreprises intéressées sur 286 contactées dans le secteur de la mobilité",
     metrics: ["286 contactées", "40 intéressées (14%)", "20 discovery calls", "15 démos"],
     sector: "Mobilité",
@@ -547,7 +553,8 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "hiag-immeuble-commercial-winterthur",
     client: "HIAG",
     banner: "/images/HIAG_banner.webp",
-    logo: "/images/case-studies/logos/immobilier-11-prospects-logo.webp",
+    logo: "/images/HIAG_logo.webp",
+    largeLogo: true,
     title:
       "Immobilier et prospection B2B : comment trouver des locataires qualifiés pour Fahrwerk Winterthur",
     metrics: ["87% ouverture", "73% réponse", "11 opportunités locataires qualifiées"],
@@ -557,6 +564,8 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "iddi-generation-leads-biotech-pharma",
     client: "IDDI",
     banner: "/images/IDDI_banner.webp",
+    logo: "/images/IDDI_logo.webp",
+    largeLogo: true,
     title: "IDDI — Services de génération de leads en biotech/pharma pour un CRO international",
     metrics: ["20 MQL et 10 SQL (rendez-vous qualifiés)"],
     sector: "Pharma / Biotech",
@@ -564,8 +573,9 @@ export const caseStudiesCards: CaseStudyCard[] = [
   {
     slug: "horus-200k-contrats-belgique",
     client: "Horus",
-    banner: "/images/Horus_banner.webp",
-    logo: "/images/case-studies/logos/logiciel-comptable-200k-ca-logo.webp",
+    banner: "/images/Horus.webp",
+    logo: "/images/Horus_logo.webp",
+    largeLogo: true,
     title:
       "Comment un éditeur de logiciel comptable a signé €200k de contrats en Belgique grâce au cold outreach multicanal",
     metrics: ["€200k de contrats signés"],
@@ -575,7 +585,8 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "abacus-30-prospects-interesses",
     client: "Abacus",
     banner: "/images/Abacus_banner.webp",
-    logo: "/images/case-studies/logos/immobilier-30-prospects-logo.webp",
+    logo: "/images/Abacus_logo.webp",
+    largeLogo: true,
     title:
       "Comment Abacus a utilisé la téléprospection externalisée et la génération de leads pour rencontrer des agences immobilières qualifiées en Suisse romande",
     metrics: ["+30 prospects intéressés"],
@@ -585,7 +596,8 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "monizze-120-rendez-vous-qualifies-belgique",
     client: "Monizze",
     banner: "/images/Monizze_banner.webp",
-    logo: "/images/Monizze.png",
+    logo: "/images/Monizze_Logo.webp",
+    largeLogo: true,
     title:
       "Comment devlo a obtenu 120 rendez-vous qualifiés pour Monizze en ciblant 7'000 décideurs RH, Finance et Direction en Belgique",
     metrics: ["120 rendez-vous qualifiés", "7'000 décideurs ciblés"],

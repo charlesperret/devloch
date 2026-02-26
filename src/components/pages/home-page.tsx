@@ -54,6 +54,16 @@ const logoScaleClassByAlt: Record<string, string> = {
   ADM: "scale-[1.12]",
 };
 
+const railLogoSizesByAlt: Record<string, string> = {
+  Apple: "(max-width: 768px) 72px, 80px",
+  BCF: "(max-width: 768px) 72px, 80px",
+  BHP: "(max-width: 768px) 72px, 80px",
+  ADM: "(max-width: 768px) 88px, 96px",
+  UEFA: "(max-width: 768px) 72px, 80px",
+};
+
+const defaultRailLogoSizes = "(max-width: 768px) 120px, 160px";
+
 function InfiniteLogoRail({
   logos,
   pauseOnHover = false,
@@ -95,7 +105,7 @@ function InfiniteLogoRail({
                 fill
                 className="object-contain opacity-70 grayscale transition duration-200 hover:opacity-100 hover:grayscale-0"
                 loading="lazy"
-                sizes="170px"
+                sizes={railLogoSizesByAlt[logo.alt] ?? defaultRailLogoSizes}
                 quality={72}
               />
             </div>
