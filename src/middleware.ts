@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-const SUPPORTED_LOCALES = new Set(["fr", "en"]);
+const SUPPORTED_LOCALES = new Set(["fr", "en", "de", "nl"]);
 
 function isBypassedPath(pathname: string) {
   return (

@@ -23,7 +23,7 @@ export function GET() {
       generatedAt: new Date().toISOString(),
       framework: "next",
       defaultLocale: "fr",
-      locales: ["fr", "en"],
+      locales: ["fr", "en", "de", "nl"],
       routing: "path",
       pathNormalizationRules: [
         {

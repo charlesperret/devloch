@@ -10,7 +10,7 @@ export function LovalingoNextProvider({ children }: { children: ReactNode }) {
     <LovalingoProvider
       publicAnonKey={LOVALINGO_PUBLIC_ANON_KEY}
       defaultLocale="fr"
-      locales={["fr", "en"]}
+      locales={["fr", "en", "de", "nl"]}
       routing="path"
       switcherPosition="bottom-right"
       switcherOffsetY={20}

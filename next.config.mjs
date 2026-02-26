@@ -506,10 +506,8 @@ const nextConfig = {
         destination: "/etudes-de-cas",
         permanent: true,
       },
-      // DE catch-all → homepage
-      { source: "/de", destination: "/", permanent: true },
-      { source: "/de/", destination: "/", permanent: true },
-      { source: "/de/:path*", destination: "/", permanent: true },
+      // Lovalingo PATH mode now handles /de/* localized URLs. Keep only the
+      // specific legacy DE redirects above; do not blanket-redirect /de paths.
     ];
 
     // ─── FR blog posts (WordPress, no equivalent in new site) ─────────────────
