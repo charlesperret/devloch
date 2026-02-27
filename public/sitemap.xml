@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://devlo.ch/etudes-de-cas</loc>
+    <lastmod>2026-02-27T12:17:28+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://devlo.ch/en/etudes-de-cas</loc>
+    <lastmod>2026-02-27T12:17:10+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://devlo.ch/consultation</loc>
+    <lastmod>2026-02-27T12:14:33+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://devlo.ch/en/consultation</loc>
+    <lastmod>2026-02-27T12:14:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://devlo.ch/</loc>
-    <lastmod>2026-02-27T12:06:05+00:00</lastmod>
+    <lastmod>2026-02-27T13:09:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://devlo.ch/en/</loc>
-    <lastmod>2026-02-27T12:06:03+00:00</lastmod>
+    <lastmod>2026-02-27T13:09:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -25,18 +49,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://devlo.ch/etudes-de-cas</loc>
-    <lastmod>2026-02-27T12:17:28+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://devlo.ch/en/etudes-de-cas</loc>
-    <lastmod>2026-02-27T12:17:10+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://devlo.ch/etudes-de-cas/audiovisuel-16-rendez-vous</loc>
     <lastmod>2026-02-27T12:26:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -49,14 +61,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://devlo.ch/conditions</loc>
+    <lastmod>2026-02-27T13:14:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://devlo.ch/en/conditions</loc>
+    <lastmod>2026-02-27T13:14:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://devlo.ch/academy</loc>
-    <lastmod>2026-02-27T12:09:38+00:00</lastmod>
+    <lastmod>2026-02-27T13:12:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://devlo.ch/en/academy</loc>
-    <lastmod>2026-02-27T12:09:23+00:00</lastmod>
+    <lastmod>2026-02-27T13:11:49+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -201,30 +225,6 @@
   <url>
     <loc>https://devlo.ch/en/etudes-de-cas/biocarburants-52-rendez-vous</loc>
     <lastmod>2026-02-27T12:29:22+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://devlo.ch/consultation</loc>
-    <lastmod>2026-02-27T12:14:33+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://devlo.ch/en/consultation</loc>
-    <lastmod>2026-02-27T12:14:24+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://devlo.ch/conditions</loc>
-    <lastmod>2026-02-27T12:12:34+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://devlo.ch/en/conditions</loc>
-    <lastmod>2026-02-27T12:12:25+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

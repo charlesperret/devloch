@@ -42,19 +42,27 @@ export function CaseStudiesMasterPage() {
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute left-4 top-4">
                     {study.logo ? (
-                      <Image
-                        src={study.logo}
-                        alt={`${study.client} logo`}
-                        width={260}
-                        height={100}
+                      <div
                         className={[
-                          "w-auto rounded-md bg-[#ffffff] object-contain shadow-sm",
-                          study.largeLogo ? "h-12 p-2 md:h-14" : "h-9 p-1.5",
+                          "inline-flex items-center justify-center rounded-md shadow-sm",
+                          study.largeLogo ? "h-12 px-2 md:h-14" : "h-9 px-1.5",
                         ].join(" ")}
-                        loading="lazy"
-                        sizes={study.largeLogo ? "220px" : "160px"}
-                        quality={74}
-                      />
+                        style={{ backgroundColor: "#ffffff", opacity: 1 }}
+                      >
+                        <Image
+                          src={study.logo}
+                          alt={`${study.client} logo`}
+                          width={260}
+                          height={100}
+                          className={[
+                            "w-auto bg-transparent object-contain",
+                            study.largeLogo ? "h-10 md:h-11" : "h-6",
+                          ].join(" ")}
+                          loading="lazy"
+                          sizes={study.largeLogo ? "220px" : "160px"}
+                          quality={74}
+                        />
+                      </div>
                     ) : null}
                   </div>
                   <h2 className="absolute bottom-4 left-4 right-4 text-lg font-semibold leading-6 text-white md:text-xl">{study.title}</h2>
