@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -16,6 +17,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   display: "swap",
 });
+
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-89LHRHHEM3";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -182,6 +185,18 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${plusJakartaSans.variable} min-h-screen bg-canvas font-sans text-ink antialiased`}>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gaMeasurementId}');
+          `}
+        </Script>
         <JsonLd schema={[organizationSchema, swissLocalBusinessSchema, usLocalBusinessSchema, serviceSchema]} />
         <a
           href="#main-content"
