@@ -28,6 +28,30 @@
   --border-strong: #d1d5db;
 }
 
+@font-face {
+  font-family: "Syne";
+  src: url("/fonts/syne-latin-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/dm-sans-latin-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jetbrains-mono-latin-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+}
+
 * {
   border-color: rgb(var(--stroke));
 }
@@ -110,15 +134,15 @@ a {
 
 @layer utilities {
   .font-service-display {
-    font-family: var(--font-syne), "Avenir Next", "Segoe UI", sans-serif;
+    font-family: "Syne", "Avenir Next", "Segoe UI", sans-serif;
   }
 
   .font-service-body {
-    font-family: var(--font-dm-sans), "Avenir Next", "Segoe UI", sans-serif;
+    font-family: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
   }
 
   .font-service-mono {
-    font-family: var(--font-jetbrains-mono), "SFMono-Regular", Menlo, monospace;
+    font-family: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
   }
 
   .text-balance {

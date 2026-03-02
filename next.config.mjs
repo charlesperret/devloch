@@ -671,7 +671,6 @@ const nextConfig = {
       // Home / generic
       { source: "/agence", destination: "/", permanent: true },
       { source: "/a-propos", destination: "/", permanent: true },
-      { source: "/services", destination: "/", permanent: true },
       { source: "/prospection-b2b", destination: "/", permanent: true },
     ];
 
@@ -686,6 +685,14 @@ const nextConfig = {
       ...wordpressRedirects,
       ...oldPageRedirects,
     ];
+  },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        { source: "/:locale(fr|en|de|nl)", destination: "/" },
+        { source: "/:locale(fr|en|de|nl)/:path*", destination: "/:path*" },
+      ],
+    };
   },
 };
 

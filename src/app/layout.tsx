@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, JetBrains_Mono, Plus_Jakarta_Sans, Syne } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -12,27 +12,10 @@ import { siteConfig } from "@/lib/site";
 
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+const plusJakartaSans = localFont({
+  src: "./fonts/GeistVF.woff",
   variable: "--font-plus-jakarta",
-  display: "swap",
-});
-
-const syne = Syne({
-  subsets: ["latin"],
-  variable: "--font-syne",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap",
-});
-
-const jetBrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  weight: "100 900",
   display: "swap",
 });
 
@@ -208,7 +191,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
       </head>
       <body
-        className={`${plusJakartaSans.variable} ${syne.variable} ${dmSans.variable} ${jetBrainsMono.variable} min-h-screen bg-canvas font-sans text-ink antialiased`}
+        className={`${plusJakartaSans.variable} min-h-screen bg-canvas font-sans text-ink antialiased`}
       >
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}

@@ -1,0 +1,13 @@
+# Local/build artifacts
+.next
+node_modules
+.vercel
+.DS_Store
+
+# Non-runtime documentation and exports
+/docs
+/reports
+/seo-crawl-exports
+
+# Misc local files
+*.log
