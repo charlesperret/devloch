@@ -84,7 +84,7 @@ export function HubSpotForm({
     return (
       <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-center">
         <div className="text-3xl">🎯</div>
-        <h3 className="mt-3 font-service-display text-xl font-bold text-emerald-900">Parfait, on vous a bien reçu.</h3>
+        <h3 className="mt-3 text-xl font-bold text-emerald-900">Parfait, on vous a bien reçu.</h3>
         <p className="mt-2 text-sm leading-6 text-emerald-800">
           Votre équipe devlo prépare votre stratégie et vous contacte sous 24h.
         </p>

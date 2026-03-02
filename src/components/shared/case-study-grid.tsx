@@ -47,7 +47,7 @@ export function CaseStudyGrid({ filterTag, limit }: CaseStudyGridProps) {
                 <CountryFlags countries={brand?.countries ?? ["EU"]} showMore={Boolean(brand?.showMoreCountries)} />
               </div>
 
-              <h3 className="font-service-display text-lg font-bold leading-snug text-devlo-900">{caseStudy.headline}</h3>
+              <h3 className="text-lg font-bold leading-snug text-devlo-900">{caseStudy.headline}</h3>
 
               <div className="mt-3 space-y-1.5">
                 {caseStudy.kpis.map((kpi) => (

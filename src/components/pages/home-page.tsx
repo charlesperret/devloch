@@ -20,6 +20,7 @@ import {
 import { CaseStudiesCarousel } from "@/components/home/case-studies-carousel";
 import { WrittenTestimonialsCarousel } from "@/components/home/written-testimonials-carousel";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
+import { InfiniteLogoRail, namesToLogoItems } from "@/components/shared/logo-rail";
 import { AccordionSingle } from "@/components/ui/accordion-single";
 import { buttonClassName } from "@/components/ui/button";
 import { FadeInOnScroll } from "@/components/ui/fade-in-on-scroll";
@@ -46,79 +47,9 @@ const methodIconMap = {
   Send,
   CalendarCheck,
 } as const;
-
-const logoScaleClassByAlt: Record<string, string> = {
-  Apple: "scale-[0.82]",
-  BCF: "scale-[0.82]",
-  BHP: "scale-[0.82]",
-  ADM: "scale-[1.12]",
-};
-
-const railLogoSizesByAlt: Record<string, string> = {
-  Apple: "(max-width: 768px) 72px, 80px",
-  BCF: "(max-width: 768px) 72px, 80px",
-  BHP: "(max-width: 768px) 72px, 80px",
-  ADM: "(max-width: 768px) 88px, 96px",
-  UEFA: "(max-width: 768px) 72px, 80px",
-};
-
-const defaultRailLogoSizes = "(max-width: 768px) 120px, 160px";
-
-function InfiniteLogoRail({
-  logos,
-  pauseOnHover = false,
-  reverse = false,
-  duration = "normal",
-}: {
-  logos: { src: string; alt: string }[];
-  pauseOnHover?: boolean;
-  reverse?: boolean;
-  duration?: "normal" | "slow";
-}) {
-  const doubled = [...logos, ...logos];
-  const animClass = duration === "slow"
-    ? (reverse ? "animate-logo-scroll-slow-reverse" : "animate-logo-scroll-slow")
-    : (reverse ? "animate-logo-scroll-reverse" : "animate-logo-scroll");
-
-  return (
-    <div className="group py-1">
-      <div
-        className={[
-          "flex min-w-max items-center will-change-transform",
-          animClass,
-          pauseOnHover ? "group-hover:[animation-play-state:paused]" : "",
-        ]
-          .filter(Boolean)
-          .join(" ")}
-      >
-        {doubled.map((logo, index) => (
-          <div
-            key={`${logo.alt}-${index}`}
-            className="flex h-11 w-[170px] shrink-0 items-center justify-center px-5"
-          >
-            <div
-              className={["relative h-10 w-full overflow-hidden", logoScaleClassByAlt[logo.alt] ?? ""].join(" ").trim()}
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                fill
-                className="object-contain opacity-70 grayscale transition duration-200 hover:opacity-100 hover:grayscale-0"
-                loading="lazy"
-                sizes={railLogoSizesByAlt[logo.alt] ?? defaultRailLogoSizes}
-                quality={72}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
+ 
 function ClientsRailRow({ names, reverse = false }: { names: string[]; reverse?: boolean }) {
-  const logos = names.map((name) => ({ src: `/images/${name}`, alt: name.replace(/\.[a-z0-9]+$/i, "") }));
-  return <InfiniteLogoRail logos={logos} pauseOnHover reverse={reverse} duration="slow" />;
+  return <InfiniteLogoRail logos={namesToLogoItems(names)} pauseOnHover reverse={reverse} duration="slow" />;
 }
 
 export function HomePage() {

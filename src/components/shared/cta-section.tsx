@@ -9,7 +9,7 @@ export function CTASection({ title, subtitle }: CTASectionProps) {
   return (
     <section className="bg-[var(--bg-dark)] py-20 text-white">
       <div className="mx-auto max-w-5xl px-6 text-center">
-        <h2 className="font-service-display text-3xl font-bold leading-tight md:text-4xl">{title}</h2>
+        <h2 className="text-3xl font-bold leading-tight md:text-4xl">{title}</h2>
         <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-white/75 md:text-lg">{subtitle}</p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link

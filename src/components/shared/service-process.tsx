@@ -17,7 +17,7 @@ export function ServiceProcess({ title, steps }: ServiceProcessProps) {
               <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-devlo-700 text-[11px] font-bold text-white">
                 {index + 1}
               </span>
-              <h3 className="font-service-display text-lg font-semibold text-devlo-900 md:text-xl">{step.title}</h3>
+              <h3 className="text-lg font-semibold text-devlo-900 md:text-xl">{step.title}</h3>
             </div>
             <p className="mt-2 text-sm leading-7 text-neutral-600 md:text-base">{step.description}</p>
           </li>

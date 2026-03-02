@@ -6,7 +6,6 @@ import { ServicesSurfaceCard } from "@/components/services/services-ui";
 import type { ServicePageData } from "@/content/services";
 import { HubSpotForm } from "@/components/shared/HubSpotForm";
 import { type ConfiguratorLine, ServiceConfigurator } from "@/components/shared/service-configurator";
-import { ServiceSwitcher } from "@/components/shared/service-switcher";
 
 type ServiceLeadPanelProps = {
   service: ServicePageData;
@@ -29,8 +28,6 @@ export function ServiceLeadPanel({ service }: ServiceLeadPanelProps) {
 
   return (
     <div className="space-y-5 lg:sticky lg:top-28">
-      <ServiceSwitcher currentSlug={service.slug} />
-
       <div className={step === 1 ? "block" : "hidden"}>
         <ServiceConfigurator
           title={service.configuratorTitle}

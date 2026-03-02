@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import { HeaderLangSwitcher } from "@/components/layout/header-lang-switcher";
 import { buttonClassName } from "@/components/ui/button";
 import { mainNav } from "@/content/masterfile.fr";
-import { ALL_CASE_STUDIES, SERVICE_HUB_CARDS } from "@/content/services";
+import { SERVICE_HUB_CARDS } from "@/content/services";
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -127,48 +127,30 @@ export function SiteHeader() {
                           transition={{ duration: 0.16, ease: "easeOut" }}
                           className="absolute right-0 top-[calc(100%+8px)] z-[70] w-[760px] overflow-hidden rounded-2xl border border-neutral-200 bg-white p-4 shadow-panel"
                         >
-                          <div className="grid gap-4 lg:grid-cols-[1.45fr_0.95fr]">
-                            <div>
-                              <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-devlo-700">
-                                Tous les services
-                              </p>
-                              <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                                {SERVICE_HUB_CARDS.map((service) => (
-                                  <Link
-                                    key={`desktop-menu-${service.href}`}
-                                    href={service.href}
-                                    className="rounded-xl border border-neutral-200 bg-white px-3 py-2 transition hover:border-devlo-700/30 hover:bg-devlo-50/45"
-                                  >
-                                    <p className="text-sm font-semibold text-devlo-900">{service.title}</p>
-                                    <p className="mt-1 text-xs leading-5 text-neutral-500">{service.subtitle}</p>
-                                  </Link>
-                                ))}
-                              </div>
+                          <div>
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-devlo-700">
+                              Tous les services
+                            </p>
+                            <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                              {SERVICE_HUB_CARDS.map((service) => (
+                                <Link
+                                  key={`desktop-menu-${service.href}`}
+                                  href={service.href}
+                                  className="rounded-xl border border-neutral-200 bg-white px-3 py-2 transition hover:border-devlo-700/30 hover:bg-devlo-50/45"
+                                >
+                                  <p className="text-sm font-semibold text-devlo-900">{service.title}</p>
+                                  <p className="mt-1 text-xs leading-5 text-neutral-500">{service.subtitle}</p>
+                                </Link>
+                              ))}
                             </div>
-
-                            <aside className="rounded-xl border border-neutral-200 bg-neutral-50 p-3">
-                              <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-devlo-700">
-                                Résultats observés
-                              </p>
-                              <div className="mt-3 space-y-2">
-                                {ALL_CASE_STUDIES.slice(0, 3).map((study) => (
-                                  <Link
-                                    key={`desktop-proof-${study.slug}`}
-                                    href={study.href}
-                                    className="block rounded-lg border border-neutral-200 bg-white px-3 py-2 transition hover:border-devlo-700/30"
-                                  >
-                                    <p className="text-sm font-semibold text-devlo-900">{study.client}</p>
-                                    <p className="mt-1 text-xs text-neutral-600">{study.headline}</p>
-                                  </Link>
-                                ))}
-                              </div>
+                            <div className="mt-4 border-t border-neutral-200 pt-3">
                               <Link
                                 href="/services"
-                                className="mt-3 inline-flex rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold text-devlo-700 transition hover:border-devlo-700/30"
+                                className="inline-flex rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold text-devlo-700 transition hover:border-devlo-700/30"
                               >
                                 Voir tous les services →
                               </Link>
-                            </aside>
+                            </div>
                           </div>
                         </motion.div>
                       ) : null}
@@ -276,6 +258,14 @@ export function SiteHeader() {
                                   <p className="text-xs text-neutral-500">{service.subtitle}</p>
                                 </Link>
                               ))}
+                            </div>
+                            <div className="mt-2 border-t border-neutral-200 pt-2">
+                              <Link
+                                href="/services"
+                                className="inline-flex min-h-[40px] items-center rounded-lg border border-neutral-200 bg-white px-3 text-sm font-semibold text-devlo-700"
+                              >
+                                Voir tous les services →
+                              </Link>
                             </div>
                           </motion.div>
                         ) : null}

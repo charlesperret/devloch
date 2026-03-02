@@ -21,12 +21,12 @@ export function ServiceHero({ title, subtitle, breadcrumbLabel, paragraphs, quic
       <div className="pointer-events-none absolute -left-16 top-10 h-44 w-44 rounded-full bg-devlo-100/40 blur-3xl" />
       <div className="pointer-events-none absolute -right-16 top-20 h-52 w-52 rounded-full bg-devlo-100/30 blur-3xl" />
 
-      <div className="relative mx-auto w-full max-w-[1400px] px-6 pb-12 pt-10 md:px-8 md:pb-14 md:pt-14">
-        <nav aria-label="Breadcrumb" className="mb-8">
+      <div className="relative mx-auto w-full max-w-[1400px] px-6 pb-8 pt-8 md:px-8 md:pb-10 md:pt-10">
+        <nav aria-label="Breadcrumb" className="mb-6">
           <ol className="flex flex-wrap items-center gap-2 text-sm text-neutral-500">
             <li>
               <Link href="/" className="transition hover:text-devlo-700">
-                devlo.ch
+                Accueil
               </Link>
             </li>
             <li>/</li>
@@ -44,10 +44,10 @@ export function ServiceHero({ title, subtitle, breadcrumbLabel, paragraphs, quic
           DEVLO.CH — AGENCE B2B SUISSE
         </p>
 
-        <h1 className="mt-5 max-w-5xl text-4xl font-extrabold leading-[1.06] tracking-tight text-devlo-900 md:text-5xl lg:text-[56px]">
+        <h1 className="mt-4 max-w-5xl text-3xl font-extrabold leading-[1.08] tracking-tight text-devlo-900 md:text-4xl lg:text-5xl">
           {title}
         </h1>
-        <p className="mt-5 max-w-3xl text-xl font-semibold leading-relaxed text-devlo-700 md:text-2xl">{subtitle}</p>
+        <p className="mt-4 max-w-3xl text-lg font-semibold leading-relaxed text-devlo-700 md:text-xl">{subtitle}</p>
 
         <div className="mt-6 flex flex-wrap gap-2">
           {quickFacts.map((fact) => (
@@ -60,13 +60,13 @@ export function ServiceHero({ title, subtitle, breadcrumbLabel, paragraphs, quic
           ))}
         </div>
 
-        <div className="mt-6 max-w-4xl space-y-4 text-base leading-8 text-neutral-600 md:text-lg md:leading-9">
+        <div className="mt-5 max-w-4xl space-y-3.5 text-base leading-7 text-neutral-600 md:text-[17px] md:leading-8">
           {paragraphs.map((paragraph, index) => (
             <p key={`${title}-paragraph-${index}`}>{paragraph}</p>
           ))}
         </div>
 
-        <nav aria-label="Navigation de section" className="mt-8">
+        <nav aria-label="Navigation de section" className="mt-6">
           <ul className="flex flex-wrap gap-2">
             {sectionAnchors.map((anchor) => (
               <li key={anchor.id}>

@@ -17,10 +17,10 @@ export function CaseStudyBadge({ client, result, details, href }: CaseStudyBadge
   const content = (
     <ServicesSurfaceCard className="h-full p-4 transition-all duration-200 hover:border-devlo-600/35 hover:shadow-panel">
       <div className="flex items-start justify-between gap-3">
-        <p className="font-service-mono text-xs font-semibold uppercase tracking-[0.1em] text-devlo-700">{client}</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.1em] text-devlo-700">{client}</p>
         <CountryFlags countries={brand?.countries ?? ["EU"]} showMore={Boolean(brand?.showMoreCountries)} />
       </div>
-      <h3 className="mt-3 font-service-display text-lg font-semibold leading-snug text-devlo-900">{result}</h3>
+      <h3 className="mt-3 text-lg font-semibold leading-snug text-devlo-900">{result}</h3>
       <p className="mt-2 text-sm leading-6 text-neutral-600">{details}</p>
 
       <div className="mt-4 flex items-center gap-2 border-t border-neutral-100 pt-3">

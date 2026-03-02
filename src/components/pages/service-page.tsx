@@ -8,6 +8,7 @@ import { ServiceBenefits } from "@/components/shared/service-benefits";
 import { ServiceHero } from "@/components/shared/service-hero";
 import { ServiceLeadPanel } from "@/components/shared/service-lead-panel";
 import { ServiceProcess } from "@/components/shared/service-process";
+import { ServiceSwitcher } from "@/components/shared/service-switcher";
 import { ServicesSectionHeader, ServicesSurfaceCard, TrustedLogosRow } from "@/components/services/services-ui";
 import { TRUSTED_LOGOS_STRIP } from "@/content/service-brand-assets";
 import { ALL_CASE_STUDIES, type ServicePageData } from "@/content/services";
@@ -79,7 +80,15 @@ export function ServicePageTemplate({ service }: ServicePageProps) {
           quickFacts={quickFacts}
         />
 
-        <section className="bg-white py-16 md:py-24">
+        <section className="border-b border-neutral-200 bg-white py-4">
+          <div className="mx-auto w-full max-w-[1400px] px-6 md:px-8">
+            <div className="max-w-md">
+              <ServiceSwitcher currentSlug={service.slug} />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-12 md:py-16">
           <div className="mx-auto grid w-full max-w-[1400px] gap-8 px-6 md:px-8 lg:grid-cols-[minmax(0,1.06fr)_minmax(0,0.94fr)] lg:items-start lg:gap-10">
             <div className="space-y-6">
               <div id="ce-que-couvre" className="scroll-mt-32">
@@ -120,7 +129,7 @@ export function ServicePageTemplate({ service }: ServicePageProps) {
           </div>
         </section>
 
-        <section className="border-t border-neutral-200 bg-devlo-50 py-20">
+        <section className="border-t border-neutral-200 bg-devlo-50 py-14 md:py-16">
           <div className="mx-auto w-full max-w-[1400px] px-6 md:px-8">
             <div className="space-y-8">
               <TrustedLogosRow logos={TRUSTED_LOGOS_STRIP} />
