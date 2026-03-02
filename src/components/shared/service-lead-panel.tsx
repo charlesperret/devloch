@@ -6,6 +6,7 @@ import { ServicesSurfaceCard } from "@/components/services/services-ui";
 import type { ServicePageData } from "@/content/services";
 import { HubSpotForm } from "@/components/shared/HubSpotForm";
 import { type ConfiguratorLine, ServiceConfigurator } from "@/components/shared/service-configurator";
+import { ServiceSwitcher } from "@/components/shared/service-switcher";
 
 type ServiceLeadPanelProps = {
   service: ServicePageData;
@@ -28,6 +29,8 @@ export function ServiceLeadPanel({ service }: ServiceLeadPanelProps) {
 
   return (
     <div className="space-y-5 lg:sticky lg:top-28">
+      <ServiceSwitcher currentSlug={service.slug} />
+
       <div className={step === 1 ? "block" : "hidden"}>
         <ServiceConfigurator
           title={service.configuratorTitle}
@@ -42,8 +45,18 @@ export function ServiceLeadPanel({ service }: ServiceLeadPanelProps) {
 
       <div className={step === 2 ? "space-y-5" : "hidden"}>
         <ServicesSurfaceCard className="p-5 md:p-6">
+          <div className="rounded-xl border border-devlo-100 bg-devlo-50/70 p-4">
+            <div className="flex items-center justify-between">
+              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-devlo-700">Étape 2/2 — Coordonnées</p>
+              <p className="text-xs font-semibold text-devlo-700">100%</p>
+            </div>
+            <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-devlo-100">
+              <div className="h-full w-full rounded-full bg-devlo-700" />
+            </div>
+          </div>
+
           <div className="flex items-center justify-between gap-3">
-            <h2 className="text-xl font-extrabold tracking-tight text-devlo-900">{summaryTitle}</h2>
+            <h2 className="mt-4 text-xl font-extrabold tracking-tight text-devlo-900">{summaryTitle}</h2>
             <button
               type="button"
               onClick={() => setStep(1)}

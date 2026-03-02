@@ -72,15 +72,24 @@ export function ServiceConfigurator({
   }, [lines, onPreviewChange, onSummaryChange, summary]);
 
   return (
-    <ServicesSurfaceCard className="p-5 md:p-6">
-      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-devlo-700">Étape 1 — Configurez</p>
-      <h2 className="mt-3 text-2xl font-extrabold leading-tight tracking-tight text-devlo-900">{title}</h2>
+    <ServicesSurfaceCard className="overflow-hidden p-5 md:p-6">
+      <div className="rounded-xl border border-devlo-100 bg-devlo-50/70 p-4">
+        <div className="flex items-center justify-between">
+          <p className="text-xs font-semibold uppercase tracking-[0.08em] text-devlo-700">Étape 1/2 — Configurez</p>
+          <p className="text-xs font-semibold text-devlo-700">50%</p>
+        </div>
+        <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-devlo-100">
+          <div className="h-full w-1/2 rounded-full bg-devlo-700" />
+        </div>
+      </div>
+
+      <h2 className="mt-4 text-2xl font-extrabold leading-tight tracking-tight text-devlo-900">{title}</h2>
       <p className="mt-2 text-sm leading-6 text-neutral-600">{intro}</p>
 
-      <div className="mt-5 space-y-5">
+      <div className="mt-5 space-y-4">
         {fields.map((field) => (
-          <div key={field.id}>
-            <div className="mb-2 flex items-center gap-2">
+          <div key={field.id} className="rounded-xl border border-neutral-200 bg-white p-4">
+            <div className="mb-2.5 flex items-center gap-2">
               <p className="text-sm font-semibold text-devlo-900">{field.label}</p>
               {field.optional ? (
                 <span className="rounded-full border border-neutral-200 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.06em] text-neutral-500">
@@ -89,7 +98,7 @@ export function ServiceConfigurator({
               ) : null}
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {field.options.map((option) => {
                 const currentSelection = selections[field.id];
                 const isSelected =
@@ -137,10 +146,12 @@ export function ServiceConfigurator({
         </div>
       </div>
 
-      <button type="button" className={buttonClassName("primary", "mt-5 w-full py-3.5 text-sm")} onClick={onContinue}>
-        Continuer
-      </button>
-      <p className="mt-2 text-center text-xs text-neutral-500">Vous pourrez modifier vos choix avant envoi.</p>
+      <div className="-mx-5 mt-5 border-t border-neutral-200 bg-white/95 px-5 pb-1 pt-4 backdrop-blur md:-mx-6 md:px-6">
+        <button type="button" className={buttonClassName("primary", "w-full py-3.5 text-sm")} onClick={onContinue}>
+          Continuer
+        </button>
+        <p className="mt-2 text-center text-xs text-neutral-500">Vous pourrez modifier vos choix avant envoi.</p>
+      </div>
     </ServicesSurfaceCard>
   );
 }

@@ -1,4 +1,4 @@
-export type CountryCode = "CH" | "BE" | "FR" | "DE" | "AT" | "NL" | "EU";
+export type CountryCode = string;
 
 export type CaseStudyBrandAsset = {
   logo?: string;

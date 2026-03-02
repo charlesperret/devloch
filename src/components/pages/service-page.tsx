@@ -49,6 +49,14 @@ type ServicePageProps = {
 };
 
 export function ServicePageTemplate({ service }: ServicePageProps) {
+  const caseStudiesForService = ALL_CASE_STUDIES.filter((study) => study.tags.includes(service.caseStudyTag));
+  const quickFacts = [
+    `${service.processSteps.length} étapes`,
+    `${service.configuratorFields.length} leviers à configurer`,
+    `${caseStudiesForService.length} études de cas liées`,
+    `${service.faqItems.length} questions fréquentes`,
+  ];
+
   const schemas = [
     buildServiceSchema(service),
     buildFaqPageSchema(service.faqItems),
@@ -68,13 +76,18 @@ export function ServicePageTemplate({ service }: ServicePageProps) {
           subtitle={service.pageSubtitle}
           breadcrumbLabel={service.navTitle}
           paragraphs={service.heroParagraphs}
+          quickFacts={quickFacts}
         />
 
         <section className="bg-white py-16 md:py-24">
           <div className="mx-auto grid w-full max-w-[1400px] gap-8 px-6 md:px-8 lg:grid-cols-[minmax(0,1.06fr)_minmax(0,0.94fr)] lg:items-start lg:gap-10">
             <div className="space-y-6">
-              <ServiceBenefits title={service.coverageTitle} items={service.coverageItems} />
-              <ServiceProcess title={service.processTitle} steps={service.processSteps} />
+              <div id="ce-que-couvre" className="scroll-mt-32">
+                <ServiceBenefits title={service.coverageTitle} items={service.coverageItems} />
+              </div>
+              <div id="processus" className="scroll-mt-32">
+                <ServiceProcess title={service.processTitle} steps={service.processSteps} />
+              </div>
 
               <ServicesSurfaceCard className="p-6 md:p-8">
                 <h2 className="text-3xl font-extrabold leading-[1.15] tracking-tight text-devlo-900 md:text-4xl">{service.editorialTitle}</h2>
@@ -87,7 +100,7 @@ export function ServicePageTemplate({ service }: ServicePageProps) {
                 </div>
               </ServicesSurfaceCard>
 
-              <ServicesSurfaceCard className="p-6 md:p-8">
+              <ServicesSurfaceCard id="resultats" className="scroll-mt-32 p-6 md:p-8">
                 <ServicesSectionHeader title={service.socialProofTitle} />
                 <div className="mt-6 grid gap-4 md:grid-cols-2">
                   {service.socialProofItems.map((item) => (
@@ -121,7 +134,7 @@ export function ServicePageTemplate({ service }: ServicePageProps) {
           </div>
         </section>
 
-        <FAQSection title={service.faqTitle} items={service.faqItems} />
+        <FAQSection id="faq" title={service.faqTitle} items={service.faqItems} />
         <RelatedServices currentSlug={service.slug} relatedSlugs={service.relatedServices} />
         <CTASection title={service.ctaTitle} subtitle={service.ctaSubtitle} />
       </main>

@@ -58,7 +58,7 @@ export function HubSpotForm({
     setLoading(true);
     setErrors({});
 
-    const ok = await submitToHubSpot({
+    const result = await submitToHubSpot({
       firstname: form.firstname,
       email: form.email,
       company: form.company,
@@ -70,14 +70,14 @@ export function HubSpotForm({
 
     setLoading(false);
 
-    if (ok) {
+    if (result.ok) {
       setSuccess(true);
       window.dataLayer?.push({ event: "lead_form_submit", service: serviceInterest });
       onSuccess?.();
       return;
     }
 
-    setErrors({ submit: "Une erreur est survenue. Veuillez réessayer." });
+    setErrors({ submit: result.errorMessage ?? "Une erreur est survenue. Veuillez réessayer." });
   };
 
   if (success) {
