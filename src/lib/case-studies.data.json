@@ -8,7 +8,7 @@
     "client": "Horus",
     "sector": "Logiciel de comptabilité et de gestion post-comptable pour les experts-comptables et les PME",
     "heroImageUrl": "/images/Horus.webp",
-    "clientLogoUrl": "/images/Horus_logo.webp",
+    "clientLogoUrl": "/images/Horus.webp",
     "heroStats": [
       {
         "value": "80",

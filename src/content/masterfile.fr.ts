@@ -223,7 +223,7 @@ export const homeContent = {
     "Many_ways_logo.webp",
     "Undu_du_logo.webp",
     "IDDI_logo.webp",
-    "Horus_logo.webp",
+    "Horus.webp",
     "Apidae_log.webp",
   ],
   noRecruitTitle: "Développez votre chiffre d'affaires sans recruter",
@@ -600,7 +600,7 @@ export const caseStudiesCards: CaseStudyCard[] = [
     slug: "horus-200k-contrats-belgique",
     client: "Horus",
     banner: "/images/Horus.webp",
-    logo: "/images/Horus_logo.webp",
+    logo: "/images/Horus.webp",
     largeLogo: true,
     title:
       "Comment un éditeur de logiciel comptable a signé €200k de contrats en Belgique grâce au cold outreach multicanal",

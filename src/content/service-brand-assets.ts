@@ -8,7 +8,7 @@ export type CaseStudyBrandAsset = {
 
 export const TRUSTED_LOGOS_STRIP: Array<{ src: string; alt: string }> = [
   { src: "/images/Monizze_Logo.webp", alt: "Monizze" },
-  { src: "/images/Horus_logo.webp", alt: "Horus Software" },
+  { src: "/images/Horus.webp", alt: "Horus Software" },
   { src: "/images/CareerLunch_logo.webp", alt: "CareerLunch" },
   { src: "/images/Saporo_logo.webp", alt: "Saporo" },
   { src: "/images/Cegos_Logo.webp", alt: "Cegos" },
@@ -21,7 +21,7 @@ export const TRUSTED_LOGOS_STRIP: Array<{ src: string; alt: string }> = [
 
 export const CASE_STUDY_BRAND_ASSETS: Record<string, CaseStudyBrandAsset> = {
   monizze: { logo: "/images/Monizze_Logo.webp", countries: ["BE"] },
-  horus: { logo: "/images/Horus_logo.webp", countries: ["BE"] },
+  horus: { logo: "/images/Horus.webp", countries: ["BE"] },
   careerlunch: { logo: "/images/CareerLunch_logo.webp", countries: ["DE", "AT", "CH"] },
   saporo: { logo: "/images/Saporo_logo.webp", countries: ["CH", "FR", "DE", "AT", "BE"], showMoreCountries: true },
   cegos: { logo: "/images/Cegos_Logo.webp", countries: ["CH"] },

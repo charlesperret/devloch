@@ -85,7 +85,7 @@ export function ServicePageTemplate({ service }: ServicePageProps) {
             <div className="space-y-6">
               <div id="ce-que-couvre" className="scroll-mt-32 space-y-5">
                 <ServiceBenefits title={service.coverageTitle} items={service.coverageItems} />
-                <div className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-2">
+                <div className="relative my-[2cm] overflow-hidden rounded-2xl border border-neutral-200 bg-white p-2">
                   <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[8vw] bg-gradient-to-r from-white to-transparent" />
                   <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[8vw] bg-gradient-to-l from-white to-transparent" />
                   <InfiniteLogoRail logos={TRUSTED_LOGOS_STRIP} duration="slow" pauseOnHover />

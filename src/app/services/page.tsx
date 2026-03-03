@@ -68,7 +68,7 @@ export default function ServicesHubPage() {
               </div>
             </div>
 
-            <div className="relative mt-6 -mx-6 overflow-hidden md:-mx-12 lg:-mx-16">
+            <div className="relative my-[2cm] -mx-6 overflow-hidden md:-mx-12 lg:-mx-16">
               <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[8vw] bg-gradient-to-r from-white to-transparent" />
               <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[8vw] bg-gradient-to-l from-white to-transparent" />
               <InfiniteLogoRail logos={TRUSTED_LOGOS_STRIP} duration="slow" pauseOnHover />
