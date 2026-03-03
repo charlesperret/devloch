@@ -63,12 +63,14 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/images/devlo_favicon.ico", type: "image/x-icon" },
-      { url: "/images/devlo_favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
       { url: "/images/devlo_favicon-96x96.webp", type: "image/webp", sizes: "96x96" },
     ],
-    apple: [{ url: "/images/devlo_apple-touch-icon.webp", sizes: "180x180", type: "image/webp" }],
-    shortcut: ["/images/devlo_favicon.ico"],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.ico"],
+    other: [{ rel: "manifest", url: "/site.webmanifest" }],
   },
   manifest: "/site.webmanifest",
 };
