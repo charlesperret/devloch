@@ -26,12 +26,15 @@ function localizedPath(lang: SupportedLang, path: string): string {
 }
 
 export function buildLanguageAlternates(path: string): NonNullable<Metadata["alternates"]>["languages"] {
-  return {
+  const languages: Record<string, string> = {
     fr: localizedPath("fr", path),
     en: localizedPath("en", path),
     de: localizedPath("de", path),
     nl: localizedPath("nl", path),
+    "x-default": localizedPath("fr", path),
   };
+
+  return languages as NonNullable<Metadata["alternates"]>["languages"];
 }
 
 export function toAbsoluteUrl(path: string): string {

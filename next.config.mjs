@@ -10,6 +10,16 @@ function excludeRscRequests(redirects) {
   }));
 }
 
+function withStatusCode301(redirects) {
+  return redirects.map((redirect) => {
+    const { permanent: _permanent, ...rest } = redirect;
+    return {
+      ...rest,
+      statusCode: 301,
+    };
+  });
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
@@ -121,6 +131,26 @@ const nextConfig = {
     // The old Next.js site used /resultats/[slug]; keep for backlink preservation.
     // Specific WP long-slug overrides are handled above (wpResultatRedirects).
     const resultatRedirects = [
+      {
+        source: "/resultats",
+        destination: "/etudes-de-cas",
+        permanent: true,
+      },
+      {
+        source: "/resultats/",
+        destination: "/etudes-de-cas",
+        permanent: true,
+      },
+      {
+        source: "/resultats/:slug",
+        destination: "/etudes-de-cas/:slug",
+        permanent: true,
+      },
+      {
+        source: "/resultats/:slug/",
+        destination: "/etudes-de-cas/:slug",
+        permanent: true,
+      },
       {
         source: "/resultats-cas-etudes/page/:num",
         destination: "/etudes-de-cas",
@@ -684,17 +714,19 @@ const nextConfig = {
       { source: "/prospection-b2b", destination: "/", permanent: true },
     ];
 
-    return excludeRscRequests([
-      ...caseStudyRedirects,
-      ...wpResultatRedirects, // specific WP long slugs — must be before wildcard
-      ...resultatRedirects,
-      ...appAliasRedirects,
-      ...enRedirects,
-      ...deRedirects,
-      ...frBlogRedirects,
-      ...wordpressRedirects,
-      ...oldPageRedirects,
-    ]);
+    return excludeRscRequests(
+      withStatusCode301([
+        ...caseStudyRedirects,
+        ...wpResultatRedirects, // specific WP long slugs — must be before wildcard
+        ...resultatRedirects,
+        ...appAliasRedirects,
+        ...enRedirects,
+        ...deRedirects,
+        ...frBlogRedirects,
+        ...wordpressRedirects,
+        ...oldPageRedirects,
+      ]),
+    );
   },
   async rewrites() {
     return {
