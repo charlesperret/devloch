@@ -7,10 +7,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-import { HeaderLangSwitcher } from "@/components/layout/header-lang-switcher";
 import { buttonClassName } from "@/components/ui/button";
 import { mainNav } from "@/content/masterfile.fr";
 import { SERVICE_HUB_CARDS } from "@/content/services";
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -189,10 +189,10 @@ export function SiteHeader() {
             })}
 
             <div className="flex items-center gap-3">
+              <LanguageSwitcher />
               <Link href={mainNav.cta.href} className={buttonClassName("outline", "px-5 py-2.5 text-sm")}>
                 {mainNav.cta.label}
               </Link>
-              <HeaderLangSwitcher transparent={transparentMode} />
             </div>
           </nav>
 
@@ -229,6 +229,7 @@ export function SiteHeader() {
             </div>
 
             <div className="mt-10 space-y-2">
+              <LanguageSwitcher mobile />
               {mainNav.links.map((item) => {
                 if (item.href === "/services") {
                   return (
@@ -306,7 +307,6 @@ export function SiteHeader() {
             <Link href={mainNav.cta.href} className={buttonClassName("primary", "mt-8 w-full py-4 text-base")}>
               {mainNav.cta.label}
             </Link>
-            <HeaderLangSwitcher mobile className="mt-3" />
           </motion.aside>
         ) : null}
       </AnimatePresence>

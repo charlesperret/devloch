@@ -6,20 +6,25 @@
     "node": "20.x"
   },
   "scripts": {
-    "prebuild": "node scripts/fetch-lovalingo-sitemap.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "check:hadoseo-metadata": "node scripts/verify-hadoseo-metadata.mjs",
+    "check:slug-map-navigation": "node scripts/check_slug_map_navigation.mjs",
     "check:deploy": "npm run lint && npm run build",
     "sync:case-studies": "node scripts/sync-case-studies.mjs",
+    "icons:generate": "node scripts/generate_favicons.mjs",
+    "audit:i18n:full": "bash scripts/audit_i18n_full.sh",
+    "slugmap:build": "node scripts/build_slug_map_from_sitemap.mjs",
+    "sanity:seed-fr": "node scripts/sanity_seed_from_repo_fr.mjs",
+    "sanity:translate-missing": "node scripts/translate_missing_locales_deepl.mjs",
     "vercel:link": "npx vercel link",
     "vercel:preview": "npx vercel --yes",
     "vercel:prod": "npx vercel --prod --yes"
   },
   "dependencies": {
-    "@lovalingo/lovalingo": "^0.5.27",
+    "@sanity/client": "^7.11.2",
     "@vercel/speed-insights": "^1.3.1",
     "framer-motion": "^12.34.3",
     "lucide-react": "^0.575.0",
