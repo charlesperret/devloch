@@ -1,5 +1,15 @@
-import { permanentRedirect } from "next/navigation";
+import type { Metadata } from "next";
+
+import { ConditionsMasterPage } from "@/components/pages/conditions-master-page";
+import { conditionsSeo } from "@/content/masterfile.fr";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: conditionsSeo.title.replace(/\s*\|\s*devlo$/i, ""),
+  description: conditionsSeo.description,
+  path: "/politique-confidentialite",
+});
 
 export default function Page() {
-  permanentRedirect("/conditions");
+  return <ConditionsMasterPage />;
 }

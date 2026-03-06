@@ -134,15 +134,30 @@ export function resolvePathForLocale(pathname: string, targetLocale: SupportedLo
   }
 
   const { path: normalizedInputPath } = splitLocalePath(pathname);
-  const caseStudyPrefix = "/etudes-de-cas/";
+  const caseStudyAliasPath =
+    normalizedInputPath === "/etudes-de-cas"
+      ? "/resultats-cas-etudes"
+      : normalizedInputPath.startsWith("/etudes-de-cas/")
+        ? `/resultats/${normalizedInputPath.slice("/etudes-de-cas/".length)}`
+        : normalizedInputPath;
+  const aliasMatch = findEntryByFrPath(caseStudyAliasPath);
 
+  if (aliasMatch) {
+    const localizedPath = aliasMatch.entry[targetLocale];
+    if (localizedPath) {
+      return { path: normalizePath(localizedPath), found: true, pageId: aliasMatch.pageId };
+    }
+  }
+
+  const caseStudyPrefix = normalizedInputPath.startsWith("/resultats/") ? "/resultats/" : "/etudes-de-cas/";
   if (normalizedInputPath.startsWith(caseStudyPrefix)) {
     const incomingSlug = normalizedInputPath.slice(caseStudyPrefix.length);
     const canonicalSlug = resolveCaseStudyCanonicalSlug(incomingSlug);
 
     if (canonicalSlug !== incomingSlug) {
-      const canonicalFrPath = `${caseStudyPrefix}${canonicalSlug}`;
-      const canonicalMatch = findEntryByFrPath(canonicalFrPath);
+      const canonicalFrPath = `/resultats/${canonicalSlug}`;
+      const canonicalMatch = findEntryByFrPath(canonicalFrPath)
+        ?? findEntryByFrPath(`/etudes-de-cas/${canonicalSlug}`);
 
       if (canonicalMatch) {
         const localizedPath = canonicalMatch.entry[targetLocale];

@@ -43,6 +43,11 @@ const consultationAliases = new Set([
   "/merci-prise-de-contact",
 ]);
 
+const academyAliases = new Set([
+  "/formation-prospection-b2b",
+  "/prospection-commerciale-b2b",
+]);
+
 const conditionsAliases = new Set([
   "/terms",
   "/politique-confidentialite",
@@ -69,6 +74,7 @@ function normalizeTextForCompare(value: string | undefined): string {
 function mapFrPathToRenderable(path: string): string {
   const normalized = normalizePath(path);
   if (consultationAliases.has(normalized)) return "/consultation";
+  if (academyAliases.has(normalized)) return "/academy";
   if (conditionsAliases.has(normalized)) return "/conditions";
 
   if (normalized === "/resultats" || normalized === "/resultats-cas-etudes") return "/etudes-de-cas";

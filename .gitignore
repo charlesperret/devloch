@@ -35,6 +35,8 @@ yarn-error.log*
 # local audit/temp artifacts
 docs/**/raw/
 docs/i18n_sanity_migration/phase3_audit_*/
+docs/i18n_sanity_migration/check_success_*/
+docs/i18n_sanity_migration/phase1_locale_state_*.tsv
 docs/mobile_audit_*/
 scripts/_tmp*
 scripts/_inputs/

@@ -102,37 +102,37 @@ const nextConfig = {
       {
         source:
           "/resultats/solution-de-cybersecurite-180-prospects-interesses-generation-de-prospects-b2b-et-prospection-a-froid",
-        destination: "/etudes-de-cas/cybersecurite-4500-entreprises",
+        destination: "/resultats/cybersecurite-4500-entreprises",
         permanent: true,
       },
       {
         source:
           "/resultats/solution-de-cybersecurite-180-prospects-interesses-generation-de-prospects-b2b-et-prospection-a-froid/",
-        destination: "/etudes-de-cas/cybersecurite-4500-entreprises",
+        destination: "/resultats/cybersecurite-4500-entreprises",
         permanent: true,
       },
       {
         source:
           "/resultats/limmobilier-et-la-prospection-commerciale-b2b-comment-cibler-et-demarcher-des-prospects-pour-la-location-de-surfaces-commerciales",
-        destination: "/etudes-de-cas/immobilier-11-prospects",
+        destination: "/resultats/immobilier-11-prospects",
         permanent: true,
       },
       {
         source:
           "/resultats/limmobilier-et-la-prospection-commerciale-b2b-comment-cibler-et-demarcher-des-prospects-pour-la-location-de-surfaces-commerciales/",
-        destination: "/etudes-de-cas/immobilier-11-prospects",
+        destination: "/resultats/immobilier-11-prospects",
         permanent: true,
       },
       {
         source:
           "/resultats/telemarketing-b2b-dans-limmobilier-commercial-30-prospects-interesses-pour-des-surfaces-de-bureaux",
-        destination: "/etudes-de-cas/immobilier-30-prospects",
+        destination: "/resultats/immobilier-30-prospects",
         permanent: true,
       },
       {
         source:
           "/resultats/telemarketing-b2b-dans-limmobilier-commercial-30-prospects-interesses-pour-des-surfaces-de-bureaux/",
-        destination: "/etudes-de-cas/immobilier-30-prospects",
+        destination: "/resultats/immobilier-30-prospects",
         permanent: true,
       },
     ];
@@ -142,43 +142,23 @@ const nextConfig = {
     // Specific WP long-slug overrides are handled above (wpResultatRedirects).
     const resultatRedirects = [
       {
-        source: "/resultats",
-        destination: "/etudes-de-cas",
-        permanent: true,
-      },
-      {
-        source: "/resultats/",
-        destination: "/etudes-de-cas",
-        permanent: true,
-      },
-      {
-        source: "/resultats/:slug",
-        destination: "/etudes-de-cas/:slug",
-        permanent: true,
-      },
-      {
-        source: "/resultats/:slug/",
-        destination: "/etudes-de-cas/:slug",
-        permanent: true,
-      },
-      {
         source: "/resultats-cas-etudes/page/:num",
-        destination: "/etudes-de-cas",
+        destination: "/resultats-cas-etudes",
         permanent: true,
       },
       {
         source: "/resultats-cas-etudes/page/:num/",
-        destination: "/etudes-de-cas",
-        permanent: true,
-      },
-      {
-        source: "/resultats-cas-etudes",
-        destination: "/etudes-de-cas",
+        destination: "/resultats-cas-etudes",
         permanent: true,
       },
       {
         source: "/resultats_cas_etudes",
-        destination: "/etudes-de-cas",
+        destination: "/resultats-cas-etudes",
+        permanent: true,
+      },
+      {
+        source: "/resultats_cas_etudes/page/:num",
+        destination: "/resultats-cas-etudes",
         permanent: true,
       },
     ];
@@ -190,14 +170,8 @@ const nextConfig = {
     const appAliasRedirects = [
       { source: "/contact", destination: "/consultation", permanent: true },
       { source: "/contact/", destination: "/consultation", permanent: true },
-      { source: "/formation-prospection-b2b", destination: "/academy", permanent: true },
-      { source: "/formation-prospection-b2b/", destination: "/academy", permanent: true },
       { source: "/academy-notre-appel", destination: "/consultation", permanent: true },
       { source: "/academy-notre-appel/", destination: "/consultation", permanent: true },
-      { source: "/telephone", destination: "/consultation", permanent: true },
-      { source: "/telephone/", destination: "/consultation", permanent: true },
-      { source: "/notrerendez-vous", destination: "/consultation", permanent: true },
-      { source: "/notrerendez-vous/", destination: "/consultation", permanent: true },
       { source: "/merci", destination: "/consultation", permanent: true },
       { source: "/merci/", destination: "/consultation", permanent: true },
       { source: "/merci-prise-de-contact", destination: "/consultation", permanent: true },
@@ -206,10 +180,6 @@ const nextConfig = {
       { source: "/modele/", destination: "/", permanent: true },
       { source: "/blog-list", destination: "/", permanent: true },
       { source: "/blog-list/", destination: "/", permanent: true },
-      { source: "/conditions-utilisation-academie", destination: "/conditions", permanent: true },
-      { source: "/conditions-utilisation-academie/", destination: "/conditions", permanent: true },
-      { source: "/politique-confidentialite", destination: "/conditions", permanent: true },
-      { source: "/politique-confidentialite/", destination: "/conditions", permanent: true },
       { source: "/terms", destination: "/conditions", permanent: true },
       { source: "/terms/", destination: "/conditions", permanent: true },
     ];
@@ -556,130 +526,6 @@ const nextConfig = {
     // These WP blog posts had indexed URLs and some traffic.
     // Redirect to homepage as no equivalent content exists.
     const frBlogRedirects = [
-      {
-        source: "/prospection-commerciale-b2b",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/prospection-commerciale-b2b/",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source:
-          "/5-raisons-pour-lesquelles-la-prospection-commerciale-b2b-est-cruciale",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source:
-          "/5-raisons-pour-lesquelles-la-prospection-commerciale-b2b-est-cruciale/",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source:
-          "/externaliser-le-developpement-des-ventes-b2b-comment-eviter-les-depenses-excessives",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source:
-          "/externaliser-le-developpement-des-ventes-b2b-comment-eviter-les-depenses-excessives/",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/courriel-quelquun-vendre-quelque-chose",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/courriel-quelquun-vendre-quelque-chose/",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/developpement-ventes-peche-au-harpon",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/developpement-ventes-peche-au-harpon/",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/lancement-devlo-partenaire-de-confiance-generation-de-prospects",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/lancement-devlo-partenaire-de-confiance-generation-de-prospects/",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/oui-a-reduction-friction-commerciale",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/oui-a-reduction-friction-commerciale/",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/personnalisation-digitalisation-sont-si-importantes",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/personnalisation-digitalisation-sont-si-importantes/",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/indicateurs-de-performance-elimines-2020",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/indicateurs-de-performance-elimines-2020/",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/2020-leaders-equipes-vente-b2b",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/2020-leaders-equipes-vente-b2b/",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/mark-roberge-predictions-prescriptions-2021",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/mark-roberge-predictions-prescriptions-2021/",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/developpement-ventes-b2b",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/developpement-ventes-b2b/",
-        destination: "/",
-        permanent: true,
-      },
       {
         source: "/blog",
         destination: "/",
