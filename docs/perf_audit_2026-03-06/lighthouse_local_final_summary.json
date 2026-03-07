@@ -1,0 +1,66 @@
+[
+  {
+    "file": "consultation.desktop.json",
+    "perf": 100,
+    "lcp": "0.7 s",
+    "cls": "0",
+    "tbt": "0 ms",
+    "unusedJS": "Est savings of 244 KiB"
+  },
+  {
+    "file": "consultation.mobile.json",
+    "perf": 89,
+    "lcp": "3.8 s",
+    "cls": "0",
+    "tbt": "80 ms",
+    "unusedJS": "Est savings of 244 KiB"
+  },
+  {
+    "file": "home.desktop.json",
+    "perf": 99,
+    "lcp": "1.0 s",
+    "cls": "0",
+    "tbt": "0 ms",
+    "unusedJS": "Est savings of 67 KiB"
+  },
+  {
+    "file": "home.mobile.json",
+    "perf": 85,
+    "lcp": "4.4 s",
+    "cls": "0",
+    "tbt": "30 ms",
+    "unusedJS": "Est savings of 67 KiB"
+  },
+  {
+    "file": "horus.desktop.json",
+    "perf": 100,
+    "lcp": "0.8 s",
+    "cls": "0",
+    "tbt": "0 ms",
+    "unusedJS": "Est savings of 67 KiB"
+  },
+  {
+    "file": "horus.mobile.json",
+    "perf": 87,
+    "lcp": "4.0 s",
+    "cls": "0",
+    "tbt": "0 ms",
+    "unusedJS": "Est savings of 67 KiB"
+  },
+  {
+    "file": "services.desktop.json",
+    "perf": 95,
+    "lcp": "1.4 s",
+    "cls": "0",
+    "tbt": "0 ms",
+    "unusedJS": "Est savings of 67 KiB"
+  },
+  {
+    "file": "services.mobile.json",
+    "perf": 89,
+    "lcp": "3.8 s",
+    "cls": "0",
+    "tbt": "10 ms",
+    "unusedJS": "Est savings of 67 KiB"
+  }
+]

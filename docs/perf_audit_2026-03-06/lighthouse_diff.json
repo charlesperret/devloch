@@ -1,0 +1,90 @@
+[
+  {
+    "file": "consultation.desktop.json",
+    "perf_before": 93,
+    "perf_after": 93,
+    "lcp_before": "0.6 s",
+    "lcp_after": "0.6 s",
+    "cls_before": "0.158",
+    "cls_after": "0.158",
+    "unusedJS_before": "Est savings of 267 KiB",
+    "unusedJS_after": "Est savings of 267 KiB"
+  },
+  {
+    "file": "consultation.mobile.json",
+    "perf_before": 92,
+    "perf_after": 91,
+    "lcp_before": "3.2 s",
+    "lcp_after": "3.3 s",
+    "cls_before": "0",
+    "cls_after": "0",
+    "unusedJS_before": "Est savings of 268 KiB",
+    "unusedJS_after": "Est savings of 268 KiB"
+  },
+  {
+    "file": "etudes-de-cas_logiciel-comptable-200k-ca.desktop.json",
+    "perf_before": 100,
+    "perf_after": 100,
+    "lcp_before": "0.6 s",
+    "lcp_after": "0.8 s",
+    "cls_before": "0",
+    "cls_after": "0",
+    "unusedJS_before": "Est savings of 97 KiB",
+    "unusedJS_after": "Est savings of 97 KiB"
+  },
+  {
+    "file": "etudes-de-cas_logiciel-comptable-200k-ca.mobile.json",
+    "perf_before": 93,
+    "perf_after": 97,
+    "lcp_before": "3.2 s",
+    "lcp_after": "2.6 s",
+    "cls_before": "0",
+    "cls_after": "0",
+    "unusedJS_before": "Est savings of 97 KiB",
+    "unusedJS_after": "Est savings of 97 KiB"
+  },
+  {
+    "file": "home.desktop.json",
+    "perf_before": 100,
+    "perf_after": 100,
+    "lcp_before": "0.7 s",
+    "lcp_after": "0.7 s",
+    "cls_before": "0",
+    "cls_after": "0",
+    "unusedJS_before": "Est savings of 97 KiB",
+    "unusedJS_after": "Est savings of 97 KiB"
+  },
+  {
+    "file": "home.mobile.json",
+    "perf_before": 88,
+    "perf_after": 91,
+    "lcp_before": "3.8 s",
+    "lcp_after": "3.5 s",
+    "cls_before": "0",
+    "cls_after": "0",
+    "unusedJS_before": "Est savings of 97 KiB",
+    "unusedJS_after": "Est savings of 97 KiB"
+  },
+  {
+    "file": "services.desktop.json",
+    "perf_before": 100,
+    "perf_after": 100,
+    "lcp_before": "0.7 s",
+    "lcp_after": "0.7 s",
+    "cls_before": "0",
+    "cls_after": "0.052",
+    "unusedJS_before": "Est savings of 103 KiB",
+    "unusedJS_after": "Est savings of 103 KiB"
+  },
+  {
+    "file": "services.mobile.json",
+    "perf_before": 93,
+    "perf_after": 93,
+    "lcp_before": "3.2 s",
+    "lcp_after": "3.2 s",
+    "cls_before": "0",
+    "cls_after": "0",
+    "unusedJS_before": "Est savings of 103 KiB",
+    "unusedJS_after": "Est savings of 103 KiB"
+  }
+]
