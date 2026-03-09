@@ -759,6 +759,31 @@ export const academyContent = {
       answer:
         "Aucun problème, vous découvrirez toutes les étapes nécessaires pour mettre en place vos propres campagnes de prospection commerciale ou décider d'externaliser votre développement commercial.",
     },
+    {
+      question: "Combien de temps faut-il pour obtenir des résultats ?",
+      answer:
+        "Les premiers rendez-vous qualifiés arrivent généralement entre 1 et 5 semaines après le lancement de la campagne, selon le marché cible et les canaux utilisés. L'Academy vous apprend à optimiser chaque étape pour accélérer ce délai.",
+    },
+    {
+      question: "L'Academy est-elle adaptée au marché francophone et DACH ?",
+      answer:
+        "Oui, nos stratégies sont testées et optimisées pour les marchés francophones (Suisse, Belgique, France) et germanophones (DACH). Nous partageons des études de cas réelles dans ces régions, y compris les bonnes pratiques linguistiques et culturelles.",
+    },
+    {
+      question: "Puis-je combiner l'Academy avec les services de devlo ?",
+      answer:
+        "Absolument. Beaucoup de nos clients utilisent l'Academy pour former leur équipe interne, puis font appel à nos services pour externaliser l'exécution. C'est la combinaison idéale pour scaler rapidement votre prospection.",
+    },
+    {
+      question: "Quelle est la différence entre faire soi-même et externaliser avec devlo ?",
+      answer:
+        "L'Academy vous donne les compétences pour lancer vos propres campagnes. Externaliser avec devlo vous fait gagner du temps : notre équipe gère la génération de leads, la qualification et la prise de rendez-vous, pendant que vous vous concentrez sur la vente.",
+    },
+    {
+      question: "Quels taux de conversion puis-je espérer ?",
+      answer:
+        "Nos clients obtiennent en moyenne 50-70% de taux d'ouverture email, 5-20% de taux de réponse, et 5-10% de taux d'intérêt (prospects qui acceptent un rendez-vous). Ces métriques varient selon le secteur et la qualité du ciblage.",
+    },
   ] as FaqItem[],
   finalCta: {
     h2: "Découvrez étape par étape notre méthodologie ultra complète",
@@ -834,6 +859,39 @@ export const consultationContent = {
 
   postForm:
     "En soumettant ce formulaire, notre équipe vous contacte sous 24h avec votre stratégie outbound personnalisée.",
+
+  faqs: [
+    {
+      question: "Est-ce vraiment gratuit ?",
+      answer:
+        "Oui, la consultation est 100% gratuite et sans engagement. Vous recevez un plan de prospection personnalisé basé sur votre ICP, sans aucune obligation de travailler avec nous.",
+    },
+    {
+      question: "Combien de temps dure la consultation ?",
+      answer:
+        "La consultation dure environ 30 minutes. Avant l'appel, notre équipe prépare déjà votre stratégie outbound. Pendant l'appel, nous affinons ensemble les priorités et vous repartez avec un plan d'action concret.",
+    },
+    {
+      question: "Quels résultats puis-je attendre ?",
+      answer:
+        "Nos clients obtiennent en moyenne 50-70% de taux d'ouverture, 5-20% de taux de réponse et entre 10 et 120 rendez-vous qualifiés par campagne. Les premiers rendez-vous arrivent généralement en 1 à 5 semaines.",
+    },
+    {
+      question: "Est-ce adapté à mon secteur ?",
+      answer:
+        "Nous travaillons avec des entreprises B2B de tous secteurs : SaaS, cybersécurité, fintech, formation, immobilier, industrie, services professionnels. Plus de 1000 campagnes déployées depuis 2020.",
+    },
+    {
+      question: "Que se passe-t-il après la consultation ?",
+      answer:
+        "Vous recevez votre stratégie outbound complète (résumé ICP, plan multicanal, accroches et CTA). Vous pouvez l'exécuter vous-même ou nous confier l'implémentation. Aucune pression commerciale.",
+    },
+    {
+      question: "Travaillez-vous avec des entreprises hors de Suisse ?",
+      answer:
+        "Oui, nous servons des clients en Suisse, Belgique, France, Allemagne, Luxembourg, aux États-Unis et au Canada. Nos campagnes sont déployées en français, anglais, allemand et néerlandais.",
+    },
+  ] as FaqItem[],
 };
 
 export const conditionsSeo = {

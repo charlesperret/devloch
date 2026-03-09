@@ -997,6 +997,16 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
         answer:
           "En général 1 à 2 semaines pour le setup, puis 2 à 3 semaines pour les premières séquences opérationnelles et les premiers retours terrain.",
       },
+      {
+        question: "Quelle est la différence entre intent data et lead scoring classique ?",
+        answer:
+          "Le lead scoring classique se base sur des critères statiques (taille d'entreprise, secteur). L'intent data détecte des comportements actifs : recherches en ligne, visites sur des sites de comparaison, recrutement de profils spécifiques. C'est un signal de timing, pas juste de fit.",
+      },
+      {
+        question: "L'intent data fonctionne-t-il pour les petites entreprises cibles ?",
+        answer:
+          "Les signaux sont plus rares pour les TPE. L'intent data est particulièrement efficace pour cibler des entreprises de 50+ employés dans des secteurs où les décisions d'achat laissent des traces digitales.",
+      },
     ],
     ctaTitle: "Activez vos signaux d'achat en pipeline réel",
     ctaSubtitle: "Définissez vos triggers prioritaires et lancez une stratégie signal-based structurée.",
@@ -1606,6 +1616,16 @@ export const SERVICE_PAGE_DATA: Record<ServiceSlug, ServicePageData> = {
         question: "Proposez-vous un audit HubSpot existant ?",
         answer:
           "Oui, avec diagnostic des données, pipeline, workflows et intégrations, puis plan d'actions priorisé.",
+      },
+      {
+        question: "Quels sont les protocoles d'authentification email essentiels ?",
+        answer:
+          "SPF, DKIM et DMARC sont indispensables. Nous configurons les trois pour chaque domaine d'envoi, plus les DNS inversés et les enregistrements MX. Sans ça, vos emails finissent en spam.",
+      },
+      {
+        question: "Peut-on garder Salesforce au lieu de HubSpot ?",
+        answer:
+          "Absolument. Nous travaillons avec HubSpot, Salesforce, Pipedrive et d'autres CRM. L'important est que le CRM soit correctement configuré pour suivre le pipeline outbound et synchroniser les données avec vos outils de prospection.",
       },
     ],
     ctaTitle: "Fiabilisez votre machine commerciale",
