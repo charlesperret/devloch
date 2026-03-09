@@ -5,7 +5,14 @@ export type BlogArticle = {
   date: string;
   category: string;
   relatedServiceSlug: string;
+  author?: string;
+  authorUrl?: string;
   body: string[];
+};
+
+const FOUNDER = {
+  author: "Charles Perret",
+  authorUrl: "https://www.linkedin.com/in/charlesperret-devlo/",
 };
 
 export const articles: BlogArticle[] = [
@@ -17,6 +24,7 @@ export const articles: BlogArticle[] = [
     date: "2026-03-01",
     category: "Cold Email",
     relatedServiceSlug: "cold-email",
+    ...FOUNDER,
     body: [
       "Le cold email reste en 2026 l'un des canaux les plus rentables pour la prospection B2B. Avec un coût par lead 5 à 10 fois inférieur au paid advertising, il offre un ROI difficilement égalable — à condition de maîtriser les fondamentaux.",
 
@@ -47,6 +55,7 @@ export const articles: BlogArticle[] = [
     date: "2026-03-05",
     category: "Stratégie",
     relatedServiceSlug: "outbound-multicanal",
+    ...FOUNDER,
     body: [
       "Externaliser sa prospection commerciale est une décision stratégique majeure. Bien exécutée, elle accélère votre pipeline de 3 à 6 mois. Mal gérée, elle brûle du budget sans résultat. Voici comment prendre la bonne décision.",
 
@@ -77,6 +86,7 @@ export const articles: BlogArticle[] = [
     date: "2026-03-08",
     category: "Intent Data",
     relatedServiceSlug: "intent-data",
+    ...FOUNDER,
     body: [
       "En prospection B2B, le timing est aussi important que le ciblage. L'intent data — les signaux d'intention d'achat — permet d'identifier les entreprises qui recherchent activement des solutions comme la vôtre. Résultat : des taux de conversion 2 à 5 fois supérieurs.",
 
@@ -104,6 +114,7 @@ export const articles: BlogArticle[] = [
     date: "2026-03-09",
     category: "Stratégie",
     relatedServiceSlug: "outbound-multicanal",
+    ...FOUNDER,
     body: [
       "La Suisse est l'un des marchés B2B les plus exigeants — et les plus rentables — d'Europe. Avec trois régions linguistiques, une culture d'affaires distincte et des décideurs difficiles à joindre, la prospection y demande une approche sur mesure.",
 
@@ -131,6 +142,7 @@ export const articles: BlogArticle[] = [
     date: "2026-03-09",
     category: "LinkedIn",
     relatedServiceSlug: "linkedin-outreach",
+    ...FOUNDER,
     body: [
       "LinkedIn est devenu le canal outbound B2B le plus puissant de 2026 — à condition de l'utiliser correctement. Avec plus de 900 millions de membres et des décideurs directement accessibles, c'est une opportunité que peu d'entreprises exploitent vraiment.",
 
@@ -158,6 +170,7 @@ export const articles: BlogArticle[] = [
     date: "2026-03-09",
     category: "Cold Calling",
     relatedServiceSlug: "cold-calling",
+    ...FOUNDER,
     body: [
       "\"Le cold calling est mort.\" Cette phrase circule depuis 2015. Et pourtant, en 2026, le téléphone reste l'un des canaux B2B avec les meilleurs taux de conversion — à condition de l'utiliser correctement.",
 
@@ -175,6 +188,71 @@ export const articles: BlogArticle[] = [
 
       "## Conclusion",
       "Le cold calling B2B en 2026 n'est pas mort — il est en voie de renaissance pour ceux qui savent l'utiliser. Avec les bons scripts, la bonne cible et la bonne cadence, c'est souvent le canal qui débloque les deals que l'email ne peut pas obtenir.",
+    ],
+  },
+  {
+    slug: "generation-leads-b2b-methode-complete",
+    title: "Génération de leads B2B : méthode complète 2026",
+    description:
+      "Comment construire un pipeline de leads B2B qualifiés de manière systématique ? ICP, TAM, enrichissement, qualification — la méthode devlo.",
+    date: "2026-03-09",
+    category: "Lead Generation",
+    relatedServiceSlug: "generation-leads",
+    ...FOUNDER,
+    body: [
+      "La génération de leads B2B est la base de toute stratégie commerciale. Pourtant, la majorité des entreprises la pratiquent de manière désorganisée — avec des listes de mauvaise qualité, un ICP flou et aucune méthode de qualification. Voici la méthode systématique que nous appliquons chez devlo.",
+
+      "## Étape 1 : Définir l'ICP avec précision",
+      "L'Ideal Customer Profile (ICP) n'est pas un persona marketing. C'est la définition précise des entreprises et des décideurs qui ont le plus de probabilité d'acheter votre produit ou service. Variables clés : taille d'entreprise (nombre d'employés, chiffre d'affaires), secteur d'activité (codes NAF/NACE), localisation géographique, stack technologique, signaux comportementaux (levées de fonds, recrutements, etc.).",
+
+      "## Étape 2 : Cartographier le TAM",
+      "Le Total Addressable Market (TAM) est le nombre total d'entreprises correspondant à votre ICP. Calculez-le via LinkedIn Sales Navigator, Apollo ou des bases de données sectorielles. Un TAM bien cartographié vous donne une vision claire de votre potentiel de croissance et permet de prioriser vos efforts.",
+
+      "## Étape 3 : Sourcer et enrichir les contacts",
+      "Pour chaque compte cible, identifiez les bons décideurs (titre, ancienneté, responsabilités). Sourcez leurs coordonnées via Apollo, Hunter, Dropcontact ou Clay. Enrichissez avec des données contextuelles : actualités récentes, articles publiés, activité LinkedIn. Une liste enrichie génère 2 à 3 fois plus de réponses qu'une liste brute.",
+
+      "## Étape 4 : Qualifier avant de prospecter",
+      "Tous les leads ne méritent pas la même attention. Créez un scoring basé sur l'ICP fit (0-10) et les signaux d'intent (0-10). Les leads avec un score > 15/20 sont prioritaires. Les autres sont mis en \"nurturing\" ou exclus. Cette qualification manuelle est chronophage mais elle est la clé d'un pipeline de qualité.",
+
+      "## Étape 5 : Maintenir la liste à jour",
+      "Une liste de leads se dégrade rapidement — 30 % des données sont obsolètes au bout d'un an. Mettez en place une hygène de données : vérification des emails (NeverBounce, ZeroBounce), mise à jour des postes (LinkedIn), suppression des entreprises qui ne correspondent plus à l'ICP.",
+
+      "## Résultats avec la méthode devlo",
+      "Sur nos missions de lead generation, nous construisons en moyenne 300 à 500 contacts qualifiés par semaine pour nos clients. Taux de délivrabilité > 95 %, taux de qualification ICP > 85 %. Ces listes alimentent directement les campagnes outbound avec des résultats 2 à 3 fois supérieurs aux listes achetées.",
+
+      "## Conclusion",
+      "La génération de leads B2B de qualité est un processus rigoureux qui demande des outils, de l'expertise et du temps. Chez devlo, c'est une prestation à part entière, distincte de la prospection. Une bonne liste est le fondement de toute campagne performante.",
+    ],
+  },
+  {
+    slug: "prospection-multicanale-b2b-cold-email-linkedin-calling",
+    title: "Prospection multicanale B2B : combiner cold email, LinkedIn et calling",
+    description:
+      "Comment coordonner cold email, LinkedIn outreach et cold calling pour maximiser les rendez-vous B2B ? Séquences, timing et résultats sur 14 cas clients.",
+    date: "2026-03-09",
+    category: "Outbound",
+    relatedServiceSlug: "outbound-multicanal",
+    ...FOUNDER,
+    body: [
+      "La prospection multicanale est la stratégie outbound la plus efficace en 2026. Plutôt que de parier sur un seul canal, elle combine cold email, LinkedIn outreach et cold calling dans une séquence coordonnée. Résultat : des taux de conversion 2 à 3 fois supérieurs au monocanal.",
+
+      "## Pourquoi le multicanal surperforme",
+      "Chaque canal a ses forces et ses limites. Le cold email est scalable et asynchrone. LinkedIn crée une présence dans le réseau du décideur. Le calling permet une qualification en temps réel. Combinés, ils créent plusieurs points de contact avec le même décideur — augmentant la mémorabilité et la probabilité de réponse.",
+
+      "## La séquence multicanale devlo",
+      "Notre modèle éprouvé sur 1000+ campagnes : Jour 1 — cold email personnalisé. Jour 3 — demande de connexion LinkedIn avec note. Jour 7 — relance email avec étude de cas. Jour 10 — message LinkedIn si connexion acceptée. Jour 14 — appel téléphonique (cold call). Jour 17 — email de breakup. Cette séquence génère en moyenne 3 à 4 points de contact avec le décideur sur 2-3 semaines.",
+
+      "## L'importance de la coordination",
+      "Le multicanal ne signifie pas \"envoyer la même chose partout\". Chaque canal doit avoir un message adapté et apporter une valeur différente. L'email éduque, LinkedIn crée la relation, le calling qualifie. La coordination est clé : si un prospect répond à l'email, il doit être retiré automatiquement des séquences LinkedIn et calling.",
+
+      "## Résultats sur nos 14 cas clients",
+      "Voici quelques exemples concrets : Monizze (Belgique) — 120 rendez-vous qualifiés en ciblant 7000 décideurs RH. Logiciel comptable — 80 rendez-vous et 200K€ de contrats signés. Propreté urbaine — 71 rendez-vous avec des décideurs de villes européennes. Biocarburants — 52 rendez-vous avec des industriels en 3 mois.",
+
+      "## Les outils nécessaires",
+      "Pour une campagne multicanale efficace : un outil de cold email (Lemlist, Instantly, Smartlead), LinkedIn Sales Navigator + un outil d'automatisation (Expandi, Waalaxy), un CRM pour centraliser les données (HubSpot, Pipedrive), Clay pour l'enrichissement et la personnalisation. L'infrastructure est aussi importante que le messaging.",
+
+      "## Conclusion",
+      "La prospection multicanale B2B n'est pas de la prospection \"agressive\" — c'est une approche professionnelle et coordonnée qui respecte le temps du décideur en lui proposant de la valeur à chaque point de contact. C'est au cœur de notre méthodologie chez devlo depuis 2020.",
     ],
   },
 ];
