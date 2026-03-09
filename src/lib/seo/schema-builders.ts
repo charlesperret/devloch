@@ -22,6 +22,8 @@ type ArticleSchemaInput = {
   imagePath?: string;
   datePublished?: string;
   dateModified?: string;
+  author?: string;
+  authorUrl?: string;
 };
 
 type ReviewSchemaInput = {
@@ -90,11 +92,17 @@ export function buildArticleSchema(input: ArticleSchemaInput) {
     }),
     datePublished: input.datePublished ?? "2024-01-01",
     dateModified: input.dateModified ?? new Date().toISOString().split("T")[0],
-    author: {
-      "@type": "Organization",
-      name: "devlo",
-      url: siteConfig.url,
-    },
+    author: input.author
+      ? {
+          "@type": "Person",
+          name: input.author,
+          ...(input.authorUrl && { url: input.authorUrl }),
+        }
+      : {
+          "@type": "Organization",
+          name: "devlo",
+          url: siteConfig.url,
+        },
     publisher: {
       "@type": "Organization",
       name: "devlo",

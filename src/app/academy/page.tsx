@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { AcademyMasterPage } from "@/components/pages/academy-master-page";
 import { academyContent, academySeo } from "@/content/masterfile.fr";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { buildBreadcrumbSchema, buildFaqPageSchema } from "@/lib/seo/schema-builders";
+import { buildBreadcrumbSchema, buildFaqPageSchema, buildVideoObjectSchema } from "@/lib/seo/schema-builders";
 
 const academyTitle = academySeo.title.replace(/\s*\|\s*devlo$/i, "");
 
@@ -27,6 +27,24 @@ export default function Page() {
         schema={[
           buildBreadcrumbSchema(breadcrumbItems),
           buildFaqPageSchema(academyContent.faqs),
+          buildVideoObjectSchema({
+            name: "Formation prospection B2B — Outbound Academy devlo",
+            description:
+              "Formation complète prospection B2B : cold email, LinkedIn outreach, cold calling. 50 tutoriels vidéo, méthodologie complète, accès à vie.",
+            thumbnailUrl: "/images/devlo_OG_Banner.webp",
+            uploadDate: "2024-01-01",
+            embedUrl: "https://fast.wistia.net/embed/iframe/gj1ltuo3tm",
+            duration: "PT3M",
+          }),
+          buildVideoObjectSchema({
+            name: "Planifier des démos qualifiées — Outbound Academy devlo",
+            description:
+              "Comment planifier plus de démos qualifiées et rendez-vous avec des leads B2B qualifiés. Méthodes et techniques de prospection multicanale.",
+            thumbnailUrl: "/images/devlo_OG_Banner.webp",
+            uploadDate: "2024-01-01",
+            embedUrl: "https://fast.wistia.net/embed/iframe/7inn49mdy6",
+            duration: "PT3M",
+          }),
         ]}
       />
       <Breadcrumb items={breadcrumbItems} />

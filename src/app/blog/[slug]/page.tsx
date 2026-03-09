@@ -43,6 +43,8 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
             path: `/blog/${article.slug}`,
             datePublished: article.date,
             dateModified: article.date,
+            author: article.author,
+            authorUrl: article.authorUrl,
           }),
         ]}
       />
