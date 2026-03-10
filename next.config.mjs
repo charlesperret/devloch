@@ -333,12 +333,43 @@ const nextConfig = {
       },
       {
         source: "/en/casestudy/monizze-120-appointments-belgium",
-        destination: "/etudes-de-cas/monizze-120-rendez-vous",
+        destination: "/en/casestudy/monizze-120-appointments",
         permanent: true,
       },
       {
         source: "/en/casestudy/monizze-120-appointments-belgium/",
-        destination: "/etudes-de-cas/monizze-120-rendez-vous",
+        destination: "/en/casestudy/monizze-120-appointments",
+        permanent: true,
+      },
+      // Legacy untranslated Monizze/IDDI URLs → correct locale paths
+      {
+        source: "/en/etudes-de-cas/monizze-120-rendez-vous",
+        destination: "/en/casestudy/monizze-120-appointments",
+        permanent: true,
+      },
+      {
+        source: "/de/etudes-de-cas/monizze-120-rendez-vous",
+        destination: "/de/fallstudien/monizze-120-termine",
+        permanent: true,
+      },
+      {
+        source: "/nl/etudes-de-cas/monizze-120-rendez-vous",
+        destination: "/nl/casestudy/monizze-120-appointments",
+        permanent: true,
+      },
+      {
+        source: "/en/etudes-de-cas/iddi-generation-leads-biotech-pharma",
+        destination: "/en/casestudy/iddi-lead-generation-biotech-pharma",
+        permanent: true,
+      },
+      {
+        source: "/de/etudes-de-cas/iddi-generation-leads-biotech-pharma",
+        destination: "/de/fallstudien/iddi-leadgenerierung-biotech-pharma",
+        permanent: true,
+      },
+      {
+        source: "/nl/etudes-de-cas/iddi-generation-leads-biotech-pharma",
+        destination: "/nl/casestudy/iddi-lead-generation-biotech-pharma",
         permanent: true,
       },
       // EN casestudy fallback → listing page
@@ -465,12 +496,12 @@ const nextConfig = {
       },
       {
         source: "/de/fallstudien/monizze-120-termine-belgien",
-        destination: "/etudes-de-cas/monizze-120-rendez-vous",
+        destination: "/de/fallstudien/monizze-120-termine",
         permanent: true,
       },
       {
         source: "/de/fallstudien/monizze-120-termine-belgien/",
-        destination: "/etudes-de-cas/monizze-120-rendez-vous",
+        destination: "/de/fallstudien/monizze-120-termine",
         permanent: true,
       },
       // DE fallstudien fallback → listing page
