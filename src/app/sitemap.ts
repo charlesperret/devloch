@@ -44,9 +44,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const isService = path.includes("/services/");
       const isCaseStudy = path.includes("/etudes-de-cas/") || path.includes("/casestudy/") || path.includes("/fallstudien/");
       const isBlog = path.includes("/blog");
-      const isGeo = path.includes("/prospection-commerciale-");
-      const isAgence = path.endsWith("/agence");
-      const isAlternative = path.includes("/alternative-");
+      const isGeo = path.includes("/prospection-commerciale-")
+        || path.includes("/b2b-prospecting-")
+        || path.includes("/b2b-akquise-")
+        || path.includes("/b2b-prospectie-");
+      const isAgence = path.endsWith("/agence")
+        || path.endsWith("/about")
+        || path.endsWith("/uber-uns")
+        || path.endsWith("/over-ons");
+      const isAlternative = path.includes("/alternative-") || path.includes("/alternatief-");
 
       const lastModifiedDate = isHome || isService || isBlog || isGeo || isAgence || isAlternative
         ? new Date("2026-03-09")
