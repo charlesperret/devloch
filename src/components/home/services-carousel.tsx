@@ -44,32 +44,31 @@ export function ServicesCarousel({ cards, locale }: ServicesCarouselProps) {
   const currentLocale = locale ?? splitLocalePath(pathname).locale;
   const copy = copyByLocale[currentLocale];
 
-  const [page, setPage] = useState(0);
-  const totalPages = Math.ceil(cards.length / VISIBLE);
-  const prev = () => setPage((p) => (p - 1 + totalPages) % totalPages);
-  const next = () => setPage((p) => (p + 1) % totalPages);
+  const [index, setIndex] = useState(0);
 
-  const start = page * VISIBLE;
-  const visible = cards.slice(start, start + VISIBLE);
+  const prev = () => setIndex((i) => (i - VISIBLE + cards.length) % cards.length);
+  const next = () => setIndex((i) => (i + VISIBLE) % cards.length);
+
+  const visible = Array.from({ length: Math.min(VISIBLE, cards.length) }, (_, offset) =>
+    cards[(index + offset) % cards.length],
+  );
 
   return (
     <div className="mt-10">
       <div className="relative">
-        {totalPages > 1 && (
-          <button
-            type="button"
-            onClick={prev}
-            aria-label={copy.prev}
-            className="absolute left-0 top-1/2 z-10 hidden -translate-x-5 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white p-2 shadow-soft transition hover:border-devlo-600 hover:text-devlo-600 lg:flex"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-        )}
+        <button
+          type="button"
+          onClick={prev}
+          aria-label={copy.prev}
+          className="absolute left-0 top-1/2 z-10 hidden -translate-x-5 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white p-2 shadow-soft transition hover:border-devlo-600 hover:text-devlo-600 lg:flex"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          {visible.map((card) => (
+          {visible.map((card, i) => (
             <Link
-              key={card.href}
+              key={`${card.href}-${i}`}
               href={resolvePathForLocale(card.href, currentLocale).path}
               className="group rounded-2xl border border-neutral-200 bg-white p-5 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-panel"
             >
@@ -84,40 +83,35 @@ export function ServicesCarousel({ cards, locale }: ServicesCarouselProps) {
           ))}
         </div>
 
-        {totalPages > 1 && (
-          <button
-            type="button"
-            onClick={next}
-            aria-label={copy.next}
-            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-5 items-center justify-center rounded-full border border-neutral-200 bg-white p-2 shadow-soft transition hover:border-devlo-600 hover:text-devlo-600 lg:flex"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        )}
+        <button
+          type="button"
+          onClick={next}
+          aria-label={copy.next}
+          className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-5 items-center justify-center rounded-full border border-neutral-200 bg-white p-2 shadow-soft transition hover:border-devlo-600 hover:text-devlo-600 lg:flex"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
       </div>
 
       {/* Mobile pagination */}
-      {totalPages > 1 && (
-        <div className="mt-6 flex items-center justify-center gap-4 lg:hidden">
-          <button
-            type="button"
-            onClick={prev}
-            aria-label={copy.prev}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white shadow-soft"
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <span className="text-xs text-neutral-500">{page + 1}/{totalPages}</span>
-          <button
-            type="button"
-            onClick={next}
-            aria-label={copy.next}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white shadow-soft"
-          >
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
-      )}
+      <div className="mt-6 flex items-center justify-center gap-4 lg:hidden">
+        <button
+          type="button"
+          onClick={prev}
+          aria-label={copy.prev}
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white shadow-soft"
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </button>
+        <button
+          type="button"
+          onClick={next}
+          aria-label={copy.next}
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white shadow-soft"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </button>
+      </div>
 
       {/* All services link */}
       <div className="mt-8 text-center">

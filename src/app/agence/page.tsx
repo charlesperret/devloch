@@ -83,11 +83,17 @@ export default function AgencePage() {
             >
               Voir les résultats
             </Link>
+            <Link
+              href="/services"
+              className="inline-flex h-12 items-center rounded-lg border border-white/30 px-6 text-sm font-semibold uppercase tracking-[0.1em] text-white transition hover:border-white/60"
+            >
+              Voir les services
+            </Link>
           </div>
         </div>
       </section>
 
-      <WaveDivider variant="layered-bottom" />
+      <WaveDivider variant="layered-bottom" fromBg="#0a3a54" toBg="#FFFFFF" />
 
       {/* Stats */}
       <section className="bg-white py-14">
@@ -103,7 +109,7 @@ export default function AgencePage() {
         </div>
       </section>
 
-      <WaveDivider tone="light" />
+      <WaveDivider fromBg="#FFFFFF" toBg="#f7f8fc" />
 
       {/* Story */}
       <section className="bg-[#f7f8fc] py-14 md:py-18">
@@ -165,7 +171,7 @@ export default function AgencePage() {
         </div>
       </section>
 
-      <WaveDivider tone="light" />
+      <WaveDivider fromBg="#f7f8fc" toBg="#FFFFFF" />
 
       {/* Markets */}
       <section className="bg-white py-14 md:py-18">
@@ -191,7 +197,7 @@ export default function AgencePage() {
         </div>
       </section>
 
-      <WaveDivider tone="light" />
+      <WaveDivider fromBg="#FFFFFF" toBg="#f7f8fc" />
 
       {/* Values */}
       <section className="bg-[#f7f8fc] py-14 md:py-18">
@@ -217,8 +223,6 @@ export default function AgencePage() {
       </section>
 
       <FAQSection title="Questions sur l'agence" items={agencyContent.faq} />
-
-      <WaveDivider variant="layered-top" />
 
       <CTASection
         title="Travaillons ensemble"

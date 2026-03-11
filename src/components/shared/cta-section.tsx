@@ -7,22 +7,26 @@ type CTASectionProps = {
   subtitle: string;
 };
 
-const copyByLocale: Record<SupportedLocale, { ctaConsultation: string; ctaCaseStudies: string }> = {
+const copyByLocale: Record<SupportedLocale, { ctaConsultation: string; ctaCaseStudies: string; ctaServices: string }> = {
   fr: {
     ctaConsultation: "Réserver une consultation gratuite",
     ctaCaseStudies: "Voir les études de cas",
+    ctaServices: "Voir les services",
   },
   en: {
     ctaConsultation: "Book a free consultation",
     ctaCaseStudies: "View case studies",
+    ctaServices: "View services",
   },
   de: {
     ctaConsultation: "Kostenlose Beratung buchen",
     ctaCaseStudies: "Fallstudien ansehen",
+    ctaServices: "Leistungen ansehen",
   },
   nl: {
     ctaConsultation: "Gratis consultatie boeken",
     ctaCaseStudies: "Praktijkvoorbeelden bekijken",
+    ctaServices: "Diensten bekijken",
   },
 };
 
@@ -45,6 +49,12 @@ export function CTASection({ locale = "fr", title, subtitle }: CTASectionProps) 
             className="rounded-lg border border-neutral-300 px-6 py-3 text-sm font-semibold text-devlo-900 transition hover:border-devlo-700/40 hover:text-devlo-700"
           >
             {copy.ctaCaseStudies}
+          </Link>
+          <Link
+            href={resolvePathForLocale("/services", locale).path}
+            className="rounded-lg border border-neutral-300 px-6 py-3 text-sm font-semibold text-devlo-900 transition hover:border-devlo-700/40 hover:text-devlo-700"
+          >
+            {copy.ctaServices}
           </Link>
         </div>
       </div>

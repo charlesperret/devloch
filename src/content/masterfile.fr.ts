@@ -86,7 +86,7 @@ export const homeContent = {
       line: "Plus de 30 prospects intéressés générés pour leur solution",
       href: "/etudes-de-cas/immobilier-30-prospects",
     },
-    microProof: "⭐ 4.9/5 satisfaction client · 7% taux d'intérêt moyen · +1'000 campagnes",
+    microProof: "⭐ 5/5 satisfaction client sur Lemlist Experts · 7% taux d'intérêt moyen · +1'000 campagnes",
   },
   rendezVousTitle: "Rendez-vous commerciaux obtenus avec",
   rendezVousLogos: [

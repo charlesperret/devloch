@@ -360,7 +360,7 @@ export function HomePage({ content = homeContent, studies = caseStudiesCards, lo
         <WrittenTestimonialsCarousel testimonials={writtenTestimonials} />
       </SectionWrapper>
 
-      <WaveDivider variant="layered-top" />
+      <WaveDivider variant="layered-top" fromBg="#FFFFFF" toBg="#0F2B3C" />
       <SectionWrapper background="dark" className="py-[80px] text-white md:py-[120px]">
         <FadeInOnScroll>
           <h2 className="text-center text-3xl font-bold leading-[1.2] md:text-4xl">{content.ctaMid.title}</h2>
@@ -382,7 +382,7 @@ export function HomePage({ content = homeContent, studies = caseStudiesCards, lo
           </div>
         </FadeInOnScroll>
       </SectionWrapper>
-      <WaveDivider variant="layered-bottom" />
+      <WaveDivider variant="layered-bottom" fromBg="#0F2B3C" toBg="#FFFFFF" />
 
       <SectionWrapper background="white" className="py-[80px] md:py-[120px]">
         <FadeInOnScroll>

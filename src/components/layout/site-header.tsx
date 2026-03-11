@@ -334,7 +334,7 @@ export function SiteHeader() {
                           <div className="mt-2 border-t border-white/20 pt-2">
                             <Link
                               href={toCurrentLocalePath("/academy")}
-                              className="flex rounded-xl border border-white/20 bg-white/10 px-3 py-2 transition hover:border-white/40 hover:bg-white/15"
+                              className="flex flex-col rounded-xl border border-white/20 bg-white/10 px-3 py-2 transition hover:border-white/40 hover:bg-white/15"
                             >
                               <p className="text-sm font-semibold text-white">{navCopy.academy}</p>
                               <p className="mt-0.5 text-xs text-white/75">{navCopy.academySubtitle}</p>
