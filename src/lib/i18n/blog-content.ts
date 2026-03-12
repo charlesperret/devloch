@@ -1,4 +1,5 @@
 import type { SupportedLocale } from "@/lib/i18n/slug-map";
+import { normalizeLocalizedCopyDeep } from "@/lib/i18n/text-normalization";
 import blogContentJson from "@/lib/i18n/blog-content.json";
 
 type BlogArticleContent = {
@@ -32,20 +33,25 @@ export function getLocalizedBlogArticle(frSlug: string, locale: SupportedLocale)
   const articles = (blogContentJson as { articles: Record<string, Record<string, BlogArticleContent>> }).articles;
   const entry = articles[frSlug];
   if (!entry) return null;
-  return entry[key] ?? entry.fr;
+  return normalizeLocalizedCopyDeep(entry[key] ?? entry.fr, key as SupportedLocale);
 }
 
 export function getLocalizedBlogHub(locale: SupportedLocale): BlogHubCopy {
   const key = normalizeLocale(locale);
   const hub = (blogContentJson as { hubCopy: Record<string, BlogHubCopy> }).hubCopy;
-  return hub[key] ?? hub.fr;
+  return normalizeLocalizedCopyDeep(hub[key] ?? hub.fr, key as SupportedLocale);
 }
 
 export function getAllLocalizedBlogArticles(locale: SupportedLocale): (BlogArticleContent & { frSlug: string })[] {
   const key = normalizeLocale(locale);
   const articles = (blogContentJson as { articles: Record<string, Record<string, BlogArticleContent>> }).articles;
-  return Object.entries(articles).map(([frSlug, locales]) => ({
-    frSlug,
-    ...(locales[key] ?? locales.fr),
-  }));
+  return Object.entries(articles).map(([frSlug, locales]) =>
+    normalizeLocalizedCopyDeep(
+      {
+        frSlug,
+        ...(locales[key] ?? locales.fr),
+      },
+      key as SupportedLocale,
+    ),
+  );
 }

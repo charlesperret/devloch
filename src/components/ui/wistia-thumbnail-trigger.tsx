@@ -11,22 +11,44 @@ type WistiaThumbnailTriggerProps = {
   title: string;
   previewSrc: string;
   previewAlt: string;
+  locale?: "fr" | "en" | "de" | "nl";
   priority?: boolean;
   sizes?: string;
   className?: string;
 };
+
+const copyByLocale = {
+  fr: {
+    open: "Lire la vidéo",
+    close: "Fermer la vidéo",
+  },
+  en: {
+    open: "Play video",
+    close: "Close video",
+  },
+  de: {
+    open: "Video abspielen",
+    close: "Video schließen",
+  },
+  nl: {
+    open: "Video afspelen",
+    close: "Video sluiten",
+  },
+} as const;
 
 export function WistiaThumbnailTrigger({
   videoId,
   title,
   previewSrc,
   previewAlt,
+  locale = "fr",
   priority = false,
   sizes = "(min-width: 768px) 45vw, 92vw",
   className,
 }: WistiaThumbnailTriggerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [showFrame, setShowFrame] = useState(false);
+  const copy = copyByLocale[locale];
 
   const iframeSrc = useMemo(
     () => `https://fast.wistia.net/embed/iframe/${videoId}?autoplay=1&seo=true&videoFoam=true`,
@@ -47,7 +69,7 @@ export function WistiaThumbnailTrigger({
     <div className={className}>
       <button
         type="button"
-        aria-label={`Lire la vidéo : ${title}`}
+        aria-label={`${copy.open}: ${title}`}
         onClick={handleOpen}
         className="group relative block w-full text-left"
       >
@@ -70,7 +92,7 @@ export function WistiaThumbnailTrigger({
         </div>
       </button>
 
-      <VideoModal open={isOpen} title={title} onClose={handleClose}>
+      <VideoModal open={isOpen} title={title} closeLabel={copy.close} onClose={handleClose}>
         {showFrame ? (
           <iframe
             src={iframeSrc}

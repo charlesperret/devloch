@@ -27,7 +27,7 @@ import { WaveDivider } from "@/components/ui/wave-divider";
 import { WistiaThumbnailTrigger } from "@/components/ui/wistia-thumbnail-trigger";
 import { caseStudiesCards, homeContent } from "@/content/masterfile.fr";
 import type { CaseStudyCard as MasterCaseStudyCard } from "@/content/masterfile.fr";
-import { SERVICE_HUB_CARDS } from "@/content/services";
+import { SERVICE_HUB_CARDS, type ServiceHubCard } from "@/content/services";
 
 const noRecruitIcons = [Target, PiggyBank, Rocket] as const;
 const whyIcons = [
@@ -86,6 +86,7 @@ function ClientsRailRow({ names, reverse = false }: { names: string[]; reverse?:
 type HomeContentProps = {
   content?: typeof homeContent;
   studies?: MasterCaseStudyCard[];
+  serviceCards?: ServiceHubCard[];
   locale?: "fr" | "en" | "de" | "nl";
 };
 
@@ -107,7 +108,12 @@ function normalizeMetricSeparator(value: string): string {
   return value.replace(/\s-\s\+/g, " · +").replace(/\s-\s/g, " · ");
 }
 
-export function HomePage({ content = homeContent, studies = caseStudiesCards, locale = "fr" }: HomeContentProps) {
+export function HomePage({
+  content = homeContent,
+  studies = caseStudiesCards,
+  serviceCards = SERVICE_HUB_CARDS,
+  locale = "fr",
+}: HomeContentProps) {
   const noRecruitCards = content.noRecruitCards;
   const methodSteps = content.methodSteps;
   const whyCards = content.whyCards;
@@ -169,6 +175,7 @@ export function HomePage({ content = homeContent, studies = caseStudiesCards, lo
                 title={content.hero.h1}
                 previewSrc={content.hero.posterSrc}
                 previewAlt={content.hero.posterAlt}
+                locale={locale}
                 priority
                 sizes="(min-width: 1024px) 46vw, (min-width: 768px) 88vw, 100vw"
                 className="bg-white"
@@ -217,6 +224,7 @@ export function HomePage({ content = homeContent, studies = caseStudiesCards, lo
                   title={item.title}
                   previewSrc={item.posterSrc}
                   previewAlt={item.posterAlt}
+                  locale={locale}
                   sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
                   className="bg-white"
                 />
@@ -296,7 +304,7 @@ export function HomePage({ content = homeContent, studies = caseStudiesCards, lo
         <FadeInOnScroll>
           <h2 className="text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl">{servicesTitleByLocale[locale]}</h2>
         </FadeInOnScroll>
-        <DeferredServicesCarousel cards={SERVICE_HUB_CARDS} locale={locale} />
+        <DeferredServicesCarousel cards={serviceCards} locale={locale} />
       </SectionWrapper>
 
       <SectionWrapper background="white" className="py-[80px] md:py-[120px]">
@@ -357,7 +365,7 @@ export function HomePage({ content = homeContent, studies = caseStudiesCards, lo
         <FadeInOnScroll>
           <h2 className="text-center text-3xl font-bold leading-[1.2] text-devlo-900 md:text-4xl">{content.writtenTitle}</h2>
         </FadeInOnScroll>
-        <WrittenTestimonialsCarousel testimonials={writtenTestimonials} />
+        <WrittenTestimonialsCarousel testimonials={writtenTestimonials} locale={locale} />
       </SectionWrapper>
 
       <WaveDivider variant="layered-top" fromBg="#FFFFFF" toBg="#0F2B3C" />

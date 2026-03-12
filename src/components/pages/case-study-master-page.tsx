@@ -789,6 +789,7 @@ export function CaseStudyMasterPage({
                         title={detailedStudy.testimonialVideo.title ?? copy.videoTestimonial(detailedStudy.client)}
                         previewSrc={detailedStudy.testimonialVideo.previewSrc}
                         previewAlt={detailedStudy.testimonialVideo.previewAlt}
+                        locale={locale}
                         sizes="(min-width: 1280px) 640px, (min-width: 768px) 80vw, 94vw"
                         className="bg-white"
                       />

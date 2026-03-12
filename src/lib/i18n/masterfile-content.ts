@@ -1,5 +1,6 @@
 import type { SupportedLocale } from "@/lib/i18n/slug-map";
 import { resolvePathForLocale } from "@/lib/i18n/slug-map";
+import { academySupplementContent } from "@/lib/i18n/academy-supplement-content";
 import { normalizeLocalizedCopyDeep } from "@/lib/i18n/text-normalization";
 import masterfileContentJson from "@/lib/i18n/masterfile-content.json";
 
@@ -63,6 +64,13 @@ function localizeHrefsDeep<T>(node: T, locale: SupportedLocale, key = ""): T {
 export function getLocalizedMasterfileContent(locale: SupportedLocale): MasterfileBundle {
   const key = normalizeLocale(locale);
   const data = bundle[key] ?? bundle.fr;
-  const localizedHrefs = localizeHrefsDeep(data, key);
+  const merged = {
+    ...data,
+    academyContent: {
+      ...(data.academyContent as Record<string, unknown>),
+      ...academySupplementContent[key],
+    },
+  };
+  const localizedHrefs = localizeHrefsDeep(merged, key);
   return normalizeLocalizedCopyDeep(localizedHrefs, key);
 }

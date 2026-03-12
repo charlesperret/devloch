@@ -395,6 +395,7 @@ export default async function LocalizedRoutePage({ params }: Params) {
       <HomePage
         content={localizedTemplate.content.homeContent as Parameters<typeof HomePage>[0]["content"]}
         studies={localizedTemplate.content.caseStudiesCards as Parameters<typeof HomePage>[0]["studies"]}
+        serviceCards={getLocalizedServicesContent(resolved.locale).SERVICE_HUB_CARDS}
         locale={resolved.locale}
       />
     );

@@ -7,11 +7,12 @@ import { createPortal } from "react-dom";
 type VideoModalProps = {
   open: boolean;
   title: string;
+  closeLabel?: string;
   onClose: () => void;
   children: React.ReactNode;
 };
 
-export function VideoModal({ open, title, onClose, children }: VideoModalProps) {
+export function VideoModal({ open, title, closeLabel = "Fermer la vidéo", onClose, children }: VideoModalProps) {
   const [isMounted, setIsMounted] = useState(false);
   const bodyStyleRef = useRef<{ overflow: string; paddingRight: string } | null>(null);
 
@@ -82,7 +83,7 @@ export function VideoModal({ open, title, onClose, children }: VideoModalProps) 
           <button
             type="button"
             onClick={onClose}
-            aria-label="Fermer la vidéo"
+            aria-label={closeLabel}
             className="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/55 text-white transition hover:bg-white/20"
           >
             <X className="h-5 w-5" aria-hidden />

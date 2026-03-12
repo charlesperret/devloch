@@ -2,10 +2,23 @@ import Image from "next/image";
 
 import type { WrittenTestimonial } from "@/content/masterfile.fr";
 
-function TestimonialCard({ t }: { t: WrittenTestimonial }) {
+const ratingLabelByLocale = {
+  fr: "5 étoiles",
+  en: "5 stars",
+  de: "5 Sterne",
+  nl: "5 sterren",
+} as const;
+
+function TestimonialCard({
+  t,
+  locale,
+}: {
+  t: WrittenTestimonial;
+  locale: "fr" | "en" | "de" | "nl";
+}) {
   return (
     <article className="w-[340px] shrink-0 rounded-2xl border border-devlo-100 bg-white p-6 shadow-soft">
-      <div className="flex items-center gap-1 text-accent-gold" aria-label="5 étoiles">
+      <div className="flex items-center gap-1 text-accent-gold" aria-label={ratingLabelByLocale[locale]}>
         {"★★★★★".split("").map((star, i) => (
           <span key={i}>{star}</span>
         ))}
@@ -32,7 +45,13 @@ function TestimonialCard({ t }: { t: WrittenTestimonial }) {
   );
 }
 
-export function WrittenTestimonialsCarousel({ testimonials }: { testimonials: WrittenTestimonial[] }) {
+export function WrittenTestimonialsCarousel({
+  testimonials,
+  locale = "fr",
+}: {
+  testimonials: WrittenTestimonial[];
+  locale?: "fr" | "en" | "de" | "nl";
+}) {
   const mixTestimonials = (items: WrittenTestimonial[]) => {
     if (items.length <= 2) return [...items];
 
@@ -95,12 +114,12 @@ export function WrittenTestimonialsCarousel({ testimonials }: { testimonials: Wr
       <div className="space-y-4 py-2">
         <div className="flex min-w-max animate-testimonial-scroll items-stretch gap-4 will-change-transform">
           {row1.map((t, i) => (
-            <TestimonialCard key={`r1-${i}`} t={t} />
+            <TestimonialCard key={`r1-${i}`} t={t} locale={locale} />
           ))}
         </div>
         <div className="flex min-w-max animate-testimonial-scroll-reverse items-stretch gap-4 will-change-transform">
           {row2.map((t, i) => (
-            <TestimonialCard key={`r2-${i}`} t={t} />
+            <TestimonialCard key={`r2-${i}`} t={t} locale={locale} />
           ))}
         </div>
       </div>
