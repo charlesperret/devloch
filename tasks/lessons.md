@@ -21,6 +21,11 @@
 - Do not add promotional badges, novelty labels, or extra navigation adornments unless the user explicitly asked for them.
 - In the header, preserve the logo's aspect ratio and left-side footprint first; if space gets tight, adjust layout behavior instead of letting the logo compress.
 - When the user specifies a header element order, implement that order literally and keep key labels on a single line.
+- In navigation, never use a permanent highlight style for a section if that same style is also used to indicate the current page. Active-state semantics must stay unambiguous.
+- When adding a new header dropdown, match the interaction quality of existing menus end-to-end: hover bridge, focus handling, delayed close, and stable pointer travel into the panel.
+- Header changes must be checked against the longest locale labels and longest CTA copy. A navigation that fits in French but overflows in Dutch or German is still broken.
+- Do not solve dense desktop dropdowns with internal scroll by default. If the menu content is primary navigation, prefer a naturally taller panel before adding a nested scroll area.
+- When the user asks to "memorize" a workflow preference, persist it in this file in concrete terms before moving on, so the same expectation carries into the next changes and deploys.
 
 ## Definition of done
 

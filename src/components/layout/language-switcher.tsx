@@ -7,11 +7,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { resolvePathForLocale, splitLocalePath, type SupportedLocale } from "@/lib/i18n/slug-map";
 
-const localeOptions: Array<{ locale: SupportedLocale; flag: string; label: string }> = [
-  { locale: "fr", flag: "🇫🇷", label: "Français" },
-  { locale: "en", flag: "🇬🇧", label: "English" },
-  { locale: "de", flag: "🇩🇪", label: "Deutsch" },
-  { locale: "nl", flag: "🇳🇱", label: "Nederlands" },
+const localeOptions: Array<{ locale: SupportedLocale; flag: string; label: string; shortLabel: string }> = [
+  { locale: "fr", flag: "🇫🇷", label: "Français", shortLabel: "FR" },
+  { locale: "en", flag: "🇬🇧", label: "English", shortLabel: "EN" },
+  { locale: "de", flag: "🇩🇪", label: "Deutsch", shortLabel: "DE" },
+  { locale: "nl", flag: "🇳🇱", label: "Nederlands", shortLabel: "NL" },
 ];
 
 type LanguageSwitcherProps = {
@@ -90,9 +90,9 @@ export function LanguageSwitcher({ mobile = false }: LanguageSwitcherProps) {
           mobile ? "w-full" : "",
         ].join(" ")}
       >
-        <span className="inline-flex items-center gap-2">
+        <span className="inline-flex items-center gap-2 whitespace-nowrap">
           <span aria-hidden>{active.flag}</span>
-          <span>{active.label}</span>
+          <span>{mobile ? active.label : active.shortLabel}</span>
         </span>
         <ChevronDown className={["h-4 w-4 text-devlo-700 transition-transform", isOpen ? "rotate-180" : ""].join(" ")} />
       </button>

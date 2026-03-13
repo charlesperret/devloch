@@ -8,13 +8,18 @@ import { useEffect, useRef, useState } from "react";
 
 import { buttonClassName } from "@/components/ui/button";
 import { mainNav } from "@/content/masterfile.fr";
+import { getCaseStudyNavigationItems } from "@/data/case-study-navigation";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { getLocalizedServicesContent } from "@/lib/i18n/services-content";
-import { resolvePathForLocale, splitLocalePath, type SupportedLocale } from "@/lib/i18n/slug-map";
+import { normalizePath, resolvePathForLocale, splitLocalePath, type SupportedLocale } from "@/lib/i18n/slug-map";
 
-function isActive(pathname: string, href: string) {
-  if (href === "/") return pathname === "/";
-  return pathname === href || pathname.startsWith(`${href}/`);
+function toCanonicalFrPath(pathname: string) {
+  const resolved = normalizePath(resolvePathForLocale(pathname, "fr").path);
+  if (resolved === "/resultats-cas-etudes") return "/etudes-de-cas";
+  if (resolved.startsWith("/resultats/")) {
+    return `/etudes-de-cas/${resolved.slice("/resultats/".length)}`;
+  }
+  return resolved;
 }
 
 const navCopyByLocale: Record<
@@ -29,6 +34,10 @@ const navCopyByLocale: Record<
     cta: string;
     allServices: string;
     seeAllServices: string;
+    allCaseStudies: string;
+    seeAllCaseStudies: string;
+    openCaseStudiesMenu: string;
+    showCaseStudies: string;
     openServicesMenu: string;
     showServices: string;
     openMenu: string;
@@ -54,6 +63,10 @@ const navCopyByLocale: Record<
     cta: "Consultation gratuite",
     allServices: "Tous les services",
     seeAllServices: "Voir tous les services →",
+    allCaseStudies: "Toutes les études de cas",
+    seeAllCaseStudies: "Voir toutes les études de cas →",
+    openCaseStudiesMenu: "Ouvrir le menu études de cas",
+    showCaseStudies: "Afficher les études de cas",
     openServicesMenu: "Ouvrir le menu services",
     showServices: "Afficher les services",
     openMenu: "Ouvrir le menu",
@@ -78,6 +91,10 @@ const navCopyByLocale: Record<
     cta: "Free consultation",
     allServices: "All services",
     seeAllServices: "See all services →",
+    allCaseStudies: "All case studies",
+    seeAllCaseStudies: "See all case studies →",
+    openCaseStudiesMenu: "Open case studies menu",
+    showCaseStudies: "Show case studies",
     openServicesMenu: "Open services menu",
     showServices: "Show services",
     openMenu: "Open menu",
@@ -102,6 +119,10 @@ const navCopyByLocale: Record<
     cta: "Kostenlose Beratung",
     allServices: "Alle Leistungen",
     seeAllServices: "Alle Leistungen ansehen →",
+    allCaseStudies: "Alle Fallstudien",
+    seeAllCaseStudies: "Alle Fallstudien ansehen →",
+    openCaseStudiesMenu: "Fallstudien-Menü öffnen",
+    showCaseStudies: "Fallstudien anzeigen",
     openServicesMenu: "Service-Menü öffnen",
     showServices: "Leistungen anzeigen",
     openMenu: "Menü öffnen",
@@ -126,6 +147,10 @@ const navCopyByLocale: Record<
     cta: "Gratis consultatie",
     allServices: "Alle diensten",
     seeAllServices: "Alle diensten bekijken →",
+    allCaseStudies: "Alle praktijkvoorbeelden",
+    seeAllCaseStudies: "Alle praktijkvoorbeelden bekijken →",
+    openCaseStudiesMenu: "Casestudy-menu openen",
+    showCaseStudies: "Casestudy's tonen",
     openServicesMenu: "Servicemenu openen",
     showServices: "Diensten tonen",
     openMenu: "Menu openen",
@@ -145,14 +170,16 @@ const navCopyByLocale: Record<
 export function SiteHeader() {
   const pathname = usePathname();
   const safePathname = pathname ?? "/";
-  const { locale: currentLocale, path: localePath } = splitLocalePath(safePathname);
+  const { locale: currentLocale } = splitLocalePath(safePathname);
   const navCopy = navCopyByLocale[currentLocale];
+  const canonicalFrPath = toCanonicalFrPath(safePathname);
 
   const toCurrentLocalePath = (frPath: string) => resolvePathForLocale(frPath, currentLocale).path;
+  const caseStudiesHref = toCurrentLocalePath("/etudes-de-cas");
   const aiSalesOpsHref = toCurrentLocalePath("/ai-sales-ops");
   const navItems = [
     { key: "agency", href: toCurrentLocalePath("/agence") as string, label: navCopy.agency },
-    { key: "caseStudies", href: toCurrentLocalePath("/etudes-de-cas") as string, label: navCopy.caseStudies },
+    { key: "caseStudies", href: caseStudiesHref as string, label: navCopy.caseStudies },
     { key: "aiSalesOps", href: aiSalesOpsHref as string, label: navCopy.aiSalesOps },
     { key: "services", href: toCurrentLocalePath("/services") as string, label: navCopy.services },
     { key: "markets", href: toCurrentLocalePath("/prospection-commerciale-suisse") as string, label: navCopy.markets },
@@ -164,20 +191,30 @@ export function SiteHeader() {
     { href: toCurrentLocalePath("/prospection-commerciale-france"), label: navCopy.marketsFR, flag: "🇫🇷" },
   ];
   const consultationHref = toCurrentLocalePath("/consultation");
+  const caseStudyMenuItems = getCaseStudyNavigationItems(currentLocale);
   const localizedServicesCards = getLocalizedServicesContent(currentLocale).SERVICE_HUB_CARDS.map((service) => ({
     ...service,
     href: toCurrentLocalePath(service.href),
   }));
+  const agencyActive = canonicalFrPath === "/agence";
+  const caseStudiesActive = canonicalFrPath === "/etudes-de-cas" || canonicalFrPath.startsWith("/etudes-de-cas/");
+  const aiSalesOpsActive = canonicalFrPath === "/ai-sales-ops" || canonicalFrPath.startsWith("/ai-sales-ops/");
+  const servicesActive = canonicalFrPath === "/services" || canonicalFrPath.startsWith("/services/");
+  const marketsActive = canonicalFrPath.startsWith("/prospection-commerciale-");
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMobileStickyCta, setShowMobileStickyCta] = useState(false);
+  const [isCaseStudiesMenuOpen, setIsCaseStudiesMenuOpen] = useState(false);
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
   const [isMarketsMenuOpen, setIsMarketsMenuOpen] = useState(false);
+  const [isMobileCaseStudiesOpen, setIsMobileCaseStudiesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isMobileMarketsOpen, setIsMobileMarketsOpen] = useState(false);
+  const caseStudiesMenuRef = useRef<HTMLDivElement | null>(null);
   const servicesMenuRef = useRef<HTMLDivElement | null>(null);
   const marketsMenuRef = useRef<HTMLDivElement | null>(null);
+  const caseStudiesCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const servicesCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const marketsCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -205,11 +242,34 @@ export function SiteHeader() {
 
   useEffect(() => {
     setIsMenuOpen(false);
+    setIsCaseStudiesMenuOpen(false);
     setIsServicesMenuOpen(false);
     setIsMarketsMenuOpen(false);
-    setIsMobileServicesOpen(localePath.startsWith("/services"));
-    setIsMobileMarketsOpen(localePath.startsWith("/prospection-commerciale-"));
-  }, [safePathname, localePath]);
+    setIsMobileCaseStudiesOpen(caseStudiesActive);
+    setIsMobileServicesOpen(servicesActive);
+    setIsMobileMarketsOpen(marketsActive);
+  }, [safePathname, caseStudiesActive, servicesActive, marketsActive]);
+
+  useEffect(() => {
+    if (!isCaseStudiesMenuOpen) return;
+
+    const onPointerDown = (event: MouseEvent) => {
+      if (!caseStudiesMenuRef.current?.contains(event.target as Node)) {
+        setIsCaseStudiesMenuOpen(false);
+      }
+    };
+
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsCaseStudiesMenuOpen(false);
+    };
+
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onEscape);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onEscape);
+    };
+  }, [isCaseStudiesMenuOpen]);
 
   useEffect(() => {
     if (!isServicesMenuOpen) return;
@@ -254,7 +314,37 @@ export function SiteHeader() {
   }, [isMarketsMenuOpen]);
 
   const transparentMode = safePathname === "/" && !isScrolled;
-  const servicesActive = localePath === "/services" || localePath.startsWith("/services/");
+  const desktopDirectLinkClass = (active: boolean) =>
+    [
+      "inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full border px-4 py-0.5 text-[14px] font-semibold uppercase tracking-[0.08em] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-devlo-700 focus-visible:ring-offset-2",
+      active
+        ? "border-devlo-800 bg-devlo-800 text-white shadow-soft"
+        : "border-transparent text-devlo-900 hover:border-devlo-100 hover:bg-devlo-50 hover:text-devlo-700",
+    ].join(" ");
+  const mobileDirectLinkClass = (active: boolean) =>
+    [
+      "flex items-center justify-between rounded-xl border px-4 py-3",
+      active
+        ? "border-devlo-700 bg-devlo-700 text-white"
+        : "border-neutral-200 bg-white text-devlo-900 hover:border-devlo-700/30 hover:bg-devlo-50",
+    ].join(" ");
+  const desktopDropdownShellClass = (active: boolean, open: boolean) =>
+    [
+      "group flex items-center gap-0 rounded-full border px-2 py-0.5 transition-colors",
+      active || open
+        ? "border-devlo-800 bg-devlo-800 text-white shadow-soft"
+        : "border-transparent bg-transparent text-devlo-900 hover:border-devlo-700 hover:bg-devlo-700",
+    ].join(" ");
+  const desktopDropdownLinkClass = (active: boolean, open: boolean) =>
+    [
+      "inline-flex min-h-[44px] items-center rounded-full px-2 text-[14px] font-semibold uppercase tracking-[0.08em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-devlo-700 focus-visible:ring-offset-2",
+      active || open ? "text-white" : "text-devlo-900 hover:text-white group-hover:text-white",
+    ].join(" ");
+  const desktopDropdownButtonClass = (open: boolean) =>
+    [
+      "inline-flex h-6 w-6 items-center justify-center rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-devlo-700 focus-visible:ring-offset-2",
+      open ? "text-white hover:bg-white/15" : "text-devlo-700 group-hover:text-white hover:bg-white/15",
+    ].join(" ");
 
   return (
     <>
@@ -266,17 +356,104 @@ export function SiteHeader() {
             : "border-b border-neutral-200 bg-white/95 shadow-sm backdrop-blur-md",
         ].join(" ")}
       >
-        <div className="mx-auto flex h-16 w-full max-w-[1260px] items-center justify-between px-6 md:h-20 md:px-10">
+        <div className="mx-auto flex h-16 w-full max-w-[1400px] items-center justify-between px-4 md:h-20 md:px-6 xl:px-8">
           <Link
             href={toCurrentLocalePath("/")}
-            className="mr-4 inline-flex min-h-[44px] shrink-0 items-center"
+            className="mr-3 inline-flex min-h-[44px] shrink-0 items-center lg:mr-4"
             aria-label={navCopy.homeAria}
           >
             <Image src={mainNav.logo} alt="devlo logo" width={240} height={80} className="h-14 w-auto shrink-0 md:h-16" />
           </Link>
 
-          <nav className="hidden items-center gap-6 md:flex" aria-label={navCopy.navigationAria}>
+          <nav className="hidden items-center gap-3 lg:gap-4 xl:gap-5 md:flex" aria-label={navCopy.navigationAria}>
             {navItems.map((item) => {
+              if (item.key === "caseStudies") {
+                return (
+                  <div
+                    key={item.key}
+                    ref={caseStudiesMenuRef}
+                    className="relative"
+                    onMouseEnter={() => {
+                      if (caseStudiesCloseTimer.current) clearTimeout(caseStudiesCloseTimer.current);
+                      setIsCaseStudiesMenuOpen(true);
+                    }}
+                    onMouseLeave={() => {
+                      caseStudiesCloseTimer.current = setTimeout(() => setIsCaseStudiesMenuOpen(false), 120);
+                    }}
+                    onFocusCapture={() => setIsCaseStudiesMenuOpen(true)}
+                  >
+                    <div className={desktopDropdownShellClass(caseStudiesActive, isCaseStudiesMenuOpen)}>
+                      <Link href={item.href} className={desktopDropdownLinkClass(caseStudiesActive, isCaseStudiesMenuOpen)}>
+                        {item.label}
+                      </Link>
+                      <button
+                        type="button"
+                        aria-label={navCopy.openCaseStudiesMenu}
+                        aria-expanded={isCaseStudiesMenuOpen}
+                        onClick={() => setIsCaseStudiesMenuOpen((prev) => !prev)}
+                        className={desktopDropdownButtonClass(isCaseStudiesMenuOpen)}
+                      >
+                        <ChevronDown
+                          className={["h-4 w-4 transition-transform", isCaseStudiesMenuOpen ? "rotate-180" : ""].join(" ")}
+                        />
+                      </button>
+                    </div>
+
+                    {isCaseStudiesMenuOpen ? (
+                      <span
+                        aria-hidden
+                        className="pointer-events-auto absolute left-0 right-0 top-full hidden h-3 md:block"
+                      />
+                    ) : null}
+
+                    {isCaseStudiesMenuOpen ? (
+                      <div className="absolute left-1/2 top-[calc(100%+4px)] z-[70] w-[780px] -translate-x-1/2 overflow-hidden rounded-2xl border border-devlo-700 bg-devlo-700 p-4 text-white shadow-panel motion-safe:animate-fade-in-up">
+                        <div>
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-white/80">
+                            {navCopy.allCaseStudies}
+                          </p>
+                          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                            {caseStudyMenuItems.map((study) => {
+                              const selected = canonicalFrPath === `/etudes-de-cas/${study.slug}`;
+                              return (
+                                <Link
+                                  key={`desktop-case-study-${study.slug}`}
+                                  href={study.href}
+                                  className={[
+                                    "rounded-xl border px-3 py-2 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-devlo-700",
+                                    selected
+                                      ? "border-white/40 bg-white text-devlo-800"
+                                      : "border-white/20 bg-white/10 text-white hover:border-white/40 hover:bg-white/15",
+                                  ].join(" ")}
+                                >
+                                  <span className="font-semibold">{study.name}</span>
+                                  <span
+                                    className={[
+                                      "mt-0.5 block text-xs",
+                                      selected ? "text-devlo-700/80" : "text-white/75",
+                                    ].join(" ")}
+                                  >
+                                    {study.subtitle}
+                                  </span>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                          <div className="mt-3 border-t border-white/20 pt-3">
+                            <Link
+                              href={caseStudiesHref}
+                              className="inline-flex rounded-full border border-white/30 bg-white px-3 py-1.5 text-xs font-semibold text-devlo-700 transition hover:bg-devlo-50"
+                            >
+                              {navCopy.seeAllCaseStudies}
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              }
+
               if (item.key === "services") {
                 return (
                   <div
@@ -292,25 +469,8 @@ export function SiteHeader() {
                     }}
                     onFocusCapture={() => setIsServicesMenuOpen(true)}
                   >
-                    <div
-                      className={[
-                        "group flex items-center gap-0 rounded-full border px-2 py-0.5 transition-colors",
-                        isServicesMenuOpen
-                          ? "border-devlo-700 bg-devlo-700 text-white"
-                          : "border-transparent bg-transparent text-devlo-900 hover:border-devlo-700 hover:bg-devlo-700",
-                      ].join(" ")}
-                    >
-                      <Link
-                        href={item.href}
-                        className={[
-                          "inline-flex min-h-[44px] items-center rounded-full px-2 text-[14px] font-semibold uppercase tracking-[0.08em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-devlo-700 focus-visible:ring-offset-2",
-                          servicesActive
-                            ? (isServicesMenuOpen ? "text-white" : "text-devlo-700")
-                            : isServicesMenuOpen
-                              ? "text-white"
-                              : "text-devlo-900 hover:text-white group-hover:text-white",
-                        ].join(" ")}
-                      >
+                    <div className={desktopDropdownShellClass(servicesActive, isServicesMenuOpen)}>
+                      <Link href={item.href} className={desktopDropdownLinkClass(servicesActive, isServicesMenuOpen)}>
                         {item.label}
                       </Link>
                       <button
@@ -318,16 +478,18 @@ export function SiteHeader() {
                         aria-label={navCopy.openServicesMenu}
                         aria-expanded={isServicesMenuOpen}
                         onClick={() => setIsServicesMenuOpen((prev) => !prev)}
-                        className={[
-                          "inline-flex h-6 w-6 items-center justify-center rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-devlo-700 focus-visible:ring-offset-2",
-                          isServicesMenuOpen
-                            ? "text-white hover:bg-white/15"
-                            : "text-devlo-700 group-hover:text-white hover:bg-white/15",
-                        ].join(" ")}
+                        className={desktopDropdownButtonClass(isServicesMenuOpen)}
                       >
                         <ChevronDown className={["h-4 w-4 transition-transform", isServicesMenuOpen ? "rotate-180" : ""].join(" ")} />
                       </button>
                     </div>
+
+                    {isServicesMenuOpen ? (
+                      <span
+                        aria-hidden
+                        className="pointer-events-auto absolute left-0 right-0 top-full hidden h-3 md:block"
+                      />
+                    ) : null}
 
                     {isServicesMenuOpen ? (
                       <div className="absolute left-1/2 top-[calc(100%+4px)] z-[70] w-[760px] -translate-x-1/2 overflow-hidden rounded-2xl border border-devlo-700 bg-devlo-700 p-4 text-white shadow-panel motion-safe:animate-fade-in-up">
@@ -386,25 +548,14 @@ export function SiteHeader() {
               }
 
               if (item.key === "aiSalesOps") {
-                const active = isActive(safePathname, item.href);
                 return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={[
-                      "inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full border px-4 py-0.5 text-[14px] font-semibold uppercase tracking-[0.08em] transition-all",
-                      active
-                        ? "border-devlo-800 bg-devlo-800 text-white shadow-soft"
-                        : "border-devlo-700 bg-devlo-700 text-white shadow-soft hover:bg-devlo-800",
-                    ].join(" ")}
-                  >
+                  <Link key={item.href} href={item.href} className={desktopDirectLinkClass(aiSalesOpsActive)}>
                     <span>{item.label}</span>
                   </Link>
                 );
               }
 
               if (item.key === "markets") {
-                const marketsActive = localePath.startsWith("/prospection-commerciale-");
                 return (
                   <div
                     key={item.key}
@@ -419,25 +570,8 @@ export function SiteHeader() {
                     }}
                     onFocusCapture={() => setIsMarketsMenuOpen(true)}
                   >
-                    <div
-                      className={[
-                        "group flex items-center gap-0 rounded-full border px-2 py-0.5 transition-colors",
-                        isMarketsMenuOpen
-                          ? "border-devlo-700 bg-devlo-700 text-white"
-                          : "border-transparent bg-transparent text-devlo-900 hover:border-devlo-700 hover:bg-devlo-700",
-                      ].join(" ")}
-                    >
-                      <Link
-                        href={item.href}
-                        className={[
-                          "inline-flex min-h-[44px] items-center rounded-full px-2 text-[14px] font-semibold uppercase tracking-[0.08em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-devlo-700 focus-visible:ring-offset-2",
-                          marketsActive
-                            ? (isMarketsMenuOpen ? "text-white" : "text-devlo-700")
-                            : isMarketsMenuOpen
-                              ? "text-white"
-                              : "text-devlo-900 hover:text-white group-hover:text-white",
-                        ].join(" ")}
-                      >
+                    <div className={desktopDropdownShellClass(marketsActive, isMarketsMenuOpen)}>
+                      <Link href={item.href} className={desktopDropdownLinkClass(marketsActive, isMarketsMenuOpen)}>
                         {item.label}
                       </Link>
                       <button
@@ -445,16 +579,18 @@ export function SiteHeader() {
                         aria-label={navCopy.openMarketsMenu}
                         aria-expanded={isMarketsMenuOpen}
                         onClick={() => setIsMarketsMenuOpen((prev) => !prev)}
-                        className={[
-                          "inline-flex h-6 w-6 items-center justify-center rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-devlo-700 focus-visible:ring-offset-2",
-                          isMarketsMenuOpen
-                            ? "text-white hover:bg-white/15"
-                            : "text-devlo-700 group-hover:text-white hover:bg-white/15",
-                        ].join(" ")}
+                        className={desktopDropdownButtonClass(isMarketsMenuOpen)}
                       >
                         <ChevronDown className={["h-4 w-4 transition-transform", isMarketsMenuOpen ? "rotate-180" : ""].join(" ")} />
                       </button>
                     </div>
+
+                    {isMarketsMenuOpen ? (
+                      <span
+                        aria-hidden
+                        className="pointer-events-auto absolute left-0 right-0 top-full hidden h-3 md:block"
+                      />
+                    ) : null}
 
                     {isMarketsMenuOpen ? (
                       <div className="absolute left-0 top-[calc(100%+4px)] z-[70] w-56 overflow-hidden rounded-2xl border border-devlo-700 bg-devlo-700 p-3 text-white shadow-panel motion-safe:animate-fade-in-up">
@@ -476,23 +612,19 @@ export function SiteHeader() {
                 );
               }
 
-              const active = isActive(pathname, item.href);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={[
-                    "inline-flex min-h-[44px] items-center whitespace-nowrap border-b-2 text-[14px] font-semibold uppercase tracking-[0.08em] transition-colors",
-                    active ? "border-devlo-600 text-devlo-700" : "border-transparent text-devlo-900 hover:text-devlo-600",
-                  ].join(" ")}
-                >
-                  {item.label}
-                </Link>
-              );
+              if (item.key === "agency") {
+                return (
+                  <Link key={item.href} href={item.href} className={desktopDirectLinkClass(agencyActive)}>
+                    {item.label}
+                  </Link>
+                );
+              }
+
+              return null;
             })}
 
             <div className="flex items-center gap-3">
-              <Link href={consultationHref} className={buttonClassName("outline", "whitespace-nowrap px-5 py-2.5 text-sm")}>
+              <Link href={consultationHref} className={buttonClassName("outline", "whitespace-nowrap px-4 py-2.5 text-sm lg:px-5")}>
                 {navCopy.cta}
               </Link>
               <LanguageSwitcher />
@@ -527,6 +659,69 @@ export function SiteHeader() {
             <div className="mt-10 space-y-2">
               <LanguageSwitcher mobile />
               {navItems.map((item) => {
+                if (item.key === "caseStudies") {
+                  return (
+                    <div key={`mobile-${item.key}`} className="rounded-xl border border-neutral-200 p-2">
+                      <div className="flex items-center justify-between gap-2">
+                        <Link
+                          href={item.href}
+                          className={[
+                            "flex min-h-[44px] flex-1 items-center rounded-lg px-3 py-2 text-xl font-semibold",
+                            caseStudiesActive ? "bg-devlo-700 text-white" : "text-devlo-900",
+                          ].join(" ")}
+                        >
+                          {item.label}
+                        </Link>
+                        <button
+                          type="button"
+                          onClick={() => setIsMobileCaseStudiesOpen((prev) => !prev)}
+                          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 text-devlo-700"
+                          aria-label={navCopy.showCaseStudies}
+                        >
+                          <ChevronDown
+                            className={["h-4 w-4 transition-transform", isMobileCaseStudiesOpen ? "rotate-180" : ""].join(" ")}
+                          />
+                        </button>
+                      </div>
+
+                      {isMobileCaseStudiesOpen ? (
+                        <div className="mt-2 overflow-hidden motion-safe:animate-fade-in-up">
+                          <div className="grid gap-1.5">
+                            {caseStudyMenuItems.map((study) => {
+                              const selected = canonicalFrPath === `/etudes-de-cas/${study.slug}`;
+                              return (
+                                <Link
+                                  key={`mobile-case-study-${study.slug}`}
+                                  href={study.href}
+                                  className={[
+                                    "rounded-lg border px-3 py-2 transition",
+                                    selected
+                                      ? "border-devlo-700 bg-devlo-700 text-white"
+                                      : "border-neutral-200 bg-neutral-50 text-devlo-900 hover:border-devlo-700/30",
+                                  ].join(" ")}
+                                >
+                                  <p className="text-sm font-semibold">{study.name}</p>
+                                  <p className={["text-xs", selected ? "text-white/75" : "text-neutral-500"].join(" ")}>
+                                    {study.subtitle}
+                                  </p>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                          <div className="mt-2 border-t border-neutral-200 pt-2">
+                            <Link
+                              href={caseStudiesHref}
+                              className="inline-flex min-h-[40px] items-center rounded-lg border border-neutral-200 bg-white px-3 text-sm font-semibold text-devlo-700"
+                            >
+                              {navCopy.seeAllCaseStudies}
+                            </Link>
+                          </div>
+                        </div>
+                      ) : null}
+                    </div>
+                  );
+                }
+
                 if (item.key === "services") {
                   return (
                     <div key={`mobile-${item.key}`} className="rounded-xl border border-neutral-200 p-2">
@@ -535,7 +730,7 @@ export function SiteHeader() {
                           href={item.href}
                           className={[
                             "flex min-h-[44px] flex-1 items-center rounded-lg px-3 py-2 text-xl font-semibold",
-                            servicesActive ? "bg-devlo-50 text-devlo-700" : "text-devlo-900",
+                            servicesActive ? "bg-devlo-700 text-white" : "text-devlo-900",
                           ].join(" ")}
                         >
                           {item.label}
@@ -602,27 +797,17 @@ export function SiteHeader() {
                 }
 
                 if (item.key === "aiSalesOps") {
-                  const active = isActive(safePathname, item.href);
                   return (
-                    <Link
-                      key={`mobile-${item.href}`}
-                      href={item.href}
-                      className={[
-                        "flex items-center justify-between rounded-xl border px-4 py-3",
-                        active
-                          ? "border-devlo-700 bg-devlo-700 text-white"
-                          : "border-devlo-200 bg-devlo-50 text-devlo-900",
-                      ].join(" ")}
-                    >
+                    <Link key={`mobile-${item.href}`} href={item.href} className={mobileDirectLinkClass(aiSalesOpsActive)}>
                       <div>
                         <div className="flex items-center gap-2">
                           <p className="whitespace-nowrap text-base font-semibold">{item.label}</p>
                         </div>
-                        <p className={["mt-1 text-xs", active ? "text-white/75" : "text-neutral-600"].join(" ")}>
+                        <p className={["mt-1 text-xs", aiSalesOpsActive ? "text-white/75" : "text-neutral-600"].join(" ")}>
                           {navCopy.aiSalesOpsSubtitle}
                         </p>
                       </div>
-                      <span className={["text-sm font-semibold", active ? "text-white" : "text-devlo-700"].join(" ")}>
+                      <span className={["text-sm font-semibold", aiSalesOpsActive ? "text-white" : "text-devlo-700"].join(" ")}>
                         →
                       </span>
                     </Link>
@@ -630,7 +815,6 @@ export function SiteHeader() {
                 }
 
                 if (item.key === "markets") {
-                  const marketsActive = localePath.startsWith("/prospection-commerciale-");
                   return (
                     <div key={`mobile-${item.key}`} className="rounded-xl border border-neutral-200 p-2">
                       <div className="flex items-center justify-between gap-2">
@@ -638,7 +822,7 @@ export function SiteHeader() {
                           href={item.href}
                           className={[
                             "flex min-h-[44px] flex-1 items-center rounded-lg px-3 py-2 text-xl font-semibold",
-                            marketsActive ? "bg-devlo-50 text-devlo-700" : "text-devlo-900",
+                            marketsActive ? "bg-devlo-700 text-white" : "text-devlo-900",
                           ].join(" ")}
                         >
                           {item.label}
@@ -673,18 +857,24 @@ export function SiteHeader() {
                   );
                 }
 
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={[
-                      "flex min-h-[44px] items-center rounded-lg px-4 py-3 text-xl font-semibold",
-                      isActive(pathname, item.href) ? "bg-devlo-50 text-devlo-700" : "text-devlo-900",
-                    ].join(" ")}
-                  >
-                    {item.label}
-                  </Link>
-                );
+                if (item.key === "agency") {
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={[
+                        "flex min-h-[44px] items-center rounded-xl border px-4 py-3 text-xl font-semibold",
+                        agencyActive
+                          ? "border-devlo-700 bg-devlo-700 text-white"
+                          : "border-neutral-200 bg-white text-devlo-900",
+                      ].join(" ")}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                }
+
+                return null;
               })}
             </div>
 

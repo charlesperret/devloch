@@ -1014,6 +1014,12 @@
     ],
     "testimonialPhotoUrl": "/images/Tanguy_Coustaline.webp",
     "testimonialPhotoAlt": "Photo de Tanguy Coustaline",
+    "testimonialVideo": {
+      "wistiaMediaId": "w9ews1v05q",
+      "previewSrc": "/images/video-thumb-apidae.webp",
+      "previewAlt": "Vidéo témoignage Apidae",
+      "title": "Témoignage vidéo Apidae"
+    },
     "migrationStatus": "premium",
     "validationStatus": "unknown",
     "assetAudit": {

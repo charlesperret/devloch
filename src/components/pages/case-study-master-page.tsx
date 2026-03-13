@@ -179,6 +179,21 @@ function normalizeLoose(value: string) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
+function parseMethodStepHeading(heading: string): { number: string; title: string } | null {
+  const match = heading.trim().match(/^(\d+)\)\s*(.+)$/);
+  if (!match) return null;
+  return {
+    number: match[1],
+    title: match[2].trim(),
+  };
+}
+
+const heroVideoStudySlugs = new Set([
+  "biodiversite-70-rendez-vous",
+  "formation-14-rendez-vous",
+  "immobilier-30-prospects",
+]);
+
 type CaseStudySectionKind =
   | "about"
   | "icp"
@@ -484,6 +499,7 @@ export function CaseStudyMasterPage({
 
   const heroImage = detailedStudy.heroImageUrl || study.banner;
   const isIddiStudy = detailedStudy.slug === "iddi-generation-leads-biotech-pharma";
+  const heroVideo = heroVideoStudySlugs.has(detailedStudy.slug) ? detailedStudy.testimonialVideo : undefined;
   const testimonialAvatarSrc = detailedStudy.testimonialPhotoUrl;
   const testimonialAvatarAlt = detailedStudy.testimonialPhotoAlt ?? `Photo de profil de ${detailedStudy.client}`;
   const introParagraphs = [detailedStudy.summary];
@@ -573,18 +589,31 @@ export function CaseStudyMasterPage({
                 </div>
                 <span className="rounded-full bg-devlo-900 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">{copy.caseStudyBadge}</span>
               </div>
-              <div className="relative aspect-[16/10] bg-devlo-50">
-                <Image
-                  src={heroImage}
-                  alt={study.client}
-                  fill
-                  className={isIddiStudy ? "object-contain bg-white p-3 md:p-4" : "object-cover"}
+              {heroVideo ? (
+                <WistiaThumbnailTrigger
+                  videoId={heroVideo.wistiaMediaId}
+                  title={heroVideo.title ?? copy.videoTestimonial(detailedStudy.client)}
+                  previewSrc={heroVideo.previewSrc}
+                  previewAlt={heroVideo.previewAlt}
+                  locale={locale}
                   priority
                   sizes="(max-width: 640px) 92vw, (max-width: 1024px) 88vw, (max-width: 1280px) 42vw, 520px"
-                  quality={74}
+                  className="bg-white"
                 />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/20 to-transparent" />
-              </div>
+              ) : (
+                <div className="relative aspect-[16/10] bg-devlo-50">
+                  <Image
+                    src={heroImage}
+                    alt={study.client}
+                    fill
+                    className={isIddiStudy ? "object-contain bg-white p-3 md:p-4" : "object-cover"}
+                    priority
+                    sizes="(max-width: 640px) 92vw, (max-width: 1024px) 88vw, (max-width: 1280px) 42vw, 520px"
+                    quality={74}
+                  />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/20 to-transparent" />
+                </div>
+              )}
             </div>
           </FadeInOnScroll>
         </div>
@@ -696,19 +725,24 @@ export function CaseStudyMasterPage({
 
                   {methodSteps.length ? (
                     <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
-                      {methodSteps.map((stepSection, index) => (
-                        <article key={stepSection.heading} className="rounded-2xl border border-neutral-200 bg-gradient-to-b from-white to-devlo-50/60 p-5">
-                          <div className="flex items-center gap-3">
-                            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-devlo-900 text-sm font-bold text-white">
-                              {index + 1}
-                            </span>
-                            <h3 className="text-base font-semibold leading-6 text-devlo-900">{stepSection.heading}</h3>
-                          </div>
-                          <div className="mt-4">
-                            <SectionContent section={stepSection} sectionKind="solutions" />
-                          </div>
-                        </article>
-                      ))}
+                      {methodSteps.map((stepSection, index) => {
+                        const parsedStep = parseMethodStepHeading(stepSection.heading);
+                        return (
+                          <article key={stepSection.heading} className="rounded-2xl border border-neutral-200 bg-gradient-to-b from-white to-devlo-50/60 p-5">
+                            <div className="flex items-center gap-3">
+                              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-devlo-900 text-sm font-bold text-white">
+                                {parsedStep?.number ?? String(index + 1)}
+                              </span>
+                              <h3 className="text-base font-semibold leading-6 text-devlo-900">
+                                {parsedStep?.title ?? stepSection.heading}
+                              </h3>
+                            </div>
+                            <div className="mt-4">
+                              <SectionContent section={stepSection} sectionKind="solutions" />
+                            </div>
+                          </article>
+                        );
+                      })}
                     </div>
                   ) : null}
                 </section>
