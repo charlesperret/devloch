@@ -42,7 +42,6 @@ const navCopyByLocale: Record<
     academySubtitle: string;
     aiSalesOps: string;
     aiSalesOpsSubtitle: string;
-    newBadge: string;
   }
 > = {
   fr: {
@@ -68,7 +67,6 @@ const navCopyByLocale: Record<
     academySubtitle: "Formation prospection B2B gratuite",
     aiSalesOps: "AI Sales Ops",
     aiSalesOpsSubtitle: "Systèmes IA pour équipes commerciales B2B",
-    newBadge: "Nouveau",
   },
   en: {
     navigationAria: "Main navigation",
@@ -93,7 +91,6 @@ const navCopyByLocale: Record<
     academySubtitle: "Free B2B outbound training",
     aiSalesOps: "AI Sales Ops",
     aiSalesOpsSubtitle: "AI systems for B2B sales teams",
-    newBadge: "New",
   },
   de: {
     navigationAria: "Hauptnavigation",
@@ -118,7 +115,6 @@ const navCopyByLocale: Record<
     academySubtitle: "Kostenlose B2B-Akquise-Schulung",
     aiSalesOps: "AI Sales Ops",
     aiSalesOpsSubtitle: "KI-Systeme für B2B-Vertriebsteams",
-    newBadge: "Neu",
   },
   nl: {
     navigationAria: "Hoofdnavigatie",
@@ -143,7 +139,6 @@ const navCopyByLocale: Record<
     academySubtitle: "Gratis B2B outbound training",
     aiSalesOps: "AI Sales Ops",
     aiSalesOpsSubtitle: "AI-systemen voor B2B salesteams",
-    newBadge: "Nieuw",
   },
 };
 
@@ -154,19 +149,20 @@ export function SiteHeader() {
   const navCopy = navCopyByLocale[currentLocale];
 
   const toCurrentLocalePath = (frPath: string) => resolvePathForLocale(frPath, currentLocale).path;
+  const aiSalesOpsHref = toCurrentLocalePath("/ai-sales-ops");
   const navItems = [
     { key: "agency", href: toCurrentLocalePath("/agence") as string, label: navCopy.agency },
     { key: "caseStudies", href: toCurrentLocalePath("/etudes-de-cas") as string, label: navCopy.caseStudies },
+    { key: "aiSalesOps", href: aiSalesOpsHref as string, label: navCopy.aiSalesOps },
     { key: "services", href: toCurrentLocalePath("/services") as string, label: navCopy.services },
     { key: "markets", href: toCurrentLocalePath("/prospection-commerciale-suisse") as string, label: navCopy.markets },
   ] as const;
 
   const geoLinks = [
-    { href: "/prospection-commerciale-suisse", label: navCopy.marketsCH, flag: "🇨🇭" },
-    { href: "/prospection-commerciale-belgique", label: navCopy.marketsBE, flag: "🇧🇪" },
-    { href: "/prospection-commerciale-france", label: navCopy.marketsFR, flag: "🇫🇷" },
+    { href: toCurrentLocalePath("/prospection-commerciale-suisse"), label: navCopy.marketsCH, flag: "🇨🇭" },
+    { href: toCurrentLocalePath("/prospection-commerciale-belgique"), label: navCopy.marketsBE, flag: "🇧🇪" },
+    { href: toCurrentLocalePath("/prospection-commerciale-france"), label: navCopy.marketsFR, flag: "🇫🇷" },
   ];
-  const aiSalesOpsHref = "/ai-sales-ops";
   const consultationHref = toCurrentLocalePath("/consultation");
   const localizedServicesCards = getLocalizedServicesContent(currentLocale).SERVICE_HUB_CARDS.map((service) => ({
     ...service,
@@ -271,8 +267,12 @@ export function SiteHeader() {
         ].join(" ")}
       >
         <div className="mx-auto flex h-16 w-full max-w-[1260px] items-center justify-between px-6 md:h-20 md:px-10">
-          <Link href={toCurrentLocalePath("/")} className="mr-4 inline-flex min-h-[44px] items-center" aria-label={navCopy.homeAria}>
-            <Image src={mainNav.logo} alt="devlo logo" width={240} height={80} className="h-14 w-auto md:h-16" />
+          <Link
+            href={toCurrentLocalePath("/")}
+            className="mr-4 inline-flex min-h-[44px] shrink-0 items-center"
+            aria-label={navCopy.homeAria}
+          >
+            <Image src={mainNav.logo} alt="devlo logo" width={240} height={80} className="h-14 w-auto shrink-0 md:h-16" />
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex" aria-label={navCopy.navigationAria}>
@@ -341,11 +341,8 @@ export function SiteHeader() {
                               className="flex items-start justify-between gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-3 transition hover:border-white/35 hover:bg-white/10"
                             >
                               <div>
-                                <div className="flex flex-wrap items-center gap-2">
-                                  <p className="text-sm font-semibold text-white">{navCopy.aiSalesOps}</p>
-                                  <span className="rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-devlo-700">
-                                    {navCopy.newBadge}
-                                  </span>
+                                <div className="flex items-center gap-2">
+                                  <p className="whitespace-nowrap text-sm font-semibold text-white">{navCopy.aiSalesOps}</p>
                                 </div>
                                 <p className="mt-1 text-xs leading-5 text-white/75">{navCopy.aiSalesOpsSubtitle}</p>
                               </div>
@@ -385,6 +382,24 @@ export function SiteHeader() {
                       </div>
                     ) : null}
                   </div>
+                );
+              }
+
+              if (item.key === "aiSalesOps") {
+                const active = isActive(safePathname, item.href);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={[
+                      "inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full border px-4 py-0.5 text-[14px] font-semibold uppercase tracking-[0.08em] transition-all",
+                      active
+                        ? "border-devlo-800 bg-devlo-800 text-white shadow-soft"
+                        : "border-devlo-700 bg-devlo-700 text-white shadow-soft hover:bg-devlo-800",
+                    ].join(" ")}
+                  >
+                    <span>{item.label}</span>
+                  </Link>
                 );
               }
 
@@ -477,10 +492,10 @@ export function SiteHeader() {
             })}
 
             <div className="flex items-center gap-3">
-              <LanguageSwitcher />
               <Link href={consultationHref} className={buttonClassName("outline", "whitespace-nowrap px-5 py-2.5 text-sm")}>
                 {navCopy.cta}
               </Link>
+              <LanguageSwitcher />
             </div>
           </nav>
 
@@ -543,11 +558,8 @@ export function SiteHeader() {
                           >
                             <div className="flex items-center justify-between gap-3">
                               <div>
-                                <div className="flex flex-wrap items-center gap-2">
-                                  <p className="text-sm font-semibold text-devlo-900">{navCopy.aiSalesOps}</p>
-                                  <span className="rounded-full bg-devlo-700 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-white">
-                                    {navCopy.newBadge}
-                                  </span>
+                                <div className="flex items-center gap-2">
+                                  <p className="whitespace-nowrap text-sm font-semibold text-devlo-900">{navCopy.aiSalesOps}</p>
                                 </div>
                                 <p className="mt-1 text-xs text-neutral-600">{navCopy.aiSalesOpsSubtitle}</p>
                               </div>
@@ -586,6 +598,34 @@ export function SiteHeader() {
                         </div>
                       ) : null}
                     </div>
+                  );
+                }
+
+                if (item.key === "aiSalesOps") {
+                  const active = isActive(safePathname, item.href);
+                  return (
+                    <Link
+                      key={`mobile-${item.href}`}
+                      href={item.href}
+                      className={[
+                        "flex items-center justify-between rounded-xl border px-4 py-3",
+                        active
+                          ? "border-devlo-700 bg-devlo-700 text-white"
+                          : "border-devlo-200 bg-devlo-50 text-devlo-900",
+                      ].join(" ")}
+                    >
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <p className="whitespace-nowrap text-base font-semibold">{item.label}</p>
+                        </div>
+                        <p className={["mt-1 text-xs", active ? "text-white/75" : "text-neutral-600"].join(" ")}>
+                          {navCopy.aiSalesOpsSubtitle}
+                        </p>
+                      </div>
+                      <span className={["text-sm font-semibold", active ? "text-white" : "text-devlo-700"].join(" ")}>
+                        →
+                      </span>
+                    </Link>
                   );
                 }
 

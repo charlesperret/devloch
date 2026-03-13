@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { ServicesSurfaceCard } from "@/components/services/services-ui";
+import type { SupportedLocale } from "@/lib/i18n/slug-map";
 
 type SystemCardLink = {
   label: string;
@@ -16,6 +17,32 @@ type SystemCardProps = {
   result: string;
   stack: readonly string[];
   links?: readonly SystemCardLink[];
+  locale?: SupportedLocale;
+};
+
+const copyByLocale: Record<
+  SupportedLocale,
+  {
+    resultLabel: string;
+    detailsLabel: string;
+  }
+> = {
+  fr: {
+    resultLabel: "Résultat attendu",
+    detailsLabel: "En savoir plus",
+  },
+  en: {
+    resultLabel: "Expected outcome",
+    detailsLabel: "Learn more",
+  },
+  de: {
+    resultLabel: "Erwartetes Ergebnis",
+    detailsLabel: "Mehr erfahren",
+  },
+  nl: {
+    resultLabel: "Verwacht resultaat",
+    detailsLabel: "Meer weten",
+  },
 };
 
 export function SystemCard({
@@ -27,7 +54,10 @@ export function SystemCard({
   result,
   stack,
   links = [],
+  locale = "fr",
 }: SystemCardProps) {
+  const copy = copyByLocale[locale];
+
   return (
     <ServicesSurfaceCard className="h-full p-6 md:p-7">
       <div className="flex items-start justify-between gap-3">
@@ -43,7 +73,7 @@ export function SystemCard({
       <p className="mt-4 text-sm leading-7 text-neutral-600 md:text-base">{shortDescription}</p>
 
       <div className="mt-5 rounded-2xl bg-devlo-50 p-4">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-devlo-700">Résultat attendu</p>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-devlo-700">{copy.resultLabel}</p>
         <p className="mt-2 text-sm font-semibold leading-6 text-devlo-900 md:text-base">{result}</p>
       </div>
 
@@ -74,7 +104,7 @@ export function SystemCard({
 
       <details className="group mt-6 border-t border-neutral-200 pt-4">
         <summary className="cursor-pointer list-none text-sm font-semibold text-devlo-800">
-          En savoir plus
+          {copy.detailsLabel}
         </summary>
         <p className="mt-3 text-sm leading-7 text-neutral-600 md:text-base">{longDescription}</p>
       </details>

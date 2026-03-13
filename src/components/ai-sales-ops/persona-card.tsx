@@ -1,4 +1,5 @@
 import { ServicesSurfaceCard } from "@/components/services/services-ui";
+import type { SupportedLocale } from "@/lib/i18n/slug-map";
 
 type PersonaCardProps = {
   icon: string;
@@ -7,9 +8,37 @@ type PersonaCardProps = {
   pain: string;
   systems: readonly string[];
   result: string;
+  locale?: SupportedLocale;
 };
 
-export function PersonaCard({ icon, title, profile, pain, systems, result }: PersonaCardProps) {
+const copyByLocale: Record<
+  SupportedLocale,
+  {
+    painLabel: string;
+    resultLabel: string;
+  }
+> = {
+  fr: {
+    painLabel: "Problème principal",
+    resultLabel: "Résultat attendu",
+  },
+  en: {
+    painLabel: "Main challenge",
+    resultLabel: "Expected outcome",
+  },
+  de: {
+    painLabel: "Hauptproblem",
+    resultLabel: "Erwartetes Ergebnis",
+  },
+  nl: {
+    painLabel: "Belangrijkste probleem",
+    resultLabel: "Verwacht resultaat",
+  },
+};
+
+export function PersonaCard({ icon, title, profile, pain, systems, result, locale = "fr" }: PersonaCardProps) {
+  const copy = copyByLocale[locale];
+
   return (
     <ServicesSurfaceCard className="h-full p-6 md:p-7">
       <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-devlo-100 text-2xl">
@@ -19,7 +48,7 @@ export function PersonaCard({ icon, title, profile, pain, systems, result }: Per
       <p className="mt-3 text-sm leading-7 text-neutral-600 md:text-base">{profile}</p>
 
       <div className="mt-5 rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">Problème principal</p>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">{copy.painLabel}</p>
         <p className="mt-2 text-sm font-semibold leading-6 text-devlo-900">{pain}</p>
       </div>
 
@@ -35,7 +64,7 @@ export function PersonaCard({ icon, title, profile, pain, systems, result }: Per
       </div>
 
       <div className="mt-5 rounded-2xl bg-devlo-900 p-4 text-white">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-white/70">Résultat attendu</p>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-white/70">{copy.resultLabel}</p>
         <p className="mt-2 text-sm font-semibold leading-6 md:text-base">{result}</p>
       </div>
     </ServicesSurfaceCard>

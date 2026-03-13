@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { generateMetadata as generateCaseStudyFrMetadata } from "@/app/etudes-de-cas/[slug]/page";
 import { AcademyMasterPage } from "@/components/pages/academy-master-page";
+import { AiSalesOpsMasterPage } from "@/components/pages/ai-sales-ops-master-page";
 import { AgencyMasterPage } from "@/components/pages/agency-master-page";
 import { BlogHubMasterPage } from "@/components/pages/blog-hub-master-page";
 import { BlogArticleMasterPage } from "@/components/pages/blog-article-master-page";
@@ -24,6 +25,7 @@ import { academySeo, caseStudiesSeo, conditionsSeo, consultationSeo, homeSeo } f
 import { getLocalizedBlogArticle } from "@/lib/i18n/blog-content";
 import { getLocalizedGeoContent } from "@/lib/i18n/geo-content";
 import { getLocalizedAlternativeContent } from "@/lib/i18n/alternatives-content";
+import { getLocalizedAiSalesOpsContent } from "@/lib/i18n/ai-sales-ops-content";
 import { getLocalizedCaseStudyBySlug } from "@/lib/i18n/case-studies-content";
 import { getLocalizedMasterfileContent } from "@/lib/i18n/masterfile-content";
 import { getLocalizedServicesContent } from "@/lib/i18n/services-content";
@@ -196,6 +198,14 @@ function resolveFrSeo(frPath: string): { title: string; description: string; ima
     };
   }
 
+  if (path === "/ai-sales-ops") {
+    const content = getLocalizedAiSalesOpsContent("fr");
+    return {
+      title: content.metaTitle,
+      description: content.metaDescription,
+    };
+  }
+
   if (path === "/blog") {
     return {
       title: "Blog — Prospection B2B, cold email et outbound",
@@ -323,7 +333,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     return {};
   }
 
-  const baseSeo = resolveFrSeo(resolved.frPath);
+  const baseSeo = resolved.frPath === "/ai-sales-ops"
+    ? {
+        title: getLocalizedAiSalesOpsContent(resolved.locale).metaTitle,
+        description: getLocalizedAiSalesOpsContent(resolved.locale).metaDescription,
+      }
+    : resolveFrSeo(resolved.frPath);
   const sanitySeo = await getSanityLocalizedSeo(resolved.pageId, resolved.locale);
   const title = stripDevloSuffix(sanitySeo?.title ?? baseSeo.title);
   const description = sanitySeo?.description ?? baseSeo.description;
@@ -454,6 +469,10 @@ export default async function LocalizedRoutePage({ params }: Params) {
 
   if (frPath === "/agence") {
     return <AgencyMasterPage locale={resolved.locale} />;
+  }
+
+  if (frPath === "/ai-sales-ops") {
+    return <AiSalesOpsMasterPage locale={resolved.locale} />;
   }
 
   if (frPath === "/blog") {

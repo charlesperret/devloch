@@ -6,7 +6,8 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 import { caseStudiesCards, type CaseStudyCard } from "@/content/masterfile.fr";
-import { resolvePathForLocale } from "@/lib/i18n/slug-map";
+import { getLocalizedMasterfileContent } from "@/lib/i18n/masterfile-content";
+import { resolvePathForLocale, type SupportedLocale } from "@/lib/i18n/slug-map";
 
 const SELECTED_SLUGS = [
   "monizze-120-rendez-vous",
@@ -19,14 +20,46 @@ const SELECTED_SLUGS = [
   "squareco-52-prospects-interesses-biocarburants",
 ];
 
-function getCarouselCards(): CaseStudyCard[] {
+const copyByLocale: Record<
+  SupportedLocale,
+  {
+    nextAria: string;
+    allCaseStudies: string;
+  }
+> = {
+  fr: {
+    nextAria: "Voir plus d'études de cas",
+    allCaseStudies: "Voir toutes les études de cas →",
+  },
+  en: {
+    nextAria: "View more case studies",
+    allCaseStudies: "View all case studies →",
+  },
+  de: {
+    nextAria: "Mehr Fallstudien ansehen",
+    allCaseStudies: "Alle Fallstudien ansehen →",
+  },
+  nl: {
+    nextAria: "Meer praktijkvoorbeelden bekijken",
+    allCaseStudies: "Bekijk alle praktijkvoorbeelden →",
+  },
+};
+
+function getCarouselCards(allCards: CaseStudyCard[]): CaseStudyCard[] {
   const slugSet = new Set(SELECTED_SLUGS);
-  const matched = caseStudiesCards.filter((c) => slugSet.has(c.slug));
-  return matched.length >= 4 ? matched : caseStudiesCards.slice(0, 8);
+  const matched = allCards.filter((card) => slugSet.has(card.slug));
+  return matched.length >= 4 ? matched : allCards.slice(0, 8);
 }
 
-export function CaseStudyCarousel() {
-  const cards = getCarouselCards();
+type CaseStudyCarouselProps = {
+  locale?: SupportedLocale;
+  cards?: CaseStudyCard[];
+};
+
+export function CaseStudyCarousel({ locale = "fr", cards: providedCards }: CaseStudyCarouselProps) {
+  const copy = copyByLocale[locale];
+  const defaultCards = (getLocalizedMasterfileContent(locale).caseStudiesCards as CaseStudyCard[]) ?? caseStudiesCards;
+  const cards = getCarouselCards(providedCards ?? defaultCards);
   const [offset, setOffset] = useState(0);
 
   const next = useCallback(() => {
@@ -44,7 +77,7 @@ export function CaseStudyCarousel() {
         {visible.map((card, i) => (
           <Link
             key={`${card.slug}-${offset}-${i}`}
-            href={resolvePathForLocale(`/etudes-de-cas/${card.slug}`, "fr").path}
+            href={resolvePathForLocale(`/etudes-de-cas/${card.slug}`, locale).path}
             className="group w-full min-w-0 flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-panel"
           >
             <div className="relative aspect-[16/9] overflow-hidden bg-devlo-50">
@@ -82,7 +115,7 @@ export function CaseStudyCarousel() {
       <button
         type="button"
         onClick={next}
-        aria-label="Voir plus d'études de cas"
+        aria-label={copy.nextAria}
         className="absolute right-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white shadow-soft transition hover:border-devlo-600 hover:text-devlo-600"
       >
         <ChevronRight className="h-5 w-5" />
@@ -90,10 +123,10 @@ export function CaseStudyCarousel() {
 
       <div className="mt-4 text-center">
         <Link
-          href="/etudes-de-cas"
+          href={resolvePathForLocale("/etudes-de-cas", locale).path}
           className="text-sm font-semibold text-devlo-700 underline decoration-devlo-200 underline-offset-4 transition hover:text-devlo-900 hover:decoration-devlo-400"
         >
-          Voir toutes les études de cas →
+          {copy.allCaseStudies}
         </Link>
       </div>
     </div>

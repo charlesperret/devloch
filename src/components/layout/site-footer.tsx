@@ -195,6 +195,7 @@ export function SiteFooter() {
   const localizedServices = getLocalizedServicesContent(locale).SERVICE_HUB_CARDS;
   const labels = footerLabelsByLocale[locale];
   const toLocaleHref = (frPath: string) => resolvePathForLocale(frPath, locale).path;
+  const aiSalesOpsBaseHref = toLocaleHref("/ai-sales-ops");
 
   const navigationLinks = [
     { label: labels.navHome, href: toLocaleHref("/") },
@@ -213,6 +214,20 @@ export function SiteFooter() {
     label: getCaseStudyFooterLabel(study.slug, locale),
     href: toLocaleHref(study.href),
   }));
+  const aiSalesOpsLinks = labels.aiSalesOpsItems.map((item) => {
+    if (item.href.startsWith("/ai-sales-ops")) {
+      const suffix = item.href.slice("/ai-sales-ops".length);
+      return {
+        ...item,
+        href: `${aiSalesOpsBaseHref}${suffix}`,
+      };
+    }
+
+    return {
+      ...item,
+      href: toLocaleHref(item.href),
+    };
+  });
 
   return (
     <footer className="relative border-t border-neutral-200 bg-white pb-20 pt-16 text-devlo-900 md:pt-20">
@@ -286,7 +301,7 @@ export function SiteFooter() {
         </div>
 
         <div className="lg:border-l lg:border-neutral-200 lg:pl-8">
-          <FooterList title={labels.aiSalesOps} links={labels.aiSalesOpsItems} compactLinks />
+          <FooterList title={labels.aiSalesOps} links={aiSalesOpsLinks} compactLinks />
         </div>
 
         <div className="lg:border-l lg:border-neutral-200 lg:pl-8">

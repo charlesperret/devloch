@@ -5,6 +5,12 @@
     "de": "/de/academy",
     "nl": "/nl/academy"
   },
+  "ai-sales-ops": {
+    "fr": "/ai-sales-ops",
+    "en": "/en/ai-sales-ops",
+    "de": "/de/ki-vertriebsautomatisierung",
+    "nl": "/nl/ai-sales-automatisering"
+  },
   "case-studies": {
     "fr": "/etudes-de-cas",
     "en": "/en/case-studies",

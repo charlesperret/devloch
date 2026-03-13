@@ -144,6 +144,50 @@ const copyByLocale: Record<
   },
 };
 
+const aiSalesOpsBridgeCopyByLocale: Record<
+  SupportedLocale,
+  {
+    eyebrow: string;
+    title: string;
+    description: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
+  }
+> = {
+  fr: {
+    eyebrow: "Nouveau chez devlo",
+    title: "Découvrez aussi AI Sales Ops, notre couche d'automatisation IA pour équipes commerciales B2B",
+    description:
+      "Si vous voulez compléter ce service avec des workflows IA pour l'inbox, le CRM, la préparation de rendez-vous, le reporting ou les battle cards, nous pouvons les déployer en complément de votre machine outbound.",
+    ctaPrimary: "Voir AI Sales Ops →",
+    ctaSecondary: "Réserver un diagnostic",
+  },
+  en: {
+    eyebrow: "New at devlo",
+    title: "Also discover AI Sales Ops, our AI automation layer for B2B sales teams",
+    description:
+      "If you want to complement this service with AI workflows for inbox management, CRM updates, meeting preparation, reporting or battle cards, we can deploy them alongside your outbound engine.",
+    ctaPrimary: "View AI Sales Ops →",
+    ctaSecondary: "Book a diagnostic",
+  },
+  de: {
+    eyebrow: "Neu bei devlo",
+    title: "Entdecken Sie auch AI Sales Ops, unsere KI-Automatisierungsschicht für B2B-Vertriebsteams",
+    description:
+      "Wenn Sie diese Leistung mit KI-Workflows für Inbox-Management, CRM-Updates, Meeting-Vorbereitung, Reporting oder Battle Cards ergänzen möchten, können wir diese zusätzlich zu Ihrer Outbound-Maschine implementieren.",
+    ctaPrimary: "AI Sales Ops ansehen →",
+    ctaSecondary: "Diagnose buchen",
+  },
+  nl: {
+    eyebrow: "Nieuw bij devlo",
+    title: "Ontdek ook AI Sales Ops, onze AI-automatiseringslaag voor B2B-salesteams",
+    description:
+      "Als je deze dienst wilt aanvullen met AI-workflows voor inboxbeheer, CRM-updates, meetingvoorbereiding, reporting of battle cards, kunnen we die boven op je outboundmachine uitrollen.",
+    ctaPrimary: "Bekijk AI Sales Ops →",
+    ctaSecondary: "Plan een diagnose",
+  },
+};
+
 export function ServicePageTemplate({ service, locale = "fr" }: ServicePageProps) {
   const localizedService = localizeGeoTermsInObject(service, locale);
   const localizedServicesContent = getLocalizedServicesContent(locale);
@@ -158,7 +202,8 @@ export function ServicePageTemplate({ service, locale = "fr" }: ServicePageProps
     `${localizedService.faqItems.length} ${copy.faqQuestions}`,
   ];
   const aiSalesOpsEligibleServices = new Set(["outbound-multicanal", "cold-email", "enrichissement-clay"]);
-  const showAiSalesOpsBridge = locale === "fr" && aiSalesOpsEligibleServices.has(localizedService.slug);
+  const showAiSalesOpsBridge = aiSalesOpsEligibleServices.has(localizedService.slug);
+  const aiSalesOpsBridgeCopy = aiSalesOpsBridgeCopyByLocale[locale];
 
   const breadcrumbItems = [
     { name: copy.home, path: resolvePathForLocale("/", locale).path },
@@ -257,20 +302,20 @@ export function ServicePageTemplate({ service, locale = "fr" }: ServicePageProps
               <ServicesSurfaceCard className="overflow-hidden border-devlo-200 bg-devlo-900 p-6 text-white shadow-panel md:p-8">
                 <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.08em] text-white/70">Nouveau chez devlo</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.08em] text-white/70">{aiSalesOpsBridgeCopy.eyebrow}</p>
                     <h2 className="mt-3 text-2xl font-bold leading-tight md:text-3xl">
-                      {"Découvrez aussi AI Sales Ops, notre couche d'automatisation IA pour équipes commerciales B2B"}
+                      {aiSalesOpsBridgeCopy.title}
                     </h2>
                     <p className="mt-3 max-w-3xl text-sm leading-7 text-white/75 md:text-base">
-                      {"Si vous voulez compléter ce service avec des workflows IA pour l'inbox, le CRM, la préparation de rendez-vous, le reporting ou les battle cards, nous pouvons les déployer en complément de votre machine outbound."}
+                      {aiSalesOpsBridgeCopy.description}
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-3">
-                    <Link href="/ai-sales-ops" className={buttonClassName("outline", "px-6 py-3 text-sm")}>
-                      Voir AI Sales Ops →
+                    <Link href={resolvePathForLocale("/ai-sales-ops", locale).path} className={buttonClassName("outline", "px-6 py-3 text-sm")}>
+                      {aiSalesOpsBridgeCopy.ctaPrimary}
                     </Link>
-                    <Link href="/consultation" className={buttonClassName("secondary", "border-white/20 bg-white/5 px-6 py-3 text-sm text-white hover:border-white/35 hover:text-white")}>
-                      Réserver un diagnostic
+                    <Link href={resolvePathForLocale("/consultation", locale).path} className={buttonClassName("secondary", "border-white/20 bg-white/5 px-6 py-3 text-sm text-white hover:border-white/35 hover:text-white")}>
+                      {aiSalesOpsBridgeCopy.ctaSecondary}
                     </Link>
                   </div>
                 </div>

@@ -1,0 +1,1570 @@
+{
+  "fr": {
+    "metaTitle": "AI Sales Ops B2B en Suisse",
+    "metaDescription": "Systèmes AI Sales Ops pour équipes commerciales B2B : inbox, CRM, meeting prep et reporting. Diagnostic gratuit avec devlo, en Suisse.",
+    "hero": {
+      "badge": "AI Sales Ops pour équipes commerciales B2B",
+      "h1": "Vos commerciaux closent plus de deals sans recruter, grâce à l'IA",
+      "subtitle": "devlo conçoit et déploie des systèmes d'automatisation alimentés par l'IA qui libèrent vos commerciaux des tâches répétitives, accélèrent vos cycles de vente et transforment vos données en avantage concurrentiel.",
+      "ctaPrimary": "Réserver un diagnostic gratuit →",
+      "ctaSecondary": "Découvrir les 7 systèmes ↓",
+      "badge1": "7 ans de terrain commercial",
+      "badge2": "+1'000 campagnes exécutées",
+      "badge3": "Diagnostic gratuit, zéro engagement"
+    },
+    "problemSection": {
+      "eyebrow": "Le problème",
+      "title": "Pourquoi vos commerciaux passent-ils plus de temps à administrer qu'à vendre ?",
+      "description": "Les équipes B2B performantes ne gagnent pas en ajoutant plus d'outils. Elles gagnent en supprimant le travail répétitif qui ralentit les deals.",
+      "body": [
+        "Selon Salesforce, les commerciaux consacrent environ 60% de leur temps à des tâches non commerciales. Sur une équipe de 5 personnes, cela représente l'équivalent de 3 postes à temps plein absorbés par l'administration, la mise à jour CRM, la gestion inbox et la préparation des rendez-vous. L'enjeu n'est pas de remplacer vos commerciaux. L'enjeu est de leur rendre leur temps de vente.",
+        "Les PME et ETI en Suisse romande font face à un double blocage. Le recrutement commercial coûte plus cher, l'onboarding prend plus de temps, et les cycles de vente se tendent. Si vos réponses arrivent tard, si le CRM est incomplet ou si les follow-ups partent mal, vous perdez déjà du terrain.",
+        "devlo construit des systèmes de prospection B2B depuis 7 ans. Chaque workflow présenté ici a été testé en production, d'abord pour nos propres campagnes, puis pour des clients en Suisse, en France, en Belgique et en DACH."
+      ]
+    },
+    "systemsSection": {
+      "eyebrow": "Les 7 systèmes",
+      "title": "Quels systèmes AI Sales Ops déployer pour votre équipe commerciale ?",
+      "description": "Chaque système se déploie en 2 à 4 semaines. Il est configuré pour votre entreprise, puis gardé sous contrôle humain à chaque étape clé."
+    },
+    "systems": [
+      {
+        "number": "01",
+        "title": "Gestion intelligente des réponses commerciales",
+        "fit": "Équipes 2+ commerciaux",
+        "shortDescription": "L'IA prépare des réponses personnalisées pour vos prospects, sur email et LinkedIn, à partir de vos guidelines internes, de l'historique conversationnel et de votre playbook commercial. Un humain valide chaque message avant envoi.",
+        "longDescription": "Chaque message entrant est classifié par intention, puis enrichi avec vos SOP, vos conversations passées et les règles commerciales propres à votre entreprise. Le système propose une réponse prête à envoyer. Votre équipe corrige si nécessaire, puis cette correction alimente la boucle d'apprentissage. Vous gardez la qualité humaine, sans garder la charge opérationnelle.",
+        "result": "Jusqu'à 80% du temps inbox récupéré, sans perte de personnalisation.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "HubSpot",
+          "Lemlist"
+        ],
+        "links": [
+          {
+            "label": "Outbound multicanal",
+            "href": "/services/outbound-multicanal"
+          },
+          {
+            "label": "CRM et délivrabilité",
+            "href": "/services/crm-delivrabilite"
+          }
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Assistant IA pour vos équipes commerciales",
+        "fit": "Équipes 5 à 20 personnes",
+        "shortDescription": "Un agent IA dans Slack ou Teams répond instantanément aux questions de vos commerciaux, sur les objections, le produit, les process et les bonnes pratiques. Quand le système n'est pas certain, il escalade au manager.",
+        "longDescription": "Le Sales Knowledge Bot centralise vos playbooks, FAQ, SOP et documents produit dans un point d'accès unique. Il répond dans la langue de la question, puis capture les réponses du manager quand une escalade est nécessaire. La base de connaissances s'enrichit sans nouveau projet documentaire. Résultat, l'onboarding s'accélère et les réponses se standardisent.",
+        "result": "Onboarding commercial 3 fois plus rapide, avec 70% d'escalades en moins après quelques mois.",
+        "stack": [
+          "Slack",
+          "Teams",
+          "n8n",
+          "Claude API",
+          "Google Docs"
+        ],
+        "links": []
+      },
+      {
+        "number": "03",
+        "title": "Préparation automatique de rendez-vous et mise à jour CRM",
+        "fit": "Équipes 3+ commerciaux",
+        "shortDescription": "Avant chaque rendez-vous, l'IA génère un briefing complet. Après le call, elle transforme vos notes en compte-rendu structuré, met à jour le CRM et crée les follow-ups.",
+        "longDescription": "Quand un rendez-vous entre dans le calendrier, le système prépare un dossier prospect : actualités récentes, activité LinkedIn, historique CRM, objections déjà rencontrées, talking points recommandés. Après l'appel, le commercial dicte un mémo vocal ou colle ses notes. L'IA structure le compte-rendu, met à jour le pipeline, crée les tâches et évite les relances oubliées.",
+        "result": "Jusqu'à 4 heures récupérées par jour et par commercial, avec un CRM enfin à jour.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "Google Calendar",
+          "HubSpot",
+          "Salesforce"
+        ],
+        "links": [
+          {
+            "label": "Prise de rendez-vous",
+            "href": "/services/prise-de-rendez-vous"
+          },
+          {
+            "label": "CRM et délivrabilité",
+            "href": "/services/crm-delivrabilite"
+          }
+        ]
+      },
+      {
+        "number": "04",
+        "title": "Bibliothèque d'objections et battle cards en temps réel",
+        "fit": "Équipes 5+ commerciaux",
+        "shortDescription": "Les objections gagnantes et les réponses qui closent sont capturées automatiquement à partir de vos deals. Dès qu'un concurrent revient, une battle card est générée et diffusée à l'équipe.",
+        "longDescription": "Au lieu de laisser le savoir commercial dans la tête de deux seniors, le système collecte les objections remontées en call, les réponses qui ont marché et les signaux concurrentiels. Chaque nouvelle information renforce la bibliothèque. Les juniors accèdent aux meilleurs arguments en quelques secondes, directement dans leur environnement de travail.",
+        "result": "Le niveau d'argumentation des juniors converge vers celui des seniors, sans dépendre d'une seule personne.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "Google Docs",
+          "Slack",
+          "Teams"
+        ],
+        "links": []
+      },
+      {
+        "number": "05",
+        "title": "Rédaction automatique de propositions et follow-ups commerciaux",
+        "fit": "Équipes qui envoient 5+ propositions par semaine",
+        "shortDescription": "L'IA génère des drafts de propositions et de follow-ups à partir du contexte réel du deal. Le commercial ajuste quelques lignes et envoie.",
+        "longDescription": "Le système récupère les données CRM, les notes de meeting, le secteur du prospect, les objections soulevées et le ton de votre entreprise. Il produit ensuite un premier draft propre, structuré et cohérent. Vos équipes passent de plusieurs heures de rédaction à quelques minutes de revue, avec des follow-ups plus réguliers et mieux contextualisés.",
+        "result": "Des propositions prêtes à envoyer en 15 minutes au lieu de 2 ou 3 heures.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "HubSpot",
+          "Salesforce",
+          "Google Docs"
+        ],
+        "links": [
+          {
+            "label": "Cold Email B2B",
+            "href": "/services/cold-email"
+          }
+        ]
+      },
+      {
+        "number": "06",
+        "title": "Dashboard IA de performance commerciale",
+        "fit": "Managers de 5 à 15 personnes",
+        "shortDescription": "L'IA analyse les feedbacks quotidiens de votre équipe, détecte les patterns récurrents, met en évidence les progrès et propose des plans d'action concrets par commercial.",
+        "longDescription": "Le dashboard transforme des notes dispersées, des feedbacks de coaching et des observations terrain en une vue structurée, par personne et par équipe. Vous obtenez des tendances lisibles, des priorités de coaching, une vision claire des patterns résolus ou persistants, et une base plus objective pour vos décisions RH.",
+        "result": "Des décisions de management fondées sur des données, avec un onboarding plus propre et moins de turnover caché.",
+        "stack": [
+          "Supabase",
+          "n8n",
+          "Claude API",
+          "Lovable"
+        ],
+        "links": []
+      },
+      {
+        "number": "07",
+        "title": "Portail client avec reporting en temps réel",
+        "fit": "Agences et directions commerciales",
+        "shortDescription": "Un portail sécurisé donne accès aux métriques de campagne, au ROI, au calendrier d'actions et à l'historique de performance, sans passer par des exports manuels.",
+        "longDescription": "Chaque client ou direction consulte ses propres données via un accès contrôlé. Le portail remplace les fichiers Excel et les échanges de reporting récurrents. Vous centralisez les métriques utiles, les tendances, les prochaines actions et un simulateur de ROI. Le reporting devient un produit, pas une charge.",
+        "result": "Jusqu'à 90% de demandes de reporting ad hoc en moins, avec plus de confiance côté client et direction.",
+        "stack": [
+          "Lovable",
+          "Supabase",
+          "n8n",
+          "RLS"
+        ],
+        "links": [
+          {
+            "label": "Étude de cas Monizze",
+            "href": "/etudes-de-cas/monizze-120-rendez-vous"
+          }
+        ]
+      }
+    ],
+    "startSection": {
+      "eyebrow": "Par où commencer",
+      "title": "Commencez par le workflow qui fait déjà perdre du temps aujourd'hui",
+      "description": "Dans la majorité des cas, nous commençons par l'inbox, la préparation de rendez-vous ou le CRM. Ensuite, nous ajoutons les briques qui font monter la qualité de pilotage : knowledge bot, battle cards, reporting ou sales writer."
+    },
+    "processSection": {
+      "eyebrow": "Comment ça marche",
+      "title": "Comment déployer des systèmes AI Sales Ops en 3 semaines ?",
+      "description": "Un diagnostic franc, un déploiement encadré, puis une amélioration continue. Vous savez ce qui est branché, pourquoi, et avec quel impact attendu."
+    },
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Diagnostic gratuit, 30 minutes",
+        "description": "Nous analysons votre CRM, vos outils de prospection, vos SOP et les points de friction réels de votre équipe. Vous repartez avec une recommandation claire, sans jargon ni audit de complaisance."
+      },
+      {
+        "number": "02",
+        "title": "Déploiement personnalisé, 2 à 4 semaines",
+        "description": "Notre équipe configure les systèmes, connecte vos outils et calibre les prompts, les règles et les workflows avec vos données, votre ton et vos standards de qualité."
+      },
+      {
+        "number": "03",
+        "title": "Optimisation continue",
+        "description": "Chaque validation humaine, chaque correction et chaque nouveau cas enrichissent le système. Nous monitorons les performances, puis nous ajustons mensuellement avec un interlocuteur dédié."
+      }
+    ],
+    "proofSection": {
+      "eyebrow": "Preuves",
+      "title": "Quelles preuves montrent que ces systèmes fonctionnent ?",
+      "description": "devlo ne vend pas un concept IA. Nous déployons des systèmes bâtis sur des campagnes réelles, avec des clients qui veulent du pipeline, du suivi et du ROI."
+    },
+    "proofStats": [
+      {
+        "value": "60%",
+        "label": "du temps commercial absorbé par des tâches hors vente",
+        "sourceLabel": "Salesforce, State of Sales",
+        "sourceHref": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
+      },
+      {
+        "value": "2 h",
+        "label": "de vente active par jour pour un commercial moyen",
+        "sourceLabel": "HubSpot, Sales Trends Report",
+        "sourceHref": "https://www.hubspot.com/sales/statistics"
+      },
+      {
+        "value": "27%",
+        "label": "du temps commercial consacré à la vente effective selon Forrester",
+        "sourceLabel": "Forrester, B2B Sales Benchmark",
+        "sourceHref": "https://www.forrester.com/research/b2b-sales/"
+      },
+      {
+        "value": "1 jour",
+        "label": "par semaine peut être perdu à chercher de l'information",
+        "sourceLabel": "McKinsey, Economic potential of generative AI",
+        "sourceHref": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+      }
+    ],
+    "deliveryProof": [
+      {
+        "value": "7 ans",
+        "label": "d'expérience opérationnelle en prospection B2B"
+      },
+      {
+        "value": "+1'000",
+        "label": "campagnes exécutées par devlo"
+      },
+      {
+        "value": "80%",
+        "label": "de temps inbox récupéré sur les workflows ciblés"
+      },
+      {
+        "value": "70%+",
+        "label": "de taux d'ouverture moyen sur nos campagnes"
+      },
+      {
+        "value": "3 à 5x",
+        "label": "de gain potentiel sur le taux de réponse avec les bons signaux"
+      }
+    ],
+    "personasSection": {
+      "eyebrow": "Pour qui",
+      "title": "Pour quelles entreprises ces systèmes sont-ils conçus ?",
+      "description": "Le bon système dépend moins de votre taille que du point de friction à éliminer : trop de reporting, trop de handoff manuel, trop de savoir tacite, ou pas assez de rigueur dans le follow-up."
+    },
+    "personas": [
+      {
+        "icon": "📈",
+        "title": "Le directeur commercial qui veut scaler sans recruter",
+        "profile": "Il pilote 5 à 15 commerciaux, a des objectifs de croissance forts et ne veut pas transformer son budget en machine à embauche.",
+        "pain": "Mes commerciaux passent plus de temps à administrer qu'à vendre.",
+        "systemTags": [
+          "Inbox Manager",
+          "Meeting Prep",
+          "Sales Writer"
+        ],
+        "result": "L'équivalent de 2 commerciaux supplémentaires, sans ouvrir 2 postes de plus."
+      },
+      {
+        "icon": "🏗️",
+        "title": "Le CEO de PME qui veut structurer ses ventes",
+        "profile": "L'équipe commerciale existe, mais le process n'est pas encore formalisé. Le savoir est concentré sur quelques personnes clés.",
+        "pain": "Tout le savoir commercial est dans la tête de 2 personnes.",
+        "systemTags": [
+          "Knowledge Bot",
+          "Objection Library",
+          "Team Performance"
+        ],
+        "result": "Vos juniors argumentent comme vos seniors en quelques mois, avec des process enfin documentés."
+      },
+      {
+        "icon": "🧾",
+        "title": "L'agence B2B qui veut impressionner ses clients",
+        "profile": "Elle gère des campagnes pour ses clients, doit prouver sa valeur en continu et veut réduire le temps passé à produire du reporting.",
+        "pain": "Mes clients veulent de la visibilité en temps réel, avec des chiffres clairs.",
+        "systemTags": [
+          "Reporting Portal",
+          "Inbox Manager"
+        ],
+        "result": "Transparence totale, zéro reporting manuel et un argument commercial que peu d'agences peuvent montrer."
+      }
+    ],
+    "comparisonSection": {
+      "eyebrow": "Comparaison",
+      "title": "Que se passe-t-il quand vous gardez le statu quo ?",
+      "description": "Pendant que vous hésitez, vos concurrents répondent plus vite, préparent mieux leurs rendez-vous et capitalisent déjà leur savoir commercial."
+    },
+    "comparisonRows": [
+      {
+        "criterion": "Temps de réponse aux prospects",
+        "withoutDevlo": "2 à 24 heures, avec beaucoup de réponses rédigées à la main.",
+        "withDevlo": "Moins de 15 minutes, avec proposition IA et validation humaine."
+      },
+      {
+        "criterion": "Mise à jour CRM après un call",
+        "withoutDevlo": "Souvent oubliée ou faite plusieurs heures plus tard.",
+        "withDevlo": "Automatique, structurée et poussée en temps réel."
+      },
+      {
+        "criterion": "Préparation d'un rendez-vous",
+        "withoutDevlo": "30 minutes de recherche manuelle, parfois plus.",
+        "withDevlo": "Briefing généré automatiquement, prêt avant le call."
+      },
+      {
+        "criterion": "Onboarding d'un nouveau commercial",
+        "withoutDevlo": "3 à 6 mois avant autonomie réelle.",
+        "withDevlo": "4 à 6 semaines avec bot de connaissance et battle cards."
+      },
+      {
+        "criterion": "Propositions commerciales",
+        "withoutDevlo": "2 à 3 heures de rédaction par proposition.",
+        "withDevlo": "15 minutes avec draft IA, puis revue humaine."
+      },
+      {
+        "criterion": "Visibilité pour la direction",
+        "withoutDevlo": "Reporting hebdomadaire sur Excel ou Slides.",
+        "withDevlo": "Dashboard live, consultable 24 heures sur 24."
+      },
+      {
+        "criterion": "Savoir commercial quand un senior part",
+        "withoutDevlo": "Une partie du savoir part avec lui.",
+        "withDevlo": "Les objections, réponses et learnings sont capturés dans le système."
+      }
+    ],
+    "differenceCard": {
+      "eyebrow": "La différence devlo",
+      "title": "Les agences IA généralistes automatisent vos opérations. devlo automatise votre machine commerciale.",
+      "description": "Nous ne partons pas d'un outil, ni d'un prompt. Nous partons du process commercial, des objections, des handoffs, du CRM, des follow-ups et du rythme réel de votre équipe. C'est cette lecture métier qui fait la différence entre une automatisation impressionnante en démo, et un système utile en production."
+    },
+    "faqSection": {
+      "title": "Questions fréquentes sur nos systèmes AI Sales Ops"
+    },
+    "faqItems": [
+      {
+        "question": "Combien coûtent les systèmes AI Sales Ops ?",
+        "answer": "Le pricing dépend du système choisi et de la taille de votre équipe. Le diagnostic initial est gratuit. Les systèmes individuels démarrent à CHF 2'000 par mois. La plupart de nos clients investissent entre CHF 3'000 et CHF 6'000 par mois pour un ou deux systèmes combinés."
+      },
+      {
+        "question": "Faut-il changer de CRM ou d'outils pour utiliser vos systèmes ?",
+        "answer": "Non. Nos systèmes s'intègrent à vos outils existants : HubSpot, Salesforce, Pipedrive, Lemlist, LinkedIn Sales Navigator, Slack, Teams, et d'autres. Nous nous adaptons à votre stack, pas l'inverse."
+      },
+      {
+        "question": "Est-ce que l'IA remplace mes commerciaux ?",
+        "answer": "Non. L'IA prend en charge les tâches répétitives (rédaction d'emails, mise à jour CRM, recherche de prospects, reporting) pour que vos commerciaux se concentrent sur la vente, la relation client et la négociation. Un humain reste dans la boucle à chaque étape critique."
+      },
+      {
+        "question": "Combien de temps faut-il pour déployer un système ?",
+        "answer": "Entre 2 et 4 semaines selon la complexité. Le diagnostic prend 30 minutes. La configuration technique prend 1 à 2 semaines. La phase de calibration et de test prend 1 à 2 semaines supplémentaires."
+      },
+      {
+        "question": "Mes données sont-elles sécurisées ?",
+        "answer": "Oui. Nous utilisons des infrastructures hébergées en Europe (notamment Supabase et n8n Cloud), conformes au RGPD et à la nLPD suisse. Vos données clients ne sont jamais partagées entre clients. Chaque système est isolé."
+      },
+      {
+        "question": "Peut-on commencer par un seul système et en ajouter d'autres ensuite ?",
+        "answer": "Oui. C'est d'ailleurs la trajectoire la plus saine. La plupart de nos clients démarrent avec l'Inbox Manager ou le Meeting Prep, puis ajoutent d'autres briques quand le premier workflow est stabilisé."
+      },
+      {
+        "question": "Quelle est la différence entre devlo et une agence IA généraliste ?",
+        "answer": "Les agences IA généralistes automatisent souvent des sujets administratifs (factures, support ou back-office). devlo se concentre uniquement sur les équipes commerciales B2B. Nous partons du process commercial, puis nous ajoutons l'IA là où elle crée un vrai gain de temps ou de taux de conversion."
+      },
+      {
+        "question": "Proposez-vous ces systèmes en complément de vos services de prospection externalisée ?",
+        "answer": "Oui. Nos clients en prospection externalisée peuvent ajouter ces systèmes comme extension naturelle. Les systèmes AI Sales Ops existent aussi en standalone pour les équipes commerciales internes qui veulent accélérer sans recruter immédiatement."
+      }
+    ],
+    "ctaSection": {
+      "eyebrow": "Diagnostic gratuit",
+      "title": "Prêt à libérer du temps pour vos commerciaux ?",
+      "description": "Réservez un diagnostic gratuit de 30 minutes. Nous analysons votre situation et vous recommandons les systèmes les plus pertinents pour votre équipe.",
+      "checklist": [
+        "Quels workflows automatiser en priorité",
+        "Quels systèmes déployer dans les 30 prochains jours",
+        "Quel ROI attendre, avec quels garde-fous",
+        "Zéro engagement, zéro jargon"
+      ],
+      "formTitle": "Réserver un diagnostic gratuit",
+      "formSubtitle": "30 minutes, sans engagement."
+    },
+    "caseStudiesLink": "Voir toutes les études de cas →",
+    "startCta": {
+      "primary": "Réserver un diagnostic gratuit →",
+      "secondary": "Voir les services outbound"
+    }
+  },
+  "en": {
+    "metaTitle": "AI Sales Ops B2B in Switzerland",
+    "metaDescription": "AI Sales Ops systems for B2B sales teams: inbox, CRM, meeting prep and reporting. Free diagnosis with devlo, in Switzerland.",
+    "hero": {
+      "badge": "AI Sales Ops for B2B sales teams",
+      "h1": "Your salespeople close more deals without recruiting, thanks to AI",
+      "subtitle": "devlo designs and deploys AI-powered automation systems that free your salespeople from repetitive tasks, speed up your sales cycles and turn your data into a competitive advantage.",
+      "ctaPrimary": "Book a free diagnostic →",
+      "ctaSecondary": "Discover the 7 systems ↓",
+      "badge1": "7 years in the sales field",
+      "badge2": "+1'000 campaigns executed",
+      "badge3": "Free diagnosis, no obligation"
+    },
+    "problemSection": {
+      "eyebrow": "The problem",
+      "title": "Why do your salespeople spend more time managing than selling?",
+      "description": "Successful B2B teams don't win by adding more tools. They win by eliminating the repetitive work that slows down deals.",
+      "body": [
+        "According to Salesforce, sales people spend around 60% of their time on non-sales tasks. In a team of 5 people, this represents the equivalent of 3 full-time posts absorbed by administration, CRM updates, inbox management and preparing appointments. The challenge is not to replace your sales people. The challenge is to give them back their sales time.",
+        "SMEs and SMIs in French-speaking Switzerland are facing a twofold stumbling block. Sales recruitment is more expensive, onboarding takes longer and sales cycles are tighter. If your responses arrive late, if the CRM is incomplete or if follow-ups go badly, you're already losing ground.",
+        "devlo has been building B2B prospecting systems for 7 years. Each workflow presented here has been tested in production, first for our own campaigns, then for customers in Switzerland, France, Belgium and DACH."
+      ]
+    },
+    "systemsSection": {
+      "eyebrow": "The 7 systems",
+      "title": "What AI Sales Ops systems should you deploy for your sales team?",
+      "description": "Each system can be deployed in 2 to 4 weeks. It is configured for your business, then kept under human control at every key stage."
+    },
+    "systems": [
+      {
+        "number": "01",
+        "title": "Intelligent management of sales responses",
+        "fit": "2+ sales teams",
+        "shortDescription": "AI prepares personalised responses for your prospects, by email and LinkedIn, based on your internal guidelines, conversational history and sales playbook. A human validates each message before it is sent.",
+        "longDescription": "Each incoming message is classified by intention, then enriched with your SOPs, past conversations and your company's own business rules. The system proposes a ready-to-send response. Your team corrects it if necessary, and this correction feeds the learning loop. You keep the human quality, without keeping the operational burden.",
+        "result": "Up to 80% of inbox time recovered, with no loss of personalisation.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "HubSpot",
+          "Lemlist"
+        ],
+        "links": [
+          {
+            "label": "Multi-channel outbound",
+            "href": "/services/outbound-multicanal"
+          },
+          {
+            "label": "CRM and deliverability",
+            "href": "/services/crm-delivrabilite"
+          }
+        ]
+      },
+      {
+        "number": "02",
+        "title": "AI Assistant for your sales teams",
+        "fit": "Teams of 5 to 20 people",
+        "shortDescription": "An AI agent in Slack or Teams instantly answers your sales reps' questions about objections, the product, processes and best practice. When the system is unsure, it escalates to the manager.",
+        "longDescription": "The Sales Knowledge Bot centralises your playbooks, FAQs, SOPs and product documents in a single access point. It responds in the language of the question, then captures the manager's answers when escalation is required. The knowledge base is enriched without the need for a new documentation project. As a result, onboarding is accelerated and responses are standardised.",
+        "result": "Commercial onboarding 3 times faster, with 70% fewer escalations after just a few months.",
+        "stack": [
+          "Slack",
+          "Teams",
+          "n8n",
+          "Claude API",
+          "Google Docs"
+        ],
+        "links": []
+      },
+      {
+        "number": "03",
+        "title": "Automatic appointment scheduling and CRM updates",
+        "fit": "3+ sales teams",
+        "shortDescription": "Before each meeting, AI generates a full briefing. After the call, it transforms your notes into a structured report, updates the CRM and creates follow-ups.",
+        "longDescription": "When an appointment is entered into the calendar, the system prepares a prospect file: recent news, LinkedIn activity, CRM history, objections already encountered, recommended talking points. After the call, the sales rep dictates a voice memo or pastes notes. The AI structures the report, updates the pipeline, creates tasks and avoids forgotten follow-ups.",
+        "result": "Up to 4 hours saved per day per sales rep, with a CRM that's finally up to date.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "Google Calendar",
+          "HubSpot",
+          "Salesforce"
+        ],
+        "links": [
+          {
+            "label": "Making an appointment",
+            "href": "/services/prise-de-rendez-vous"
+          },
+          {
+            "label": "CRM and deliverability",
+            "href": "/services/crm-delivrabilite"
+          }
+        ]
+      },
+      {
+        "number": "04",
+        "title": "Real-time objection library and battle cards",
+        "fit": "5+ sales teams",
+        "shortDescription": "Winning objections and closing responses are captured automatically from your deals. As soon as a competitor returns, a battle card is generated and distributed to the team.",
+        "longDescription": "Instead of leaving the commercial knowledge in the heads of two senior people, the system collects the objections raised in the call, the answers that have worked and the competitive signals. Each new piece of information adds to the library. The juniors have access to the best arguments in a matter of seconds, directly in their working environment.",
+        "result": "The level of argumentation of the juniors converges with that of the seniors, without depending on a single person.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "Google Docs",
+          "Slack",
+          "Teams"
+        ],
+        "links": []
+      },
+      {
+        "number": "05",
+        "title": "Automatic drafting of commercial proposals and follow-ups",
+        "fit": "Teams sending 5+ proposals per week",
+        "shortDescription": "The AI generates drafts of proposals and follow-ups based on the actual context of the deal. The sales person adjusts a few lines and sends.",
+        "longDescription": "The system gathers CRM data, meeting notes, the prospect's sector, the objections raised and the tone of your company. It then produces a clean, structured and coherent first draft. Your teams go from writing for several hours to reviewing in a few minutes, with more regular and better contextualised follow-ups.",
+        "result": "Proposals ready to send in 15 minutes instead of 2 or 3 hours.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "HubSpot",
+          "Salesforce",
+          "Google Docs"
+        ],
+        "links": [
+          {
+            "label": "Cold Email B2B",
+            "href": "/services/cold-email"
+          }
+        ]
+      },
+      {
+        "number": "06",
+        "title": "IA Sales Performance Dashboard",
+        "fit": "Managers of 5 to 15 people",
+        "shortDescription": "AI analyses your team's daily feedback, detects recurring patterns, highlights progress and proposes concrete action plans for each salesperson.",
+        "longDescription": "The dashboard transforms scattered notes, coaching feedback and field observations into a structured view, by person and by team. You get clear trends, coaching priorities, a clear view of resolved or persistent patterns, and a more objective basis for your HR decisions.",
+        "result": "Data-driven management decisions, with cleaner onboarding and less hidden turnover.",
+        "stack": [
+          "Supabase",
+          "n8n",
+          "Claude API",
+          "Lovable"
+        ],
+        "links": []
+      },
+      {
+        "number": "07",
+        "title": "Customer portal with real-time reporting",
+        "fit": "Agencies and sales departments",
+        "shortDescription": "A secure portal provides access to campaign metrics, ROI, action calendar and performance history, without the need for manual exports.",
+        "longDescription": "Each customer or department can consult its own data via controlled access. The portal replaces Excel files and recurring reporting exchanges. You centralise useful metrics, trends, next actions and an ROI simulator. Reporting becomes a product, not a burden.",
+        "result": "Up to 90% fewer ad hoc reporting requests, with greater confidence on the part of customers and management.",
+        "stack": [
+          "Lovable",
+          "Supabase",
+          "n8n",
+          "RLS"
+        ],
+        "links": [
+          {
+            "label": "Monizze case study",
+            "href": "/etudes-de-cas/monizze-120-rendez-vous"
+          }
+        ]
+      }
+    ],
+    "startSection": {
+      "eyebrow": "Where to start",
+      "title": "Start with the workflow that is already wasting time today",
+      "description": "In most cases, we start with inbox, appointment preparation or CRM. Then we add the building blocks that raise the quality of management: knowledge bot, battle cards, reporting or sales writer."
+    },
+    "processSection": {
+      "eyebrow": "How it works",
+      "title": "How do you deploy AI Sales Ops systems in 3 weeks?",
+      "description": "A straightforward diagnosis, supervised deployment, then continuous improvement. You know what's plugged in, why, and with what expected impact."
+    },
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Free diagnosis, 30 minutes",
+        "description": "We analyse your CRM, your prospecting tools, your SOPs and your team's real sticking points. You'll leave with a clear recommendation, free of jargon and complacent audits."
+      },
+      {
+        "number": "02",
+        "title": "Customised deployment, 2 to 4 weeks",
+        "description": "Our team configures the systems, connects your tools and calibrates the prompts, rules and workflows in line with your data, tone and quality standards."
+      },
+      {
+        "number": "03",
+        "title": "Continuous optimisation",
+        "description": "Every human validation, every correction and every new case enriches the system. We monitor performance, then make monthly adjustments with a dedicated contact person."
+      }
+    ],
+    "proofSection": {
+      "eyebrow": "Preuves",
+      "title": "What evidence is there that these systems work?",
+      "description": "devlo doesn't sell an AI concept. We deploy systems built on real campaigns, with customers who want pipeline, tracking and ROI."
+    },
+    "proofStats": [
+      {
+        "value": "60%",
+        "label": "of sales time absorbed by non-sales tasks",
+        "sourceLabel": "Salesforce, State of Sales",
+        "sourceHref": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
+      },
+      {
+        "value": "2 h",
+        "label": "active sales per day for an average salesperson",
+        "sourceLabel": "HubSpot, Sales Trends Report",
+        "sourceHref": "https://www.hubspot.com/sales/statistics"
+      },
+      {
+        "value": "27%",
+        "label": "of sales time devoted to actual selling, according to Forrester",
+        "sourceLabel": "Forrester, B2B Sales Benchmark",
+        "sourceHref": "https://www.forrester.com/research/b2b-sales/"
+      },
+      {
+        "value": "1 jour",
+        "label": "per week can be lost searching for information",
+        "sourceLabel": "McKinsey, Economic potential of generative AI",
+        "sourceHref": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+      }
+    ],
+    "deliveryProof": [
+      {
+        "value": "7 ans",
+        "label": "operational experience in B2B prospecting"
+      },
+      {
+        "value": "+1'000",
+        "label": "campaigns run by devlo"
+      },
+      {
+        "value": "80%",
+        "label": "of inbox time recovered on targeted workflows"
+      },
+      {
+        "value": "70%+",
+        "label": "average opening rate for our campaigns"
+      },
+      {
+        "value": "3 à 5x",
+        "label": "potential gain in response rate with the right signals"
+      }
+    ],
+    "personasSection": {
+      "eyebrow": "For whom",
+      "title": "For which companies are these systems designed?",
+      "description": "The right system depends less on your size than on the sticking point you need to eliminate: too much reporting, too much manual handoff, too much tacit knowledge, or not enough rigour in follow-up."
+    },
+    "personas": [
+      {
+        "icon": "📈",
+        "title": "The sales manager who wants to grow without recruiting",
+        "profile": "He manages 5 to 15 sales people, has strong growth targets and doesn't want to turn his budget into a hiring machine.",
+        "pain": "My sales people spend more time managing than selling.",
+        "systemTags": [
+          "Inbox Manager",
+          "Meeting Prep",
+          "Sales Writer"
+        ],
+        "result": "The equivalent of 2 extra sales staff, without opening 2 extra jobs."
+      },
+      {
+        "icon": "🏗️",
+        "title": "The SME CEO who wants to structure his sales",
+        "profile": "The sales team exists, but the process is not yet formalised. Knowledge is concentrated in a few key people.",
+        "pain": "All the commercial knowledge is in the heads of 2 people.",
+        "systemTags": [
+          "Knowledge Bot",
+          "Objection Library",
+          "Team Performance"
+        ],
+        "result": "In just a few months, your juniors will be arguing like your seniors, with processes that are finally documented."
+      },
+      {
+        "icon": "🧾",
+        "title": "The B2B agency that wants to impress its clients",
+        "profile": "It manages campaigns for its customers, needs to prove its value on an ongoing basis and wants to reduce the time it spends producing reports.",
+        "pain": "My customers want visibility in real time, with clear figures.",
+        "systemTags": [
+          "Reporting Portal",
+          "Inbox Manager"
+        ],
+        "result": "Total transparency, zero manual reporting and a selling point that few agencies can match."
+      }
+    ],
+    "comparisonSection": {
+      "eyebrow": "Comparaison",
+      "title": "What happens when you maintain the status quo?",
+      "description": "While you're hesitating, your competitors are responding faster, preparing their meetings better and already capitalising on their commercial knowledge."
+    },
+    "comparisonRows": [
+      {
+        "criterion": "Lead response time",
+        "withoutDevlo": "2 to 24 hours, with many answers written by hand.",
+        "withDevlo": "Less than 15 minutes, with AI proposal and human validation."
+      },
+      {
+        "criterion": "CRM update after a call",
+        "withoutDevlo": "Often forgotten or done several hours later.",
+        "withDevlo": "Automatic, structured and advanced in real time."
+      },
+      {
+        "criterion": "Preparing an appointment",
+        "withoutDevlo": "30 minutes of manual searching, sometimes more.",
+        "withDevlo": "Automatically generated briefing, ready before the call."
+      },
+      {
+        "criterion": "Onboarding a new salesperson",
+        "withoutDevlo": "3 to 6 months before real autonomy.",
+        "withDevlo": "4 to 6 weeks with bot de connaissance and battle cards."
+      },
+      {
+        "criterion": "Commercial proposals",
+        "withoutDevlo": "2 to 3 hours of writing per proposal.",
+        "withDevlo": "15 minutes with draft AI, then human review."
+      },
+      {
+        "criterion": "Visibility for management",
+        "withoutDevlo": "Weekly reporting on Excel or Slides.",
+        "withDevlo": "Live dashboard, available 24 hours a day."
+      },
+      {
+        "criterion": "Knowing how to sell when a senior leaves",
+        "withoutDevlo": "Some of the knowledge goes with it.",
+        "withDevlo": "Objections, responses and learnings are captured in the system."
+      }
+    ],
+    "differenceCard": {
+      "eyebrow": "The devlo difference",
+      "title": "Generalist AI agencies automate your operations. devlo automates your sales machine.",
+      "description": "We don't start with a tool or a prompt. We start from the sales process, the objections, the handoffs, the CRM, the follow-ups and the real rhythm of your team. It's this understanding of the business that makes the difference between an impressive automation demo and a useful system in production."
+    },
+    "faqSection": {
+      "title": "Frequently asked questions about our AI Sales Ops systems"
+    },
+    "faqItems": [
+      {
+        "question": "How much do AI Sales Ops systems cost?",
+        "answer": "Pricing depends on the system you choose and the size of your team. The initial diagnosis is free. Individual systems start at CHF 2,000 per month. Most of our customers invest between CHF 3,000 and CHF 6,000 per month for one or two combined systems."
+      },
+      {
+        "question": "Do you need to change your CRM or tools to use your systems?",
+        "answer": "No. Our systems integrate with your existing tools: HubSpot, Salesforce, Pipedrive, Lemlist, LinkedIn Sales Navigator, Slack, Teams, and others. We adapt to your stack, not the other way round."
+      },
+      {
+        "question": "Is AI replacing my salespeople?",
+        "answer": "No. AI takes care of the repetitive tasks (writing emails, updating CRM, prospect research, reporting) so that your sales staff can concentrate on selling, customer relations and negotiation. A human remains in the loop at each critical stage."
+      },
+      {
+        "question": "How long does it take to deploy a system?",
+        "answer": "Between 2 and 4 weeks, depending on complexity. Diagnosis takes 30 minutes. Technical configuration takes 1 to 2 weeks. Calibration and testing take a further 1 to 2 weeks."
+      },
+      {
+        "question": "Is my data secure?",
+        "answer": "Yes, we use infrastructures hosted in Europe (including Supabase and n8n Cloud) that comply with the RGPD and the Swiss nLPD. Your customer data is never shared between customers. Each system is isolated."
+      },
+      {
+        "question": "Can we start with just one system and then add others?",
+        "answer": "Yes, and that's the healthiest way to go. Most of our customers start with Inbox Manager or Meeting Prep, then add other building blocks once the initial workflow has stabilised."
+      },
+      {
+        "question": "What is the difference between devlo and a general AI agency?",
+        "answer": "Generalist AI agencies often automate administrative tasks (invoices, support or back office). devlo focuses solely on B2B sales teams. We start with the sales process, then add AI where it really saves time or increases the conversion rate."
+      },
+      {
+        "question": "Do you offer these systems as a complement to your outsourced prospecting services?",
+        "answer": "Yes, our outsourced prospecting customers can add these systems as a natural extension. AI Sales Ops systems are also available on a standalone basis for in-house sales teams who want to accelerate without recruiting immediately."
+      }
+    ],
+    "ctaSection": {
+      "eyebrow": "Free diagnosis",
+      "title": "Ready to free up time for your sales force?",
+      "description": "Book a free 30-minute diagnostic. We'll analyse your situation and recommend the most appropriate systems for your team.",
+      "checklist": [
+        "Which workflows should be automated first?",
+        "Which systems to deploy in the next 30 days",
+        "What ROI to expect, with what safeguards",
+        "Zero commitment, zero jargon"
+      ],
+      "formTitle": "Book a free diagnostic",
+      "formSubtitle": "30 minutes, no obligation."
+    },
+    "caseStudiesLink": "See all case studies →",
+    "startCta": {
+      "primary": "Book a free diagnostic →",
+      "secondary": "See outbound services"
+    }
+  },
+  "de": {
+    "metaTitle": "AI Sales Ops B2B in der Schweiz",
+    "metaDescription": "AI Sales Ops-Systeme für B2B-Vertriebsteams: Inbox, CRM, Meeting Prep und Reporting. Kostenlose Diagnose mit devlo, in der Schweiz.",
+    "hero": {
+      "badge": "AI Sales Ops für B2B-Verkaufsteams",
+      "h1": "Ihre Vertriebsmitarbeiter schließen mehr Deals ab, ohne neue Mitarbeiter einzustellen - dank KI",
+      "subtitle": "devlo entwirft und implementiert KI-gespeiste Automatisierungssysteme, die Ihre Vertriebsmitarbeiter von sich wiederholenden Aufgaben befreien, Ihre Verkaufszyklen beschleunigen und Ihre Daten in einen Wettbewerbsvorteil verwandeln.",
+      "ctaPrimary": "Buchen Sie eine kostenlose Diagnose →",
+      "ctaSecondary": "Entdecke die 7 Systeme ↓",
+      "badge1": "7 Jahre kommerzielles Feld",
+      "badge2": "+1'000 ausgeführte Kampagnen",
+      "badge3": "Kostenlose Diagnose, keine Verpflichtung"
+    },
+    "problemSection": {
+      "eyebrow": "Das Problem",
+      "title": "Warum verbringen Ihre Vertriebsmitarbeiter mehr Zeit mit der Verwaltung als mit dem Verkauf?",
+      "description": "Erfolgreiche B2B-Teams gewinnen nicht, indem sie mehr Tools hinzufügen. Sie gewinnen, indem sie die sich wiederholende Arbeit, die die Deals verlangsamt, abschaffen.",
+      "body": [
+        "Laut Salesforce verbringen Vertriebsmitarbeiter etwa 60 % ihrer Zeit mit nicht vertrieblichen Aufgaben. Bei einem Team von fünf Personen entspricht dies drei Vollzeitstellen, die von der Verwaltung, der CRM-Aktualisierung, der Inbox-Verwaltung und der Vorbereitung von Terminen absorbiert werden. Es geht nicht darum, Ihre Vertriebsmitarbeiter zu ersetzen. Es geht darum, ihnen ihre Verkaufszeit zurückzugeben.",
+        "Die KMU und ETI in der Westschweiz sind mit einer doppelten Blockade konfrontiert. Die Einstellung von Vertriebsmitarbeitern ist teurer, das Onboarding nimmt mehr Zeit in Anspruch und die Verkaufszyklen werden immer straffer. Wenn Ihre Antworten spät kommen, das CRM unvollständig ist oder Follow-ups schlecht anlaufen, verlieren Sie bereits an Boden.",
+        "devlo baut seit sieben Jahren B2B-Akquise-Systeme. Jeder der hier vorgestellten Workflows wurde in der Produktion getestet, zunächst für unsere eigenen Kampagnen, dann für Kunden in der Schweiz, Frankreich, Belgien und DACH."
+      ]
+    },
+    "systemsSection": {
+      "eyebrow": "Die 7 Systeme",
+      "title": "Welche AI Sales Ops-Systeme setzen Sie für Ihr Vertriebsteam ein?",
+      "description": "Jedes System lässt sich innerhalb von 2 bis 4 Wochen einrichten. Es wird für Ihr Unternehmen konfiguriert und dann bei jedem wichtigen Schritt unter menschlicher Kontrolle gehalten."
+    },
+    "systems": [
+      {
+        "number": "01",
+        "title": "Intelligente Verwaltung von Geschäftsantworten",
+        "fit": "Teams 2+ kommerzielle",
+        "shortDescription": "Die KI bereitet personalisierte Antworten für Ihre potenziellen Kunden per E-Mail und LinkedIn vor, die auf Ihren internen Richtlinien, dem Konversationsverlauf und Ihrem Business-Playbook basieren. Ein Mensch validiert jede Nachricht vor dem Versand.",
+        "longDescription": "Jede eingehende Nachricht wird nach Absicht klassifiziert und dann mit Ihren SOPs, vergangenen Gesprächen und den unternehmensspezifischen Geschäftsregeln angereichert. Das System schlägt eine sendefertige Antwort vor. Ihr Team korrigiert sie ggf., und diese Korrektur speist dann die Lernschleife. Sie behalten die menschliche Qualität bei, ohne die operative Last zu behalten.",
+        "result": "Bis zu 80% der Inbox-Zeit zurückgewonnen, ohne Verlust der Personalisierung.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "HubSpot",
+          "Lemlist"
+        ],
+        "links": [
+          {
+            "label": "Multi-Channel-Outbound",
+            "href": "/services/outbound-multicanal"
+          },
+          {
+            "label": "CRM und Zustellbarkeit",
+            "href": "/services/crm-delivrabilite"
+          }
+        ]
+      },
+      {
+        "number": "02",
+        "title": "KI-Assistent für Ihre Verkaufsteams",
+        "fit": "Teams 5 bis 20 Personen",
+        "shortDescription": "Ein KI-Agent in Slack oder Teams beantwortet sofort die Fragen Ihrer Vertriebsmitarbeiter - zu Einwänden, zum Produkt, zu Prozessen und zu bewährten Verfahren. Wenn das System unsicher ist, eskaliert es an den Manager.",
+        "longDescription": "Der Sales Knowledge Bot zentralisiert Ihre Playbooks, FAQs, SOPs und Produktdokumente in einem einzigen Zugangspunkt. Er antwortet in der Sprache, in der die Frage gestellt wurde, und erfasst dann die Antworten des Managers, wenn eine Eskalation erforderlich ist. Die Wissensdatenbank wird ohne neue Dokumentenprojekte erweitert. Das Ergebnis: Das Onboarding wird beschleunigt und die Antworten werden standardisiert.",
+        "result": "3-mal schnelleres kommerzielles Onboarding, nach einigen Monaten 70 % weniger Eskalationen",
+        "stack": [
+          "Slack",
+          "Teams",
+          "n8n",
+          "Claude API",
+          "Google Docs"
+        ],
+        "links": []
+      },
+      {
+        "number": "03",
+        "title": "Automatische Vorbereitung von Terminen und CRM-Aktualisierung",
+        "fit": "Teams 3+ kommerzielle",
+        "shortDescription": "Vor jedem Termin generiert die KI ein vollständiges Briefing. Nach dem Call wandelt sie Ihre Notizen in ein strukturiertes Protokoll um, aktualisiert das CRM und erstellt Follow-ups.",
+        "longDescription": "Wenn ein Termin in den Kalender eingetragen wird, bereitet das System eine Interessentenakte vor: aktuelle Neuigkeiten, LinkedIn-Aktivitäten, CRM-Verlauf, bereits aufgetretene Einwände, empfohlene Talking Points. Nach dem Anruf diktiert der Vertriebsmitarbeiter ein Sprachmemo oder klebt seine Notizen ein. Die KI strukturiert das Protokoll, aktualisiert die Pipeline, erstellt Aufgaben und vermeidet vergessene Nachfassaktionen.",
+        "result": "Bis zu 4 Stunden pro Tag und Vertriebsmitarbeiter zurückgewonnen, mit einem CRM, das endlich auf dem neuesten Stand ist.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "Google Calendar",
+          "HubSpot",
+          "Salesforce"
+        ],
+        "links": [
+          {
+            "label": "Einen Termin vereinbaren",
+            "href": "/services/prise-de-rendez-vous"
+          },
+          {
+            "label": "CRM und Zustellbarkeit",
+            "href": "/services/crm-delivrabilite"
+          }
+        ]
+      },
+      {
+        "number": "04",
+        "title": "Bibliothek von Einwänden und Battle Cards in Echtzeit",
+        "fit": "Teams 5+ kommerzielle",
+        "shortDescription": "Die siegreichen Einwände und die abschließenden Antworten werden automatisch aus Ihren Deals erfasst. Sobald ein Konkurrent zurückkommt, wird eine Battle Card generiert und an das Team verteilt.",
+        "longDescription": "Anstatt das Geschäftswissen in den Köpfen zweier Senioren zu belassen, sammelt das System Einwände, die im Callcenter hochgekommen sind, Antworten, die funktioniert haben, und Wettbewerbssignale. Jede neue Information stärkt die Bibliothek. Die Juniors greifen in Sekundenschnelle auf die besten Argumente zu, direkt in ihrer Arbeitsumgebung.",
+        "result": "Das Argumentationsniveau der Junioren konvergiert mit dem der Senioren, ohne von einer einzelnen Person abhängig zu sein.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "Google Docs",
+          "Slack",
+          "Teams"
+        ],
+        "links": []
+      },
+      {
+        "number": "05",
+        "title": "Automatisches Verfassen von Geschäftsvorschlägen und Follow-ups",
+        "fit": "Teams, die 5+ Vorschläge pro Woche einsenden",
+        "shortDescription": "Die KI erstellt aus dem tatsächlichen Kontext des Deals Drafts für Vorschläge und Follow-ups. Der Vertriebsmitarbeiter passt ein paar Zeilen an und sendet.",
+        "longDescription": "Das System ruft CRM-Daten, Besprechungsnotizen, die Branche des Interessenten, die erhobenen Einwände und den Tonfall Ihres Unternehmens ab. Es erstellt dann einen sauberen, strukturierten und konsistenten ersten Draft. Ihre Teams kommen von stundenlangem Schreiben auf wenige Minuten Durchsicht, mit regelmäßigeren und besser kontextualisierten Follow-ups.",
+        "result": "Versandfertige Vorschläge in 15 Minuten statt in 2 oder 3 Stunden.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "HubSpot",
+          "Salesforce",
+          "Google Docs"
+        ],
+        "links": [
+          {
+            "label": "Cold Email B2B",
+            "href": "/services/cold-email"
+          }
+        ]
+      },
+      {
+        "number": "06",
+        "title": "KI-Dashboard zur Geschäftsleistung",
+        "fit": "Manager von 5 bis 15 Personen",
+        "shortDescription": "Die KI analysiert das tägliche Feedback Ihres Teams, erkennt wiederkehrende Muster, hebt Fortschritte hervor und schlägt konkrete Aktionspläne pro Vertriebsmitarbeiter vor.",
+        "longDescription": "Das Dashboard wandelt verstreute Notizen, Coaching-Feedback und Feldbeobachtungen in eine strukturierte Ansicht um, die nach Personen und Teams gegliedert ist. Sie erhalten lesbare Trends, Coaching-Prioritäten, einen klaren Überblick über gelöste oder hartnäckige Muster und eine objektivere Grundlage für Ihre Personalentscheidungen.",
+        "result": "Datengestützte Managemententscheidungen mit saubererem Onboarding und weniger versteckter Fluktuation.",
+        "stack": [
+          "Supabase",
+          "n8n",
+          "Claude API",
+          "Lovable"
+        ],
+        "links": []
+      },
+      {
+        "number": "07",
+        "title": "Kundenportal mit Echtzeitberichterstattung",
+        "fit": "Agenturen und Geschäftsleitungen",
+        "shortDescription": "Ein sicheres Portal bietet Zugang zu Kampagnenmetriken, ROI, Aktionskalender und Leistungsverlauf, ohne dass manuelle Exporte erforderlich sind.",
+        "longDescription": "Jeder Kunde oder jedes Management ruft seine eigenen Daten über einen kontrollierten Zugang ab. Das Portal ersetzt Excel-Dateien und den Austausch von wiederkehrenden Berichten. Sie zentralisieren nützliche Metriken, Trends, nächste Aktionen und einen ROI-Simulator. Das Berichtswesen wird zu einem Produkt, nicht zu einer Last.",
+        "result": "Bis zu 90% weniger Ad-hoc-Berichtsanfragen, mit mehr Vertrauen auf Kunden- und Managementseite.",
+        "stack": [
+          "Lovable",
+          "Supabase",
+          "n8n",
+          "RLS"
+        ],
+        "links": [
+          {
+            "label": "Fallstudie Monizze",
+            "href": "/etudes-de-cas/monizze-120-rendez-vous"
+          }
+        ]
+      }
+    ],
+    "startSection": {
+      "eyebrow": "Wo soll ich anfangen",
+      "title": "Beginnen Sie mit dem Workflow, der heute schon Zeit kostet",
+      "description": "In den meisten Fällen beginnen wir mit der Inbox, der Terminvorbereitung oder dem CRM. Dann fügen wir die Bausteine hinzu, die die Steuerungsqualität erhöhen: knowledge bot, battle cards, reporting oder sales writer."
+    },
+    "processSection": {
+      "eyebrow": "Wie es funktioniert",
+      "title": "Wie kann man AI Sales Ops-Systeme in drei Wochen einführen?",
+      "description": "Eine ehrliche Diagnose, eine betreute Einführung und dann eine kontinuierliche Verbesserung. Sie wissen, was eingeschaltet ist, warum und mit welchen Auswirkungen Sie rechnen."
+    },
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Kostenlose Diagnose, 30 Minuten",
+        "description": "Wir analysieren Ihr CRM, Ihre Akquisitionsinstrumente, Ihre SOPs und die tatsächlichen Reibungspunkte in Ihrem Team. Sie gehen mit einer klaren Empfehlung nach Hause, ohne Fachjargon oder Gefälligkeitsprüfungen."
+      },
+      {
+        "number": "02",
+        "title": "Individuelle Bereitstellung, 2 bis 4 Wochen",
+        "description": "Unser Team richtet die Systeme ein, verbindet Ihre Tools und kalibriert Prompts, Regeln und Workflows mit Ihren Daten, Ihrem Ton und Ihren Qualitätsstandards."
+      },
+      {
+        "number": "03",
+        "title": "Kontinuierliche Optimierung",
+        "description": "Jede menschliche Validierung, jede Korrektur und jeder neue Fall bereichern das System. Wir überwachen die Leistung und passen sie monatlich mit einem engagierten Ansprechpartner an."
+      }
+    ],
+    "proofSection": {
+      "eyebrow": "Preuves",
+      "title": "Welche Beweise gibt es dafür, dass diese Systeme funktionieren?",
+      "description": "devlo verkauft kein KI-Konzept. Wir setzen Systeme ein, die auf realen Kampagnen aufgebaut sind, mit Kunden, die Pipeline, Nachverfolgung und ROI wollen."
+    },
+    "proofStats": [
+      {
+        "value": "60%",
+        "label": "der Vertriebszeit, die durch Aufgaben außerhalb des Vertriebs absorbiert wird",
+        "sourceLabel": "Salesforce, State of Sales",
+        "sourceHref": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
+      },
+      {
+        "value": "2 h",
+        "label": "aktiver Verkauf pro Tag für einen durchschnittlichen Vertriebsmitarbeiter",
+        "sourceLabel": "HubSpot, Sales Trends Report",
+        "sourceHref": "https://www.hubspot.com/sales/statistics"
+      },
+      {
+        "value": "27%",
+        "label": "der Vertriebszeit, die laut Forrester für den tatsächlichen Verkauf aufgewendet wird",
+        "sourceLabel": "Forrester, B2B Sales Benchmark",
+        "sourceHref": "https://www.forrester.com/research/b2b-sales/"
+      },
+      {
+        "value": "1 jour",
+        "label": "pro Woche kann mit der Suche nach Informationen verschwendet werden",
+        "sourceLabel": "McKinsey, Wirtschaftliches Potenzial der generativen KI",
+        "sourceHref": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+      }
+    ],
+    "deliveryProof": [
+      {
+        "value": "7 ans",
+        "label": "operative Erfahrung in der B2B-Akquise"
+      },
+      {
+        "value": "+1'000",
+        "label": "von devlo ausgeführte Kampagnen"
+      },
+      {
+        "value": "80%",
+        "label": "der wiedergewonnenen Inbox-Zeit bei gezielten Workflows"
+      },
+      {
+        "value": "70%+",
+        "label": "durchschnittliche Öffnungsrate unserer Kampagnen"
+      },
+      {
+        "value": "3 à 5x",
+        "label": "potenzieller Gewinn bei der Antwortrate mit den richtigen Signalen"
+      }
+    ],
+    "personasSection": {
+      "eyebrow": "Für wen",
+      "title": "Für welche Unternehmen sind diese Systeme gedacht?",
+      "description": "Das richtige System hängt weniger von Ihrer Größe ab als vielmehr davon, welche Reibungspunkte beseitigt werden sollen: zu viel Berichterstattung, zu viel manuelles Handoff, zu viel implizites Wissen oder zu wenig Strenge beim Follow-up."
+    },
+    "personas": [
+      {
+        "icon": "📈",
+        "title": "Der Verkaufsleiter, der scalieren will, ohne einzustellen",
+        "profile": "Er steuert 5 bis 15 Vertriebsmitarbeiter, hat starke Wachstumsziele und will sein Budget nicht in eine Einstellungsmaschine verwandeln.",
+        "pain": "Meine Vertriebsmitarbeiter verbringen mehr Zeit mit der Verwaltung als mit dem Verkauf.",
+        "systemTags": [
+          "Inbox Manager",
+          "Meeting Prep",
+          "Sales Writer"
+        ],
+        "result": "Das Äquivalent von zwei zusätzlichen Vertriebsmitarbeitern, ohne zwei weitere Stellen zu eröffnen."
+      },
+      {
+        "icon": "🏗️",
+        "title": "Der CEO eines KMU, der seine Verkäufe strukturieren will",
+        "profile": "Das Verkaufsteam existiert, aber der Prozess ist noch nicht formalisiert. Das Wissen ist auf einige wenige Schlüsselpersonen konzentriert.",
+        "pain": "Das gesamte Geschäftswissen befindet sich in den Köpfen von zwei Personen.",
+        "systemTags": [
+          "Knowledge Bot",
+          "Objection Library",
+          "Team Performance"
+        ],
+        "result": "Ihre Junioren argumentieren innerhalb weniger Monate genauso wie Ihre Senioren, mit endlich dokumentierten Prozessen."
+      },
+      {
+        "icon": "🧾",
+        "title": "Die B2B-Agentur, die ihre Kunden beeindrucken will",
+        "profile": "Sie führt Kampagnen für ihre Kunden durch, muss ihren Wert laufend beweisen und will die Zeit, die sie mit der Erstellung von Berichten verbringt, reduzieren.",
+        "pain": "Meine Kunden wollen Transparenz in Echtzeit und mit klaren Zahlen.",
+        "systemTags": [
+          "Reporting Portal",
+          "Inbox Manager"
+        ],
+        "result": "Völlige Transparenz, null manuelle Berichterstattung und ein Geschäftsargument, das nur wenige Agenturen vorweisen können."
+      }
+    ],
+    "comparisonSection": {
+      "eyebrow": "Comparaison",
+      "title": "Was passiert, wenn Sie den Status quo beibehalten?",
+      "description": "Während Sie zögern, antworten Ihre Konkurrenten schneller, bereiten sich besser auf Termine vor und kapitalisieren bereits ihr Verkaufswissen."
+    },
+    "comparisonRows": [
+      {
+        "criterion": "Reaktionszeit auf Leads",
+        "withoutDevlo": "2 bis 24 Stunden, wobei viele Antworten handschriftlich verfasst wurden.",
+        "withDevlo": "Weniger als 15 Minuten, mit KI-Vorschlag und menschlicher Validierung."
+      },
+      {
+        "criterion": "CRM-Aktualisierung nach einem Anruf",
+        "withoutDevlo": "Oft vergessen oder erst Stunden später gemacht.",
+        "withDevlo": "Automatisch, strukturiert und gepusht in Echtzeit."
+      },
+      {
+        "criterion": "Vorbereitung eines Termins",
+        "withoutDevlo": "30 Minuten manuelle Suche, manchmal auch länger.",
+        "withDevlo": "Automatisch generiertes Briefing, das vor dem Call bereitsteht."
+      },
+      {
+        "criterion": "Onboarding eines neuen Vertriebsmitarbeiters",
+        "withoutDevlo": "3-6 Monate bis zur tatsächlichen Selbstständigkeit",
+        "withDevlo": "4 bis 6 Wochen mit Wissensbot und Battle Cards."
+      },
+      {
+        "criterion": "Kommerzielle Vorschläge",
+        "withoutDevlo": "2-3 Stunden Schreibarbeit pro Vorschlag.",
+        "withDevlo": "15 Minuten mit KI-Draft, dann menschliche Überprüfung."
+      },
+      {
+        "criterion": "Sichtbarkeit für das Management",
+        "withoutDevlo": "Wöchentliches Reporting in Excel oder Slides.",
+        "withDevlo": "Live-Dashboard, das rund um die Uhr abrufbar ist."
+      },
+      {
+        "criterion": "Kommerzielles Wissen, wenn ein Senior geht",
+        "withoutDevlo": "Ein Teil des Wissens geht mit ihm.",
+        "withDevlo": "Einwände, Antworten und Learnings werden im System erfasst."
+      }
+    ],
+    "differenceCard": {
+      "eyebrow": "Der devlo-Unterschied",
+      "title": "Generalistische KI-Agenturen automatisieren Ihre Operationen. devlo automatisiert Ihre Geschäftsmaschine.",
+      "description": "Wir gehen nicht von einem Tool oder einem Prompt aus. Wir gehen vom Geschäftsprozess aus, von Einwänden, Handoffs, CRM, Follow-ups und dem tatsächlichen Tempo Ihres Teams. Es ist diese fachliche Lesart, die den Unterschied zwischen einer beeindruckenden Automatisierung in einer Demo und einem nützlichen System in der Produktion ausmacht."
+    },
+    "faqSection": {
+      "title": "Häufig gestellte Fragen zu unseren AI Sales Ops-Systemen"
+    },
+    "faqItems": [
+      {
+        "question": "Wie viel kosten AI Sales Ops-Systeme?",
+        "answer": "Die Preisgestaltung hängt vom gewählten System und der Größe Ihres Teams ab. Die Erstdiagnose ist kostenlos. Einzelsysteme beginnen bei CHF 2'000 pro Monat. Die meisten unserer Kunden investieren zwischen CHF 3'000 und CHF 6'000 pro Monat für ein oder zwei Kombisysteme."
+      },
+      {
+        "question": "Müssen Sie das CRM oder die Tools wechseln, um Ihre Systeme zu nutzen?",
+        "answer": "Nein. Unsere Systeme lassen sich in Ihre bestehenden Tools integrieren: HubSpot, Salesforce, Pipedrive, Lemlist, LinkedIn Sales Navigator, Slack, Teams und andere. Wir passen uns an Ihren Stack an, nicht umgekehrt."
+      },
+      {
+        "question": "Ersetzt die KI meine Vertriebsmitarbeiter?",
+        "answer": "Nein. Die KI übernimmt sich wiederholende Aufgaben (E-Mails schreiben, CRM aktualisieren, Leads suchen, Berichte erstellen), damit sich Ihre Vertriebsmitarbeiter auf den Verkauf, die Kundenbeziehung und die Verhandlungen konzentrieren können. Ein Mensch bleibt bei jedem kritischen Schritt in der Schleife."
+      },
+      {
+        "question": "Wie lange dauert es, ein System einzusetzen?",
+        "answer": "Je nach Komplexität zwischen 2 und 4 Wochen. Die Diagnose dauert 30 Minuten. Die technische Konfiguration dauert 1 bis 2 Wochen. Die Kalibrierungs- und Testphase dauert weitere 1 bis 2 Wochen."
+      },
+      {
+        "question": "Sind meine Daten sicher?",
+        "answer": "Ja. Wir verwenden in Europa gehostete Infrastrukturen (u. a. Supabase und n8n Cloud), die der DSGVO und dem Schweizer nLPD entsprechen. Ihre Kundendaten werden niemals zwischen Kunden geteilt. Jedes System ist isoliert."
+      },
+      {
+        "question": "Kann man mit einem einzigen System beginnen und später weitere hinzufügen?",
+        "answer": "Ja. Das ist sogar der gesündeste Weg. Die meisten unserer Kunden beginnen mit dem Inbox Manager oder Meeting Prep und fügen dann weitere Bausteine hinzu, wenn sich der erste Workflow stabilisiert hat."
+      },
+      {
+        "question": "Was ist der Unterschied zwischen devlo und einer allgemeinen KI-Agentur?",
+        "answer": "Allgemeine KI-Agenturen automatisieren oft administrative Themen (Rechnungen, Support oder Backoffice). devlo konzentriert sich ausschließlich auf B2B-Vertriebsteams. Wir gehen vom Geschäftsprozess aus und fügen dann KI dort hinzu, wo sie eine echte Zeitersparnis oder eine höhere Konversionsrate schafft."
+      },
+      {
+        "question": "Bieten Sie diese Systeme als Ergänzung zu Ihren ausgelagerten Akquisitionsdienstleistungen an?",
+        "answer": "Ja. Unsere ausgelagerten Akquisitionskunden können diese Systeme als natürliche Erweiterung hinzufügen. AI Sales Ops-Systeme gibt es auch als Standalone-Systeme für interne Vertriebsteams, die beschleunigen wollen, ohne sofort neue Mitarbeiter einzustellen."
+      }
+    ],
+    "ctaSection": {
+      "eyebrow": "Kostenlose Diagnose",
+      "title": "Sind Sie bereit, mehr Zeit für Ihre Vertriebsmitarbeiter zu schaffen?",
+      "description": "Buchen Sie eine kostenlose 30-minütige Diagnose. Wir analysieren Ihre Situation und empfehlen Ihnen die relevantesten Systeme für Ihr Team.",
+      "checklist": [
+        "Welche Workflows sollten vorrangig automatisiert werden",
+        "Welche Systeme in den nächsten 30 Tagen eingesetzt werden sollen",
+        "Welcher ROI ist zu erwarten, mit welchen Leitplanken",
+        "Null Engagement, null Jargon"
+      ],
+      "formTitle": "Eine kostenlose Diagnose buchen",
+      "formSubtitle": "30 Minuten, unverbindlich."
+    },
+    "caseStudiesLink": "Alle Fallstudien anzeigen →",
+    "startCta": {
+      "primary": "Buchen Sie eine kostenlose Diagnose →",
+      "secondary": "Siehe Outbound-Dienste"
+    }
+  },
+  "nl": {
+    "metaTitle": "AI Sales Ops B2B in Zwitserland",
+    "metaDescription": "AI Sales Ops-systemen voor B2B-verkoopteams: inbox, CRM, voorbereiding van vergaderingen en rapportage. Gratis diagnose met devlo, in Zwitserland.",
+    "hero": {
+      "badge": "AI Sales Ops voor B2B-verkoopteams",
+      "h1": "Uw verkopers sluiten meer deals zonder te werven, dankzij AI",
+      "subtitle": "devlo ontwerpt en implementeert AI-gestuurde automatiseringssystemen die uw verkopers bevrijden van repetitieve taken, uw verkoopcycli versnellen en uw gegevens omzetten in een concurrentievoordeel.",
+      "ctaPrimary": "Boek een gratis diagnose →",
+      "ctaSecondary": "Ontdek de 7 systemen ↓",
+      "badge1": "7 jaar in de verkoop",
+      "badge2": "+1.000 campagnes uitgevoerd",
+      "badge3": "Gratis en vrijblijvende diagnose"
+    },
+    "problemSection": {
+      "eyebrow": "Het probleem",
+      "title": "Waarom besteden uw verkopers meer tijd aan managen dan aan verkopen?",
+      "description": "Succesvolle B2B teams winnen niet door meer tools toe te voegen. Ze winnen door het repetitieve werk dat deals vertraagt te elimineren.",
+      "body": [
+        "Volgens Salesforce besteden verkopers ongeveer 60% van hun tijd aan niet-verkooptaken. In een team van 5 mensen komt dit neer op het equivalent van 3 fulltime banen die opgeslokt worden door administratie, CRM-updates, inboxbeheer en het voorbereiden van afspraken. De uitdaging is niet om uw verkopers te vervangen. De uitdaging is om hen hun verkooptijd terug te geven.",
+        "KMO's en SMI's in Franstalig Zwitserland worden geconfronteerd met een dubbel struikelblok. Het werven van verkopers is duurder, het inwerken duurt langer en de verkoopcycli zijn korter. Als je antwoorden te laat komen, als het CRM onvolledig is of als follow-ups slecht verlopen, verlies je al terrein.",
+        "devlo bouwt al 7 jaar B2B prospectiesystemen. Elke workflow die hier wordt gepresenteerd is in productie getest, eerst voor onze eigen campagnes, daarna voor klanten in Zwitserland, Frankrijk, België en DACH."
+      ]
+    },
+    "systemsSection": {
+      "eyebrow": "De 7 systemen",
+      "title": "Welke AI Sales Ops-systemen moet je inzetten voor je verkoopteam?",
+      "description": "Elk systeem kan in 2 tot 4 weken worden geïmplementeerd. Het wordt geconfigureerd voor uw bedrijf en vervolgens in elke belangrijke fase onder menselijke controle gehouden."
+    },
+    "systems": [
+      {
+        "number": "01",
+        "title": "Intelligent beheer van verkoopreacties",
+        "fit": "2+ verkoopteams",
+        "shortDescription": "AI bereidt gepersonaliseerde reacties voor je prospects voor, via e-mail en LinkedIn, op basis van je interne richtlijnen, gesprekshistorie en verkoopplaybook. Een mens valideert elk bericht voordat het wordt verzonden.",
+        "longDescription": "Elk inkomend bericht wordt geclassificeerd op intentie en vervolgens verrijkt met uw SOP's, eerdere conversaties en de eigen bedrijfsregels van uw bedrijf. Het systeem stelt een kant-en-klaar antwoord voor. Uw team corrigeert het indien nodig en deze correctie voedt de leerlus. U behoudt de menselijke kwaliteit, zonder de operationele last.",
+        "result": "Tot 80% van de inboxtijd teruggewonnen, zonder verlies van personalisatie.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "HubSpot",
+          "Lemlist"
+        ],
+        "links": [
+          {
+            "label": "Outbound via meerdere kanalen",
+            "href": "/services/outbound-multicanal"
+          },
+          {
+            "label": "CRM en bezorgbaarheid",
+            "href": "/services/crm-delivrabilite"
+          }
+        ]
+      },
+      {
+        "number": "02",
+        "title": "AI-assistent voor uw verkoopteams",
+        "fit": "Teams van 5 tot 20 personen",
+        "shortDescription": "Een AI-agent in Slack of Teams beantwoordt onmiddellijk de vragen van je verkopers over bezwaren, het product, processen en best practices. Als het systeem twijfelt, escaleert het naar de manager.",
+        "longDescription": "De Sales Knowledge Bot centraliseert uw draaiboeken, veelgestelde vragen, SOP's en productdocumenten in één enkel toegangspunt. Hij antwoordt in de taal van de vraag en legt de antwoorden van de manager vast wanneer escalatie vereist is. De kennisbank wordt verrijkt zonder dat er een nieuw documentatieproject nodig is. Het resultaat is een snellere onboarding en gestandaardiseerde antwoorden.",
+        "result": "Commerciële onboarding 3 keer sneller, met 70% minder escalaties na slechts een paar maanden.",
+        "stack": [
+          "Slack",
+          "Teams",
+          "n8n",
+          "Claude API",
+          "Google Docs"
+        ],
+        "links": []
+      },
+      {
+        "number": "03",
+        "title": "Automatische afspraakplanning en CRM-updates",
+        "fit": "3+ verkoopteams",
+        "shortDescription": "Voor elke vergadering genereert AI een volledige briefing. Na het gesprek zet het je notities om in een gestructureerd rapport, werkt het de CRM bij en maakt het follow-ups.",
+        "longDescription": "Wanneer een afspraak wordt ingevoerd in de agenda, bereidt het systeem een prospectdossier voor: recent nieuws, LinkedIn-activiteit, CRM-geschiedenis, reeds ondervonden bezwaren, aanbevolen gesprekspunten. Na het gesprek dicteert de verkoper een voice memo of plakt notities. De AI structureert het rapport, werkt de pijplijn bij, maakt taken aan en voorkomt vergeten follow-ups.",
+        "result": "Tot 4 uur besparing per dag per verkoper met een CRM dat eindelijk up-to-date is.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "Google Calendar",
+          "HubSpot",
+          "Salesforce"
+        ],
+        "links": [
+          {
+            "label": "Een afspraak maken",
+            "href": "/services/prise-de-rendez-vous"
+          },
+          {
+            "label": "CRM en bezorgbaarheid",
+            "href": "/services/crm-delivrabilite"
+          }
+        ]
+      },
+      {
+        "number": "04",
+        "title": "Real-time bezwaarbibliotheek en gevechtskaarten",
+        "fit": "5+ verkoopteams",
+        "shortDescription": "Winnende bezwaren en afsluitende reacties worden automatisch vastgelegd vanuit je deals. Zodra een concurrent terugkomt, wordt er een strijdkaart gegenereerd en uitgedeeld aan het team.",
+        "longDescription": "In plaats van de commerciële kennis in de hoofden van twee senior mensen te laten zitten, verzamelt het systeem de bezwaren die in het gesprek naar voren komen, de antwoorden die hebben gewerkt en de signalen van de concurrentie. Elk nieuw stukje informatie vult de bibliotheek aan. De juniors hebben binnen enkele seconden toegang tot de beste argumenten, direct in hun werkomgeving.",
+        "result": "Het argumentatieniveau van de juniors convergeert met dat van de seniors, zonder afhankelijk te zijn van één persoon.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "Google Docs",
+          "Slack",
+          "Teams"
+        ],
+        "links": []
+      },
+      {
+        "number": "05",
+        "title": "Automatisch opstellen van commerciële voorstellen en follow-ups",
+        "fit": "Teams die 5+ voorstellen per week versturen",
+        "shortDescription": "De AI genereert concepten voor voorstellen en follow-ups op basis van de werkelijke context van de deal. De verkoper past een paar regels aan en verstuurt.",
+        "longDescription": "Het systeem verzamelt CRM-gegevens, notities van vergaderingen, de sector van de prospect, de geuite bezwaren en de toon van je bedrijf. Vervolgens produceert het een schone, gestructureerde en samenhangende eerste versie. Uw teams gaan van uren schrijven naar een paar minuten nakijken, met regelmatiger en beter gecontextualiseerde follow-ups.",
+        "result": "Voorstellen klaar om te verzenden in 15 minuten in plaats van 2 of 3 uur.",
+        "stack": [
+          "n8n",
+          "Claude API",
+          "HubSpot",
+          "Salesforce",
+          "Google Docs"
+        ],
+        "links": [
+          {
+            "label": "Koude B2B-e-mail",
+            "href": "/services/cold-email"
+          }
+        ]
+      },
+      {
+        "number": "06",
+        "title": "IA Sales Performance Dashboard",
+        "fit": "Managers van 5 tot 15 personen",
+        "shortDescription": "AI analyseert de dagelijkse feedback van je team, detecteert terugkerende patronen, markeert vooruitgang en stelt concrete actieplannen voor elke verkoper voor.",
+        "longDescription": "Het dashboard transformeert verspreide notities, coaching feedback en veldobservaties in een gestructureerd beeld, per persoon en per team. Je krijgt duidelijke trends, coachingsprioriteiten, een helder zicht op opgeloste of hardnekkige patronen en een objectievere basis voor je HR-beslissingen.",
+        "result": "Datagestuurde managementbeslissingen, met een zuiverder onboarding en minder verborgen verloop.",
+        "stack": [
+          "Supabase",
+          "n8n",
+          "Claude API",
+          "Lovable"
+        ],
+        "links": []
+      },
+      {
+        "number": "07",
+        "title": "Klantenportaal met real-time rapportage",
+        "fit": "Agentschappen en verkoopafdelingen",
+        "shortDescription": "Een beveiligd portaal biedt toegang tot campagnemetrics, ROI, actiekalenders en prestatiegeschiedenis, zonder dat handmatige exports nodig zijn.",
+        "longDescription": "Elke klant of afdeling kan zijn eigen gegevens raadplegen via gecontroleerde toegang. Het portaal vervangt Excel-bestanden en terugkerende rapportage-uitwisselingen. U centraliseert nuttige statistieken, trends, volgende acties en een ROI-simulator. Rapporteren wordt een product, geen last.",
+        "result": "Tot 90% minder ad hoc rapportageverzoeken, met meer vertrouwen van klanten en management.",
+        "stack": [
+          "Lovable",
+          "Supabase",
+          "n8n",
+          "RLS"
+        ],
+        "links": [
+          {
+            "label": "Casestudie Monizze",
+            "href": "/etudes-de-cas/monizze-120-rendez-vous"
+          }
+        ]
+      }
+    ],
+    "startSection": {
+      "eyebrow": "Waar te beginnen",
+      "title": "Begin met de werkstroom die vandaag al tijd verspilt",
+      "description": "In de meeste gevallen beginnen we met inbox, afspraakvoorbereiding of CRM. Daarna voegen we de bouwstenen toe die de kwaliteit van het beheer verhogen: kennisbots, slagkaarten, rapportage of verkoopschrijver."
+    },
+    "processSection": {
+      "eyebrow": "Hoe het werkt",
+      "title": "Hoe zet je AI Sales Ops-systemen in 3 weken in?",
+      "description": "Een eenvoudige diagnose, implementatie onder toezicht en vervolgens voortdurende verbetering. U weet wat is aangesloten, waarom en met welke verwachte impact."
+    },
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "Gratis diagnose, 30 minuten",
+        "description": "We analyseren je CRM, je prospectietools, je SOP's en de echte knelpunten van je team. Je vertrekt met een duidelijke aanbeveling, zonder jargon en zelfgenoegzame audits."
+      },
+      {
+        "number": "02",
+        "title": "Inzet op maat, 2 tot 4 weken",
+        "description": "Ons team configureert de systemen, sluit uw tools aan en kalibreert de prompts, regels en workflows in overeenstemming met uw gegevens, toon en kwaliteitsnormen."
+      },
+      {
+        "number": "03",
+        "title": "Voortdurende optimalisatie",
+        "description": "Elke menselijke validatie, elke correctie en elk nieuw geval verrijkt het systeem. We monitoren de prestaties en sturen ze maandelijks bij met een toegewijd contactpersoon."
+      }
+    ],
+    "proofSection": {
+      "eyebrow": "Preuves",
+      "title": "Welk bewijs is er dat deze systemen werken?",
+      "description": "devlo verkoopt geen AI-concept. We implementeren systemen die gebouwd zijn op echte campagnes, met klanten die pipeline, tracking en ROI willen."
+    },
+    "proofStats": [
+      {
+        "value": "60%",
+        "label": "van verkooptijd opgeslokt door niet-verkooptaken",
+        "sourceLabel": "Salesforce, de staat van verkoop",
+        "sourceHref": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
+      },
+      {
+        "value": "2 h",
+        "label": "actieve verkoop per dag voor een gemiddelde verkoper",
+        "sourceLabel": "HubSpot, Rapport Verkooptrends",
+        "sourceHref": "https://www.hubspot.com/sales/statistics"
+      },
+      {
+        "value": "27%",
+        "label": "van de verkooptijd besteed aan daadwerkelijke verkoop, volgens Forrester",
+        "sourceLabel": "Forrester, B2B-verkoopbenchmark",
+        "sourceHref": "https://www.forrester.com/research/b2b-sales/"
+      },
+      {
+        "value": "1 jour",
+        "label": "per week kan verloren gaan aan het zoeken naar informatie",
+        "sourceLabel": "McKinsey, Economisch potentieel van generatieve AI",
+        "sourceHref": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+      }
+    ],
+    "deliveryProof": [
+      {
+        "value": "7 ans",
+        "label": "operationele ervaring in B2B-prospectie"
+      },
+      {
+        "value": "+1'000",
+        "label": "campagnes uitgevoerd door devlo"
+      },
+      {
+        "value": "80%",
+        "label": "van inbox-tijd teruggewonnen op gerichte workflows"
+      },
+      {
+        "value": "70%+",
+        "label": "gemiddeld openingspercentage voor onze campagnes"
+      },
+      {
+        "value": "3 à 5x",
+        "label": "potentiële toename in reactiesnelheid met de juiste signalen"
+      }
+    ],
+    "personasSection": {
+      "eyebrow": "Voor wie",
+      "title": "Voor welke bedrijven zijn deze systemen ontworpen?",
+      "description": "Het juiste systeem hangt niet zozeer af van de grootte van het bedrijf als wel van het knelpunt dat u wilt elimineren: te veel rapportage, te veel handmatige overdracht, te veel stilzwijgende kennis of te weinig striktheid in de follow-up."
+    },
+    "personas": [
+      {
+        "icon": "📈",
+        "title": "De sales manager die wil groeien zonder te werven",
+        "profile": "Hij geeft leiding aan 5 tot 15 verkopers, heeft sterke groeidoelstellingen en wil van zijn budget geen aanwervingsmachine maken.",
+        "pain": "Mijn verkopers besteden meer tijd aan managen dan aan verkopen.",
+        "systemTags": [
+          "Inbox Manager",
+          "Meeting Prep",
+          "Sales Writer"
+        ],
+        "result": "Het equivalent van 2 extra verkopers, zonder 2 extra banen te openen."
+      },
+      {
+        "icon": "🏗️",
+        "title": "De MKB CEO die zijn verkoop wil structureren",
+        "profile": "Het verkoopteam bestaat, maar het proces is nog niet geformaliseerd. De kennis is geconcentreerd bij een paar sleutelfiguren.",
+        "pain": "Alle commerciële kennis zit in de hoofden van 2 mensen.",
+        "systemTags": [
+          "Knowledge Bot",
+          "Objection Library",
+          "Team Performance"
+        ],
+        "result": "Binnen een paar maanden zullen je juniors net als je seniors ruziën, met processen die eindelijk gedocumenteerd zijn."
+      },
+      {
+        "icon": "🧾",
+        "title": "Het B2B-bureau dat indruk wil maken op zijn klanten",
+        "profile": "Het beheert campagnes voor zijn klanten, moet voortdurend zijn waarde bewijzen en wil de tijd die het besteedt aan het produceren van rapporten verminderen.",
+        "pain": "Mijn klanten willen zichtbaarheid in realtime, met duidelijke cijfers.",
+        "systemTags": [
+          "Reporting Portal",
+          "Inbox Manager"
+        ],
+        "result": "Totale transparantie, geen handmatige rapportage en een verkoopargument waar maar weinig bureaus aan kunnen tippen."
+      }
+    ],
+    "comparisonSection": {
+      "eyebrow": "Comparaison",
+      "title": "Wat gebeurt er als je de status quo handhaaft?",
+      "description": "Terwijl jij aarzelt, reageren je concurrenten sneller, bereiden ze hun vergaderingen beter voor en maken ze al gebruik van hun commerciële kennis."
+    },
+    "comparisonRows": [
+      {
+        "criterion": "Responstijd",
+        "withoutDevlo": "2 tot 24 uur, met veel antwoorden met de hand geschreven.",
+        "withDevlo": "Minder dan 15 minuten, met AI-voorstel en menselijke validatie."
+      },
+      {
+        "criterion": "CRM-update na een gesprek",
+        "withoutDevlo": "Vaak vergeten of een paar uur later gedaan.",
+        "withDevlo": "Automatisch, gestructureerd en geavanceerd in realtime."
+      },
+      {
+        "criterion": "Een afspraak voorbereiden",
+        "withoutDevlo": "30 minuten handmatig zoeken, soms meer.",
+        "withDevlo": "Automatisch gegenereerde briefing, klaar voor het gesprek."
+      },
+      {
+        "criterion": "Een nieuwe verkoper inwerken",
+        "withoutDevlo": "3 tot 6 maanden voor echte autonomie.",
+        "withDevlo": "4 tot 6 weken met bot de connaissance en gevechtskaarten."
+      },
+      {
+        "criterion": "Commerciële voorstellen",
+        "withoutDevlo": "2 tot 3 uur schrijven per voorstel.",
+        "withDevlo": "15 minuten met concept-AI, daarna menselijke beoordeling."
+      },
+      {
+        "criterion": "Zichtbaarheid voor het management",
+        "withoutDevlo": "Wekelijkse rapportage op Excel of Slides.",
+        "withDevlo": "Live dashboard, 24 uur per dag beschikbaar."
+      },
+      {
+        "criterion": "Weten hoe je moet verkopen als een senior vertrekt",
+        "withoutDevlo": "Een deel van de kennis hoort erbij.",
+        "withDevlo": "Bezwaren, reacties en lessen worden vastgelegd in het systeem."
+      }
+    ],
+    "differenceCard": {
+      "eyebrow": "Het devlo-verschil",
+      "title": "Generalistische AI-bureaus automatiseren uw activiteiten. devlo automatiseert uw verkoopmachine.",
+      "description": "We beginnen niet met een tool of een prompt. We gaan uit van het verkoopproces, de bezwaren, de handoffs, het CRM, de follow-ups en het echte ritme van je team. Het is dit begrip van de business dat het verschil maakt tussen een indrukwekkende automatiseringsdemo en een bruikbaar systeem in productie."
+    },
+    "faqSection": {
+      "title": "Veelgestelde vragen over onze AI Sales Ops systemen"
+    },
+    "faqItems": [
+      {
+        "question": "Hoeveel kosten AI Sales Ops-systemen?",
+        "answer": "De prijs is afhankelijk van het systeem dat je kiest en de grootte van je team. De eerste diagnose is gratis. Afzonderlijke systemen beginnen bij CHF 2.000 per maand. De meeste van onze klanten investeren tussen CHF 3.000 en CHF 6.000 per maand voor één of twee gecombineerde systemen."
+      },
+      {
+        "question": "Moet je je CRM of tools veranderen om je systemen te kunnen gebruiken?",
+        "answer": "Nee. Onze systemen integreren met je bestaande tools: HubSpot, Salesforce, Pipedrive, Lemlist, LinkedIn Sales Navigator, Slack, Teams en andere. Wij passen ons aan jouw stack aan, niet andersom."
+      },
+      {
+        "question": "Vervangt AI mijn verkopers?",
+        "answer": "Nee. AI zorgt voor de repetitieve taken (e-mails schrijven, CRM bijwerken, prospectonderzoek, rapportage) zodat je verkoopmedewerkers zich kunnen concentreren op verkopen, klantrelaties en onderhandelen. In elke kritieke fase blijft een mens betrokken."
+      },
+      {
+        "question": "Hoe lang duurt het om een systeem te implementeren?",
+        "answer": "Tussen 2 en 4 weken, afhankelijk van de complexiteit. Diagnose duurt 30 minuten. Technische configuratie duurt 1 tot 2 weken. Kalibratie en testen nemen nog eens 1 tot 2 weken in beslag."
+      },
+      {
+        "question": "Zijn mijn gegevens veilig?",
+        "answer": "Ja, we gebruiken infrastructuren die in Europa worden gehost (waaronder Supabase en n8n Cloud) en die voldoen aan de RGPD en de Zwitserse nLPD. Uw klantgegevens worden nooit gedeeld tussen klanten. Elk systeem is geïsoleerd."
+      },
+      {
+        "question": "Kunnen we beginnen met één systeem en dan andere toevoegen?",
+        "answer": "Ja, en dat is de gezondste manier. De meeste van onze klanten beginnen met Inbox Manager of Meeting Prep en voegen vervolgens andere bouwstenen toe zodra de initiële workflow is gestabiliseerd."
+      },
+      {
+        "question": "Wat is het verschil tussen devlo en een algemeen AI-bureau?",
+        "answer": "Generalistische AI-bureaus automatiseren vaak administratieve taken (facturen, ondersteuning of backoffice). devlo richt zich alleen op B2B-salesteams. We beginnen met het verkoopproces en voegen dan AI toe waar het echt tijd bespaart of de conversie verhoogt."
+      },
+      {
+        "question": "Bied je deze systemen aan als aanvulling op je uitbestede prospectiediensten?",
+        "answer": "Ja, onze klanten die prospectie uitbesteden kunnen deze systemen als een natuurlijke uitbreiding toevoegen. AI Sales Ops-systemen zijn ook beschikbaar op een standalone basis voor in-house verkoopteams die willen versnellen zonder meteen te werven."
+      }
+    ],
+    "ctaSection": {
+      "eyebrow": "Gratis diagnose",
+      "title": "Klaar om tijd vrij te maken voor uw verkoopteam?",
+      "description": "Boek een gratis diagnose van 30 minuten. We analyseren je situatie en bevelen de meest geschikte systemen voor je team aan.",
+      "checklist": [
+        "Welke workflows moeten als eerste worden geautomatiseerd?",
+        "Welke systemen in de komende 30 dagen te implementeren",
+        "Welke ROI kun je verwachten, met welke waarborgen",
+        "Geen verplichtingen, geen jargon"
+      ],
+      "formTitle": "Boek een gratis diagnose",
+      "formSubtitle": "30 minuten, geen verplichtingen."
+    },
+    "caseStudiesLink": "Bekijk alle casestudy's →",
+    "startCta": {
+      "primary": "Boek een gratis diagnose →",
+      "secondary": "Uitgaande services bekijken"
+    }
+  }
+}
