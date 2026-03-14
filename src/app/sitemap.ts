@@ -22,6 +22,9 @@ function normalizeSitemapPath(path: string): string | null {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const urls = new Set<string>();
+  const latestSeoRefreshDate = new Date("2026-03-14");
+  const evergreenContentRefreshDate = new Date("2026-03-09");
+  const fallbackRefreshDate = new Date("2026-03-01");
 
   for (const [pageId, entry] of entriesByPageId()) {
     if (pageId.startsWith("page:")) continue;
@@ -48,11 +51,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
         || path.endsWith("/about")
         || path.endsWith("/uber-uns")
         || path.endsWith("/over-ons");
+      const isConsultation = path.endsWith("/consultation")
+        || path.endsWith("/contact")
+        || path.endsWith("/kostenlose-beratung")
+        || path.endsWith("/gratis-consultatie");
+      const isAcademy = path.endsWith("/academy")
+        || path.endsWith("/outbound-academy");
+      const isAiSalesOps = path.endsWith("/ai-sales-ops");
+      const isCaseStudiesHub = path.endsWith("/etudes-de-cas")
+        || path.endsWith("/case-studies")
+        || path.endsWith("/fallstudien")
+        || path.endsWith("/case-studies-nl");
       const isAlternative = path.includes("/alternative-") || path.includes("/alternatief-");
+      const isPrimarySeoSurface = isHome
+        || isService
+        || isBlog
+        || isGeo
+        || isAgence
+        || isConsultation
+        || isAcademy
+        || isAiSalesOps
+        || isCaseStudiesHub
+        || isAlternative;
 
-      const lastModifiedDate = isHome || isService || isBlog || isGeo || isAgence || isAlternative
-        ? new Date("2026-03-09")
-        : new Date("2026-03-01");
+      const lastModifiedDate = isPrimarySeoSurface
+        ? latestSeoRefreshDate
+        : isCaseStudy
+          ? evergreenContentRefreshDate
+          : fallbackRefreshDate;
 
       return {
         url,

@@ -15,8 +15,8 @@ export type HadoSeoMetadataOverride = {
 export const hadoseoMetadataOverrides: HadoSeoMetadataOverride[] = [
   {
     route: "/",
-    title: "Agence prospection B2B Suisse | Leads & RDV qualifiés | devlo",
-    description: "devlo génère des rendez-vous B2B qualifiés pour vos équipes commerciales en Suisse, Belgique et France. Cold email, LinkedIn, cold calling — résultats dès la 3e semaine.",
+    title: "Agence de prospection commerciale B2B en Suisse | Leads & RDV qualifiés | devlo",
+    description: "Agence de prospection commerciale B2B en Suisse. devlo genere des leads qualifies via cold email, LinkedIn et cold calling, avec resultats des la 3e semaine.",
     canonical: "https://devlo.ch/",
     ogImage: "/images/devlo_OG_Banner.webp",
     status: "✅ OPTIMISÉ",

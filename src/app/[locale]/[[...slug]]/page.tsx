@@ -76,6 +76,13 @@ const openGraphLocaleByLanguage: Record<SupportedLocale, string> = {
   nl: "nl_NL",
 };
 
+const openGraphImageAltByLanguage: Record<SupportedLocale, string> = {
+  fr: "devlo - agence suisse de prospection B2B",
+  en: "devlo - Swiss B2B outreach agency",
+  de: "devlo - Schweizer B2B Akquise Agentur",
+  nl: "devlo - Zwitsers B2B prospectiebureau",
+};
+
 function isPrefixedLocale(value: string): value is Exclude<SupportedLocale, "fr"> {
   return value === "en" || value === "de" || value === "nl";
 }
@@ -333,12 +340,28 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     return {};
   }
 
+  const localizedGeoSeo = resolved.frPath.startsWith("/prospection-commerciale-")
+    ? getLocalizedGeoContent(resolved.frPath.slice(1), resolved.locale)
+    : null;
+  const localizedAlternativeSeo = resolved.frPath.startsWith("/alternative-")
+    ? getLocalizedAlternativeContent(resolved.frPath.slice(1), resolved.locale)
+    : null;
   const baseSeo = resolved.frPath === "/ai-sales-ops"
     ? {
         title: getLocalizedAiSalesOpsContent(resolved.locale).metaTitle,
         description: getLocalizedAiSalesOpsContent(resolved.locale).metaDescription,
       }
-    : resolveFrSeo(resolved.frPath);
+    : localizedGeoSeo
+      ? {
+          title: localizedGeoSeo.metaTitle,
+          description: localizedGeoSeo.metaDescription,
+        }
+      : localizedAlternativeSeo
+        ? {
+            title: localizedAlternativeSeo.metaTitle,
+            description: localizedAlternativeSeo.metaDescription,
+          }
+        : resolveFrSeo(resolved.frPath);
   const sanitySeo = await getSanityLocalizedSeo(resolved.pageId, resolved.locale);
   const title = stripDevloSuffix(sanitySeo?.title ?? baseSeo.title);
   const description = sanitySeo?.description ?? baseSeo.description;
@@ -369,7 +392,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
           url: toAbsoluteUrl(imagePath),
           width: 1200,
           height: 630,
-          alt: "devlo — aperçu",
+          alt: openGraphImageAltByLanguage[resolved.locale],
         },
       ],
     },

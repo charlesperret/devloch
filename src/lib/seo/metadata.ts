@@ -7,6 +7,7 @@ import { buildLanguageAlternatesForFrPath, normalizePath as normalizeLocalizedPa
 import { siteConfig } from "@/lib/site";
 
 export const defaultOgImagePath = "/images/devlo_OG_Banner.webp";
+const defaultOgImageAlt = "devlo - agence suisse de prospection B2B";
 
 export function normalizeRoute(path: string): string {
   if (!path || path === "/") return "/";
@@ -86,7 +87,7 @@ export function buildPageMetadata({
           url: ogImageAbsoluteUrl,
           width: 1200,
           height: 630,
-          alt: `${siteConfig.name} - aperçu`,
+          alt: defaultOgImageAlt,
         },
       ],
     },

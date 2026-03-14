@@ -20,6 +20,26 @@ function withStatusCode301(redirects) {
   });
 }
 
+function withTrailingSlashVariants(redirects) {
+  return redirects.flatMap((redirect) => {
+    if (
+      redirect.source === "/" ||
+      redirect.source.endsWith("/") ||
+      redirect.source.includes("/:")
+    ) {
+      return [redirect];
+    }
+
+    return [
+      redirect,
+      {
+        ...redirect,
+        source: `${redirect.source}/`,
+      },
+    ];
+  });
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
@@ -595,6 +615,51 @@ const nextConfig = {
       { source: "/prospection-b2b", destination: "/", permanent: true },
     ];
 
+    // ─── GSC-backed legacy redirects still surfacing with 404s ───────────────
+    // These URLs were still getting impressions/clicks in GSC on 2026-03-14.
+    // Keep them exact and locale-aware; do not enable the older broad en/de
+    // redirect sets because the site now serves valid localized routes.
+    const gscLegacyRedirects = withTrailingSlashVariants([
+      // Academy / consultation legacy aliases
+      { source: "/en/ultimate-sales-training-course", destination: "/en/b2b-sales-training-academy", permanent: true },
+      { source: "/de/ultimativer-verkaufstrainingskurs", destination: "/de/ausbildung-prospektion-b2b", permanent: true },
+      { source: "/en/academy-our-call", destination: "/en/consultation", permanent: true },
+      // Old case-study hub aliases
+      { source: "/en/results_cas_studies", destination: "/en/case-studies", permanent: true },
+      { source: "/de/ergebnisse_fall_studien", destination: "/de/fallstudien", permanent: true },
+      { source: "/nl/results_cas_studies", destination: "/nl/case-studies", permanent: true },
+      // Untranslated locale case-study slugs
+      { source: "/en/etudes-de-cas/immobilier-30-prospects", destination: "/en/casestudy/real-estate-30-prospects", permanent: true },
+      { source: "/en/etudes-de-cas/biocarburants-52-rendez-vous", destination: "/en/casestudy/biofuels-52-sales-meetings", permanent: true },
+      { source: "/de/etudes-de-cas/monizze-120-rendez-vous", destination: "/de/fallstudien/monizze-120-termine", permanent: true },
+      { source: "/de/etudes-de-cas/cybersecurite-4500-entreprises", destination: "/de/fallstudien/cybersicherheit-4500-unternehmen", permanent: true },
+      { source: "/de/etudes-de-cas/iddi-generation-leads-biotech-pharma", destination: "/de/fallstudien/iddi-leadgenerierung-biotech-pharma", permanent: true },
+      { source: "/nl/etudes-de-cas/immobilier-30-prospects", destination: "/nl/casestudy/vastgoed-30-prospects", permanent: true },
+      // EN long-form legacy case-study URLs
+      { source: "/en/casestudy/how-to-identify-the-most-valuable-ideal-customer-profiles-among-several-buyer-personas-using-cold-outreach-2", destination: "/en/casestudy/biofuels-52-sales-meetings", permanent: true },
+      { source: "/en/casestudy/how-can-you-identify-the-best-prospects-among-several-ideal-customer-profiles-icp-using-sales-prospecting-campaigns", destination: "/en/casestudy/biofuels-52-sales-meetings", permanent: true },
+      { source: "/en/casestudy/how-we-helped-an-accounting-software-firm-close-200k-in-belgium-using-multichannel-outbound", destination: "/en/casestudy/accounting-200k-revenue", permanent: true },
+      { source: "/en/casestudy/how-this-audiovisual-integrator-obtained-16-qualified-appointments-through-b2b-sales-prospecting", destination: "/en/casestudy/audiovisual-16-meetings", permanent: true },
+      { source: "/en/casestudy/how-this-commercial-building-project-gets-tenants-to-rent-the-space-in-fahrwerk-winterthur", destination: "/en/casestudy/commercial-real-estate-11-prospects", permanent: true },
+      { source: "/en/casestudy/how-this-merchandising-company-obtained-70-responses-and-8-meetings-with-their-prospects-thanks-to-this-b2b-sales-prospecting-sequence", destination: "/en/casestudy/merchandising-23-prospects", permanent: true },
+      { source: "/en/casestudy/how-this-association-outsourced-their-customer-acquisition-and-secured-70-qualified-appointments-with-companies-such-as-uefa-tag-heuer-rothschild-etc", destination: "/en/casestudy/biodiversity-70-meetings", permanent: true },
+      // DE long-form legacy case-study URLs
+      { source: "/de/fallstudien/wie-dieser-verband-seine-kundenakquise-auslagerte-und-sich-70-qualifizierte-termine-bei-unternehmen-wie-uefa-tag-heuer-rothschild-usw-sicherte", destination: "/de/fallstudien/biodiversitat-70-termine", permanent: true },
+      { source: "/de/fallstudien/wie-dieser-audiovisuelle-integrator-durch-b2b-verkaufsakquise-16-qualifizierte-termine-erhielt", destination: "/de/fallstudien/av-integration-16-termine", permanent: true },
+      { source: "/de/fallstudien/wie-konnen-sie-mit-hilfe-von-prospektionskampagnen-die-besten-potenziellen-kunden-unter-mehreren-idealen-kundenprofilen-icp-identifizieren-2", destination: "/de/fallstudien/biokraftstoffe-52-termine", permanent: true },
+      { source: "/de/fallstudien/wie-wir-einem-buchhaltungssoftware-anbieter-halfen-200k-in-belgien-mit-multikanal-outbound-zu-gewinnen", destination: "/de/fallstudien/buchhaltungssoftware-200k-umsatz", permanent: true },
+      { source: "/de/fallstudien/wie-dieses-unternehmen-fur-reinigungsmanagement-71-treffen-mit-top-entscheidungstragern-in-den-grosten-stadten-der-schweiz-frankreichs-und-belgiens-organisiert-hat", destination: "/de/fallstudien/stadtreinigung-71-termine", permanent: true },
+      { source: "/de/fallstudien/wie-diese-merchandising-firma-mithilfe-dieser-b2b-geschaftsanbahnungssequenz-70-antworten-und-8-meetings-mit-ihren-potenziellen-kunden-erreichte", destination: "/de/fallstudien/merchandising-23-interessenten", permanent: true },
+      // FR long-form legacy case-study URLs
+      { source: "/resultats/strategie-unique-de-generation-de-prospects-b2b-comment-careerlunch-a-obtenu-54-rendez-vous-dans-la-region-dach-alors-que-la-plupart-des-entreprises-avaient-deja-ete-contactees", destination: "/resultats/hr-54-rendez-vous-dach", permanent: true },
+      { source: "/resultats/comment-identifier-les-meilleurs-prospects-parmi-plusieurs-ideal-customer-profiles-icp-grace-a-des-campagnes-de-prospection-commerciale", destination: "/resultats/biocarburants-52-rendez-vous", permanent: true },
+      { source: "/resultats/comment-cette-societe-de-gestion-du-nettoyage-a-obtenu-71-rendez-vous-qualifies-avec-des-decideurs-b2b-dans-les-plus-grandes-villes-de-suisse-france-et-belgique", destination: "/resultats/proprete-urbaine-71-rendez-vous", permanent: true },
+      { source: "/resultats/comment-cette-societe-de-merchandising-a-obtenu-70-de-reponses-et-8-de-meetings-avec-leurs-prospects-grace-a-cette-sequence-de-prospection-commerciale-b2b", destination: "/resultats/merchandising-23-prospects", permanent: true },
+      { source: "/resultats/comment-cet-integrateur-audiovisuel-a-obtenu-16-rendez-vous-qualifies-grace-a-notre-agence-de-prospection-commerciale-b2b", destination: "/resultats/audiovisuel-16-rendez-vous", permanent: true },
+      { source: "/resultats/comment-cette-association-a-externalise-son-acquisition-de-clients-et-obtenu-70-rendez-vous-qualifies-avec-des-entreprises-comme-luefa-tag-heuer-rothschild-etc", destination: "/resultats/biodiversite-70-rendez-vous", permanent: true },
+      { source: "/resultats/planification-de-rendez-vous-b2b-avec-decideurs-formation-developpement-des-competences-ld-50-des-prospects-repondent-agence-de-prospection-commerciale-b2b", destination: "/resultats/formation-14-rendez-vous", permanent: true },
+    ]);
+
     // ─── Slug fix redirects: old FR slugs copied to EN/DE/NL → correct translations ──
     // These were set up with copy-pasted FR slugs in EN/DE/NL routes.
     // Must come BEFORE enRedirects/deRedirects to avoid redirect chains.
@@ -685,6 +750,7 @@ const nextConfig = {
         ...appAliasRedirects,
         ...frBlogRedirects,
         ...wordpressRedirects,
+        ...gscLegacyRedirects,
         ...oldPageRedirects,
       ]),
     );
