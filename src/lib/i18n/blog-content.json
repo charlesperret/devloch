@@ -22,8 +22,16 @@
         "author": "Charles Perret",
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-01",
+        "dateModified": "2026-03-01",
         "category": "Cold Email",
-        "relatedServiceSlug": "cold-email"
+        "relatedServiceSlug": "cold-email",
+        "editorialTitle": "Comment structurer une campagne de cold email B2B qui génère plus de 60 % de taux d'ouverture ?",
+        "summaryPoints": [
+          "**Liste de qualité** : utilisez Apollo, Clay ou Sales Navigator pour identifier des décideurs vérifiés correspondant exactement à votre ICP.",
+          "**Email < 120 mots** : une accroche personnalisée, un problème reconnaissable, et un seul CTA (appel de 15 min) — pas de pièces jointes.",
+          "**Délivrabilité avant tout** : configurez SPF/DKIM/DMARC, utilisez des domaines dédiés, chauffez vos boîtes 2-3 semaines.",
+          "**KPIs cibles** : taux d'ouverture > 60 %, taux de réponse > 5 %, taux de RDV > 2 % — itérez sur objets, accroches et CTA."
+        ]
       },
       "en": {
         "title": "Cold email B2B: the complete guide to 2026",
@@ -47,7 +55,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-01",
         "category": "Cold Email",
-        "relatedServiceSlug": "cold-email"
+        "relatedServiceSlug": "cold-email",
+        "editorialTitle": "How do you structure a B2B cold email campaign that generates an open rate of over 60%?",
+        "summaryPoints": [
+          "**Quality list**: use Apollo, Clay or Sales Navigator to identify verified decision-makers who exactly match your KPI.",
+          "**Email < 120 words**: a personalised tagline, a recognisable problem, and a single CTA (15-minute call) - no attachments.",
+          "**Deliverability first and foremost**: configure SPF/DKIM/DMARC, use dedicated domains and warm up your mailboxes for 2-3 weeks.",
+          "**Target KPIs**: open rate > 60%, response rate > 5%, appointment rate > 2% - iterate on subject lines, catchphrases and CTAs."
+        ],
+        "dateModified": "2026-03-01"
       },
       "de": {
         "title": "Cold email B2B: Der vollständige Leitfaden für 2026",
@@ -71,7 +87,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-01",
         "category": "Cold Email",
-        "relatedServiceSlug": "cold-email"
+        "relatedServiceSlug": "cold-email",
+        "editorialTitle": "Wie strukturiert man eine B2B-Cold-E-Mail-Kampagne, die mehr als 60% Öffnungsrate erzielt?",
+        "summaryPoints": [
+          "**Qualitätsliste**: Verwenden Sie Apollo, Clay oder Sales Navigator, um verifizierte Entscheidungsträger zu identifizieren, die genau zu Ihrer KPI passen.",
+          "**E-Mail < 120 Wörter**: ein personalisierter Aufhänger, ein erkennbares Problem und nur ein CTA (15-minütiger Anruf) - keine Anhänge.",
+          "**Zustellbarkeit geht vor**: Konfigurieren Sie SPF/DKIM/DMARC, verwenden Sie dedizierte Domains, heizen Sie Ihre Boxen 2-3 Wochen auf.",
+          "**Ziel-KPIs**: Öffnungsrate > 60 %, Antwortrate > 5 %, Terminrate > 2 % - Iterieren Sie mit Betreffzeilen, Teasern und CTAs."
+        ],
+        "dateModified": "2026-03-01"
       },
       "nl": {
         "title": "Koude e-mail B2B: de volledige gids tot 2026",
@@ -95,7 +119,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-01",
         "category": "Cold Email",
-        "relatedServiceSlug": "cold-email"
+        "relatedServiceSlug": "cold-email",
+        "editorialTitle": "Hoe structureer je een koude B2B e-mailcampagne die een open rate van meer dan 60% genereert?",
+        "summaryPoints": [
+          "**Kwaliteitslijst**: gebruik Apollo, Clay of Sales Navigator om geverifieerde beslissers te identificeren die precies voldoen aan je KPI.",
+          "**Email < 120 woorden**: een gepersonaliseerde tagline, een herkenbaar probleem en een enkele CTA (gesprek van 15 minuten) - geen bijlagen.",
+          "**Leverbaarheid op de eerste plaats**: configureer SPF/DKIM/DMARC, gebruik speciale domeinen en warm je mailboxen 2-3 weken op.",
+          "**Doel KPI's**: open rate > 60%, respons rate > 5%, afspraken rate > 2% - herhalen van onderwerpregels, pakkende zinnen en CTA's."
+        ],
+        "dateModified": "2026-03-01"
       }
     },
     "externaliser-prospection-commerciale": {
@@ -120,8 +152,16 @@
         "author": "Charles Perret",
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-05",
+        "dateModified": "2026-03-01",
         "category": "Stratégie",
-        "relatedServiceSlug": "outbound-multicanal"
+        "relatedServiceSlug": "outbound-multicanal",
+        "editorialTitle": "Quand et pourquoi externaliser sa prospection commerciale B2B à une agence spécialisée ?",
+        "summaryPoints": [
+          "**ROI immédiat** : une agence outbound coûte CHF 2 500/mois vs CHF 80–120 000/an pour un SDR interne — sans les risques RH.",
+          "**Opérationnel en 1 semaine** : infrastructure, outils (Clay, Lemlist, Sales Navigator), domaines et copywriting inclus.",
+          "**Résultats dès J+15** : premiers rendez-vous qualifiés entre la 2e et la 3e semaine, contrairement à 6 mois pour un recrutement.",
+          "**Méthodologie éprouvée** : 1 000+ campagnes déployées avec 7 % de taux d'intérêt moyen sur les décideurs contactés."
+        ]
       },
       "en": {
         "title": "Outsourcing sales prospecting: a decision-making guide",
@@ -145,7 +185,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-05",
         "category": "Stratégie",
-        "relatedServiceSlug": "outbound-multicanal"
+        "relatedServiceSlug": "outbound-multicanal",
+        "editorialTitle": "When and why outsource B2B sales prospecting to a specialist agency?",
+        "summaryPoints": [
+          "**Immediate ROI**: an outbound agency costs CHF 2,500/month compared with CHF 80-120,000/year for an in-house SDR - without the HR risks.",
+          "**Operational in 1 week**: infrastructure, tools (Clay, Lemlist, Sales Navigator), domains and copywriting included.",
+          "**Results from D+15**: first qualified appointments between the 2nd and 3rd week, as opposed to 6 months for recruitment.",
+          "**Proven methodology**: 1,000+ campaigns deployed with an average interest rate of 7% among the decision-makers contacted."
+        ],
+        "dateModified": "2026-03-01"
       },
       "de": {
         "title": "Outsourcing der Geschäftsanbahnung: Ein Leitfaden zur Entscheidungsfindung",
@@ -169,7 +217,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-05",
         "category": "Stratégie",
-        "relatedServiceSlug": "outbound-multicanal"
+        "relatedServiceSlug": "outbound-multicanal",
+        "editorialTitle": "Wann und warum sollte man seine B2B-Geschäftsanbahnung an eine spezialisierte Agentur auslagern?",
+        "summaryPoints": [
+          "**Sofortiger ROI**: Eine Outbound-Agentur kostet CHF 2 500/Monat vs. CHF 80-120 000/Jahr für einen internen SDR - ohne HR-Risiken.",
+          "**Operational in 1 Woche**: Infrastruktur, Tools (Clay, Lemlist, Sales Navigator), Domains und Copywriting inbegriffen.",
+          "**Ergebnisse ab T+15**: erste qualifizierte Termine zwischen der 2. und 3. Woche, im Gegensatz zu 6 Monaten für eine Einstellung.",
+          "**Erprobte Methodik**: 1 000+ Kampagnen eingesetzt mit 7% durchschnittlichem Interesse an den kontaktierten Entscheidungsträgern."
+        ],
+        "dateModified": "2026-03-01"
       },
       "nl": {
         "title": "Verkoopprospectie uitbesteden: een leidraad voor besluitvorming",
@@ -193,7 +249,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-05",
         "category": "Stratégie",
-        "relatedServiceSlug": "outbound-multicanal"
+        "relatedServiceSlug": "outbound-multicanal",
+        "editorialTitle": "Wanneer en waarom B2B verkoopprospectie uitbesteden aan een gespecialiseerd bureau?",
+        "summaryPoints": [
+          "**Onmiddellijke ROI**: een outbound bureau kost CHF 2.500/maand vergeleken met CHF 80-120.000/jaar voor een in-house SDR - zonder de HR-risico's.",
+          "**Operationeel in 1 week**: infrastructuur, tools (Clay, Lemlist, Sales Navigator), domeinen en copywriting inbegrepen.",
+          "**Resultaten van D+15**: eerste gekwalificeerde benoemingen tussen de 2e en 3e week, in tegenstelling tot 6 maanden voor werving.",
+          "**Bewezen methodologie**: 1.000+ campagnes ingezet met een gemiddelde interesse van 7% onder de gecontacteerde besluitvormers."
+        ],
+        "dateModified": "2026-03-01"
       }
     },
     "intent-data-prospects-prets-acheter": {
@@ -216,8 +280,16 @@
         "author": "Charles Perret",
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-08",
+        "dateModified": "2026-03-01",
         "category": "Intent Data",
-        "relatedServiceSlug": "intent-data"
+        "relatedServiceSlug": "intent-data",
+        "editorialTitle": "Comment utiliser l'intent data pour contacter les prospects au bon moment et multiplier vos taux de réponse ?",
+        "summaryPoints": [
+          "**Intent data = timing parfait** : identifiez les entreprises en phase active de recherche via Bombora, G2, LinkedIn ou Cognism.",
+          "**3x plus de réponses** : les prospects contactés au moment où ils cherchent activement convertissent 3 fois mieux que les contacts froids classiques.",
+          "**Séquence multicanale** : combinez cold email + LinkedIn outreach + calling sur les comptes en signal d'intent fort.",
+          "**Outils recommandés** : Clay pour l'agrégation de signaux, Sales Navigator pour la qualification, Lemlist pour les séquences personnalisées."
+        ]
       },
       "en": {
         "title": "Intent data: identifying prospects ready to buy",
@@ -239,7 +311,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-08",
         "category": "Intent Data",
-        "relatedServiceSlug": "intent-data"
+        "relatedServiceSlug": "intent-data",
+        "editorialTitle": "How can you use intent data to contact prospects at the right time and boost your response rates?",
+        "summaryPoints": [
+          "**Intent data = perfect timing**: identify companies in the active research phase via Bombora, G2, LinkedIn or Cognism.",
+          "**3x more responses**: prospects contacted when they are actively searching convert 3 times better than traditional cold contacts.",
+          "**Multi-channel sequence**: combine cold email + LinkedIn outreach + calling on accounts with a strong intent signal.",
+          "**Recommended tools**: Clay for signal aggregation, Sales Navigator for qualification, Lemlist for customised sequences."
+        ],
+        "dateModified": "2026-03-01"
       },
       "de": {
         "title": "Intent data: Identifizierung von kaufbereiten Interessenten",
@@ -261,7 +341,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-08",
         "category": "Intent Data",
-        "relatedServiceSlug": "intent-data"
+        "relatedServiceSlug": "intent-data",
+        "editorialTitle": "Wie können Sie Intent Data nutzen, um potenzielle Kunden zum richtigen Zeitpunkt zu kontaktieren und Ihre Antwortquoten zu vervielfachen?",
+        "summaryPoints": [
+          "**Intent data = perfektes Timing**: Ermitteln Sie über Bombora, G2, LinkedIn oder Cognism Unternehmen, die sich in der aktiven Suchphase befinden.",
+          "**3x mehr Antworten**: Leads, die kontaktiert werden, wenn sie aktiv suchen, konvertieren 3x besser als herkömmliche Kaltkontakte.",
+          "**Multichannel-Sequenz**: Kombinieren Sie Cold E-Mail + LinkedIn Outreach + Calling auf Konten mit starkem Intent-Signal.",
+          "**Empfohlene Tools**: Clay für die Aggregation von Signalen, Sales Navigator für die Qualifizierung, Lemlist für benutzerdefinierte Sequenzen."
+        ],
+        "dateModified": "2026-03-01"
       },
       "nl": {
         "title": "Intentiegegevens: prospects identificeren die klaar zijn om te kopen",
@@ -283,7 +371,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-08",
         "category": "Intent Data",
-        "relatedServiceSlug": "intent-data"
+        "relatedServiceSlug": "intent-data",
+        "editorialTitle": "Hoe kunt u intentiegegevens gebruiken om op het juiste moment contact op te nemen met prospects en uw respons te verhogen?",
+        "summaryPoints": [
+          "**Intent data = perfecte timing**: identificeer bedrijven in de actieve onderzoeksfase via Bombora, G2, LinkedIn of Cognism.",
+          "**3x meer reacties**: prospects die worden gecontacteerd wanneer ze actief op zoek zijn, converteren 3 keer beter dan traditionele koude contacten.",
+          "**Multikanaalsequentie**: combineer koude e-mail + LinkedIn-benadering + bellen naar accounts met een sterk intentiesignaal.",
+          "**Aanbevolen tools**: Clay voor signaalaggregatie, Sales Navigator voor kwalificatie, Lemlist voor aangepaste sequenties."
+        ],
+        "dateModified": "2026-03-01"
       }
     },
     "prospection-b2b-suisse-guide-2026": {
@@ -306,8 +402,16 @@
         "author": "Charles Perret",
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
+        "dateModified": "2026-03-01",
         "category": "Stratégie",
-        "relatedServiceSlug": "outbound-multicanal"
+        "relatedServiceSlug": "outbound-multicanal",
+        "editorialTitle": "Quelles sont les spécificités de la prospection B2B en Suisse en 2026 ?",
+        "summaryPoints": [
+          "**3 régions, 3 approches** : Romandie, Deutschschweiz et Tessin ont des cultures d'affaires distinctes — les messages doivent être natifs, pas traduits.",
+          "**Taux de réponse 7 %** : devlo atteint en moyenne 7 % de taux d'intérêt sur les décideurs suisses via l'approche multicanale.",
+          "**200+ campagnes CH** : expertise éprouvée sur tous les secteurs B2B suisses — IT, finance, industrie, services pro, santé.",
+          "**CHF 2 500/mois** : budget accessible pour couvrir les 3 régions linguistiques avec une équipe native FR/DE/EN."
+        ]
       },
       "en": {
         "title": "B2B prospecting in Switzerland: complete guide 2026",
@@ -329,7 +433,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "Stratégie",
-        "relatedServiceSlug": "outbound-multicanal"
+        "relatedServiceSlug": "outbound-multicanal",
+        "editorialTitle": "What are the specifics of B2B prospecting in Switzerland in 2026?",
+        "summaryPoints": [
+          "**3 regions, 3 approaches**: Romandie, Deutschschweiz and Tessin have distinct business cultures - messages must be native, not translated.",
+          "**7% response rate**: devlo achieves an average interest rate of 7% among Swiss decision-makers through its multi-channel approach.",
+          "**200+ CH** campaigns: proven expertise in all Swiss B2B sectors - IT, finance, industry, professional services, healthcare.",
+          "**CHF 2,500/month**: affordable budget to cover the 3 language regions with a native FR/DE/EN team."
+        ],
+        "dateModified": "2026-03-01"
       },
       "de": {
         "title": "B2B-Akquise in der Schweiz: umfassender Leitfaden 2026",
@@ -351,7 +463,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "Stratégie",
-        "relatedServiceSlug": "outbound-multicanal"
+        "relatedServiceSlug": "outbound-multicanal",
+        "editorialTitle": "Was sind die Besonderheiten der B2B-Akquise in der Schweiz im Jahr 2026?",
+        "summaryPoints": [
+          "**3 Regionen, 3 Ansätze**: Romandie, Deutschschweiz und Tessin haben unterschiedliche Geschäftskulturen - die Botschaften müssen nativ sein, nicht übersetzt.",
+          "**Response Rate 7 %**: devlo erreicht über den Multi-Channel-Ansatz durchschnittlich 7 % Interesse bei Schweizer Entscheidungsträgern.",
+          "**200+ Kampagnen CH**: Bewährte Expertise in allen Schweizer B2B-Sektoren - IT, Finanzen, Industrie, Pro-Dienstleistungen, Gesundheitswesen.",
+          "**CHF 2 500/Monat**: Erschwingliches Budget, um alle drei Sprachregionen mit einem muttersprachlichen Team FR/DE/EN abzudecken."
+        ],
+        "dateModified": "2026-03-01"
       },
       "nl": {
         "title": "B2B prospectie in Zwitserland: volledige gids 2026",
@@ -373,7 +493,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "Stratégie",
-        "relatedServiceSlug": "outbound-multicanal"
+        "relatedServiceSlug": "outbound-multicanal",
+        "editorialTitle": "Wat zijn de specifieke kenmerken van B2B prospectie in Zwitserland in 2026?",
+        "summaryPoints": [
+          "**3 regio's, 3 benaderingen**: Romandië, Deutschschweiz en Tessin hebben verschillende bedrijfsculturen - berichten moeten native zijn, niet vertaald.",
+          "**Responspercentage van 7%**: devlo behaalt een gemiddeld interessepercentage van 7% onder Zwitserse besluitvormers via haar multi-channel aanpak.",
+          "**Meer dan 200 CH**-campagnes: bewezen expertise in alle Zwitserse B2B-sectoren - IT, financiën, industrie, professionele diensten, gezondheidszorg.",
+          "**CHF 2,500/maand**: betaalbaar budget om de 3 taalgebieden te dekken met een team dat FR/DE/EN als moedertaal heeft."
+        ],
+        "dateModified": "2026-03-01"
       }
     },
     "linkedin-outreach-b2b-methode-resultats": {
@@ -396,8 +524,16 @@
         "author": "Charles Perret",
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
+        "dateModified": "2026-03-01",
         "category": "LinkedIn",
-        "relatedServiceSlug": "linkedin-outreach"
+        "relatedServiceSlug": "linkedin-outreach",
+        "editorialTitle": "Comment réussir son LinkedIn outreach B2B et obtenir des rendez-vous avec des décideurs ?",
+        "summaryPoints": [
+          "**Profil optimisé** : bannière pro, résumé axé sur la valeur client, SSI > 70 — votre profil est votre landing page.",
+          "**Message < 300 caractères** : connexion avec note courte personnalisée, puis séquence de 3 messages sur 14 jours.",
+          "**Taux de réponse cible** : 10-30 % sur les campagnes LinkedIn bien ciblées via Sales Navigator + personnalisation.",
+          "**Multicanal indispensable** : LinkedIn seul convertit 2 fois moins bien que LinkedIn + cold email coordonnés."
+        ]
       },
       "en": {
         "title": "LinkedIn outreach B2B: method and results 2026",
@@ -419,7 +555,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "LinkedIn",
-        "relatedServiceSlug": "linkedin-outreach"
+        "relatedServiceSlug": "linkedin-outreach",
+        "editorialTitle": "How can you make a success of your LinkedIn outreach B2B and get meetings with decision-makers?",
+        "summaryPoints": [
+          "**Optimised profile**: pro banner, customer value summary, SSI > 70 - your profile is your landing page.",
+          "**Message < 300 characters**: connection with personalised short note, then sequence of 3 messages over 14 days.",
+          "**Target response rate**: 10-30% on well-targeted LinkedIn campaigns via Sales Navigator + personalisation.",
+          "**Multi-channel is essential** : LinkedIn alone converts 2 times less than LinkedIn + coordinated cold email."
+        ],
+        "dateModified": "2026-03-01"
       },
       "de": {
         "title": "LinkedIn outreach B2B: Methode und Ergebnisse 2026",
@@ -441,7 +585,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "LinkedIn",
-        "relatedServiceSlug": "linkedin-outreach"
+        "relatedServiceSlug": "linkedin-outreach",
+        "editorialTitle": "Wie kann ich meinen LinkedIn Outreach B2B erfolgreich gestalten und Termine mit Entscheidungsträgern erhalten?",
+        "summaryPoints": [
+          "**Optimiertes Profil**: Pro-Banner, auf den Kundenwert ausgerichtete Zusammenfassung, SSI > 70 - Ihr Profil ist Ihre Landing Page.",
+          "**Nachricht < 300 Zeichen**: Anmeldung mit personalisierter Kurznachricht, dann Sequenz von 3 Nachrichten über 14 Tage.",
+          "**Ziel-Response-Rate**: 10-30% bei gut ausgerichteten LinkedIn-Kampagnen über Sales Navigator + Personalisierung.",
+          "**Multichannel unverzichtbar**: LinkedIn allein konvertiert nur halb so gut wie LinkedIn + koordinierte Cold E-Mail."
+        ],
+        "dateModified": "2026-03-01"
       },
       "nl": {
         "title": "LinkedIn outreach B2B: methode en resultaten 2026",
@@ -463,7 +615,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "LinkedIn",
-        "relatedServiceSlug": "linkedin-outreach"
+        "relatedServiceSlug": "linkedin-outreach",
+        "editorialTitle": "Hoe kan je van je LinkedIn B2B outreach een succes maken en ontmoetingen krijgen met besluitvormers?",
+        "summaryPoints": [
+          "**Geoptimaliseerd profiel**: pro banner, samenvatting klantwaarde, SSI > 70 - je profiel is je landingspagina.",
+          "**Bericht < 300 tekens**: verbinding met gepersonaliseerde korte notitie, dan opeenvolging van 3 berichten gedurende 14 dagen.",
+          "**Target respons**: 10-30% op goed gerichte LinkedIn campagnes via Sales Navigator + personalisatie.",
+          "**Multi-channel is essentieel** : LinkedIn alleen converteert 2 keer minder dan LinkedIn + gecoördineerde koude e-mail."
+        ],
+        "dateModified": "2026-03-01"
       }
     },
     "cold-calling-b2b-2026-encore-efficace": {
@@ -486,8 +646,16 @@
         "author": "Charles Perret",
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
+        "dateModified": "2026-03-01",
         "category": "Cold Calling",
-        "relatedServiceSlug": "cold-calling"
+        "relatedServiceSlug": "cold-calling",
+        "editorialTitle": "Le cold calling B2B est-il encore efficace en 2026 ?",
+        "summaryPoints": [
+          "**Oui, s'il est bien ciblé** : le calling sur prospects ayant déjà reçu un email ou un LinkedIn message convertit 3x mieux que le cold call pur.",
+          "**Heure d'or** : appelez entre 8h-9h ou 17h-18h — taux de décroché 40 % supérieur aux autres créneaux.",
+          "**Script court** : 30 secondes max pour capturer l'attention — problème reconnaissable + question ouverte + mini-CTA.",
+          "**Multicanal** : le calling en 3e touchpoint (après email + LinkedIn) multiplie le taux de connexion par 2,5."
+        ]
       },
       "en": {
         "title": "B2B cold calling in 2026: still effective?",
@@ -509,7 +677,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "Cold Calling",
-        "relatedServiceSlug": "cold-calling"
+        "relatedServiceSlug": "cold-calling",
+        "editorialTitle": "Will B2B cold calling still be effective in 2026?",
+        "summaryPoints": [
+          "**Yes, if it's well targeted**: calling on prospects who have already received an email or LinkedIn message converts 3x better than a pure cold call.",
+          "**Golden hour**: call between 8am-9am or 5pm-6pm - 40% higher pick-up rate than other times.",
+          "**Short script**: 30 seconds max to capture attention - recognisable problem + open question + mini-CTA.",
+          "**Multichannel**: calling as the 3rd touchpoint (after email + LinkedIn) multiplies the connection rate by 2.5."
+        ],
+        "dateModified": "2026-03-01"
       },
       "de": {
         "title": "Cold Calling B2B im Jahr 2026: noch wirksam?",
@@ -531,7 +707,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "Cold Calling",
-        "relatedServiceSlug": "cold-calling"
+        "relatedServiceSlug": "cold-calling",
+        "editorialTitle": "Ist B2B-Cold-Calling im Jahr 2026 noch effektiv?",
+        "summaryPoints": [
+          "**Ja, wenn er gut ausgerichtet ist**: Das Ansprechen von Interessenten, die bereits eine E-Mail oder eine LinkedIn-Nachricht erhalten haben, konvertiert 3x besser als ein reiner Cold Call.",
+          "**Goldene Stunde**: Rufen Sie zwischen 8:00-9:00 oder 17:00-18:00 Uhr an - 40 % höhere Abrufrate als bei anderen Zeitfenstern.",
+          "**Kurzskript**: max. 30 Sekunden, um die Aufmerksamkeit zu fesseln - erkennbares Problem + offene Frage + Mini-CTA.",
+          "**Multichannel**: Calling als 3. Touchpoint (nach E-Mail + LinkedIn) erhöht die Verbindungsrate um das 2,5-fache."
+        ],
+        "dateModified": "2026-03-01"
       },
       "nl": {
         "title": "B2B cold calling in 2026: nog steeds effectief?",
@@ -553,7 +737,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "Cold Calling",
-        "relatedServiceSlug": "cold-calling"
+        "relatedServiceSlug": "cold-calling",
+        "editorialTitle": "Is B2B cold calling nog effectief in 2026?",
+        "summaryPoints": [
+          "**Ja, als het goed gericht is**: prospects opbellen die al een e-mail of LinkedIn-bericht hebben ontvangen, converteert 3x beter dan een puur koud telefoontje.",
+          "**Golden hour**: bel tussen 8u-9u of 17u-18u - 40% hoger afhaaltarief dan andere tijden.",
+          "**Kort script**: maximaal 30 seconden om de aandacht te trekken - herkenbaar probleem + open vraag + mini-CTA.",
+          "**Multichannel**: bellen als 3e touchpoint (na e-mail + LinkedIn) vermenigvuldigt de verbindingsratio met 2,5."
+        ],
+        "dateModified": "2026-03-01"
       }
     },
     "generation-leads-b2b-methode-complete": {
@@ -580,8 +772,16 @@
         "author": "Charles Perret",
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
+        "dateModified": "2026-03-01",
         "category": "Lead Generation",
-        "relatedServiceSlug": "generation-leads"
+        "relatedServiceSlug": "generation-leads",
+        "editorialTitle": "Quelle est la méthode la plus efficace pour générer des leads B2B qualifiés en 2026 ?",
+        "summaryPoints": [
+          "**ICP avant tout** : définissez précisément votre Ideal Customer Profile (secteur, taille, poste, maturité) avant toute liste.",
+          "**Volume vs qualité** : 100 prospects ultra-qualifiés génèrent plus de RDV que 1 000 contacts génériques — privilégiez la précision.",
+          "**Outbound + intent** : combinez liste ICP + signaux d'intent (recrutement, levée de fonds, expansion) pour contacter au bon moment.",
+          "**Coût par lead** : le cold email outbound génère des leads 5-10x moins chers que la publicité payante en B2B."
+        ]
       },
       "en": {
         "title": "B2B lead generation: complete method 2026",
@@ -607,7 +807,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "Lead Generation",
-        "relatedServiceSlug": "generation-leads"
+        "relatedServiceSlug": "generation-leads",
+        "editorialTitle": "What is the most effective way of generating qualified B2B leads in 2026?",
+        "summaryPoints": [
+          "**ICP first and foremost**: define your Ideal Customer Profile (sector, size, position, maturity) before making any lists.",
+          "**Volume vs. quality**: 100 ultra-qualified prospects generate more appointments than 1,000 generic contacts - focus on precision.",
+          "**Outbound + intent**: combine ICP list + intent signals (recruitment, fundraising, expansion) to contact at the right time.",
+          "**Cost per lead**: outbound cold email generates leads 5-10x cheaper than paid B2B advertising."
+        ],
+        "dateModified": "2026-03-01"
       },
       "de": {
         "title": "B2B-Leadgenerierung: vollständige Methode 2026",
@@ -633,7 +841,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "Lead Generation",
-        "relatedServiceSlug": "generation-leads"
+        "relatedServiceSlug": "generation-leads",
+        "editorialTitle": "Was ist die effektivste Methode, um im Jahr 2026 qualifizierte B2B-Leads zu generieren?",
+        "summaryPoints": [
+          "**ICP first**: Definieren Sie Ihr Ideal Customer Profile (Branche, Größe, Position, Reifegrad) genau, bevor Sie eine Liste erstellen.",
+          "**Volumen vs. Qualität**: 100 hochqualifizierte Leads generieren mehr RDVs als 1.000 generische Kontakte - geben Sie der Präzision den Vorzug.",
+          "**Outbound + intent**: Kombinieren Sie PKI-Liste + Intensitätssignale (Rekrutierung, Kapitalbeschaffung, Expansion), um zum richtigen Zeitpunkt zu kontaktieren.",
+          "**Kosten pro Lead**: Outbound-Cold-E-Mail generiert Leads 5-10x günstiger als bezahlte Werbung im B2B-Bereich."
+        ],
+        "dateModified": "2026-03-01"
       },
       "nl": {
         "title": "B2B-leadgeneratie: volledige methode 2026",
@@ -659,7 +875,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "Lead Generation",
-        "relatedServiceSlug": "generation-leads"
+        "relatedServiceSlug": "generation-leads",
+        "editorialTitle": "Wat is de meest effectieve manier om gekwalificeerde B2B-leads te genereren in 2026?",
+        "summaryPoints": [
+          "**ICP eerst en vooral**: bepaal je ideale klantenprofiel (sector, grootte, positie, maturiteit) voordat je lijsten maakt.",
+          "**Volume vs. kwaliteit**: 100 ultragekwalificeerde prospects genereren meer afspraken dan 1000 algemene contacten - focus op precisie.",
+          "**Outbound + intentie**: combineer ICP-lijst + intentiesignalen (werving, fondsenwerving, uitbreiding) om op het juiste moment contact op te nemen.",
+          "**Kosten per lead**: outbound koude e-mail genereert 5-10x goedkopere leads dan betaalde B2B-reclame."
+        ],
+        "dateModified": "2026-03-01"
       }
     },
     "prospection-multicanale-b2b-cold-email-linkedin-calling": {
@@ -684,8 +908,16 @@
         "author": "Charles Perret",
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
+        "dateModified": "2026-03-01",
         "category": "Outbound",
-        "relatedServiceSlug": "outbound-multicanal"
+        "relatedServiceSlug": "outbound-multicanal",
+        "editorialTitle": "Pourquoi la prospection multicanale B2B génère-t-elle 2 à 3 fois plus de rendez-vous que le mono-canal ?",
+        "summaryPoints": [
+          "**7 touchpoints nécessaires** : selon HubSpot 2024, les décideurs B2B nécessitent en moyenne 7 points de contact avant d'accepter un rendez-vous.",
+          "**Synergie des canaux** : email prépare la connexion LinkedIn, LinkedIn augmente le taux de décroché au calling — les canaux se renforcent mutuellement.",
+          "**7 % de taux d'intérêt moyen** sur les campagnes multicanales devlo — contre 2-3 % pour les approches mono-canal.",
+          "**Séquence optimale** : J0 email, J3 LinkedIn connexion, J7 email de relance, J14 LinkedIn message, J18 calling — 21 jours, 5 touchpoints."
+        ]
       },
       "en": {
         "title": "Multi-channel B2B prospecting: combining cold email, LinkedIn and calling",
@@ -709,7 +941,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "Outbound",
-        "relatedServiceSlug": "outbound-multicanal"
+        "relatedServiceSlug": "outbound-multicanal",
+        "editorialTitle": "Why does B2B multi-channel prospecting generate 2 to 3 times more appointments than single-channel prospecting?",
+        "summaryPoints": [
+          "**7 touchpoints required**: according to HubSpot 2024, B2B decision-makers require an average of 7 touchpoints before accepting an appointment.",
+          "**Channel synergy**: email prepares the LinkedIn connection, LinkedIn increases the call-out rate - the channels reinforce each other.",
+          "**7% average interest rate** on devlo multi-channel campaigns - compared with 2-3% for single-channel approaches.",
+          "**Optimal sequence**: D0 email, D3 LinkedIn connection, D7 follow-up email, D14 LinkedIn message, D18 call - 21 days, 5 touchpoints."
+        ],
+        "dateModified": "2026-03-01"
       },
       "de": {
         "title": "B2B-Multichannel-Akquise: Cold E-Mail, LinkedIn und Calling kombinieren",
@@ -733,7 +973,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "Outbound",
-        "relatedServiceSlug": "outbound-multicanal"
+        "relatedServiceSlug": "outbound-multicanal",
+        "editorialTitle": "Warum führt die B2B-Multichannel-Akquise zu 2-3 Mal mehr Terminen als die Single-Channel-Akquise?",
+        "summaryPoints": [
+          "**7 Touchpoints erforderlich**: Laut HubSpot 2024 benötigen B2B-Entscheidungsträger durchschnittlich 7 Touchpoints, bevor sie einem Termin zustimmen.",
+          "**Kanalsynergie**: E-Mail bereitet die LinkedIn-Verbindung vor, LinkedIn erhöht die Abnahmerate beim Calling - die Kanäle verstärken sich gegenseitig.",
+          "**7% durchschnittlicher Zinssatz** bei devlo-Multichannel-Kampagnen - im Vergleich zu 2-3% bei Single-Channel-Ansätzen.",
+          "**Optimale Reihenfolge**: J0 E-Mail, J3 LinkedIn-Anmeldung, J7 Nachfass-E-Mail, J14 LinkedIn-Nachricht, J18 Calling - 21 Tage, 5 Touchpoints."
+        ],
+        "dateModified": "2026-03-01"
       },
       "nl": {
         "title": "Multi-channel B2B prospectie: koude e-mail, LinkedIn en bellen combineren",
@@ -757,7 +1005,15 @@
         "authorUrl": "https://www.linkedin.com/in/charlesperret-devlo/",
         "date": "2026-03-09",
         "category": "Outbound",
-        "relatedServiceSlug": "outbound-multicanal"
+        "relatedServiceSlug": "outbound-multicanal",
+        "editorialTitle": "Waarom genereert B2B prospectie via meerdere kanalen 2 tot 3 keer meer afspraken dan prospectie via één kanaal?",
+        "summaryPoints": [
+          "**7 touchpoints vereist**: volgens HubSpot 2024 hebben B2B-beslissers gemiddeld 7 touchpoints nodig voordat ze een afspraak accepteren.",
+          "**Kanaalsynergie**: e-mail bereidt de LinkedIn connectie voor, LinkedIn verhoogt de call-out rate - de kanalen versterken elkaar.",
+          "**7% gemiddelde rente** op devlo multi-channel campagnes - vergeleken met 2-3% voor single-channel benaderingen.",
+          "**Optimale volgorde**: D0 e-mail, D3 LinkedIn-verbinding, D7 follow-up e-mail, D14 LinkedIn-bericht, D18 gesprek - 21 dagen, 5 contactmomenten."
+        ],
+        "dateModified": "2026-03-01"
       }
     }
   },

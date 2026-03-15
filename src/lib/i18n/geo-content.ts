@@ -7,6 +7,13 @@ type GeoTranslatableContent = {
   h1: string;
   intro: string[];
   faqs: { question: string; answer: string }[];
+  // GEO fields (optional, progressive enhancement)
+  editorialTitle?: string;
+  editorialParagraphs?: string[];
+  summaryTitle?: string;
+  summaryPoints?: string[];
+  datePublished?: string;
+  dateModified?: string;
 };
 
 export function getLocalizedGeoContent(slug: string, locale: SupportedLocale): GeoTranslatableContent | null {

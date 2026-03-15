@@ -59,6 +59,7 @@ const copyByLocale: Record<
     outcomes: string;
     fallbackSolutionTitle: string;
     navigationAriaLabel: string;
+    summaryTitle: string;
   }
 > = {
   fr: {
@@ -86,6 +87,7 @@ const copyByLocale: Record<
     outcomes: "Résultats",
     fallbackSolutionTitle: "Nos solutions",
     navigationAriaLabel: "Navigation de l’étude de cas",
+    summaryTitle: "Points clés",
   },
   en: {
     unifiedCtaLabel: "Get a similar outbound plan during a meeting",
@@ -112,6 +114,7 @@ const copyByLocale: Record<
     outcomes: "Results",
     fallbackSolutionTitle: "Our solutions",
     navigationAriaLabel: "Case study navigation",
+    summaryTitle: "Key takeaways",
   },
   de: {
     unifiedCtaLabel: "Einen ähnlichen Outbound-Plan im Gespräch erhalten",
@@ -139,6 +142,7 @@ const copyByLocale: Record<
     outcomes: "Ergebnisse",
     fallbackSolutionTitle: "Unsere Lösungen",
     navigationAriaLabel: "Fallstudien-Navigation",
+    summaryTitle: "Zusammenfassung",
   },
   nl: {
     unifiedCtaLabel: "Ontvang een gelijkaardig outboundplan tijdens een gesprek",
@@ -166,6 +170,7 @@ const copyByLocale: Record<
     outcomes: "Resultaten",
     fallbackSolutionTitle: "Onze oplossingen",
     navigationAriaLabel: "Navigatie praktijkcase",
+    summaryTitle: "Samenvatting",
   },
 };
 
@@ -756,6 +761,29 @@ export function CaseStudyMasterPage({
                   <div className="mt-4">
                     <SectionContent section={resultSection} sectionKind="results" />
                   </div>
+                </section>
+              </FadeInOnScroll>
+            ) : null}
+
+            {detailedStudy.summaryPoints && detailedStudy.summaryPoints.length > 0 ? (
+              <FadeInOnScroll delay={0.18}>
+                <section className="scroll-mt-[170px] rounded-panel border border-devlo-100 bg-devlo-50/60 p-7 shadow-soft md:p-9">
+                  <h2 className="text-xl font-semibold tracking-tight text-devlo-900 md:text-2xl">{copy.summaryTitle}</h2>
+                  <ul className="mt-5 space-y-3">
+                    {detailedStudy.summaryPoints.map((point, pointIndex) => (
+                      <li key={`${detailedStudy.slug}-summary-${pointIndex}`} className="flex gap-3 text-[15px] leading-7 text-neutral-700 md:text-base">
+                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-devlo-700" />
+                        <span>
+                          {point.split(/(\*\*[^*]+\*\*)/).map((part, partIndex) => {
+                            if (part.startsWith("**") && part.endsWith("**")) {
+                              return <strong key={partIndex} className="font-semibold text-devlo-900">{part.slice(2, -2)}</strong>;
+                            }
+                            return part;
+                          })}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </section>
               </FadeInOnScroll>
             ) : null}

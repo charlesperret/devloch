@@ -9,8 +9,11 @@ type BlogArticleContent = {
   author?: string;
   authorUrl?: string;
   date: string;
+  dateModified?: string;
   category: string;
   relatedServiceSlug: string;
+  editorialTitle?: string;
+  summaryPoints?: string[];
 };
 
 type BlogHubCopy = {

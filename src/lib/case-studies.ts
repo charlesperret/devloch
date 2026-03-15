@@ -47,6 +47,10 @@ export type CaseStudy = {
   heroStats: CaseStudyStat[];
   campaignDetails: CaseStudyDetail[];
   resultHighlights: string[];
+  editorialTitle?: string;
+  summaryPoints?: string[];
+  datePublished?: string;
+  dateModified?: string;
   objectives?: string[];
   outcomes?: string[];
   sections: CaseStudySection[];

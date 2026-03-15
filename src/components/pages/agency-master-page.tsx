@@ -7,6 +7,8 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { WaveDivider } from "@/components/ui/wave-divider";
 import { CTASection } from "@/components/shared/cta-section";
 import { FAQSection } from "@/components/shared/faq-section";
+import { SummarySection } from "@/components/shared/summary-section";
+import { RichParagraph } from "@/lib/utils/rich-text";
 import { buildBreadcrumbSchema, buildFaqPageSchema } from "@/lib/seo/schema-builders";
 import { siteConfig } from "@/lib/site";
 import { agencyContent } from "@/content/agency";
@@ -180,7 +182,7 @@ export function AgencyMasterPage({ locale = "fr" }: AgencyMasterPageProps) {
             {content.h1}
           </h1>
           <div className="mt-3">
-            <AuthorByline datePublished="2024-06-15" dateModified="2026-03-01" locale={locale} />
+            <AuthorByline datePublished={content.datePublished ?? "2024-06-15"} dateModified={content.dateModified ?? "2026-03-01"} locale={locale} />
           </div>
           <p className="mt-6 max-w-2xl text-base leading-7 text-white/85 md:text-lg">
             {content.intro}
@@ -334,6 +336,40 @@ export function AgencyMasterPage({ locale = "fr" }: AgencyMasterPageProps) {
           </div>
         </div>
       </section>
+
+      {content.editorialTitle && (
+        <section className="bg-[#f7f8fc] py-12 md:py-16">
+          <div className="mx-auto w-full max-w-screen-xl px-6 lg:px-10">
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 md:p-10">
+              <AuthorByline
+                datePublished={content.datePublished ?? "2024-06-15"}
+                dateModified={content.dateModified ?? "2026-03-01"}
+                locale={locale}
+              />
+              <h2 className="mt-4 text-2xl font-extrabold leading-[1.2] tracking-tight text-[#153a54] md:text-3xl">
+                {content.editorialTitle}
+              </h2>
+              {(content.editorialParagraphs ?? []).length > 0 && (
+                <div className="mt-5 space-y-4 text-neutral-600">
+                  {(content.editorialParagraphs ?? []).map((p: string, i: number) => (
+                    <RichParagraph key={i} className="text-sm leading-7 md:text-base md:leading-8">
+                      {p}
+                    </RichParagraph>
+                  ))}
+                </div>
+              )}
+              {(content.summaryPoints ?? []).length > 0 && (
+                <div className="mt-6">
+                  <SummarySection
+                    title={content.summaryTitle ?? (locale === "fr" ? "En résumé" : locale === "de" ? "Zusammenfassung" : locale === "nl" ? "Samenvatting" : "Key takeaways")}
+                    points={content.summaryPoints ?? []}
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       <FAQSection title={copy.faqTitle} items={content.faq} />
 

@@ -665,14 +665,42 @@
       ],
       "homeComparisonTable": {
         "caption": "Comparatif entre la prospection externalisée avec devlo et le recrutement d'une équipe SDR interne",
-        "headers": ["Critère", "Équipe SDR interne", "Avec devlo"],
+        "headers": [
+          "Critère",
+          "Équipe SDR interne",
+          "Avec devlo"
+        ],
         "rows": [
-          { "criterion": "Délai de mise en place", "colA": "3-6 mois (recrutement, formation, stack)", "colB": "2-3 semaines, campagnes live" },
-          { "criterion": "Coût annuel", "colA": "80-120k CHF (salaire + outils + formation)", "colB": "À partir de 30k CHF/an" },
-          { "criterion": "Canaux maîtrisés", "colA": "Souvent 1 seul canal", "colB": "Email + LinkedIn + Calling coordonnés" },
-          { "criterion": "Expertise copywriting", "colA": "Apprentissage par essai/erreur", "colB": "+1'000 campagnes d'expérience multilingue" },
-          { "criterion": "Scalabilité", "colA": "Limitée par la taille de l'équipe", "colB": "Volume ajustable chaque mois" },
-          { "criterion": "Risque", "colA": "Turnover élevé, formation perdue", "colB": "Aucun engagement long terme, résultats dès semaine 3" }
+          {
+            "criterion": "Délai de mise en place",
+            "colA": "3-6 mois (recrutement, formation, stack)",
+            "colB": "2-3 semaines, campagnes live"
+          },
+          {
+            "criterion": "Coût annuel",
+            "colA": "80-120k CHF (salaire + outils + formation)",
+            "colB": "À partir de 30k CHF/an"
+          },
+          {
+            "criterion": "Canaux maîtrisés",
+            "colA": "Souvent 1 seul canal",
+            "colB": "Email + LinkedIn + Calling coordonnés"
+          },
+          {
+            "criterion": "Expertise copywriting",
+            "colA": "Apprentissage par essai/erreur",
+            "colB": "+1'000 campagnes d'expérience multilingue"
+          },
+          {
+            "criterion": "Scalabilité",
+            "colA": "Limitée par la taille de l'équipe",
+            "colB": "Volume ajustable chaque mois"
+          },
+          {
+            "criterion": "Risque",
+            "colA": "Turnover élevé, formation perdue",
+            "colB": "Aucun engagement long terme, résultats dès semaine 3"
+          }
         ]
       },
       "homeAuthor": {
@@ -1195,7 +1223,7 @@
         "badge": "🇨🇭 Swiss agency - +1,000 campaigns launched",
         "h1": "Boost your B2B sales prospecting with our lead generation and telemarketing agency",
         "h2": "We'll make qualified appointments for you: outsource your B2B sales development to our agency.",
-        "paragraph": "More than consultants: your No. 1 trusted partner for lead generation, multi-channel prospecting and B2B appointment setting.",
+        "paragraph": "**B2B sales prospecting** is the art of contacting the right decision-makers, at the right time, on the right channel. devlo is your trusted partner for **lead generation**, **multi-channel prospecting** and **qualified appointment setting** — with over 1,000 campaigns deployed since 2020.",
         "ctaPrimary": {
           "label": "Schedule your free consultation →",
           "href": "/consultation"
@@ -1218,7 +1246,7 @@
           "line": "More than 30 interested prospects generated for their solution",
           "href": "/etudes-de-cas/immobilier-30-prospects"
         },
-        "microProof": "⭐ 4.9/5 customer satisfaction - 7% average interest rate - +1'000 campaigns"
+        "microProof": "⭐ 5/5 Lemlist Experts - 70-80% open rate - +3'000 qualified appointments"
       },
       "rendezVousTitle": "Sales appointments obtained with",
       "rendezVousLogos": [
@@ -2331,7 +2359,7 @@
         "badge": "🇨🇭 Schweizer Agentur - +1'000 lancierte Kampagnen",
         "h1": "Steigern Sie Ihre B2B-Geschäftsanbahnung mit unserer Agentur für Leadgenerierung und Teleprospektion",
         "h2": "Wir vereinbaren qualifizierte Termine für Sie: Lagern Sie Ihre B2B-Geschäftsentwicklung an unsere Agentur aus.",
-        "paragraph": "Mehr als nur Berater: Ihr vertrauenswürdiger Partner Nr. 1 für Lead-Generierung, Multi-Channel-Prospektion und B2B-Terminvereinbarungen.",
+        "paragraph": "**B2B-Vertriebsprospektion** ist die Kunst, die richtigen Entscheidungsträger zur richtigen Zeit über den richtigen Kanal zu kontaktieren. devlo ist Ihr zuverlässiger Partner für **Leadgenerierung**, **Multichannel-Prospektion** und **qualifizierte Terminvereinbarung** — mit mehr als 1.000 Kampagnen seit 2020.",
         "ctaPrimary": {
           "label": "Planen Sie Ihre kostenlose Beratung →",
           "href": "/consultation"
@@ -2354,7 +2382,7 @@
           "line": "Mehr als 30 generierte Interessenten für ihre Lösung",
           "href": "/etudes-de-cas/immobilier-30-prospects"
         },
-        "microProof": "⭐ 4.9/5 Kundenzufriedenheit - 7% durchschnittlicher Zinssatz - +1'000 Kampagnen"
+        "microProof": "⭐ 5/5 Lemlist Experts - 70-80% Öffnungsrate - +3'000 qualifizierte Termine"
       },
       "rendezVousTitle": "Erhaltene Geschäftstermine mit",
       "rendezVousLogos": [
@@ -3467,7 +3495,7 @@
         "badge": "🇨🇭 Zwitsers agentschap - +1.000 campagnes gelanceerd",
         "h1": "Verhoog uw B2B sales prospectie met ons leadgeneratie- en telemarketingbureau",
         "h2": "Wij maken gekwalificeerde afspraken voor u: besteed uw B2B verkoopontwikkeling uit aan ons bureau.",
-        "paragraph": "Meer dan consultants: uw nummer 1 vertrouwde partner voor leadgeneratie, multi-channel prospectie en het maken van B2B-afspraken.",
+        "paragraph": "**B2B sales prospecting** is de kunst om contact op te nemen met de juiste beslissers, op het juiste moment, via het juiste kanaal. devlo is uw vertrouwde partner voor **leadgeneratie**, **multichannel prospecting** en **gekwalificeerde afspraken** — met meer dan 1.000 campagnes sinds 2020.",
         "ctaPrimary": {
           "label": "Plan je gratis consultatie →",
           "href": "/consultation"
@@ -3490,7 +3518,7 @@
           "line": "Meer dan 30 geïnteresseerde prospects gegenereerd voor hun oplossing",
           "href": "/etudes-de-cas/immobilier-30-prospects"
         },
-        "microProof": "⭐ 4,9/5 klanttevredenheid - 7% gemiddelde rentevoet - +1.000 campagnes"
+        "microProof": "⭐ 5/5 Lemlist Experts - 70-80% open rate - +3'000 gekwalificeerde afspraken"
       },
       "rendezVousTitle": "Verkoopafspraken verkregen met",
       "rendezVousLogos": [

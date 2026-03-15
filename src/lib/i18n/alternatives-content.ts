@@ -9,6 +9,13 @@ type AltsTranslatableContent = {
   comparisonTable: { feature: string; devlo: string; competitor: string }[];
   whyDevlo: string[];
   faqs: { question: string; answer: string }[];
+  // GEO fields (optional, progressive enhancement)
+  editorialTitle?: string;
+  editorialParagraphs?: string[];
+  summaryTitle?: string;
+  summaryPoints?: string[];
+  datePublished?: string;
+  dateModified?: string;
 };
 
 export function getLocalizedAlternativeContent(slug: string, locale: SupportedLocale): AltsTranslatableContent | null {

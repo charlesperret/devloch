@@ -5,11 +5,13 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { CTASection } from "@/components/shared/cta-section";
 import { FAQSection } from "@/components/shared/faq-section";
 import { InfiniteLogoRail } from "@/components/shared/logo-rail";
+import { SummarySection } from "@/components/shared/summary-section";
 import { TRUSTED_LOGOS_STRIP } from "@/content/service-brand-assets";
 import { type AlternativePageData } from "@/content/alternatives";
 import { caseStudyBySlug } from "@/lib/case-studies";
 import { getLocalizedAlternativeContent } from "@/lib/i18n/alternatives-content";
 import { resolvePathForLocale, type SupportedLocale } from "@/lib/i18n/slug-map";
+import { RichParagraph } from "@/lib/utils/rich-text";
 
 const copyByLocale: Record<
   SupportedLocale,
@@ -99,6 +101,12 @@ export function AlternativePage({ data, locale = "fr" }: { data: AlternativePage
   const comparisonTable = localizedContent?.comparisonTable ?? data.comparisonTable;
   const whyDevlo = localizedContent?.whyDevlo ?? data.whyDevlo;
   const faqs = localizedContent?.faqs ?? data.faqs;
+  const editorialTitle = localizedContent?.editorialTitle;
+  const editorialParagraphs = localizedContent?.editorialParagraphs ?? [];
+  const summaryTitle = localizedContent?.summaryTitle;
+  const summaryPoints = localizedContent?.summaryPoints ?? [];
+  const datePublished = localizedContent?.datePublished ?? "2024-06-15";
+  const dateModified = localizedContent?.dateModified ?? "2026-03-01";
 
   const studies = data.caseStudySlugs
     .map((slug) => caseStudyBySlug[slug])
@@ -131,7 +139,7 @@ export function AlternativePage({ data, locale = "fr" }: { data: AlternativePage
             {h1}
           </h1>
           <div className="mt-4 flex justify-center">
-            <AuthorByline datePublished="2024-06-15" dateModified="2026-03-01" locale={locale} />
+            <AuthorByline datePublished={datePublished} dateModified={dateModified} locale={locale} />
           </div>
           <div className="mx-auto mt-6 max-w-3xl space-y-4">
             {intro.map((p, i) => (
@@ -248,6 +256,36 @@ export function AlternativePage({ data, locale = "fr" }: { data: AlternativePage
                   </span>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Editorial / GEO section */}
+      {editorialTitle && (
+        <section className="bg-white py-12 md:py-16">
+          <div className="mx-auto w-full max-w-screen-xl px-6 lg:px-10">
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 md:p-10">
+              <h2 className="text-2xl font-extrabold leading-[1.2] tracking-tight text-[#153a54] md:text-3xl">
+                {editorialTitle}
+              </h2>
+              {editorialParagraphs.length > 0 && (
+                <div className="mt-5 space-y-4 text-neutral-600">
+                  {editorialParagraphs.map((p, i) => (
+                    <RichParagraph key={i} className="text-sm leading-7 md:text-base md:leading-8">
+                      {p}
+                    </RichParagraph>
+                  ))}
+                </div>
+              )}
+              {summaryPoints.length > 0 && (
+                <div className="mt-6">
+                  <SummarySection
+                    title={summaryTitle ?? (locale === "fr" ? "En résumé" : locale === "de" ? "Zusammenfassung" : locale === "nl" ? "Samenvatting" : "Key takeaways")}
+                    points={summaryPoints}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </section>

@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { buildArticleSchema, buildBreadcrumbSchema } from "@/lib/seo/schema-builders";
 import { getLocalizedBlogArticle, getLocalizedBlogHub } from "@/lib/i18n/blog-content";
 import { resolvePathForLocale, type SupportedLocale } from "@/lib/i18n/slug-map";
+import { SummarySection } from "@/components/shared/summary-section";
 
 type BlogArticleMasterPageProps = {
   frSlug: string;
@@ -90,6 +91,15 @@ export function BlogArticleMasterPage({ frSlug, locale = "fr" }: BlogArticleMast
             );
           })}
         </div>
+
+        {article.summaryPoints && article.summaryPoints.length > 0 && (
+          <div className="mt-10">
+            <SummarySection
+              title={locale === "fr" ? "Points clés à retenir" : locale === "de" ? "Wichtigste Erkenntnisse" : locale === "nl" ? "Belangrijkste punten" : "Key takeaways"}
+              points={article.summaryPoints}
+            />
+          </div>
+        )}
 
         <div className="mt-12 rounded-xl border border-neutral-200 bg-[#f7f8fc] p-6">
           <p className="text-sm font-semibold text-[#153a54]">{relatedServiceLabelByLocale[locale]}</p>
