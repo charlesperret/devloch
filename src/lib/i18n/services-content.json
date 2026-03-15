@@ -2776,11 +2776,11 @@
             "description": "Setting up the infrastructure and controlled warm-up."
           },
           {
-            "title": "Ciblage",
+            "title": "Targeting",
             "description": "Building ICP lists and personalising messages."
           },
           {
-            "title": "Lancement",
+            "title": "Launch",
             "description": "Sequencing and continuous A/B testing."
           },
           {
@@ -2803,9 +2803,9 @@
             "label": "Existing email infrastructure",
             "type": "single",
             "options": [
-              "Oui",
-              "Non",
-              "Partiellement"
+              "Yes",
+              "No",
+              "Partially"
             ]
           },
           {
@@ -2961,11 +2961,11 @@
         "processTitle": "LinkedIn outreach process",
         "processSteps": [
           {
-            "title": "Ciblage",
+            "title": "Targeting",
             "description": "ICP definition and creation of Sales Navigator lists."
           },
           {
-            "title": "Connexion",
+            "title": "Connection",
             "description": "Invitation sequences and messages adapted to the segment."
           },
           {
@@ -3163,7 +3163,7 @@
             "description": "Building hooks and responding to objections."
           },
           {
-            "title": "Appels",
+            "title": "Calls",
             "description": "Live calling and qualification sessions."
           },
           {
@@ -3223,7 +3223,7 @@
             "label": "Script available",
             "type": "single",
             "options": [
-              "Oui",
+              "Yes",
               "To be co-constructed",
               "To be created in full"
             ]
@@ -3758,7 +3758,7 @@
             "description": "Find the right contacts for each account."
           },
           {
-            "title": "Livraison",
+            "title": "Delivery",
             "description": "Export a clean, actionable database."
           }
         ],
@@ -3938,11 +3938,11 @@
         "processTitle": "Outsourced SDR process",
         "processSteps": [
           {
-            "title": "Cadrage",
+            "title": "Scoping",
             "description": "Alignment with the PKI and qualification framework."
           },
           {
-            "title": "Traitement",
+            "title": "Processing",
             "description": "Qualification of inbound and outbound leads."
           },
           {
@@ -3950,11 +3950,11 @@
             "description": "Qualification calls and collection of key signals."
           },
           {
-            "title": "Passation",
+            "title": "Handover",
             "description": "Structured transmission to your sales force."
           },
           {
-            "title": "Pilotage",
+            "title": "Management",
             "description": "Weekly monitoring of conversions and adjustments."
           }
         ],
@@ -4128,7 +4128,7 @@
         "processTitle": "Appointment setting process",
         "processSteps": [
           {
-            "title": "Surveillance",
+            "title": "Monitoring",
             "description": "Continuous inbox monitoring and prioritisation of responses."
           },
           {
@@ -4144,7 +4144,7 @@
             "description": "Targeted reminders to limit no-shows."
           },
           {
-            "title": "Passation",
+            "title": "Handover",
             "description": "Passing on key information to your team."
           }
         ],
@@ -5116,11 +5116,11 @@
             "description": "Aufbau der Infrastruktur und kontrolliertes Warm-up."
           },
           {
-            "title": "Ciblage",
+            "title": "Zielgruppenauswahl",
             "description": "Aufbau der PKI-Liste und Personalisierung der Nachrichten."
           },
           {
-            "title": "Lancement",
+            "title": "Start",
             "description": "Durchführung von Sequenzen und fortlaufenden A/B-Tests."
           },
           {
@@ -5143,9 +5143,9 @@
             "label": "Bestehende E-Mail-Infrastruktur",
             "type": "single",
             "options": [
-              "Oui",
-              "Non",
-              "Partiellement"
+              "Ja",
+              "Nein",
+              "Teilweise"
             ]
           },
           {
@@ -5301,11 +5301,11 @@
         "processTitle": "LinkedIn-Prozess Outreach",
         "processSteps": [
           {
-            "title": "Ciblage",
+            "title": "Zielgruppenauswahl",
             "description": "PKI-Definition und Erstellung von Sales Navigator-Listen."
           },
           {
-            "title": "Connexion",
+            "title": "Kontaktaufnahme",
             "description": "Auf das Segment zugeschnittene Einladungssequenzen und Botschaften."
           },
           {
@@ -5503,7 +5503,7 @@
             "description": "Aufbau von Aufhängern und Antworten auf Einwände."
           },
           {
-            "title": "Appels",
+            "title": "Anrufe",
             "description": "Durchführung von Calling Sessions und Live-Qualifikation."
           },
           {
@@ -5563,7 +5563,7 @@
             "label": "Skript verfügbar",
             "type": "single",
             "options": [
-              "Oui",
+              "Ja",
               "Zum Mitgestalten",
               "Vollständig zu erstellen"
             ]
@@ -6098,7 +6098,7 @@
             "description": "Finden Sie die richtigen Ansprechpartner in jedem Konto."
           },
           {
-            "title": "Livraison",
+            "title": "Lieferung",
             "description": "Exportieren Sie eine saubere und handlungsfähige Grundlage."
           }
         ],
@@ -6278,11 +6278,11 @@
         "processTitle": "Ausgelagerter SDR-Prozess",
         "processSteps": [
           {
-            "title": "Cadrage",
+            "title": "Rahmenplanung",
             "description": "Ausrichtung auf die PKI und das Qualifizierungsframework."
           },
           {
-            "title": "Traitement",
+            "title": "Verarbeitung",
             "description": "Qualifizierung eingehender und ausgehender Leads."
           },
           {
@@ -6290,11 +6290,11 @@
             "description": "Qualifizierungsanrufe und Sammlung von Schlüsselsignalen."
           },
           {
-            "title": "Passation",
+            "title": "Übergabe",
             "description": "Strukturierte Weiterleitung an Ihre Vertriebsmitarbeiter."
           },
           {
-            "title": "Pilotage",
+            "title": "Steuerung",
             "description": "Wöchentliche Überwachung der Konversionen und Anpassungen."
           }
         ],
@@ -6468,7 +6468,7 @@
         "processTitle": "Prozess appointment setting",
         "processSteps": [
           {
-            "title": "Surveillance",
+            "title": "Überwachung",
             "description": "Kontinuierliches Inbox-Monitoring und Priorisierung von Antworten."
           },
           {
@@ -6484,7 +6484,7 @@
             "description": "Gezielte Nachfassaktionen, um No-Shows zu begrenzen."
           },
           {
-            "title": "Passation",
+            "title": "Übergabe",
             "description": "Weitergabe von Schlüsselinformationen an Ihr Team"
           }
         ],
@@ -7456,11 +7456,11 @@
             "description": "Opzetten van de infrastructuur en gecontroleerde warming-up."
           },
           {
-            "title": "Ciblage",
+            "title": "Targeting",
             "description": "ICP-lijsten samenstellen en berichten personaliseren."
           },
           {
-            "title": "Lancement",
+            "title": "Lancering",
             "description": "Sequencing en continu A/B-testen."
           },
           {
@@ -7483,9 +7483,9 @@
             "label": "Bestaande e-mailinfrastructuur",
             "type": "single",
             "options": [
-              "Oui",
-              "Non",
-              "Partiellement"
+              "Ja",
+              "Nee",
+              "Gedeeltelijk"
             ]
           },
           {
@@ -7641,11 +7641,11 @@
         "processTitle": "LinkedIn benaderingsproces",
         "processSteps": [
           {
-            "title": "Ciblage",
+            "title": "Targeting",
             "description": "ICP-definitie en aanmaak van Sales Navigator-lijsten."
           },
           {
-            "title": "Connexion",
+            "title": "Verbinding",
             "description": "Uitnodigingsreeksen en berichten aangepast aan het segment."
           },
           {
@@ -7843,7 +7843,7 @@
             "description": "Haken bouwen en reageren op bezwaren."
           },
           {
-            "title": "Appels",
+            "title": "Gesprekken",
             "description": "Live bellen en kwalificatiesessies."
           },
           {
@@ -7903,7 +7903,7 @@
             "label": "Script beschikbaar",
             "type": "single",
             "options": [
-              "Oui",
+              "Ja",
               "Samen opbouwen",
               "Volledig te creëren"
             ]
@@ -8438,7 +8438,7 @@
             "description": "Vind de juiste contactpersonen voor elke account."
           },
           {
-            "title": "Livraison",
+            "title": "Levering",
             "description": "Exporteer een schone, bruikbare database."
           }
         ],
@@ -8618,11 +8618,11 @@
         "processTitle": "SDR-proces uitbesteden",
         "processSteps": [
           {
-            "title": "Cadrage",
+            "title": "Scopebepaling",
             "description": "Afstemming op de PKI en het kwalificatieraamwerk."
           },
           {
-            "title": "Traitement",
+            "title": "Verwerking",
             "description": "Kwalificatie van inkomende en uitgaande leads."
           },
           {
@@ -8630,11 +8630,11 @@
             "description": "Kwalificatiegesprekken en verzamelen van belangrijke signalen."
           },
           {
-            "title": "Passation",
+            "title": "Overdracht",
             "description": "Gestructureerde verzending naar uw verkoopteam."
           },
           {
-            "title": "Pilotage",
+            "title": "Beheer",
             "description": "Wekelijkse controle van conversies en aanpassingen."
           }
         ],
@@ -8808,7 +8808,7 @@
         "processTitle": "Proces voor het maken van afspraken",
         "processSteps": [
           {
-            "title": "Surveillance",
+            "title": "Monitoring",
             "description": "Voortdurende inboxbewaking en prioritering van reacties."
           },
           {
@@ -8824,7 +8824,7 @@
             "description": "Gerichte herinneringen om no-shows te beperken."
           },
           {
-            "title": "Passation",
+            "title": "Overdracht",
             "description": "Belangrijke informatie doorgeven aan je team."
           }
         ],

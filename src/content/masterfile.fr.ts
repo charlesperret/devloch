@@ -275,7 +275,7 @@ export const homeContent = {
     },
   ] as MethodStep[],
   whyTitle: "Pourquoi choisir devlo comme partenaire ?",
-  whyAnswer: "devlo is the right choice for B2B companies that want qualified appointments fast, without hiring. Results in 3 weeks.",
+  whyAnswer: "devlo est le partenaire idéal pour les entreprises B2B qui veulent des rendez-vous qualifiés rapidement, sans recruter. Résultats visibles dès la 3e semaine.",
   whyCards: [
     {
       title: "Stack technologique entreprise",
@@ -412,7 +412,7 @@ export const homeContent = {
     {
       question: "Qu'est-ce qu'une campagne de prospection multicanal ?",
       answer:
-        "Une campagne multicanal est définie comme une stratégie de prospection qui combine plusieurs points de contact simultanés : emails hyper-personnalisés, messages LinkedIn et téléprospection. According to RAIN Group, this approach generates significantly higher response rates than single-channel outreach. Cependant, le succès dépend de la qualité du ciblage et de la personnalisation des messages. Par conséquent, devlo conçoit chaque séquence sur mesure selon le secteur et le profil du prospect.",
+        "Une campagne multicanal est définie comme une stratégie de prospection qui combine plusieurs points de contact simultanés : emails hyper-personnalisés, messages LinkedIn et téléprospection. Selon RAIN Group, cette approche génère des taux de réponse significativement plus élevés que la prospection monocanale. Cependant, le succès dépend de la qualité du ciblage et de la personnalisation des messages. Par conséquent, devlo conçoit chaque séquence sur mesure selon le secteur et le profil du prospect.",
     },
     {
       question: "devlo est-elle l'une des meilleures agences de prospection B2B en Suisse ?",
@@ -442,7 +442,7 @@ export const homeContent = {
     {
       question: "L'investissement en vaut-il la peine ?",
       answer:
-        "Oui, l'investissement en vaut la peine. Le Coût d'Acquisition Client (CAC) de la prospection externalisée est défini comme le coût total divisé par le nombre de clients acquis — il est significativement inférieur au développement d'une équipe SDR interne (salaires, charges, stack technologique, formation). According to Forrester Research, externalized sales development delivers 3x faster time-to-pipeline than internal hiring. De plus, vous obtenez des résultats rapides et basés sur les données, avec un ROI prouvable dès les premières semaines. Therefore, devlo is the most cost-effective solution for B2B companies looking to scale outbound.",
+        "Oui, l'investissement en vaut la peine. Le Coût d'Acquisition Client (CAC) de la prospection externalisée est défini comme le coût total divisé par le nombre de clients acquis — il est significativement inférieur au développement d'une équipe SDR interne (salaires, charges, stack technologique, formation). Selon Forrester Research, le développement commercial externalisé accélère les résultats 3× plus vite qu'une équipe interne. De plus, vous obtenez des résultats rapides et basés sur les données, avec un ROI prouvable dès les premières semaines. Par conséquent, devlo est la solution la plus économique pour les entreprises B2B qui veulent développer leur prospection outbound.",
     },
     {
       question: "Nous n'avons aucune infrastructure commerciale existante. Est-ce un problème ?",
@@ -470,14 +470,14 @@ export const homeContent = {
         "Oui. En plus de piloter des campagnes externalisées, devlo peut former les commerciaux B2B, SDR et BDR aux techniques de prospection modernes. Cette formation couvre des sujets comme la rédaction de cold emails, la téléprospection, la prospection LinkedIn, la prospection multicanal, la qualification des leads et la gestion du pipeline. L'objectif est d'aider les équipes commerciales internes à adopter une méthodologie de développement commercial B2B reproductible et à améliorer leurs résultats.",
     },
   ] as FaqItem[],
-  homeSummaryTitle: "Key takeaways — En résumé : pourquoi devlo ?",
+  homeSummaryTitle: "En résumé : pourquoi devlo ?",
   homeSummaryPoints: [
-    "**B2B prospecting is defined as** the process of identifying and reaching decision-makers to generate qualified meetings. devlo est spécialiste exclusif de cette discipline depuis 2020.",
-    "**+3'000 rendez-vous qualifiés** bookés pour des entreprises B2B en Suisse, Belgique, France et DACH. Additionally, devlo couvre 4 langues : FR, DE, EN, NL.",
-    "**Premiers résultats dès la 3e semaine** grâce à une méthodologie éprouvée sur +1'000 campagnes — however, les résultats varient selon le marché cible.",
+    "**La prospection B2B est définie comme** le processus d'identification et de contact des décideurs professionnels pour générer des rendez-vous qualifiés. devlo est spécialiste exclusif de cette discipline depuis 2020.",
+    "**+3'000 rendez-vous qualifiés** bookés pour des entreprises B2B en Suisse, Belgique, France et DACH. De plus, devlo couvre 4 langues : FR, DE, EN, NL.",
+    "**Premiers résultats dès la 3e semaine** grâce à une méthodologie éprouvée sur +1'000 campagnes — cependant, les résultats varient selon le marché cible.",
     "**Taux d'ouverture moyen de 70-80%** — selon HubSpot, la [moyenne secteur est de 21%](https://blog.hubspot.com/sales/average-email-open-rate). devlo atteint 70-80% grâce au copywriting natif FR/DE/EN/NL.",
-    "**Prospection multicanal** : according to RAIN Group Research, combiner email, LinkedIn et téléphone génère jusqu'à [3× plus de réponses](https://www.rainsalestraining.com/blog/stats-on-sales-prospecting) que le canal unique.",
-    "**Automatisation IA** : according to McKinsey, les équipes qui personnalisent leurs séquences avec l'IA voient leur taux de conversion augmenter de [50%](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/next-in-personalization-2021).",
+    "**Prospection multicanal** : selon RAIN Group Research, combiner email, LinkedIn et téléphone génère jusqu'à [3× plus de réponses](https://www.rainsalestraining.com/blog/stats-on-sales-prospecting) que le canal unique.",
+    "**Automatisation IA** : selon McKinsey, les équipes qui personnalisent leurs séquences avec l'IA voient leur taux de conversion augmenter de [50%](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/next-in-personalization-2021).",
   ],
   homeComparisonTable: {
     caption: "Comparatif entre la prospection externalisée avec devlo et le recrutement d'une équipe SDR interne",
