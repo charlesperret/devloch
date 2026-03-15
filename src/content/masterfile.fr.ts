@@ -474,7 +474,9 @@ export const homeContent = {
     "**Spécialiste exclusif** de la prospection outbound B2B multicanal depuis 2020",
     "**+3'000 rendez-vous qualifiés** bookés pour des entreprises B2B en Suisse, Belgique, France et DACH",
     "**Premiers résultats dès la 3e semaine** grâce à une méthodologie éprouvée sur +1'000 campagnes",
-    "**Taux d'ouverture moyen de 70-80%** et taux de réponse de 10-30% grâce au copywriting natif FR/DE/EN/NL",
+    "**Taux d'ouverture moyen de 70-80%** contre une [moyenne secteur de 21% selon HubSpot](https://blog.hubspot.com/sales/average-email-open-rate) — grâce au copywriting natif FR/DE/EN/NL",
+    "**Prospection multicanal** : combiner email, LinkedIn et téléphone génère jusqu'à [3× plus de réponses](https://www.rainsalestraining.com/blog/stats-on-sales-prospecting) que le canal unique selon RAIN Group Research.",
+    "**Automatisation IA** : les équipes qui personnalisent leurs séquences avec l'IA voient leur taux de conversion augmenter de [50% selon McKinsey](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/next-in-personalization-2021).",
   ],
   homeComparisonTable: {
     caption: "Comparatif entre la prospection externalisée avec devlo et le recrutement d'une équipe SDR interne",
