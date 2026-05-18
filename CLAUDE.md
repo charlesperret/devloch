@@ -7,21 +7,21 @@
 ## This repo does NOT own
 | If you need... | Go to |
 |----------------|-------|
-| Client ICP, voice, strategy | devlo-aios → `clients/{slug}/` |
-| SOPs, playbooks, guidelines | devlo-aios → `sources/`, `context/`, `constitution/` |
+| Client ICP, voice, strategy | devlo-aios → `context/clients/{slug}/` |
+| SOPs, playbooks, guidelines | devlo-aios → `data/sources/`, `context/`, `core/constitution/` |
 | Email/LinkedIn automation | devlo-inbox |
 | Prospection, Clay signals | devlo-outbound → `clay-signals/` |
 | Client portals and internal dashboards | devlo-internal |
 | Content creation (LinkedIn, YouTube) | devlo-internal → `content-creation/` |
 | Expert brains | expert-brains |
-| Architecture decisions, conventions | devlo-aios → `constitution/`, `docs/adr/` |
-| Credentials inventory, never secret values | devlo-aios → `context/access.md` |
+| Architecture decisions, conventions | devlo-aios → `core/constitution/`, `core/decisions/adr/` |
+| Credentials inventory, never secret values | devlo-aios → `context/infrastructure/access.md` |
 
 Canonical collaboration guardrails live in devlo-aios:
 - `CLAUDE.md` for the start-here map.
-- `constitution/repo-registry.md` for repo placement.
-- `constitution/save-rules.md` for file placement and no-loss rules.
-- `context/how-we-git.md` for branch, PR, and merge protocol.
+- `core/constitution/repo-registry.md` for repo placement.
+- `core/constitution/save-rules.md` for file placement and no-loss rules.
+- `core/workflow/how-we-git.md` for branch, PR, and merge protocol.
 
 **If not in this table:** `grep -r "keyword" ~/alldevlo/*/CLAUDE.md`
 

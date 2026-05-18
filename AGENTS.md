@@ -7,9 +7,9 @@ behavior, read:
 
 - `CLAUDE.md`
 - `docs/seo-geo-guide.md`
-- `~/alldevlo/devlo-aios/constitution/repo-registry.md`
-- `~/alldevlo/devlo-aios/context/how-we-git.md`
-- `~/alldevlo/devlo-aios/constitution/operational-rules.md`
+- `~/alldevlo/devlo-aios/core/constitution/repo-registry.md`
+- `~/alldevlo/devlo-aios/core/workflow/how-we-git.md`
+- `~/alldevlo/devlo-aios/core/constitution/operational-rules.md`
 
 ## Vercel Plugin Context
 
