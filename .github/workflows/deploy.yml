@@ -16,7 +16,7 @@ jobs:
         continue-on-error: true
         with:
           repository: devlollc/devlo-aios
-          sparse-checkout: skills/slack-notifier
+          sparse-checkout: automations/skills/slack-notifier
           sparse-checkout-cone-mode: false
           path: .devlo-aios
           token: ${{ secrets.CROSS_REPO_READ_TOKEN }}
@@ -71,7 +71,7 @@ jobs:
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID || vars.SLACK_CHANNEL_ID }}
         run: |
           MESSAGE="devlo-website | devlo | deploy FAILED | run ${{ github.run_id }} | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          if [ ! -x .devlo-aios/skills/slack-notifier/scripts/slack_alert.sh ]; then
+          if [ ! -x .devlo-aios/automations/skills/slack-notifier/scripts/slack_alert.sh ]; then
             echo "slack-notifier unavailable; using SLACK_FALLBACK_DIRECT_POST"
             PAYLOAD=$(jq -n --arg ch "$SLACK_CHANNEL_ID" --arg text ":rotating_light: $MESSAGE" '{channel:$ch, text:$text}')
             RESP=$(curl -sS -X POST https://slack.com/api/chat.postMessage \
@@ -85,6 +85,6 @@ jobs:
             fi
             exit 0
           fi
-          .devlo-aios/skills/slack-notifier/scripts/slack_alert.sh \
+          .devlo-aios/automations/skills/slack-notifier/scripts/slack_alert.sh \
             --level critical \
             --message "$MESSAGE"
