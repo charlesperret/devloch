@@ -84,6 +84,7 @@ A qualified lead is a B2B account that matches the client's ICP, shows an action
 - [B2B Prospecting in Switzerland](https://devlo.ch/prospection-commerciale-suisse): Targeted B2B campaigns for the Swiss market (Romandy, German-speaking, Ticino).
 - [B2B Prospecting in French-speaking Switzerland](https://devlo.ch/prospection-commerciale-suisse-romande): Localized campaigns for Geneva, Lausanne, Vaud, Valais, Fribourg and Neuchâtel.
 - [B2B Prospecting in German-speaking Switzerland](https://devlo.ch/prospection-commerciale-suisse-alemanique): German-language campaigns for Zurich, Basel, Bern, St. Gallen and Winterthur.
+- [Leadgenerierung Agentur Schweiz](https://devlo.ch/de/leadgenerierung-agentur-schweiz): German paid-search landing page for B2B lead generation, Neukundenakquise and qualified meetings in German-speaking Switzerland.
 - [B2B Prospecting in Geneva](https://devlo.ch/prospection-commerciale-geneve): FR/EN outreach for finance, services, NGOs, real estate, cybersecurity and enterprise accounts.
 - [B2B Prospecting in Lausanne](https://devlo.ch/prospection-commerciale-lausanne): Local outbound campaigns for Lausanne, Vaud, EPFL-related ecosystems, services, medtech and SMEs.
 - [B2B Prospecting in Fribourg](https://devlo.ch/prospection-commerciale-fribourg): Bilingual FR/DE campaigns for SMEs, industry, food, training and services.
@@ -140,4 +141,4 @@ A qualified lead is a B2B account that matches the client's ICP, shows an action
 - [Deutsch](https://devlo.ch/de/)
 - [Nederlands](https://devlo.ch/nl/)
 
-Last-Updated: 2026-05-11
+Last-Updated: 2026-05-19
