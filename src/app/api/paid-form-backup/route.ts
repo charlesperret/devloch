@@ -102,6 +102,11 @@ function hasPaidSignal(properties: Record<string, string>) {
 }
 
 function addOperationalMirrorProperties(properties: Record<string, string>) {
+  if (properties.paid_utm_campaign) properties.campaign ||= properties.paid_utm_campaign;
+  if (properties.paid_utm_source || properties.paid_utm_medium || properties.paid_host === "true") {
+    properties.lead_generator ||=
+      properties.paid_utm_source === "google" && properties.paid_utm_medium === "cpc" ? "Google Ads" : "Paid acquisition";
+  }
   if (properties.clients) properties.targetaudience ||= properties.clients;
   if (properties.pays) {
     properties.country ||= properties.pays;
