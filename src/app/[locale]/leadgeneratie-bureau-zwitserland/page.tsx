@@ -14,9 +14,8 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
-  if (locale !== "de") return {};
-  const content = getSwissPaidLandingContent("de");
-
+  if (locale !== "nl") return {};
+  const content = getSwissPaidLandingContent("nl");
   const base = buildPageMetadata({
     title: content.title,
     description: content.description,
@@ -36,7 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ...base.openGraph,
       title: `${content.title} | devlo`,
       description: content.description,
-      locale: "de_CH",
+      locale: "nl_NL",
       url: toAbsoluteUrl(content.path),
     },
     twitter: {
@@ -49,7 +48,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function Page({ params }: PageProps) {
   const { locale } = await params;
-  if (locale !== "de") notFound();
-
-  return <SwissGermanPaidLandingPage locale="de" />;
+  if (locale !== "nl") notFound();
+  return <SwissGermanPaidLandingPage locale="nl" />;
 }

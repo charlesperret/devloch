@@ -25,6 +25,15 @@ type PaidAwareHubspotFormProps = {
   targetId: string;
 };
 
+const localizedAgencyFormIds: Partial<Record<string, Record<SupportedLocale, string>>> = {
+  "54090bd3-970d-4ad1-b3b3-1c81d54c291e": {
+    fr: "af94dc91-a61a-4f0c-b328-39b1ade12da5",
+    en: "54090bd3-970d-4ad1-b3b3-1c81d54c291e",
+    de: "74cb5247-082f-4e6d-9b70-aa128ffa118c",
+    nl: "4877d8ff-1eb5-489c-b94b-e7fec2c95622",
+  },
+};
+
 function readStoredAttribution() {
   try {
     const stored = window.sessionStorage.getItem(PAID_ATTRIBUTION_STORAGE_KEY);
@@ -130,6 +139,7 @@ export function PaidAwareHubspotForm({
   const trackedFormStart = useRef(false);
   const trackedLeadSubmitted = useRef(false);
   const backedUpSubmission = useRef(false);
+  const localizedFormId = localizedAgencyFormIds[formId]?.[locale] ?? formId;
 
   useEffect(() => {
     setAttribution(resolveAttribution());
@@ -166,7 +176,7 @@ export function PaidAwareHubspotForm({
       if (backedUpSubmission.current || typeof event.data !== "object" || !event.data) return;
 
       const payload = event.data as { id?: string; type?: string; eventName?: string; data?: unknown };
-      if (payload.type !== "hsFormCallback" || payload.id !== formId) return;
+      if (payload.type !== "hsFormCallback" || payload.id !== localizedFormId) return;
       if (payload.eventName !== "onFormSubmit" && payload.eventName !== "onBeforeFormSubmit") return;
 
       const fields = serializeHubSpotMessageFields(payload.data);
@@ -179,13 +189,13 @@ export function PaidAwareHubspotForm({
 
     window.addEventListener("message", onMessage);
     return () => window.removeEventListener("message", onMessage);
-  }, [formId, trackLeadSubmitted]);
+  }, [localizedFormId, trackLeadSubmitted]);
 
   return (
     <div onClickCapture={trackFormStart} onFocusCapture={trackFormStart}>
       <HubspotForm
         portalId={portalId}
-        formId={formId}
+        formId={localizedFormId}
         region={region}
         targetId={targetId}
         locale={locale}
@@ -197,7 +207,7 @@ export function PaidAwareHubspotForm({
         onFormSubmitCapture={handleFormSubmitCapture}
         onSubmitted={() => {
           pushAnalyticsEvent("demo_requested", {
-            form_id: formId,
+            form_id: localizedFormId,
             form_type: "consultation",
             locale,
             page_path: window.location.pathname,
