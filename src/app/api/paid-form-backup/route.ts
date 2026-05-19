@@ -218,7 +218,76 @@ async function upsertContact(properties: Record<string, string>) {
 
   if (!response.ok) {
     const errorBody = await response.text();
+    const conflictId = errorBody.match(/Existing ID:\s*(\d+)/)?.[1];
+    if (!contactId && response.status === 409 && conflictId) {
+      const retryResponse = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${conflictId}`, {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${HUBSPOT_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ properties }),
+      });
+
+      if (!retryResponse.ok) {
+        const retryErrorBody = await retryResponse.text();
+        throw new Error(`HubSpot contact conflict patch failed: ${retryResponse.status} ${retryErrorBody}`);
+      }
+
+      return retryResponse.json();
+    }
+
     throw new Error(`HubSpot contact upsert failed: ${response.status} ${errorBody}`);
+  }
+
+  return response.json();
+}
+
+function buildContactNoteBody(properties: Record<string, string>) {
+  return [
+    "Paid consultation form submission",
+    "",
+    `Clients / target audience: ${properties.clients || "-"}`,
+    `Decision-makers: ${properties.parmi_ces_clients_qui_sont_les_decideurs_ || "-"}`,
+    `Target countries/regions: ${properties.pays || "-"}`,
+    `Industries: ${properties.industry || "-"}`,
+    `Headcount: ${properties.employee_headcount || "-"}`,
+    `Website: ${properties.website || "-"}`,
+    "",
+    `Lead generator: ${properties.lead_generator || "-"}`,
+    `Campaign: ${properties.campaign || properties.paid_utm_campaign || "-"}`,
+    `UTM source/medium: ${properties.paid_utm_source || "-"}/${properties.paid_utm_medium || "-"}`,
+    `UTM content: ${properties.paid_utm_content || "-"}`,
+    `UTM term: ${properties.paid_utm_term || "-"}`,
+    `GCLID: ${properties.paid_gclid || "-"}`,
+    `Paid current page: ${properties.paid_current_page_url || "-"}`,
+  ].join("\n");
+}
+
+async function createContactNote(contactId: string, properties: Record<string, string>) {
+  const response = await fetch("https://api.hubapi.com/crm/v3/objects/notes", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${HUBSPOT_TOKEN}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      properties: {
+        hs_note_body: buildContactNoteBody(properties),
+        hs_timestamp: new Date().toISOString(),
+      },
+      associations: [
+        {
+          to: { id: contactId },
+          types: [{ associationCategory: "HUBSPOT_DEFINED", associationTypeId: 202 }],
+        },
+      ],
+    }),
+  });
+
+  if (!response.ok) {
+    const errorBody = await response.text();
+    throw new Error(`HubSpot contact note failed: ${response.status} ${errorBody}`);
   }
 
   return response.json();
@@ -258,7 +327,15 @@ export async function POST(request: NextRequest) {
 
     const formSubmission = await submitHubSpotForm(properties, rawFields as Record<string, unknown>, request);
     const contact = await upsertContact(properties);
-    return NextResponse.json({ success: true, contactId: contact.id, formSubmission });
+    let noteId: string | undefined;
+    try {
+      const note = await createContactNote(contact.id, properties);
+      noteId = note.id;
+    } catch (noteError) {
+      console.error("Paid form backup note error:", noteError);
+    }
+
+    return NextResponse.json({ success: true, contactId: contact.id, formSubmission, noteId });
   } catch (error) {
     console.error("Paid form backup error:", error);
     return NextResponse.json({ error: "Paid form backup failed" }, { status: 500 });
