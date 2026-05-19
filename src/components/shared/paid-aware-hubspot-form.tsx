@@ -50,6 +50,8 @@ function buildPaidHiddenFields(attribution: PaidAttribution) {
 
   return {
     strategy_selections: buildPaidStrategySelections(attribution),
+    ...(compact.utm_campaign ? { campaign: compact.utm_campaign } : {}),
+    lead_generator: compact.utm_source === "google" && compact.utm_medium === "cpc" ? "Google Ads" : "Paid acquisition",
     ...(compact.paid_host ? { paid_host: compact.paid_host } : {}),
     ...(compact.utm_source ? { paid_utm_source: compact.utm_source } : {}),
     ...(compact.utm_medium ? { paid_utm_medium: compact.utm_medium } : {}),

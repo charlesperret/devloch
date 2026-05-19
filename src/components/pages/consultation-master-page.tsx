@@ -93,13 +93,18 @@ export function ConsultationMasterPage({ content = consultationContent, locale =
           </FadeInOnScroll>
 
           <FadeInOnScroll delay={0.12}>
-            <div className="mt-6 w-full max-w-[640px] min-w-0 overflow-x-auto rounded-xl border border-neutral-200 bg-white">
-              <table className="w-full min-w-[640px] border-collapse text-left text-sm">
+            <div className="mt-6 w-full max-w-[640px] min-w-0 overflow-hidden rounded-xl border border-neutral-200 bg-white">
+              <table className="w-full table-fixed border-collapse text-left text-xs sm:text-sm">
                 <caption className="sr-only">{auditTable.caption}</caption>
+                <colgroup>
+                  <col className="w-[26%]" />
+                  <col className="w-[40%]" />
+                  <col className="w-[34%]" />
+                </colgroup>
                 <thead className="bg-neutral-50 text-xs font-semibold uppercase tracking-[0.08em] text-devlo-700">
                   <tr>
                     {auditTable.headers.map((header) => (
-                      <th key={header} scope="col" className="px-4 py-3">
+                      <th key={header} scope="col" className="break-words px-3 py-3 sm:px-4">
                         {header}
                       </th>
                     ))}
@@ -108,9 +113,9 @@ export function ConsultationMasterPage({ content = consultationContent, locale =
                 <tbody className="divide-y divide-neutral-200 text-neutral-700">
                   {auditTable.rows.map(([area, check, impact]) => (
                     <tr key={area}>
-                      <td className="px-4 py-3 font-semibold text-devlo-900">{area}</td>
-                      <td className="px-4 py-3">{check}</td>
-                      <td className="px-4 py-3">{impact}</td>
+                      <td className="break-words px-3 py-3 font-semibold text-devlo-900 sm:px-4">{area}</td>
+                      <td className="break-words px-3 py-3 sm:px-4">{check}</td>
+                      <td className="break-words px-3 py-3 sm:px-4">{impact}</td>
                     </tr>
                   ))}
                 </tbody>

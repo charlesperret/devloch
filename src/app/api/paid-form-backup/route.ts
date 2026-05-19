@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const HUBSPOT_TOKEN = process.env.HUBSPOT_API_TOKEN_SLACKBOT;
+const HUBSPOT_PORTAL_ID = "8082524";
+const HUBSPOT_CONSULTATION_FORM_ID = "54090bd3-970d-4ad1-b3b3-1c81d54c291e";
 
 const allowedOrigins = new Set([
   "https://devlo.ch",
@@ -13,6 +15,8 @@ const contactFieldNames = new Set([
   "firstname",
   "lastname",
   "email",
+  "campaign",
+  "lead_generator",
   "mobilephone",
   "company",
   "website",
@@ -21,6 +25,37 @@ const contactFieldNames = new Set([
   "pays",
   "industry",
   "employee_headcount",
+  "strategy_selections",
+  "paid_host",
+  "paid_utm_source",
+  "paid_utm_medium",
+  "paid_utm_campaign",
+  "paid_utm_content",
+  "paid_utm_term",
+  "paid_gclid",
+  "paid_wbraid",
+  "paid_gbraid",
+  "paid_landing_page_url",
+  "paid_current_page_url",
+  "paid_referrer",
+  "paid_session_id",
+  "paid_first_seen_at",
+  "paid_qualification_status",
+  "paid_demo_status",
+]);
+
+const formSubmissionFieldNames = new Set([
+  "clients",
+  "parmi_ces_clients_qui_sont_les_decideurs_",
+  "pays",
+  "industry",
+  "employee_headcount",
+  "firstname",
+  "lastname",
+  "email",
+  "mobilephone",
+  "company",
+  "website",
   "strategy_selections",
   "paid_host",
   "paid_utm_source",
@@ -64,6 +99,86 @@ function hasPaidSignal(properties: Record<string, string>) {
     Boolean(properties.paid_gclid || properties.paid_gbraid || properties.paid_wbraid) ||
     Boolean(properties.paid_utm_source && properties.paid_utm_medium)
   );
+}
+
+function addOperationalMirrorProperties(properties: Record<string, string>) {
+  if (properties.clients) properties.targetaudience ||= properties.clients;
+  if (properties.pays) {
+    properties.country ||= properties.pays;
+    properties.companyhq ||= properties.pays;
+  }
+  if (properties.industry) properties.industry_en ||= properties.industry;
+}
+
+function buildFormFields(properties: Record<string, string>, rawFields: Record<string, unknown>) {
+  const fields: { name: string; value: string }[] = [];
+
+  formSubmissionFieldNames.forEach((name) => {
+    const rawValue = rawFields[name];
+    if (Array.isArray(rawValue)) {
+      rawValue.forEach((item) => {
+        const value = firstString(item);
+        if (value) fields.push({ name, value });
+      });
+      return;
+    }
+
+    const value = properties[name] || firstString(rawValue);
+    if (value) fields.push({ name, value });
+  });
+
+  return fields;
+}
+
+function resolvePageUri(properties: Record<string, string>) {
+  const pageUri = properties.paid_current_page_url || properties.paid_landing_page_url || "https://devlo.ch/en/consultation";
+
+  try {
+    const url = new URL(pageUri);
+    if (url.hostname === "devlosales.com" || url.hostname === "www.devlosales.com") {
+      url.hostname = "devlo.ch";
+      return url.toString();
+    }
+  } catch {
+    return "https://devlo.ch/en/consultation";
+  }
+
+  return pageUri;
+}
+
+async function submitHubSpotForm(
+  properties: Record<string, string>,
+  rawFields: Record<string, unknown>,
+  request: NextRequest,
+) {
+  const pageUri = resolvePageUri(properties);
+  const hutk = request.cookies.get("hubspotutk")?.value;
+
+  const response = await fetch(
+    `https://api.hsforms.com/submissions/v3/integration/secure/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_CONSULTATION_FORM_ID}`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${HUBSPOT_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fields: buildFormFields(properties, rawFields),
+        context: {
+          ...(hutk ? { hutk } : {}),
+          pageUri,
+          pageName: "Free consultation | B2B prospecting campaign",
+        },
+      }),
+    },
+  );
+
+  if (!response.ok) {
+    const errorBody = await response.text();
+    throw new Error(`HubSpot form submission failed: ${response.status} ${errorBody}`);
+  }
+
+  return response.json();
 }
 
 async function searchContactId(email: string) {
@@ -135,13 +250,15 @@ export async function POST(request: NextRequest) {
     properties.email = email;
     properties.paid_qualification_status ||= "submitted_pending_review";
     properties.paid_demo_status ||= "not_booked";
+    addOperationalMirrorProperties(properties);
 
     if (!hasPaidSignal(properties)) {
       return NextResponse.json({ error: "Missing paid signal" }, { status: 400 });
     }
 
+    const formSubmission = await submitHubSpotForm(properties, rawFields as Record<string, unknown>, request);
     const contact = await upsertContact(properties);
-    return NextResponse.json({ success: true, contactId: contact.id });
+    return NextResponse.json({ success: true, contactId: contact.id, formSubmission });
   } catch (error) {
     console.error("Paid form backup error:", error);
     return NextResponse.json({ error: "Paid form backup failed" }, { status: 500 });
