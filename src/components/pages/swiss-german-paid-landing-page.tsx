@@ -33,8 +33,8 @@ type PaidLandingContent = {
   keywordTitle: string;
   keywordIntro: string;
   keywordCaption: string;
-  keywordHeaders: [string, string, string, string];
-  keywordRows: [string, string, string, string][];
+  keywordHeaders: [string, string, string];
+  keywordRows: [string, string, string][];
   fitEyebrow: string;
   fitTitle: string;
   fitIntro: string;
@@ -65,30 +65,30 @@ export const swissPaidLandingAlternates = {
   "x-default": swissPaidLandingPaths.fr,
 };
 
-const keywordRows: Record<SupportedLocale, [string, string, string, string][]> = {
+const keywordRows: Record<SupportedLocale, [string, string, string][]> = {
   fr: [
-    ["leadgenerierung", "210", "US$3.46-13.19", "Bonne demande, mais trop large sans filtre B2B."],
-    ["kundenakquise", "320", "US$3.18-12.74", "Volume fort; l'annonce doit clarifier B2B et rendez-vous qualifiés."],
-    ["neukundengewinnung", "260", "US$3.20-10.60", "Intention utile pour les entreprises sous pression de croissance."],
-    ["kaltakquise agentur", "10", "US$5.13-13.43", "Petit volume, mais très proche d'une intention d'externalisation."],
+    ["leadgenerierung / kundenakquise", "Trop large sans filtre B2B, taille de deal et décideurs.", "Nous séparons les recherches informatives des entreprises qui veulent des rendez-vous qualifiés."],
+    ["neukundengewinnung", "Intention de croissance utile, mais encore générique.", "Nous cadrons le marché, les régions et l'ICP avant d'ouvrir le budget."],
+    ["kaltakquise agentur", "Plus proche d'une intention d'externalisation, mais volume plus faible.", "Nous testons avec un message clair : pas de listes, pas d'outil, une campagne outbound gérée."],
+    ["outsourced SDR / appointment setting", "Intent fort pour certains acheteurs internationaux, vocabulaire à valider localement.", "Nous alignons annonce, page et formulaire sur l'offre : rendez-vous B2B qualifiés."],
   ],
   en: [
-    ["leadgenerierung", "210", "US$3.46-13.19", "Useful demand, but too broad without a B2B filter."],
-    ["kundenakquise", "320", "US$3.18-12.74", "Strong volume; ads must make B2B and qualified meetings explicit."],
-    ["neukundengewinnung", "260", "US$3.20-10.60", "Good intent for companies under growth pressure."],
-    ["kaltakquise agentur", "10", "US$5.13-13.43", "Small volume, but close to outsourced acquisition intent."],
+    ["leadgenerierung / kundenakquise", "Too broad without B2B, deal-size and decision-maker filters.", "We separate informational searches from companies that want qualified meetings."],
+    ["neukundengewinnung", "Useful growth intent, but still generic.", "We frame the market, regions and ICP before opening budget."],
+    ["kaltakquise agentur", "Closer to outsourcing intent, but smaller search volume.", "We test it with a clear message: no lists, no tool, a managed outbound campaign."],
+    ["outsourced SDR / appointment setting", "Strong intent for some international buyers, but wording must match the local market.", "We align ad, page and form with the offer: qualified B2B meetings."],
   ],
   de: [
-    ["leadgenerierung", "210", "US$3.46-13.19", "Gut für Nachfrage, aber ohne B2B-Filter zu breit."],
-    ["kundenakquise", "320", "US$3.18-12.74", "Volumen stark; Anzeigen müssen B2B und qualifizierte Termine klar machen."],
-    ["neukundengewinnung", "260", "US$3.20-10.60", "Guter Suchintent für Firmen mit Wachstumsdruck."],
-    ["kaltakquise agentur", "10", "US$5.13-13.43", "Kleines Volumen, aber sehr nah an Outsourcing-Intent."],
+    ["Leadgenerierung / Kundenakquise", "Ohne B2B-, Deal-Size- und Entscheider-Filter zu breit.", "Wir trennen Informationssuche von Firmen, die qualifizierte B2B-Termine brauchen."],
+    ["Neukundengewinnung", "Nützlicher Wachstumsintent, aber noch generisch.", "Wir grenzen Markt, Regionen und ICP ein, bevor Budget skaliert wird."],
+    ["Kaltakquise Agentur", "Näher an Outsourcing-Intent, aber mit kleinerem Suchvolumen.", "Wir testen mit klarer Botschaft: keine Leadlisten, kein Tool, sondern betreute Outbound-Kampagne."],
+    ["Outsourced SDR / Appointment Setting", "Starker Intent für internationale Buyer, aber Begrifflichkeit lokal prüfen.", "Wir halten Anzeige, Seite und Formular auf das Kernangebot ausgerichtet: qualifizierte B2B-Termine."],
   ],
   nl: [
-    ["leadgenerierung", "210", "US$3.46-13.19", "Goede vraag, maar te breed zonder B2B-filter."],
-    ["kundenakquise", "320", "US$3.18-12.74", "Sterk volume; advertenties moeten B2B en gekwalificeerde afspraken duidelijk maken."],
-    ["neukundengewinnung", "260", "US$3.20-10.60", "Goede intentie voor bedrijven met groeidruk."],
-    ["kaltakquise agentur", "10", "US$5.13-13.43", "Laag volume, maar dicht bij outsourcing-intentie."],
+    ["leadgenerierung / kundenakquise", "Te breed zonder B2B-, dealwaarde- en beslisserfilters.", "We scheiden informatieve zoekopdrachten van bedrijven die gekwalificeerde afspraken willen."],
+    ["neukundengewinnung", "Nuttige groei-intentie, maar nog generiek.", "We kaderen markt, regio's en ICP af voordat budget wordt opgeschaald."],
+    ["kaltakquise agentur", "Dichter bij outsourcing-intentie, maar met lager zoekvolume.", "We testen met een duidelijke boodschap: geen lijsten, geen tool, maar een beheerde outboundcampagne."],
+    ["outsourced SDR / appointment setting", "Sterke intentie bij sommige internationale kopers, maar de lokale woordkeuze moet kloppen.", "We stemmen advertentie, pagina en formulier af op het aanbod: gekwalificeerde B2B-afspraken."],
   ],
 };
 
@@ -141,11 +141,11 @@ export const swissPaidLandingContent: Record<SupportedLocale, PaidLandingContent
       },
     ],
     keywordEyebrow: "Demande search",
-    keywordTitle: "Quels mots-clés indiquent une demande en Suisse ?",
+    keywordTitle: "Quelles intentions devons-nous filtrer en Suisse ?",
     keywordIntro:
-      "Les premières données Keyword Planner montrent que les termes larges ont plus de volume. Les termes d'agence sont plus petits, mais plus proches de l'intention d'achat.",
-    keywordCaption: "Potentiel keyword pour la lead generation B2B en Suisse",
-    keywordHeaders: ["Mot-clé", "Recherches/mois", "Top-page bid", "Lecture"],
+      "Sur un marché search limité, le bon clic n'est pas le moins cher. Il doit indiquer un fit B2B, une valeur de deal suffisante, des décideurs joignables et un besoin clair de rendez-vous qualifiés.",
+    keywordCaption: "Lecture buyer-facing des intentions de recherche B2B en Suisse",
+    keywordHeaders: ["Signal", "Risque", "Réponse devlo"],
     keywordRows: keywordRows.fr,
     fitEyebrow: "Pour qui",
     fitTitle: "Adapté aux offres B2B avec une vraie valeur de deal",
@@ -157,7 +157,7 @@ export const swissPaidLandingContent: Record<SupportedLocale, PaidLandingContent
       "Un regard concret sur la question : est-ce qu'un test en Suisse alémanique vaut la peine, et quels segments doivent passer en premier ?",
     deliverables: [
       "Régions et secteurs prioritaires pour le premier batch",
-      "Première lecture de l'intention search, du CPC et du volume outbound",
+      "Première lecture de l'intention search, de la demande et du volume outbound",
       "Angles email, LinkedIn et téléphone à tester",
       "Risques : ICP trop large, audience trop petite ou qualification floue",
     ],
@@ -238,11 +238,11 @@ export const swissPaidLandingContent: Record<SupportedLocale, PaidLandingContent
       },
     ],
     keywordEyebrow: "Search demand",
-    keywordTitle: "Which keywords show demand in Switzerland?",
+    keywordTitle: "Which search intents should be filtered in Switzerland?",
     keywordIntro:
-      "Initial Keyword Planner data shows broader terms have more volume. Agency-specific terms are smaller, but closer to buying intent.",
-    keywordCaption: "Keyword potential for B2B lead generation in Switzerland",
-    keywordHeaders: ["Keyword", "Searches/month", "Top-page bid", "Reading"],
+      "In a small search market, the cheapest click is not the goal. The click must show B2B fit, enough deal value, reachable decision-makers and a clear need for qualified meetings.",
+    keywordCaption: "Buyer-facing reading of B2B search intent in Switzerland",
+    keywordHeaders: ["Signal", "Risk", "devlo response"],
     keywordRows: keywordRows.en,
     fitEyebrow: "Fit",
     fitTitle: "Built for B2B offers with clear deal value",
@@ -254,7 +254,7 @@ export const swissPaidLandingContent: Record<SupportedLocale, PaidLandingContent
       "A practical view on one question: is a German-speaking Switzerland test worth running, and which segments should come first?",
     deliverables: [
       "Priority regions and industries for the first batch",
-      "First read on search intent, CPC and outbound volume",
+      "First read on search intent, demand and outbound volume",
       "Email, LinkedIn and phone angles to test",
       "Risks: ICP too broad, audience too small or qualification unclear",
     ],
@@ -335,11 +335,11 @@ export const swissPaidLandingContent: Record<SupportedLocale, PaidLandingContent
       },
     ],
     keywordEyebrow: "Suchnachfrage",
-    keywordTitle: "Welche Keywords zeigen Nachfrage in der Schweiz?",
+    keywordTitle: "Welche Suchintentionen müssen wir filtern?",
     keywordIntro:
-      "Die ersten Keyword-Planner-Daten zeigen: breite Begriffe wie Leadgenerierung und Kundenakquise haben mehr Volumen. Sehr genaue Agentur-Begriffe sind kleiner, aber näher am Kaufintent.",
-    keywordCaption: "Keyword-Potenzial für B2B-Leadgenerierung in der Schweiz",
-    keywordHeaders: ["Keyword", "Suchen/Monat", "Top-Page-Bid", "Einordnung"],
+      "In einem kleinen Suchmarkt zählt nicht der billigste Klick. Der Klick muss B2B-Fit, genügend Deal-Wert, erreichbare Entscheider und einen klaren Bedarf an qualifizierten Gesprächen zeigen.",
+    keywordCaption: "Buyer-facing Einordnung von B2B-Suchintentionen in der Schweiz",
+    keywordHeaders: ["Signal", "Risiko", "devlo-Antwort"],
     keywordRows: keywordRows.de,
     fitEyebrow: "Für wen",
     fitTitle: "Geeignet für B2B-Angebote mit klarem Deal-Wert",
@@ -351,7 +351,7 @@ export const swissPaidLandingContent: Record<SupportedLocale, PaidLandingContent
       "Ein kurzer, konkreter Blick auf die Frage: Lohnt sich ein Test in der Deutschschweiz, und welche Segmente sollten zuerst kommen?",
     deliverables: [
       "Priorisierte Regionen und Branchen für den ersten Batch",
-      "Erste Einschätzung von Suchintent, CPC und Outbound-Volumen",
+      "Erste Einschätzung von Suchintent, Nachfrage und Outbound-Volumen",
       "Vorschlag für E-Mail-, LinkedIn- und Telefonwinkel",
       "Risiken: zu breiter ICP, zu kleine Zielgruppe oder unklare Qualifikation",
     ],
@@ -432,11 +432,11 @@ export const swissPaidLandingContent: Record<SupportedLocale, PaidLandingContent
       },
     ],
     keywordEyebrow: "Zoekvraag",
-    keywordTitle: "Welke zoekwoorden tonen vraag in Zwitserland?",
+    keywordTitle: "Welke zoekintenties moeten we filteren?",
     keywordIntro:
-      "De eerste Keyword Planner-data tonen dat brede termen meer volume hebben. Agency-termen zijn kleiner, maar dichter bij koopintentie.",
-    keywordCaption: "Keywordpotentieel voor B2B-leadgeneratie in Zwitserland",
-    keywordHeaders: ["Zoekwoord", "Zoeken/maand", "Top-page bid", "Interpretatie"],
+      "In een kleine zoekmarkt is de goedkoopste klik niet het doel. De klik moet B2B-fit, voldoende dealwaarde, bereikbare beslissers en duidelijke behoefte aan gekwalificeerde afspraken tonen.",
+    keywordCaption: "Buyer-facing interpretatie van B2B-zoekintentie in Zwitserland",
+    keywordHeaders: ["Signaal", "Risico", "devlo-reactie"],
     keywordRows: keywordRows.nl,
     fitEyebrow: "Voor wie",
     fitTitle: "Geschikt voor B2B-aanbiedingen met duidelijke dealwaarde",
@@ -448,7 +448,7 @@ export const swissPaidLandingContent: Record<SupportedLocale, PaidLandingContent
       "Een concreet antwoord op de vraag: is een test in Duitstalig Zwitserland zinvol, en welke segmenten moeten eerst komen?",
     deliverables: [
       "Prioritaire regio's en sectoren voor de eerste batch",
-      "Eerste inschatting van zoekintentie, CPC en outboundvolume",
+      "Eerste inschatting van zoekintentie, vraag en outboundvolume",
       "E-mail-, LinkedIn- en telefoonhoeken om te testen",
       "Risico's: te breed ICP, te kleine doelgroep of onduidelijke kwalificatie",
     ],
@@ -530,8 +530,8 @@ export function SwissGermanPaidLandingPage({ locale = "de" }: { locale?: Support
       />
 
       <main className="bg-white">
-        <section className="border-b border-neutral-200 bg-[#f7f9fb] pt-24 md:pt-30">
-          <div className="mx-auto grid w-full max-w-screen-xl gap-10 px-6 py-12 lg:grid-cols-[minmax(0,0.52fr)_minmax(360px,0.48fr)] lg:px-10 lg:py-16">
+        <section className="border-b border-neutral-200 bg-[#f7f9fb]">
+          <div className="mx-auto grid w-full max-w-screen-xl gap-10 px-6 pt-6 pb-8 md:pb-10 lg:grid-cols-[minmax(0,0.52fr)_minmax(360px,0.48fr)] lg:px-10 lg:pt-8 lg:pb-12">
             <div className="min-w-0">
               <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[#0b668f]">{content.eyebrow}</p>
               <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-normal text-[#10283a] md:text-5xl">
@@ -624,29 +624,25 @@ export function SwissGermanPaidLandingPage({ locale = "de" }: { locale?: Support
                 <p className="mt-4 text-base leading-7 text-neutral-650">{content.keywordIntro}</p>
               </div>
               <div className="min-w-0 overflow-hidden rounded-lg border border-neutral-200 bg-white">
-                <div className="hidden grid-cols-[minmax(120px,1.05fr)_94px_minmax(120px,1fr)_minmax(220px,1.55fr)] bg-neutral-50 text-xs font-semibold uppercase tracking-[0.08em] text-[#0b668f] md:grid">
+                <div className="hidden grid-cols-[minmax(160px,0.9fr)_minmax(220px,1.25fr)_minmax(250px,1.35fr)] bg-neutral-50 text-xs font-semibold uppercase tracking-[0.08em] text-[#0b668f] md:grid">
                   {content.keywordHeaders.map((header) => (
                     <div key={header} className="px-4 py-3">{header}</div>
                   ))}
                 </div>
                 <div className="divide-y divide-neutral-200" role="table" aria-label={content.keywordCaption}>
-                  {content.keywordRows.map(([keyword, volume, bid, note]) => (
-                    <div key={keyword} className="grid gap-3 p-4 text-sm text-neutral-700 md:grid-cols-[minmax(120px,1.05fr)_94px_minmax(120px,1fr)_minmax(220px,1.55fr)] md:gap-0 md:px-0 md:py-0">
+                  {content.keywordRows.map(([signal, risk, response]) => (
+                    <div key={signal} className="grid gap-3 p-4 text-sm text-neutral-700 md:grid-cols-[minmax(160px,0.9fr)_minmax(220px,1.25fr)_minmax(250px,1.35fr)] md:gap-0 md:px-0 md:py-0">
                       <div className="md:px-4 md:py-4">
                         <span className="block text-xs font-semibold uppercase tracking-[0.08em] text-[#0b668f] md:hidden">{content.keywordHeaders[0]}</span>
-                        <span className="break-words font-semibold text-[#10283a]">{keyword}</span>
+                        <span className="break-words font-semibold text-[#10283a]">{signal}</span>
                       </div>
                       <div className="md:px-4 md:py-4">
                         <span className="block text-xs font-semibold uppercase tracking-[0.08em] text-[#0b668f] md:hidden">{content.keywordHeaders[1]}</span>
-                        {volume}
+                        {risk}
                       </div>
                       <div className="md:px-4 md:py-4">
                         <span className="block text-xs font-semibold uppercase tracking-[0.08em] text-[#0b668f] md:hidden">{content.keywordHeaders[2]}</span>
-                        {bid}
-                      </div>
-                      <div className="md:px-4 md:py-4">
-                        <span className="block text-xs font-semibold uppercase tracking-[0.08em] text-[#0b668f] md:hidden">{content.keywordHeaders[3]}</span>
-                        {note}
+                        {response}
                       </div>
                     </div>
                   ))}
