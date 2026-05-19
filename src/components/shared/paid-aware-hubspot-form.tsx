@@ -128,6 +128,7 @@ export function PaidAwareHubspotForm({
 }: PaidAwareHubspotFormProps) {
   const [attribution, setAttribution] = useState<PaidAttribution>({});
   const trackedFormStart = useRef(false);
+  const trackedLeadSubmitted = useRef(false);
   const backedUpSubmission = useRef(false);
 
   useEffect(() => {
@@ -140,17 +141,25 @@ export function PaidAwareHubspotForm({
     return buildPaidHiddenFields(attribution);
   }, [attribution]);
 
-  const trackFormStart = () => {
+  const trackFormStart = useCallback(() => {
     if (trackedFormStart.current || !hasPaidAttribution(attribution)) return;
     trackedFormStart.current = true;
     pushPaidAnalyticsEvent("paid_form_start", attribution);
-  };
+  }, [attribution]);
+
+  const trackLeadSubmitted = useCallback(() => {
+    if (trackedLeadSubmitted.current || !hasPaidAttribution(attribution)) return;
+    trackedLeadSubmitted.current = true;
+    trackFormStart();
+    pushPaidAnalyticsEvent("paid_lead_submitted", attribution);
+  }, [attribution, trackFormStart]);
 
   const handleFormSubmitCapture = useCallback((fields: Record<string, string | string[]>) => {
     if (backedUpSubmission.current) return;
     backedUpSubmission.current = true;
+    trackLeadSubmitted();
     sendPaidSubmissionBackup(fields);
-  }, []);
+  }, [trackLeadSubmitted]);
 
   useEffect(() => {
     const onMessage = (event: MessageEvent) => {
@@ -164,12 +173,13 @@ export function PaidAwareHubspotForm({
       if (!fields) return;
 
       backedUpSubmission.current = true;
+      trackLeadSubmitted();
       sendPaidSubmissionBackup(fields);
     };
 
     window.addEventListener("message", onMessage);
     return () => window.removeEventListener("message", onMessage);
-  }, [formId]);
+  }, [formId, trackLeadSubmitted]);
 
   return (
     <div onClickCapture={trackFormStart} onFocusCapture={trackFormStart}>
@@ -192,7 +202,7 @@ export function PaidAwareHubspotForm({
             locale,
             page_path: window.location.pathname,
           });
-          pushPaidAnalyticsEvent("paid_lead_submitted", attribution);
+          trackLeadSubmitted();
         }}
       />
     </div>
