@@ -15,6 +15,10 @@ import { AlternativePage } from "@/components/pages/alternative-page";
 import { GtmEngineeringPage } from "@/components/pages/gtm-engineering-page";
 import { GtmAgencyMarketMapPage } from "@/components/pages/gtm-agency-market-map-page";
 import { ProgrammaticSeoPilotPage } from "@/components/pages/programmatic-seo-pilot-page";
+import {
+  getSwissPaidLandingContent,
+  SwissGermanPaidLandingPage,
+} from "@/components/pages/swiss-german-paid-landing-page";
 import { DictationCleanMasterPage } from "@/components/pages/dictation-clean-master-page";
 import { HomePage } from "@/components/pages/home-page";
 import { LegalPage } from "@/components/pages/legal-page";
@@ -127,6 +131,8 @@ const privacyAliases = new Set([
   "/politique-confidentialite",
   "/privacy-policy",
 ]);
+
+const swissPaidLandingFrPath = "/agence-lead-generation-suisse";
 
 const openGraphLocaleByLanguage: Record<SupportedLocale, string> = {
   fr: "fr_CH",
@@ -242,6 +248,11 @@ async function resolveLocalizedSeo(
   const consultationSeo = masterfile.consultationSeo as { title: string; description: string };
   const conditionsSeo = masterfile.conditionsSeo as { title: string; description: string };
   const caseStudiesSeo = masterfile.caseStudiesSeo as { title: string; description: string };
+
+  if (path === swissPaidLandingFrPath) {
+    const content = getSwissPaidLandingContent(locale);
+    return { title: content.title, description: content.description };
+  }
 
   if (path === "/") return { title: homeSeo.title.replace(/\s*\|\s*devlo$/i, ""), description: homeSeo.description };
   if (path === "/academy") return { title: academySeo.title.replace(/\s*\|\s*devlo$/i, ""), description: academySeo.description };
@@ -532,8 +543,16 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const localizedColdEmailSequenceSeo = resolved.frPath.startsWith("/insights/cold-email-templates/")
     ? getLocalizedColdEmailSequence(resolved.frPath.slice("/insights/cold-email-templates/".length), resolved.locale)
     : null;
+  const swissPaidLandingSeo = resolved.frPath === swissPaidLandingFrPath
+    ? getSwissPaidLandingContent(resolved.locale)
+    : null;
   const baseSeo: { title: string; description: string; imagePath?: string; type?: "website" | "article" } =
-    programmaticSeoPilotPage
+    swissPaidLandingSeo
+    ? {
+        title: swissPaidLandingSeo.title,
+        description: swissPaidLandingSeo.description,
+      }
+    : programmaticSeoPilotPage
     ? {
         title: programmaticSeoPilotPage.metaTitle,
         description: programmaticSeoPilotPage.metaDescription,
@@ -651,6 +670,10 @@ export default async function LocalizedRoutePage({ params }: Params) {
   }
 
   const frPath = resolved.frPath;
+  if (frPath === swissPaidLandingFrPath) {
+    return <SwissGermanPaidLandingPage locale={resolved.locale} />;
+  }
+
   const programmaticSeoPilotPage = getProgrammaticSeoPilotPage(frPath, resolved.locale);
   if (programmaticSeoPilotPage) {
     return <ProgrammaticSeoPilotPage page={programmaticSeoPilotPage} />;
