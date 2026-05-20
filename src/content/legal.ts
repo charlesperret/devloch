@@ -239,7 +239,7 @@ export const legalPages: Record<SupportedLocale, LegalBundle> = {
       title: "Privacy Policy",
       description:
         "This policy explains what data devlo collects, why it is used, how it is protected, and which service providers may receive it.",
-      lastUpdated: "Last updated: May 7, 2026",
+      lastUpdated: "Last updated: May 20, 2026",
       seo: {
         title: "Privacy Policy",
         description:
@@ -313,6 +313,7 @@ export const legalPages: Record<SupportedLocale, LegalBundle> = {
           heading: "7. Your rights",
           paragraphs: [
             "Depending on your location, you may request access, correction, deletion, restriction, objection, or portability of your data. You may also withdraw consent for cookies and marketing communications where consent applies.",
+            "For individuals located in Australia, we also handle personal information with reference to the Australian Privacy Act 1988 and apply the Spam Act 2003 to commercial electronic messages where applicable.",
             "To exercise these rights, contact privacy@devlo.ch. We may request reasonable information to verify your identity before processing a request.",
           ],
         },

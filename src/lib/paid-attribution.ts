@@ -1,3 +1,5 @@
+import { isPaidHostname } from "@/lib/paid-hosts";
+
 export const PAID_ATTRIBUTION_STORAGE_KEY = "devlo_paid_attribution_v1";
 
 export type PaidAttribution = {
@@ -17,12 +19,8 @@ export type PaidAttribution = {
   wbraid?: string;
 };
 
-const paidHostnames = new Set(["devlosales.com", "www.devlosales.com"]);
 const paidParamKeys = ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
-
-export function isPaidHostname(hostname: string) {
-  return paidHostnames.has(hostname.toLowerCase());
-}
+export { isPaidHostname };
 
 export function hasPaidAttribution(attribution: PaidAttribution) {
   return (

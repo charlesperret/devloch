@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 
 import { generateMetadata as generateCaseStudyFrMetadata } from "@/app/(fr)/etudes-de-cas/[slug]/page";
@@ -56,6 +57,7 @@ import {
   type SupportedLocale,
 } from "@/lib/i18n/slug-map";
 import { defaultOgImagePath, normalizeSeoDescription, normalizeSeoTitle, resolveOgImagePath, stripDevloSuffix, toAbsoluteUrl } from "@/lib/seo/metadata";
+import { getPaidCanonicalOrigin } from "@/lib/paid-hosts";
 
 type Params = {
   params: Promise<{
@@ -605,18 +607,29 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const description = normalizeSeoDescription(sanitySeo?.description ?? baseSeo.description, resolved.locale);
   const imagePath = resolveOgImagePath(sanitySeo?.ogImage ?? baseSeo.imagePath ?? defaultOgImagePath);
   const alternates = buildAlternates(resolved.entry, resolved.frPath);
+  const requestHeaders = resolved.localePath === "/en/consultation" ? await headers() : null;
+  const host = requestHeaders?.get("x-forwarded-host") ?? requestHeaders?.get("host");
+  const paidCanonicalOrigin = getPaidCanonicalOrigin(host);
+  const paidCanonicalUrl = paidCanonicalOrigin ? `${paidCanonicalOrigin}${resolved.localePath}` : null;
+  const robots = paidCanonicalUrl
+    ? {
+        index: false,
+        follow: true,
+        googleBot: { index: false, follow: true },
+      }
+    : {
+        index: true,
+        follow: true,
+        googleBot: { index: true, follow: true },
+      };
 
   return {
     title,
     description,
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: { index: true, follow: true },
-    },
+    robots,
     alternates: {
-      canonical: resolved.localePath,
-      languages: alternates.languages,
+      canonical: paidCanonicalUrl ?? resolved.localePath,
+      ...(paidCanonicalUrl ? {} : { languages: alternates.languages }),
     },
     openGraph: {
       title,
