@@ -6,6 +6,7 @@ import { PaidAwareHubspotForm } from "@/components/shared/paid-aware-hubspot-for
 import { InfiniteLogoRail } from "@/components/shared/logo-rail";
 import { paidMarketHubspot, type PaidMarketPage } from "@/content/paid-market-pages";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
+import { PaidMarketCaseStudyCarousel } from "@/components/pages/paid-market-case-study-carousel";
 
 const homeLabel = {
   fr: "Accueil",
@@ -167,51 +168,29 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
             <p className="mt-4 text-base leading-7 text-neutral-700">{page.caseStudiesIntro}</p>
           </div>
 
-          <div className="mt-8 grid gap-4 lg:grid-cols-3">
-            {page.caseStudies.map((study) => {
-              const card = (
-                <article className="flex h-full flex-col rounded-lg border border-neutral-200 bg-white p-5 transition hover:border-[#0b6c8f]/40">
-                  <div className="flex min-h-12 items-center justify-between gap-4">
-                    {study.logo ? (
-                      <div className="relative h-10 w-28">
-                        <Image src={study.logo} alt={`${study.client} logo`} fill className="object-contain object-left" sizes="112px" />
-                      </div>
-                    ) : (
-                      <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[#e8f4f7] text-sm font-extrabold text-[#153a54]">
-                        {study.client.slice(0, 2).toUpperCase()}
-                      </div>
-                    )}
-                    <span className="rounded-md bg-neutral-100 px-2 py-1 text-xs font-semibold text-neutral-600">
-                      {study.sector}
-                    </span>
-                  </div>
-                  <h3 className="mt-5 text-base font-extrabold leading-6 text-[#153a54]">{study.client}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-6 text-neutral-700">{study.title}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {study.metrics.map((metric) => (
-                      <span key={metric} className="rounded-md border border-[#0b6c8f]/15 bg-[#e8f4f7] px-2.5 py-1 text-xs font-semibold text-[#153a54]">
-                        {metric}
-                      </span>
-                    ))}
-                  </div>
-                </article>
-              );
-
-              return study.href ? (
-                <Link key={study.client} href={study.href} className="block">
-                  {card}
-                </Link>
-              ) : (
-                <div key={study.client}>{card}</div>
-              );
-            })}
+          <div className="mt-8">
+            <PaidMarketCaseStudyCarousel
+              locale={page.locale}
+              featuredClients={page.caseStudies.map((study) => study.client)}
+            />
           </div>
 
           <h2 className="mt-10 text-2xl font-extrabold text-[#153a54]">{page.testimonialsTitle}</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {page.testimonials.map((testimonial) => (
               <figure key={`${testimonial.author}-${testimonial.company}`} className="rounded-lg border border-neutral-200 bg-[#08384d] p-6 text-white">
-                <Quote className="h-5 w-5 text-white/70" aria-hidden="true" />
+                <div className="flex items-center gap-4">
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
+                    <Image
+                      src={testimonial.photo}
+                      alt={testimonial.photoAlt}
+                      fill
+                      className="object-cover"
+                      sizes="56px"
+                    />
+                  </div>
+                  <Quote className="h-5 w-5 text-white/70" aria-hidden="true" />
+                </div>
                 <blockquote className="mt-4 text-sm leading-6 text-white/88">
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
