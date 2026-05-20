@@ -36,6 +36,7 @@ type HubspotFormProps = {
   region: string;
   targetId: string;
   locale?: SupportedLocale;
+  reservedHeightClass?: string;
   hiddenFields?: Record<string, string>;
   analyticsContext?: Record<string, string | number | boolean | null | undefined>;
   onFormSubmitCapture?: (fields: Record<string, string | string[]>) => void;
@@ -249,6 +250,7 @@ export function HubspotForm({
   region,
   targetId,
   locale = "fr",
+  reservedHeightClass = RESERVED_FORM_HEIGHT_CLASS,
   hiddenFields,
   analyticsContext,
   onFormSubmitCapture,
@@ -303,11 +305,13 @@ export function HubspotForm({
 
     const node = containerRef.current;
     if (!node) return;
+    const fallbackTimer = window.setTimeout(() => setIsNearViewport(true), 1200);
 
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries.some((entry) => entry.isIntersecting)) {
           setIsNearViewport(true);
+          window.clearTimeout(fallbackTimer);
           observer.disconnect();
         }
       },
@@ -315,7 +319,10 @@ export function HubspotForm({
     );
 
     observer.observe(node);
-    return () => observer.disconnect();
+    return () => {
+      window.clearTimeout(fallbackTimer);
+      observer.disconnect();
+    };
   }, [isNearViewport]);
 
   useEffect(() => {
@@ -433,19 +440,19 @@ export function HubspotForm({
   return (
     <div ref={containerRef} className="relative" onClickCapture={trackFormStart} onFocusCapture={trackFormStart}>
       {!loaded && !submitted && (
-        <div className={`flex ${RESERVED_FORM_HEIGHT_CLASS} items-center justify-center rounded-xl bg-neutral-50`}>
+        <div className={`flex ${reservedHeightClass} items-center justify-center rounded-xl bg-neutral-50`}>
           <div className="flex flex-col items-center gap-3 text-neutral-400">
             <div className="h-8 w-8 animate-spin rounded-full border-2 border-neutral-200 border-t-devlo-600" />
             <span className="text-sm">{loadError ? copy.loadError : copy.loading}</span>
           </div>
         </div>
       )}
-      <div id={targetId} className={loaded && !submitted ? RESERVED_FORM_HEIGHT_CLASS : "hidden"} />
+      <div id={targetId} className={loaded && !submitted ? reservedHeightClass : "hidden"} />
       {submissionError ? (
         <p className="mt-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">{submissionError}</p>
       ) : null}
       <div className={submitted ? "" : "hidden"}>
-        <div className={`flex ${RESERVED_FORM_HEIGHT_CLASS} items-center rounded-xl border border-emerald-200 bg-emerald-50 p-6`}>
+        <div className={`flex ${reservedHeightClass} items-center rounded-xl border border-emerald-200 bg-emerald-50 p-6`}>
           <p className="text-sm font-medium leading-6 text-emerald-900">
             {copy.successMessage}
           </p>

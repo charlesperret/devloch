@@ -78,7 +78,12 @@ export type PaidMarketRouteEntry = {
 
 const HUBSPOT = {
   portalId: "8082524",
-  formId: "54090bd3-970d-4ad1-b3b3-1c81d54c291e",
+  formIds: {
+    en: "e483f870-da8e-4e90-8017-7cdff873ed22",
+    fr: "c9fbd96c-6782-4053-a5a1-759d6a395238",
+    de: "9f8e7adf-523e-4907-a180-db813331fa50",
+    nl: "e2fa3a83-114f-46ea-838f-9326f2d89b5c",
+  },
   region: "na1",
 } as const;
 

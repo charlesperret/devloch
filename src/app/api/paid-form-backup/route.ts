@@ -2,7 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 
 const HUBSPOT_TOKEN = process.env.HUBSPOT_API_TOKEN_SLACKBOT;
 const HUBSPOT_PORTAL_ID = "8082524";
-const HUBSPOT_CONSULTATION_FORM_ID = "54090bd3-970d-4ad1-b3b3-1c81d54c291e";
+const HUBSPOT_DEFAULT_PAID_FORM_ID = "e483f870-da8e-4e90-8017-7cdff873ed22";
+
+const allowedHubSpotFormIds = new Set([
+  "54090bd3-970d-4ad1-b3b3-1c81d54c291e",
+  "e483f870-da8e-4e90-8017-7cdff873ed22",
+  "c9fbd96c-6782-4053-a5a1-759d6a395238",
+  "9f8e7adf-523e-4907-a180-db813331fa50",
+  "e2fa3a83-114f-46ea-838f-9326f2d89b5c",
+]);
 
 const allowedOrigins = new Set([
   "https://devlo.ch",
@@ -94,10 +102,12 @@ function cleanProperties(fields: Record<string, unknown>) {
 }
 
 function hasPaidSignal(properties: Record<string, string>) {
+  const paidPageUrl = properties.paid_current_page_url || properties.paid_landing_page_url || "";
   return (
     properties.paid_host === "true" ||
     Boolean(properties.paid_gclid || properties.paid_gbraid || properties.paid_wbraid) ||
-    Boolean(properties.paid_utm_source && properties.paid_utm_medium)
+    Boolean(properties.paid_utm_source && properties.paid_utm_medium) ||
+    /\/(en\/|de\/|nl\/)?lp\//.test(paidPageUrl)
   );
 }
 
@@ -154,13 +164,14 @@ function resolvePageUri(properties: Record<string, string>) {
 async function submitHubSpotForm(
   properties: Record<string, string>,
   rawFields: Record<string, unknown>,
+  formId: string,
   request: NextRequest,
 ) {
   const pageUri = resolvePageUri(properties);
   const hutk = request.cookies.get("hubspotutk")?.value;
 
   const response = await fetch(
-    `https://api.hsforms.com/submissions/v3/integration/secure/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_CONSULTATION_FORM_ID}`,
+    `https://api.hsforms.com/submissions/v3/integration/secure/submit/${HUBSPOT_PORTAL_ID}/${formId}`,
     {
       method: "POST",
       headers: {
@@ -311,6 +322,8 @@ export async function POST(request: NextRequest) {
   try {
     const payload = await request.json();
     const rawFields = payload?.fields;
+    const requestedFormId = typeof payload?.formId === "string" ? payload.formId : HUBSPOT_DEFAULT_PAID_FORM_ID;
+    const formId = allowedHubSpotFormIds.has(requestedFormId) ? requestedFormId : HUBSPOT_DEFAULT_PAID_FORM_ID;
     if (!rawFields || typeof rawFields !== "object" || Array.isArray(rawFields)) {
       return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
     }
@@ -330,7 +343,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Missing paid signal" }, { status: 400 });
     }
 
-    const formSubmission = await submitHubSpotForm(properties, rawFields as Record<string, unknown>, request);
+    const formSubmission = await submitHubSpotForm(properties, rawFields as Record<string, unknown>, formId, request);
     const contact = await upsertContact(properties);
     let noteId: string | undefined;
     try {
