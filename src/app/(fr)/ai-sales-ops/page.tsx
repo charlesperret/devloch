@@ -25,11 +25,6 @@ export const metadata: Metadata = {
     "dashboard performance commerciale",
     "agence IA vente Suisse",
   ],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true },
-  },
   alternates: {
     canonical: pagePath,
     languages: buildLanguageAlternatesForFrPath(pagePath),

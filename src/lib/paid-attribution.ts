@@ -17,7 +17,12 @@ export type PaidAttribution = {
   wbraid?: string;
 };
 
-const paidHostnames = new Set(["devlosales.com", "www.devlosales.com"]);
+const paidHostnames = new Set([
+  "devlosales.com",
+  "www.devlosales.com",
+  "devlosales.de",
+  "www.devlosales.de",
+]);
 const paidParamKeys = ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
 
 export function isPaidHostname(hostname: string) {

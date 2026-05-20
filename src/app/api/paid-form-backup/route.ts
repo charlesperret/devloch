@@ -9,6 +9,8 @@ const allowedOrigins = new Set([
   "https://www.devlo.ch",
   "https://devlosales.com",
   "https://www.devlosales.com",
+  "https://devlosales.de",
+  "https://www.devlosales.de",
 ]);
 
 const contactFieldNames = new Set([

@@ -32,11 +32,6 @@ export const metadata: Metadata = {
   },
   description:
     "Agence suisse de prospection B2B : lead generation, cold email, LinkedIn, calling et rendez-vous qualifiés pour équipes B2B.",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true },
-  },
   alternates: {
     canonical: "/",
     languages: buildLanguageAlternates("/"),

@@ -13,7 +13,17 @@ type HubspotCreateConfig = {
   formId: string;
   region: string;
   target: string;
+  locale?: string;
   properties?: Record<string, string>;
+  translations?: Record<
+    string,
+    {
+      fieldLabels?: Record<string, string>;
+      required?: string;
+      submitText?: string;
+      submissionErrors?: Record<string, string>;
+    }
+  >;
   onFormReady?: (form: unknown) => void;
   onBeforeFormSubmit?: (submissionValues: unknown, form: unknown) => void;
   onFormSubmit?: (form: unknown) => void;
@@ -83,6 +93,144 @@ const copyByLocale: Record<
 };
 
 const RESERVED_FORM_HEIGHT_CLASS = "min-h-[560px] md:min-h-[640px]";
+
+const hubspotFormCopy: Record<
+  SupportedLocale,
+  {
+    submitText: string;
+    required: string;
+    labels: Record<string, string>;
+    descriptions: Record<string, string>;
+    placeholders: Record<string, string>;
+  }
+> = {
+  fr: {
+    submitText: "Envoyer",
+    required: "Ce champ est obligatoire.",
+    labels: {
+      clients: "Quels sont vos meilleurs clients ?",
+      parmi_ces_clients_qui_sont_les_decideurs_: "Qui sont les décideurs chez ces clients ?",
+      pays: "Quels pays ou régions ciblez-vous ?",
+      industry: "Quels secteurs vous intéressent le plus ?",
+      employee_headcount: "Quelle taille d'entreprise ciblez-vous ?",
+      firstname: "Prénom",
+      lastname: "Nom",
+      email: "Email professionnel",
+      mobilephone: "Téléphone professionnel",
+      company: "Nom de l'entreprise",
+      website: "Site web",
+    },
+    descriptions: {
+      pays: "Pays, régions, cantons, États, etc.",
+      industry:
+        "Liste des secteurs disponibles : https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes",
+    },
+    placeholders: {
+      clients: "Apple, Sony, UBS, Tesla, etc.",
+      parmi_ces_clients_qui_sont_les_decideurs_: "CEO, directeur commercial, DRH, etc.",
+      pays: "Suisse, DACH, Royaume-Uni, EMEA, etc.",
+      industry: "Automobile, pharma, banque, etc.",
+    },
+  },
+  en: {
+    submitText: "Submit",
+    required: "This field is required.",
+    labels: {
+      clients: "Who are your best clients?",
+      parmi_ces_clients_qui_sont_les_decideurs_: "Who are the decision-makers among these clients?",
+      pays: "What are the targeted countries or regions?",
+      industry: "What are your favourite industries?",
+      employee_headcount: "What is the targeted company headcount range?",
+      firstname: "First name",
+      lastname: "Last name",
+      email: "Professional email",
+      mobilephone: "Professional telephone number",
+      company: "Company name",
+      website: "Website",
+    },
+    descriptions: {
+      pays: "Countries, states, regions, etc.",
+      industry:
+        "List of available industries and sectors: https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes",
+    },
+    placeholders: {
+      clients: "Apple, Sony, UBS, Tesla, etc.",
+      parmi_ces_clients_qui_sont_les_decideurs_: "CXO, Sales Director, Head of HR, etc.",
+      pays: "USA, EMEA, Switzerland, DACH, etc.",
+      industry: "Automotive, pharma, banking, etc.",
+    },
+  },
+  de: {
+    submitText: "Absenden",
+    required: "Dieses Feld ist erforderlich.",
+    labels: {
+      clients: "Wer sind Ihre besten Kunden?",
+      parmi_ces_clients_qui_sont_les_decideurs_: "Wer sind die Entscheider bei diesen Kunden?",
+      pays: "Welche Länder oder Regionen möchten Sie ansprechen?",
+      industry: "Welche Branchen sind für Sie am wichtigsten?",
+      employee_headcount: "Welche Unternehmensgröße möchten Sie ansprechen?",
+      firstname: "Vorname",
+      lastname: "Nachname",
+      email: "Geschäftliche E-Mail",
+      mobilephone: "Geschäftliche Telefonnummer",
+      company: "Unternehmensname",
+      website: "Website",
+    },
+    descriptions: {
+      pays: "Länder, Kantone, Regionen, Bundesländer usw.",
+      industry:
+        "Liste der verfügbaren Branchen: https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes",
+    },
+    placeholders: {
+      clients: "Apple, Sony, UBS, Tesla usw.",
+      parmi_ces_clients_qui_sont_les_decideurs_: "CXO, Vertriebsleiter, HR-Leitung usw.",
+      pays: "Schweiz, DACH, EMEA, Deutschland usw.",
+      industry: "Automotive, Pharma, Banking usw.",
+    },
+  },
+  nl: {
+    submitText: "Versturen",
+    required: "Dit veld is verplicht.",
+    labels: {
+      clients: "Wie zijn je beste klanten?",
+      parmi_ces_clients_qui_sont_les_decideurs_: "Wie zijn de beslissers bij deze klanten?",
+      pays: "Welke landen of regio's wil je targeten?",
+      industry: "Welke sectoren zijn het belangrijkst voor jou?",
+      employee_headcount: "Welke bedrijfsgrootte wil je targeten?",
+      firstname: "Voornaam",
+      lastname: "Achternaam",
+      email: "Zakelijk e-mailadres",
+      mobilephone: "Zakelijk telefoonnummer",
+      company: "Bedrijfsnaam",
+      website: "Website",
+    },
+    descriptions: {
+      pays: "Landen, regio's, provincies, kantons, enz.",
+      industry:
+        "Lijst met beschikbare sectoren: https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes",
+    },
+    placeholders: {
+      clients: "Apple, Sony, UBS, Tesla, enz.",
+      parmi_ces_clients_qui_sont_les_decideurs_: "CXO, sales director, HR-directeur, enz.",
+      pays: "Zwitserland, DACH, Verenigd Koninkrijk, EMEA, enz.",
+      industry: "Automotive, farma, banking, enz.",
+    },
+  },
+};
+
+function buildHubspotTranslations(locale: SupportedLocale): HubspotCreateConfig["translations"] {
+  const formCopy = hubspotFormCopy[locale];
+  return {
+    [locale]: {
+      fieldLabels: formCopy.labels,
+      required: formCopy.required,
+      submitText: formCopy.submitText,
+      submissionErrors: {
+        MISSING_REQUIRED_FIELDS: formCopy.required,
+      },
+    },
+  };
+}
 
 let hubspotScriptPromise: Promise<void> | null = null;
 
@@ -186,6 +334,36 @@ function syncFormInstanceValues(formInstance: HubspotFormApi | null, hiddenField
       }
     }
   });
+}
+
+function localizeHubspotForm(form: HTMLFormElement, locale: SupportedLocale) {
+  const formCopy = hubspotFormCopy[locale];
+
+  Object.entries(formCopy.placeholders).forEach(([name, value]) => {
+    const field = form.querySelector<HTMLInputElement | HTMLTextAreaElement>(`[name="${name}"]`);
+    field?.setAttribute("placeholder", value);
+  });
+
+  Object.entries(formCopy.labels).forEach(([name, value]) => {
+    const field = form.querySelector<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(`[name="${name}"]`);
+    const container = field?.closest(".hs-form-field") ?? form.querySelector(`.hs_${name}`);
+    const labelText = container?.querySelector("label span:first-child");
+    if (labelText) labelText.textContent = value;
+  });
+
+  Object.entries(formCopy.descriptions).forEach(([name, value]) => {
+    const field = form.querySelector<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(`[name="${name}"]`);
+    const container = field?.closest(".hs-form-field") ?? form.querySelector(`.hs_${name}`);
+    const description = container?.querySelector<HTMLElement>(".hs-field-desc");
+    if (description) description.textContent = value;
+  });
+
+  const submit = form.querySelector<HTMLInputElement | HTMLButtonElement>('input[type="submit"], button[type="submit"]');
+  if (submit instanceof HTMLInputElement) {
+    submit.value = formCopy.submitText;
+  } else if (submit) {
+    submit.textContent = formCopy.submitText;
+  }
 }
 
 function serializeFormFields(form: HTMLFormElement) {
@@ -331,10 +509,13 @@ export function HubspotForm({
         formId,
         region,
         target: `#${targetId}`,
+        locale,
         properties: hiddenFieldsRef.current,
+        translations: buildHubspotTranslations(locale),
         onFormReady: (formRef: unknown) => {
           const form = resolveFormElement(formRef, targetId);
           if (form) {
+            localizeHubspotForm(form, locale);
             syncHiddenFields(form, hiddenFieldsRef.current);
           }
           syncFormInstanceValues(formInstanceRef.current, hiddenFieldsRef.current);
@@ -386,7 +567,7 @@ export function HubspotForm({
     return () => {
       cancelled = true;
     };
-  }, [buildAnalyticsParams, formId, isNearViewport, onFormSubmitCapture, onSubmitted, portalId, region, targetId]);
+  }, [buildAnalyticsParams, formId, isNearViewport, locale, onFormSubmitCapture, onSubmitted, portalId, region, targetId]);
 
   useEffect(() => {
     if (!loaded || submitted) return;
@@ -394,10 +575,11 @@ export function HubspotForm({
     const container = document.getElementById(targetId);
     const form = container?.querySelector("form");
     if (form instanceof HTMLFormElement) {
+      localizeHubspotForm(form, locale);
       syncHiddenFields(form, hiddenFields);
     }
     syncFormInstanceValues(formInstanceRef.current, hiddenFields);
-  }, [hiddenFields, loaded, submitted, targetId]);
+  }, [hiddenFields, loaded, locale, submitted, targetId]);
 
   useEffect(() => {
     const onMessage = (event: MessageEvent) => {

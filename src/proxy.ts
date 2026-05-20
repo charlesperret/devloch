@@ -5,7 +5,12 @@ function normalizeHostname(host: string | null) {
   if (!host) return false;
 
   const normalizedHostname = host.split(":")[0]?.toLowerCase();
-  return normalizedHostname === "devlosales.com" || normalizedHostname === "www.devlosales.com";
+  return (
+    normalizedHostname === "devlosales.com" ||
+    normalizedHostname === "www.devlosales.com" ||
+    normalizedHostname === "devlosales.de" ||
+    normalizedHostname === "www.devlosales.de"
+  );
 }
 
 function isPaidHost(request: NextRequest) {
