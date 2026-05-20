@@ -16,6 +16,7 @@ import { AlternativePage } from "@/components/pages/alternative-page";
 import { GtmEngineeringPage } from "@/components/pages/gtm-engineering-page";
 import { GtmAgencyMarketMapPage } from "@/components/pages/gtm-agency-market-map-page";
 import { ProgrammaticSeoPilotPage } from "@/components/pages/programmatic-seo-pilot-page";
+import { PaidMarketLandingPage } from "@/components/pages/paid-market-landing-page";
 import { DictationCleanMasterPage } from "@/components/pages/dictation-clean-master-page";
 import { HomePage } from "@/components/pages/home-page";
 import { LegalPage } from "@/components/pages/legal-page";
@@ -35,6 +36,12 @@ import {
   findProgrammaticSeoRouteByLocalePath,
   getProgrammaticSeoPilotPage,
 } from "@/content/programmatic-seo-pilot";
+import {
+  PAID_MARKET_ROUTE_ENTRIES,
+  buildPaidMarketAlternates,
+  findPaidMarketRouteByLocalePath,
+  getPaidMarketPageByLocalePath,
+} from "@/content/paid-market-pages";
 import { type ServiceSlug } from "@/content/services";
 import { getLegalPageContent } from "@/content/legal";
 import { getLocalizedInsightsHub, getLocalizedBuyingSignals, getLocalizedColdEmailHub, getLocalizedColdEmailSequence, getLocalizedAutoAmelioration } from "@/lib/i18n/insights-helpers";
@@ -84,6 +91,18 @@ export function generateStaticParams() {
   }
 
   for (const { entry } of PROGRAMMATIC_SEO_ROUTE_ENTRIES) {
+    for (const locale of ["en", "de", "nl"] as const) {
+      const path = entry[locale];
+      if (!path) continue;
+      const withoutPrefix = path.replace(new RegExp(`^/${locale}/?`), "");
+      params.push({
+        locale,
+        slug: withoutPrefix ? withoutPrefix.split("/") : undefined,
+      });
+    }
+  }
+
+  for (const { entry } of PAID_MARKET_ROUTE_ENTRIES) {
     for (const locale of ["en", "de", "nl"] as const) {
       const path = entry[locale];
       if (!path) continue;
@@ -174,14 +193,25 @@ function resolveRoute(locale: string, slug: string[] | undefined) {
     const found = findEntryByLocalePath(locale, localePath);
     if (!found || !found.entry.fr) {
       const programmaticSeoRoute = findProgrammaticSeoRouteByLocalePath(locale, localePath);
-      if (!programmaticSeoRoute || !programmaticSeoRoute.entry.fr) return null;
+      if (programmaticSeoRoute?.entry.fr) {
+        return {
+          locale,
+          localePath: normalizePath(localePath),
+          pageId: programmaticSeoRoute.pageId,
+          entry: programmaticSeoRoute.entry,
+          frPath: mapFrPathToRenderable(programmaticSeoRoute.entry.fr),
+        };
+      }
+
+      const paidMarketRoute = findPaidMarketRouteByLocalePath(locale, localePath);
+      if (!paidMarketRoute) return null;
 
       return {
         locale,
         localePath: normalizePath(localePath),
-        pageId: programmaticSeoRoute.pageId,
-        entry: programmaticSeoRoute.entry,
-        frPath: mapFrPathToRenderable(programmaticSeoRoute.entry.fr),
+        pageId: paidMarketRoute.pageId,
+        entry: paidMarketRoute.entry,
+        frPath: normalizePath(localePath),
       };
     }
 
@@ -198,14 +228,25 @@ function resolveRoute(locale: string, slug: string[] | undefined) {
   const frMatch = findEntryByFrPath(frCandidatePath);
   if (!frMatch || !frMatch.entry.fr) {
     const programmaticSeoRoute = findProgrammaticSeoRouteByLocalePath("fr", frCandidatePath);
-    if (!programmaticSeoRoute || !programmaticSeoRoute.entry.fr) return null;
+    if (programmaticSeoRoute?.entry.fr) {
+      return {
+        locale: "fr" as const,
+        localePath: normalizePath(programmaticSeoRoute.entry.fr),
+        pageId: programmaticSeoRoute.pageId,
+        entry: programmaticSeoRoute.entry,
+        frPath: mapFrPathToRenderable(programmaticSeoRoute.entry.fr),
+      };
+    }
+
+    const paidMarketRoute = findPaidMarketRouteByLocalePath("fr", frCandidatePath);
+    if (!paidMarketRoute) return null;
 
     return {
       locale: "fr" as const,
-      localePath: normalizePath(programmaticSeoRoute.entry.fr),
-      pageId: programmaticSeoRoute.pageId,
-      entry: programmaticSeoRoute.entry,
-      frPath: mapFrPathToRenderable(programmaticSeoRoute.entry.fr),
+      localePath: normalizePath(frCandidatePath),
+      pageId: paidMarketRoute.pageId,
+      entry: paidMarketRoute.entry,
+      frPath: normalizePath(frCandidatePath),
     };
   }
 
@@ -534,8 +575,14 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const localizedColdEmailSequenceSeo = resolved.frPath.startsWith("/insights/cold-email-templates/")
     ? getLocalizedColdEmailSequence(resolved.frPath.slice("/insights/cold-email-templates/".length), resolved.locale)
     : null;
+  const paidMarketPage = getPaidMarketPageByLocalePath(resolved.locale, resolved.localePath);
   const baseSeo: { title: string; description: string; imagePath?: string; type?: "website" | "article" } =
-    programmaticSeoPilotPage
+    paidMarketPage
+    ? {
+        title: paidMarketPage.title,
+        description: paidMarketPage.description,
+      }
+    : programmaticSeoPilotPage
     ? {
         title: programmaticSeoPilotPage.metaTitle,
         description: programmaticSeoPilotPage.metaDescription,
@@ -606,12 +653,20 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const title = normalizeSeoTitle(stripDevloSuffix(sanitySeo?.title ?? baseSeo.title), resolved.locale);
   const description = normalizeSeoDescription(sanitySeo?.description ?? baseSeo.description, resolved.locale);
   const imagePath = resolveOgImagePath(sanitySeo?.ogImage ?? baseSeo.imagePath ?? defaultOgImagePath);
-  const alternates = buildAlternates(resolved.entry, resolved.frPath);
+  const alternates = paidMarketPage
+    ? { canonical: paidMarketPage.path, languages: buildPaidMarketAlternates(paidMarketPage) }
+    : buildAlternates(resolved.entry, resolved.frPath);
   const requestHeaders = resolved.localePath === "/en/consultation" ? await headers() : null;
   const host = requestHeaders?.get("x-forwarded-host") ?? requestHeaders?.get("host");
   const paidCanonicalOrigin = getPaidCanonicalOrigin(host);
   const paidCanonicalUrl = paidCanonicalOrigin ? `${paidCanonicalOrigin}${resolved.localePath}` : null;
-  const robots = paidCanonicalUrl
+  const robots = paidMarketPage
+    ? {
+        index: false,
+        follow: false,
+        googleBot: { index: false, follow: false },
+      }
+    : paidCanonicalUrl
     ? {
         index: false,
         follow: true,
@@ -664,6 +719,11 @@ export default async function LocalizedRoutePage({ params }: Params) {
   }
 
   const frPath = resolved.frPath;
+  const paidMarketPage = getPaidMarketPageByLocalePath(resolved.locale, resolved.localePath);
+  if (paidMarketPage) {
+    return <PaidMarketLandingPage page={paidMarketPage} />;
+  }
+
   const programmaticSeoPilotPage = getProgrammaticSeoPilotPage(frPath, resolved.locale);
   if (programmaticSeoPilotPage) {
     return <ProgrammaticSeoPilotPage page={programmaticSeoPilotPage} />;

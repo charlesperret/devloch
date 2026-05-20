@@ -11,9 +11,18 @@ function isPaidHost(request: NextRequest) {
   ].some(isPaidHostname);
 }
 
+function isPaidLandingPath(pathname: string) {
+  return pathname.startsWith("/lp/") || /^\/(en|de|nl)\/lp\//.test(pathname);
+}
+
 export function proxy(request: NextRequest) {
   const paidHost = isPaidHost(request);
   const response = NextResponse.next();
+
+  if (isPaidLandingPath(request.nextUrl.pathname)) {
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+    return response;
+  }
 
   if (paidHost) {
     response.headers.set("X-Robots-Tag", "noindex, follow");
