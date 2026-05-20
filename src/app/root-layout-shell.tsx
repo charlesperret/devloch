@@ -3,8 +3,7 @@ import localFont from "next/font/local";
 import Script from "next/script";
 
 import { PaidAttributionTracker } from "@/components/analytics/paid-attribution-tracker";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
+import { SiteChrome } from "@/components/layout/site-chrome";
 import { JsonLd } from "@/components/seo/json-ld";
 import { buildLanguageAlternates, defaultOgImagePath, toAbsoluteUrl } from "@/lib/seo/metadata";
 import { siteConfig } from "@/lib/site";
@@ -347,13 +346,7 @@ export function RootLayoutShell({
         >
           {skipToContentByLocale[locale]}
         </a>
-        <div className="relative flex min-h-screen flex-col">
-          <SiteHeader />
-          <main id="main-content" className="flex-1 pt-16 md:pt-20 lg:pt-20">
-            {children}
-          </main>
-          <SiteFooter />
-        </div>
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

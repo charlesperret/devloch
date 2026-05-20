@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, BarChart3, CheckCircle2, ClipboardCheck, MapPin, Quote, ShieldCheck, Target, Users } from "lucide-react";
 
@@ -6,7 +5,7 @@ import { PaidAwareHubspotForm } from "@/components/shared/paid-aware-hubspot-for
 import { InfiniteLogoRail } from "@/components/shared/logo-rail";
 import { paidMarketHubspot, type PaidMarketPage } from "@/content/paid-market-pages";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { PaidMarketCaseStudyCarousel } from "@/components/pages/paid-market-case-study-carousel";
+import { PaidMarketCaseStudyGrid } from "@/components/pages/paid-market-case-study-grid";
 
 const homeLabel = {
   fr: "Accueil",
@@ -208,30 +207,21 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
 
-            <div className="mt-8 rounded-lg border border-white/12 bg-white/[0.06] p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/58">
-                {heroProofTitle[page.locale]}
-              </p>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                {heroTestimonials[page.locale].map((item) => (
-                  <figure key={`${item.author}-${item.company}`} className="min-h-[112px] rounded-md border border-white/10 bg-white/[0.07] p-3">
-                    <div className="flex items-center gap-3">
-                      <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
-                        <Image src={item.photo} alt={item.photoAlt} fill className="object-cover" sizes="40px" />
+            <div className="mt-8 grid gap-3">
+              {page.proofRows.map(([label, detail], index) => {
+                const Icon = proofIcons[index % proofIcons.length];
+                return (
+                  <div key={label} className="rounded-md border border-white/12 bg-white/[0.07] p-4">
+                    <div className="flex items-start gap-3">
+                      <Icon className="mt-0.5 h-5 w-5 flex-none text-white/76" aria-hidden="true" />
+                      <div>
+                        <h2 className="text-sm font-extrabold text-white">{label}</h2>
+                        <p className="mt-1 text-sm leading-6 text-white/72">{detail}</p>
                       </div>
-                      <figcaption className="min-w-0">
-                        <p className="truncate text-sm font-extrabold text-white">{item.author}</p>
-                        <p className="truncate text-xs font-semibold text-white/62">
-                          {item.role}, {item.company}
-                        </p>
-                      </figcaption>
                     </div>
-                    <blockquote className="mt-3 text-xs font-semibold leading-5 text-white/78">
-                      &ldquo;{item.quote}&rdquo;
-                    </blockquote>
-                  </figure>
-                ))}
-              </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -266,22 +256,35 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
           <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.1em] text-neutral-500">
             {page.logosTitle}
           </p>
-          <InfiniteLogoRail logos={page.logos} duration="marathon" pauseOnHover />
+          <InfiniteLogoRail logos={page.logos} duration="normal" pauseOnHover />
         </div>
       </section>
 
-      <section className="border-b border-neutral-200 bg-neutral-50 py-10">
-        <div className="mx-auto grid w-full max-w-screen-xl gap-4 px-6 md:grid-cols-3 lg:px-10">
-          {page.proofRows.map(([label, detail], index) => {
-            const Icon = proofIcons[index % proofIcons.length];
-            return (
-              <div key={label} className="rounded-lg border border-neutral-200 bg-white p-5">
-                <Icon className="h-5 w-5 text-[#0b6c8f]" aria-hidden="true" />
-                <h2 className="mt-4 text-base font-extrabold text-[#153a54]">{label}</h2>
-                <p className="mt-2 text-sm leading-6 text-neutral-600">{detail}</p>
-              </div>
-            );
-          })}
+      <section className="border-b border-neutral-200 bg-[#08384d] py-8 text-white">
+        <div className="mx-auto w-full max-w-screen-xl px-6 lg:px-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/58">
+            {heroProofTitle[page.locale]}
+          </p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {heroTestimonials[page.locale].map((item) => (
+              <figure key={`${item.author}-${item.company}`} className="min-h-[112px] rounded-md border border-white/10 bg-white/[0.07] p-3">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
+                    <Image src={item.photo} alt={item.photoAlt} fill className="object-cover" sizes="40px" />
+                  </div>
+                  <figcaption className="min-w-0">
+                    <p className="truncate text-sm font-extrabold text-white">{item.author}</p>
+                    <p className="truncate text-xs font-semibold text-white/62">
+                      {item.role}, {item.company}
+                    </p>
+                  </figcaption>
+                </div>
+                <blockquote className="mt-3 text-xs font-semibold leading-5 text-white/78">
+                  &ldquo;{item.quote}&rdquo;
+                </blockquote>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -341,7 +344,7 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
           </div>
 
           <div className="mt-8">
-            <PaidMarketCaseStudyCarousel
+            <PaidMarketCaseStudyGrid
               locale={page.locale}
               featuredClients={page.caseStudies.map((study) => study.client)}
             />
@@ -416,6 +419,22 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
         </div>
       </section>
 
+      <section className="bg-[#f6f8fb] py-10">
+        <div className="mx-auto flex w-full max-w-screen-xl flex-col items-start justify-between gap-4 px-6 sm:flex-row sm:items-center lg:px-10">
+          <div>
+            <h2 className="text-2xl font-extrabold text-[#153a54]">{page.formTitle}</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-neutral-700">{page.formIntro}</p>
+          </div>
+          <a
+            href="#paid-market-form"
+            className="inline-flex h-12 shrink-0 items-center gap-2 rounded-md bg-[#08384d] px-5 text-sm font-semibold text-white transition hover:bg-[#0b4f6b]"
+          >
+            {page.primaryCta}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </a>
+        </div>
+      </section>
+
       <section className="border-t border-neutral-200 bg-neutral-50 py-12">
         <div className="mx-auto grid w-full max-w-screen-xl gap-8 px-6 lg:grid-cols-[1fr_0.7fr] lg:px-10">
           <div>
@@ -431,14 +450,14 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
           </div>
           <div className="rounded-lg border border-neutral-200 bg-white p-6">
             <h2 className="text-xl font-extrabold text-[#153a54]">{page.marketLabel}</h2>
-            <div className="mt-5 space-y-3">
-              {page.relatedLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="flex items-center justify-between rounded-md border border-neutral-200 px-4 py-3 text-sm font-semibold text-[#153a54] transition hover:border-[#0b6c8f] hover:text-[#0b6c8f]">
-                  <span>{link.label}</span>
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              ))}
-            </div>
+            <p className="mt-3 text-sm leading-6 text-neutral-700">{page.formIntro}</p>
+            <a
+              href="#paid-market-form"
+              className="mt-5 inline-flex h-12 items-center gap-2 rounded-md bg-[#08384d] px-5 text-sm font-semibold text-white transition hover:bg-[#0b4f6b]"
+            >
+              {page.primaryCta}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </section>
