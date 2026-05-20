@@ -225,7 +225,7 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
             </div>
           </div>
 
-          <div id="paid-market-form" className="rounded-lg border border-white/15 bg-white p-5 text-neutral-900 shadow-xl md:p-6 xl:p-7">
+          <div id="paid-market-form" className="self-start rounded-lg border border-white/15 bg-white p-5 text-neutral-900 shadow-xl md:p-6 xl:p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[#0b6c8f]">
               {page.marketLabel}
             </p>
@@ -238,10 +238,12 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
             <div className="mt-5">
               <PaidAwareHubspotForm
                 portalId={paidMarketHubspot.portalId}
-                formId={paidMarketHubspot.formId}
+                formId={paidMarketHubspot.formIds[page.locale]}
                 region={paidMarketHubspot.region}
                 targetId={`hubspot-${page.key}`}
                 locale={page.locale}
+                mode="native"
+                reservedHeightClass="min-h-[420px] md:min-h-[460px]"
               />
             </div>
             <p className="mt-4 text-center text-sm text-neutral-500">
