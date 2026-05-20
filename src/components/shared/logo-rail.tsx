@@ -9,7 +9,7 @@ type InfiniteLogoRailProps = {
   logos: LogoItem[];
   pauseOnHover?: boolean;
   reverse?: boolean;
-  duration?: "normal" | "slow";
+  duration?: "normal" | "slow" | "marathon";
 };
 
 const logoScaleClassByAlt: Record<string, string> = {
@@ -43,9 +43,11 @@ export function InfiniteLogoRail({
   duration = "normal",
 }: InfiniteLogoRailProps) {
   const doubled = [...logos, ...logos];
-  const animationClass = duration === "slow"
-    ? (reverse ? "animate-logo-scroll-slow-reverse" : "animate-logo-scroll-slow")
-    : (reverse ? "animate-logo-scroll-reverse" : "animate-logo-scroll");
+  const animationClass = duration === "marathon"
+    ? (reverse ? "animate-logo-scroll-marathon-reverse" : "animate-logo-scroll-marathon")
+    : duration === "slow"
+      ? (reverse ? "animate-logo-scroll-slow-reverse" : "animate-logo-scroll-slow")
+      : (reverse ? "animate-logo-scroll-reverse" : "animate-logo-scroll");
 
   return (
     <div className="group w-full max-w-full overflow-hidden bg-white py-1">
