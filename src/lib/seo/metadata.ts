@@ -132,11 +132,6 @@ export function buildPageMetadata({
   return {
     title: resolvedTitle,
     description: resolvedDescription,
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: { index: true, follow: true },
-    },
     alternates: {
       canonical: canonicalPath,
       languages: buildLanguageAlternates(canonicalPath),

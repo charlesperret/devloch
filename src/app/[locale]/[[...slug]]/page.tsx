@@ -628,11 +628,6 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return {
     title,
     description,
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: { index: true, follow: true },
-    },
     alternates: {
       canonical: resolved.localePath,
       languages: alternates.languages,
