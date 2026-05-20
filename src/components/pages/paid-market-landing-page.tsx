@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ClipboardCheck, MapPin, ShieldCheck, Target, Users } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, BarChart3, CheckCircle2, ClipboardCheck, MapPin, Quote, ShieldCheck, Target, Users } from "lucide-react";
 
 import { PaidAwareHubspotForm } from "@/components/shared/paid-aware-hubspot-form";
+import { InfiniteLogoRail } from "@/components/shared/logo-rail";
 import { paidMarketHubspot, type PaidMarketPage } from "@/content/paid-market-pages";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 
@@ -86,6 +88,15 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
         </div>
       </section>
 
+      <section className="border-b border-neutral-200 bg-white py-7">
+        <div className="mx-auto w-full max-w-screen-xl px-6 lg:px-10">
+          <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.1em] text-neutral-500">
+            {page.logosTitle}
+          </p>
+          <InfiniteLogoRail logos={page.logos} duration="slow" pauseOnHover />
+        </div>
+      </section>
+
       <section className="border-b border-neutral-200 bg-neutral-50 py-10">
         <div className="mx-auto grid w-full max-w-screen-xl gap-4 px-6 md:grid-cols-3 lg:px-10">
           {page.proofRows.map(([label, detail], index) => {
@@ -139,9 +150,84 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
                   <Icon className="h-6 w-6 text-[#0b6c8f]" aria-hidden="true" />
                   <h3 className="mt-5 text-lg font-extrabold text-[#153a54]">{step.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-neutral-600">{step.body}</p>
+                  <p className="mt-4 rounded-md border border-[#0b6c8f]/15 bg-[#e8f4f7] px-3 py-3 text-xs font-semibold leading-5 text-[#153a54]">
+                    {step.artifact}
+                  </p>
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 md:py-16">
+        <div className="mx-auto w-full max-w-screen-xl px-6 lg:px-10">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-extrabold text-[#153a54]">{page.caseStudiesTitle}</h2>
+            <p className="mt-4 text-base leading-7 text-neutral-700">{page.caseStudiesIntro}</p>
+          </div>
+
+          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            {page.caseStudies.map((study) => {
+              const card = (
+                <article className="flex h-full flex-col rounded-lg border border-neutral-200 bg-white p-5 transition hover:border-[#0b6c8f]/40">
+                  <div className="flex min-h-12 items-center justify-between gap-4">
+                    {study.logo ? (
+                      <div className="relative h-10 w-28">
+                        <Image src={study.logo} alt={`${study.client} logo`} fill className="object-contain object-left" sizes="112px" />
+                      </div>
+                    ) : (
+                      <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[#e8f4f7] text-sm font-extrabold text-[#153a54]">
+                        {study.client.slice(0, 2).toUpperCase()}
+                      </div>
+                    )}
+                    <span className="rounded-md bg-neutral-100 px-2 py-1 text-xs font-semibold text-neutral-600">
+                      {study.sector}
+                    </span>
+                  </div>
+                  <h3 className="mt-5 text-base font-extrabold leading-6 text-[#153a54]">{study.client}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-6 text-neutral-700">{study.title}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {study.metrics.map((metric) => (
+                      <span key={metric} className="rounded-md border border-[#0b6c8f]/15 bg-[#e8f4f7] px-2.5 py-1 text-xs font-semibold text-[#153a54]">
+                        {metric}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              );
+
+              return study.href ? (
+                <Link key={study.client} href={study.href} className="block">
+                  {card}
+                </Link>
+              ) : (
+                <div key={study.client}>{card}</div>
+              );
+            })}
+          </div>
+
+          <h2 className="mt-10 text-2xl font-extrabold text-[#153a54]">{page.testimonialsTitle}</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {page.testimonials.map((testimonial) => (
+              <figure key={`${testimonial.author}-${testimonial.company}`} className="rounded-lg border border-neutral-200 bg-[#08384d] p-6 text-white">
+                <Quote className="h-5 w-5 text-white/70" aria-hidden="true" />
+                <blockquote className="mt-4 text-sm leading-6 text-white/88">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-5 border-t border-white/15 pt-4 text-sm">
+                  <p className="font-extrabold">{testimonial.author}</p>
+                  <p className="mt-1 text-white/72">
+                    {testimonial.role}, {testimonial.company}
+                  </p>
+                  {testimonial.note ? (
+                    <p className="mt-2 text-xs font-semibold uppercase tracking-[0.08em] text-white/50">
+                      {testimonial.note}
+                    </p>
+                  ) : null}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
@@ -165,6 +251,7 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
             </div>
           </div>
           <div className="rounded-lg border border-neutral-200 bg-[#08384d] p-6 text-white md:p-8">
+            <BarChart3 className="h-6 w-6 text-white" aria-hidden="true" />
             <h2 className="text-2xl font-extrabold">{page.deliverablesTitle}</h2>
             <ul className="mt-5 space-y-4">
               {page.deliverables.map((item) => (
