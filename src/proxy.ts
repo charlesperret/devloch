@@ -1,19 +1,14 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-function normalizeHostname(host: string | null) {
-  if (!host) return false;
-
-  const normalizedHostname = host.split(":")[0]?.toLowerCase();
-  return normalizedHostname === "devlosales.com" || normalizedHostname === "www.devlosales.com";
-}
+import { isPaidHostname } from "@/lib/paid-hosts";
 
 function isPaidHost(request: NextRequest) {
   return [
     request.headers.get("host"),
     request.headers.get("x-forwarded-host"),
     request.nextUrl.hostname,
-  ].some(normalizeHostname);
+  ].some(isPaidHostname);
 }
 
 export function proxy(request: NextRequest) {
