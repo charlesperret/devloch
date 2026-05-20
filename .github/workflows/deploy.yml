@@ -27,7 +27,7 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
-      - name: Alias devlo.ch to latest deployment
+      - name: Alias production domains to latest deployment
         run: |
           echo "Fetching latest production deployment..."
 
@@ -49,20 +49,22 @@ jobs:
             exit 1
           fi
 
-          echo "Assigning devlo.ch alias..."
-          RESULT=$(curl -s -X POST "https://api.vercel.com/v2/deployments/$DEPLOY_ID/aliases?teamId=${{ secrets.VERCEL_ORG_ID }}" \
-            -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            -d '{"alias":"devlo.ch"}')
-          echo "$RESULT"
-
-          if echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); e=d.get('error') or {}; exit(0 if 'alias' in d or e.get('code') == 'not_modified' else 1)" 2>/dev/null; then
-            echo "devlo.ch alias assigned successfully or was already assigned to this deployment."
-          else
-            echo "ERROR: Failed to assign devlo.ch alias"
+          for ALIAS in devlo.ch devlosales.com www.devlosales.com; do
+            echo "Assigning $ALIAS alias..."
+            RESULT=$(curl -s -X POST "https://api.vercel.com/v2/deployments/$DEPLOY_ID/aliases?teamId=${{ secrets.VERCEL_ORG_ID }}" \
+              -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+              -H "Content-Type: application/json" \
+              -d "{\"alias\":\"$ALIAS\"}")
             echo "$RESULT"
-            exit 1
-          fi
+
+            if echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); e=d.get('error') or {}; exit(0 if 'alias' in d or e.get('code') == 'not_modified' else 1)" 2>/dev/null; then
+              echo "$ALIAS alias assigned successfully or was already assigned to this deployment."
+            else
+              echo "ERROR: Failed to assign $ALIAS alias"
+              echo "$RESULT"
+              exit 1
+            fi
+          done
 
       - name: Slack alert on failure
         if: failure()
