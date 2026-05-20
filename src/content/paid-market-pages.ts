@@ -22,6 +22,8 @@ type TestimonialProof = {
   author: string;
   role: string;
   company: string;
+  photo: string;
+  photoAlt: string;
   note?: string;
 };
 
@@ -149,7 +151,7 @@ const pages: PaidMarketPage[] = [
         artifact: "Output: conversations anchored in a reason to engage, not a generic sales pitch.",
       },
     ],
-    caseStudiesTitle: "Proof we can show without pretending it is local",
+    caseStudiesTitle: "Case studies behind the method",
     caseStudiesIntro:
       "Australia needs honest proof. We use international B2B results to show the operating method, without claiming local Australian case-study coverage.",
     caseStudies: [
@@ -185,6 +187,8 @@ const pages: PaidMarketPage[] = [
         author: "Raphael",
         role: "Head of Business Development & Marketing",
         company: "CareerLunch",
+        photo: "/images/Raphael-haut.webp",
+        photoAlt: "Raphael Haut, Head of Business Development and Marketing at CareerLunch",
         note: "Translated from French testimonial",
       },
       {
@@ -192,6 +196,8 @@ const pages: PaidMarketPage[] = [
         author: "Olivier Eyries",
         role: "CEO",
         company: "Saporo",
+        photo: "/images/Olivier-Eyries.webp",
+        photoAlt: "Olivier Eyries, CEO of Saporo",
         note: "Translated from French testimonial",
       },
     ],
@@ -313,6 +319,8 @@ const pages: PaidMarketPage[] = [
         author: "Raphael",
         role: "Head of Business Development & Marketing",
         company: "CareerLunch",
+        photo: "/images/Raphael-haut.webp",
+        photoAlt: "Raphael Haut, Head of Business Development and Marketing at CareerLunch",
         note: "Translated from French testimonial",
       },
       {
@@ -320,6 +328,8 @@ const pages: PaidMarketPage[] = [
         author: "Olivier Eyries",
         role: "CEO",
         company: "Saporo",
+        photo: "/images/Olivier-Eyries.webp",
+        photoAlt: "Olivier Eyries, CEO of Saporo",
         note: "Translated from French testimonial",
       },
     ],
@@ -440,12 +450,16 @@ const pages: PaidMarketPage[] = [
         author: "Raphael",
         role: "Head of Business Development & Marketing",
         company: "CareerLunch",
+        photo: "/images/Raphael-haut.webp",
+        photoAlt: "Raphael Haut, Head of Business Development and Marketing chez CareerLunch",
       },
       {
         quote: "Le processus, de la génération de prospects à l'obtention de rendez-vous, a été professionnel, agréable et efficace.",
         author: "Olivier Eyries",
         role: "CEO",
         company: "Saporo",
+        photo: "/images/Olivier-Eyries.webp",
+        photoAlt: "Olivier Eyries, CEO de Saporo",
       },
     ],
     riskTitle: "Ce que nous filtrons",
@@ -566,6 +580,8 @@ const pages: PaidMarketPage[] = [
         author: "Raphael",
         role: "Head of Business Development & Marketing",
         company: "CareerLunch",
+        photo: "/images/Raphael-haut.webp",
+        photoAlt: "Raphael Haut, Head of Business Development and Marketing bei CareerLunch",
         note: "Aus dem Französischen übertragen",
       },
       {
@@ -573,6 +589,8 @@ const pages: PaidMarketPage[] = [
         author: "Xavier Leuthold",
         role: "Founder",
         company: "Many Ways SA",
+        photo: "/images/Xavier_Leuthold_Many_Ways.webp",
+        photoAlt: "Xavier Leuthold, Founder bei Many Ways SA",
         note: "Aus dem Französischen übertragen",
       },
     ],
@@ -694,6 +712,8 @@ const pages: PaidMarketPage[] = [
         author: "Raphael",
         role: "Head of Business Development & Marketing",
         company: "CareerLunch",
+        photo: "/images/Raphael-haut.webp",
+        photoAlt: "Raphael Haut, Head of Business Development and Marketing bei CareerLunch",
         note: "Aus dem Französischen übertragen",
       },
       {
@@ -701,6 +721,8 @@ const pages: PaidMarketPage[] = [
         author: "Olivier Eyries",
         role: "CEO",
         company: "Saporo",
+        photo: "/images/Olivier-Eyries.webp",
+        photoAlt: "Olivier Eyries, CEO von Saporo",
         note: "Aus dem Französischen übertragen",
       },
     ],
@@ -821,6 +843,8 @@ const pages: PaidMarketPage[] = [
         author: "Raphael",
         role: "Head of Business Development & Marketing",
         company: "CareerLunch",
+        photo: "/images/Raphael-haut.webp",
+        photoAlt: "Raphael Haut, Head of Business Development and Marketing bij CareerLunch",
         note: "Vertaald uit Franse testimonial; finale NL-check door Victor",
       },
       {
@@ -828,6 +852,8 @@ const pages: PaidMarketPage[] = [
         author: "Xavier Leuthold",
         role: "Founder",
         company: "Many Ways SA",
+        photo: "/images/Xavier_Leuthold_Many_Ways.webp",
+        photoAlt: "Xavier Leuthold, Founder bij Many Ways SA",
         note: "Vertaald uit Franse testimonial; finale NL-check door Victor",
       },
     ],
