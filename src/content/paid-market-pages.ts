@@ -95,7 +95,46 @@ const LOGOS = {
   iddi: { src: "/images/IDDI_logo.webp", alt: "IDDI logo" },
   locky: { src: "/images/Locky_Logo.webp", alt: "Locky logo" },
   hiag: { src: "/images/HIAG_logo.webp", alt: "HIAG logo" },
+  lemanvisio: { src: "/images/Lemanvisio_Logo.webp", alt: "Lemanvisio logo" },
+  manyWays: { src: "/images/Many_ways_logo.webp", alt: "Many Ways logo" },
+  lafargeHolcim: { src: "/images/Logo_LafargeHolcim.webp", alt: "LafargeHolcim logo" },
+  abb: { src: "/images/Logo_ABB.webp", alt: "ABB logo" },
+  hublot: { src: "/images/Logo_Hublot.webp", alt: "Hublot logo" },
+  longines: { src: "/images/Logo_Longines.webp", alt: "Longines logo" },
+  lombardOdier: { src: "/images/Logo_Lombard_Odier.webp", alt: "Lombard Odier logo" },
+  bhp: { src: "/images/Logo_BHP.webp", alt: "BHP logo" },
+  adecco: { src: "/images/Logo_Adecco.webp", alt: "Adecco logo" },
+  bcf: { src: "/images/Logo_BCF.webp", alt: "Banque Cantonale de Fribourg logo" },
+  merck: { src: "/images/Logo_Merck.webp", alt: "Merck logo" },
+  apple: { src: "/images/Logo_Apple.webp", alt: "Apple logo" },
+  implenia: { src: "/images/Logo_Implenia.webp", alt: "Implenia logo" },
 } as const;
+
+const ALL_CLIENT_LOGOS: LogoProof[] = [
+  LOGOS.monizze,
+  LOGOS.horus,
+  LOGOS.careerlunch,
+  LOGOS.saporo,
+  LOGOS.cegos,
+  LOGOS.abacus,
+  LOGOS.apidae,
+  LOGOS.iddi,
+  LOGOS.locky,
+  LOGOS.hiag,
+  LOGOS.lemanvisio,
+  LOGOS.manyWays,
+  LOGOS.lafargeHolcim,
+  LOGOS.abb,
+  LOGOS.hublot,
+  LOGOS.longines,
+  LOGOS.lombardOdier,
+  LOGOS.bhp,
+  LOGOS.adecco,
+  LOGOS.bcf,
+  LOGOS.merck,
+  LOGOS.apple,
+  LOGOS.implenia,
+];
 
 const pages: PaidMarketPage[] = [
   {
@@ -121,7 +160,7 @@ const pages: PaidMarketPage[] = [
       "Share your offer, target buyers and current sales motion. We will review the first account segment, signal logic and proof angle before any budget is scaled.",
     postForm: "After the form, we come back with the first segment and the risks to fix before launch.",
     logosTitle: "Selected teams and case studies behind the method",
-    logos: [LOGOS.monizze, LOGOS.careerlunch, LOGOS.saporo, LOGOS.iddi, LOGOS.horus, LOGOS.locky],
+    logos: ALL_CLIENT_LOGOS,
     proofTitle: "Why this matters for paid search",
     proofRows: [
       ["Pipeline, not geography", "Most buyers are not looking to 'open Australia'. They want more qualified opportunities from the accounts that matter."],
@@ -254,7 +293,7 @@ const pages: PaidMarketPage[] = [
       "Share your offer, buyer roles and current acquisition challenge. We will identify the first segment, the likely signals and the proof angle to use.",
     postForm: "We reply with the first segment, risks and recommended next step before budget is scaled.",
     logosTitle: "Selected proof from B2B outbound campaigns",
-    logos: [LOGOS.saporo, LOGOS.monizze, LOGOS.careerlunch, LOGOS.iddi, LOGOS.cegos, LOGOS.horus],
+    logos: ALL_CLIENT_LOGOS,
     proofTitle: "Why the UK page must be specific",
     proofRows: [
       ["Competitive demand", "UK clicks are expensive when the page sounds like a generic lead-generation agency."],
@@ -385,7 +424,7 @@ const pages: PaidMarketPage[] = [
       "Décrivez votre offre, vos décideurs cibles et votre situation commerciale. Nous identifions le premier segment, les signaux à suivre et les preuves à utiliser.",
     postForm: "Nous revenons avec les segments à prioriser et les risques à corriger avant lancement.",
     logosTitle: "Quelques preuves issues de campagnes B2B",
-    logos: [LOGOS.apidae, LOGOS.cegos, LOGOS.saporo, LOGOS.monizze, LOGOS.iddi, LOGOS.locky],
+    logos: ALL_CLIENT_LOGOS,
     proofTitle: "Pourquoi cette page existe",
     proofRows: [
       ["Acquisition client", "Un prospect en France veut souvent plus de conversations commerciales qualifiées avec les bons comptes."],
@@ -515,7 +554,7 @@ const pages: PaidMarketPage[] = [
       "Teilen Sie Angebot, Zielkunden und aktuelle Vertriebssituation. Wir prüfen Segment, Kaufsignale und Proof-Ansatz für den ersten Kampagnenbatch.",
     postForm: "Wir melden uns mit einer kurzen Einschätzung und den nächsten sinnvollen Schritten.",
     logosTitle: "Ausgewählte B2B-Nachweise aus bestehenden Kampagnen",
-    logos: [LOGOS.abacus, LOGOS.hiag, LOGOS.saporo, LOGOS.careerlunch, LOGOS.cegos, LOGOS.iddi],
+    logos: ALL_CLIENT_LOGOS,
     proofTitle: "Warum diese Seite anders sein muss",
     proofRows: [
       ["B2B-Akquise", "Viele Schweizer Käufer wollen ihre bestehende Kundengewinnung strukturierter und messbarer verbessern."],
@@ -647,7 +686,7 @@ const pages: PaidMarketPage[] = [
       "Teilen Sie Zielkunden, Angebot und Vertriebssituation. Wir prüfen, welcher Account-Batch, welche Signale und welcher Proof für den Start sinnvoll sind.",
     postForm: "Wir melden uns mit einer Empfehlung für den ersten realistischen Kampagnenbatch.",
     logosTitle: "Ausgewählte Nachweise aus B2B-Outbound-Kampagnen",
-    logos: [LOGOS.careerlunch, LOGOS.saporo, LOGOS.iddi, LOGOS.cegos, LOGOS.monizze, LOGOS.horus],
+    logos: ALL_CLIENT_LOGOS,
     proofTitle: "Warum Deutschland präzise bearbeitet werden muss",
     proofRows: [
       ["Grosser Markt", "Deutschland ist gross genug, um Budget zu verlieren, wenn Segment, Region und Buyer-Rolle nicht getrennt werden."],
@@ -778,7 +817,7 @@ const pages: PaidMarketPage[] = [
       "Deel uw aanbod, doelgroep en huidige salesaanpak. We bekijken welk segment, welke signalen en welk bewijs geschikt zijn voor de eerste campagne.",
     postForm: "We komen terug met een korte beoordeling en de meest logische volgende stap.",
     logosTitle: "Geselecteerde bewijzen uit B2B-campagnes",
-    logos: [LOGOS.monizze, LOGOS.horus, LOGOS.careerlunch, LOGOS.saporo, LOGOS.locky, LOGOS.iddi],
+    logos: ALL_CLIENT_LOGOS,
     proofTitle: "Waarom deze pagina anders moet zijn",
     proofRows: [
       ["Acquisitie, geen marktopening", "Veel Nederlandse bezoekers willen hun klantenwerving verbeteren, niet Nederland als nieuwe markt ontdekken."],

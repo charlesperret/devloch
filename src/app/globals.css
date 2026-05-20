@@ -212,6 +212,14 @@ a {
     animation: logo-scroll-reverse 70s linear infinite;
   }
 
+  .animate-logo-scroll-marathon {
+    animation: logo-scroll 120s linear infinite;
+  }
+
+  .animate-logo-scroll-marathon-reverse {
+    animation: logo-scroll-reverse 120s linear infinite;
+  }
+
   .animate-testimonial-scroll {
     animation: logo-scroll 40s linear infinite;
   }

@@ -25,6 +25,152 @@ const pageLabel = {
 const proofIcons = [MapPin, ShieldCheck, Users] as const;
 const stepIcons = [Target, ClipboardCheck, CheckCircle2] as const;
 
+const heroProofTitle = {
+  fr: "Ce que nos clients soulignent",
+  en: "What clients point out",
+  de: "Was Kunden hervorheben",
+  nl: "Wat klanten benadrukken",
+} as const;
+
+const heroTestimonials = {
+  fr: [
+    {
+      quote: "Communication fluide, équipe réactive, volume et qualité.",
+      author: "Anthony Crémer",
+      role: "Revenue Ops Analyst",
+      company: "Monizze",
+      photo: "/images/Anthony_CREMER.webp",
+      photoAlt: "Anthony Crémer, Revenue Ops Analyst chez Monizze",
+    },
+    {
+      quote: "Campagnes hyper-personnalisées et rendez-vous qualifiés.",
+      author: "Raphael Haut",
+      role: "Head of Business Development & Marketing",
+      company: "CareerLunch",
+      photo: "/images/Raphael-haut.webp",
+      photoAlt: "Raphael Haut, Head of Business Development and Marketing chez CareerLunch",
+    },
+    {
+      quote: "Collaboration professionnelle et efficace en cybersécurité.",
+      author: "Olivier Eyries",
+      role: "CEO",
+      company: "Saporo",
+      photo: "/images/Olivier-Eyries.webp",
+      photoAlt: "Olivier Eyries, CEO de Saporo",
+    },
+    {
+      quote: "Ciblage affiné et approche améliorée avec devlo.",
+      author: "Xavier Leuthold",
+      role: "Fondateur",
+      company: "Many Ways SA",
+      photo: "/images/Xavier_Leuthold_Many_Ways.webp",
+      photoAlt: "Xavier Leuthold, fondateur de Many Ways SA",
+    },
+  ],
+  en: [
+    {
+      quote: "Clear communication, responsive team, volume and quality.",
+      author: "Anthony Crémer",
+      role: "Revenue Ops Analyst",
+      company: "Monizze",
+      photo: "/images/Anthony_CREMER.webp",
+      photoAlt: "Anthony Crémer, Revenue Ops Analyst at Monizze",
+    },
+    {
+      quote: "Hyper-personalised campaigns and qualified meetings.",
+      author: "Raphael Haut",
+      role: "Head of Business Development & Marketing",
+      company: "CareerLunch",
+      photo: "/images/Raphael-haut.webp",
+      photoAlt: "Raphael Haut, Head of Business Development and Marketing at CareerLunch",
+    },
+    {
+      quote: "Professional and efficient collaboration in cybersecurity.",
+      author: "Olivier Eyries",
+      role: "CEO",
+      company: "Saporo",
+      photo: "/images/Olivier-Eyries.webp",
+      photoAlt: "Olivier Eyries, CEO of Saporo",
+    },
+    {
+      quote: "Sharper targeting and a better prospecting approach.",
+      author: "Xavier Leuthold",
+      role: "Founder",
+      company: "Many Ways SA",
+      photo: "/images/Xavier_Leuthold_Many_Ways.webp",
+      photoAlt: "Xavier Leuthold, Founder of Many Ways SA",
+    },
+  ],
+  de: [
+    {
+      quote: "Klare Kommunikation, reaktionsschnelles Team, Volumen und Qualität.",
+      author: "Anthony Crémer",
+      role: "Revenue Ops Analyst",
+      company: "Monizze",
+      photo: "/images/Anthony_CREMER.webp",
+      photoAlt: "Anthony Crémer, Revenue Ops Analyst bei Monizze",
+    },
+    {
+      quote: "Hyperpersonalisierte Kampagnen und qualifizierte Termine.",
+      author: "Raphael Haut",
+      role: "Head of Business Development & Marketing",
+      company: "CareerLunch",
+      photo: "/images/Raphael-haut.webp",
+      photoAlt: "Raphael Haut, Head of Business Development and Marketing bei CareerLunch",
+    },
+    {
+      quote: "Professionelle und effiziente Zusammenarbeit in Cybersecurity.",
+      author: "Olivier Eyries",
+      role: "CEO",
+      company: "Saporo",
+      photo: "/images/Olivier-Eyries.webp",
+      photoAlt: "Olivier Eyries, CEO von Saporo",
+    },
+    {
+      quote: "Präziseres Targeting und ein besserer Prospecting-Ansatz.",
+      author: "Xavier Leuthold",
+      role: "Founder",
+      company: "Many Ways SA",
+      photo: "/images/Xavier_Leuthold_Many_Ways.webp",
+      photoAlt: "Xavier Leuthold, Founder bei Many Ways SA",
+    },
+  ],
+  nl: [
+    {
+      quote: "Heldere communicatie, een reactief team, volume en kwaliteit.",
+      author: "Anthony Crémer",
+      role: "Revenue Ops Analyst",
+      company: "Monizze",
+      photo: "/images/Anthony_CREMER.webp",
+      photoAlt: "Anthony Crémer, Revenue Ops Analyst bij Monizze",
+    },
+    {
+      quote: "Hypergepersonaliseerde campagnes en gekwalificeerde afspraken.",
+      author: "Raphael Haut",
+      role: "Head of Business Development & Marketing",
+      company: "CareerLunch",
+      photo: "/images/Raphael-haut.webp",
+      photoAlt: "Raphael Haut, Head of Business Development and Marketing bij CareerLunch",
+    },
+    {
+      quote: "Professionele en efficiënte samenwerking in cybersecurity.",
+      author: "Olivier Eyries",
+      role: "CEO",
+      company: "Saporo",
+      photo: "/images/Olivier-Eyries.webp",
+      photoAlt: "Olivier Eyries, CEO van Saporo",
+    },
+    {
+      quote: "Scherpere targeting en een betere prospectieaanpak.",
+      author: "Xavier Leuthold",
+      role: "Founder",
+      company: "Many Ways SA",
+      photo: "/images/Xavier_Leuthold_Many_Ways.webp",
+      photoAlt: "Xavier Leuthold, Founder bij Many Ways SA",
+    },
+  ],
+} as const;
+
 export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
   const homePath = page.locale === "fr" ? "/" : `/${page.locale}`;
   const breadcrumbItems = [
@@ -34,9 +180,9 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
 
   return (
     <main className="bg-white text-neutral-900">
-      <section className="bg-[#08384d] pb-12 pt-2 text-white md:pb-16">
+      <section className="bg-[#08384d] pb-10 pt-2 text-white md:pb-12">
         <Breadcrumb items={breadcrumbItems} variant="dark" />
-        <div className="mx-auto grid w-full max-w-screen-xl gap-8 px-6 pt-8 lg:grid-cols-[1fr_0.78fr] lg:px-10">
+        <div className="mx-auto grid w-full max-w-[1600px] gap-8 px-6 pt-8 lg:grid-cols-[minmax(0,0.88fr)_minmax(560px,0.92fr)] xl:grid-cols-[minmax(0,0.9fr)_minmax(680px,0.92fr)] lg:px-10">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/70">
               {page.eyebrow}
@@ -61,9 +207,35 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
               {page.primaryCta}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
+
+            <div className="mt-8 rounded-lg border border-white/12 bg-white/[0.06] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/58">
+                {heroProofTitle[page.locale]}
+              </p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {heroTestimonials[page.locale].map((item) => (
+                  <figure key={`${item.author}-${item.company}`} className="min-h-[112px] rounded-md border border-white/10 bg-white/[0.07] p-3">
+                    <div className="flex items-center gap-3">
+                      <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
+                        <Image src={item.photo} alt={item.photoAlt} fill className="object-cover" sizes="40px" />
+                      </div>
+                      <figcaption className="min-w-0">
+                        <p className="truncate text-sm font-extrabold text-white">{item.author}</p>
+                        <p className="truncate text-xs font-semibold text-white/62">
+                          {item.role}, {item.company}
+                        </p>
+                      </figcaption>
+                    </div>
+                    <blockquote className="mt-3 text-xs font-semibold leading-5 text-white/78">
+                      &ldquo;{item.quote}&rdquo;
+                    </blockquote>
+                  </figure>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <div id="paid-market-form" className="rounded-lg border border-white/15 bg-white p-5 text-neutral-900 shadow-xl md:p-6">
+          <div id="paid-market-form" className="rounded-lg border border-white/15 bg-white p-5 text-neutral-900 shadow-xl md:p-6 xl:p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[#0b6c8f]">
               {page.marketLabel}
             </p>
@@ -90,11 +262,11 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
       </section>
 
       <section className="border-b border-neutral-200 bg-white py-7">
-        <div className="mx-auto w-full max-w-screen-xl px-6 lg:px-10">
+        <div className="mx-auto w-full max-w-[1600px] px-6 lg:px-10">
           <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.1em] text-neutral-500">
             {page.logosTitle}
           </p>
-          <InfiniteLogoRail logos={page.logos} duration="slow" pauseOnHover />
+          <InfiniteLogoRail logos={page.logos} duration="marathon" pauseOnHover />
         </div>
       </section>
 
