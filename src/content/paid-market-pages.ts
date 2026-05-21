@@ -808,7 +808,7 @@ const pages: PaidMarketPage[] = [
     reviewStatus: "needs-review",
     market: "Nederland",
     marketLabel: "Nederland",
-    title: "B2B leadgeneratie Nederland | devlo",
+    title: "B2B-leadgeneratie in Nederland | devlo",
     description:
       "B2B-leadgeneratie in Nederland: addressable market scherp maken, koopsignalen prioriteren en gekwalificeerde afspraken plannen.",
     eyebrow: "B2B-leadgeneratie in Nederland",
@@ -826,7 +826,7 @@ const pages: PaidMarketPage[] = [
     proofTitle: "Voor wie dit werkt",
     proofRows: [
       ["Acquisitie, geen marketingverhaal", "Concrete afspraken in je agenda, geen vage funnels of brand awareness."],
-      ["Directe relevantie", "Maak meteen duidelijk waarom je deze prospect nu benadert."],
+      ["Directe relevantie", "Maak meteen duidelijk waarom je deze prospect nú benadert."],
       ["Kwaliteit, geen massa", "Nederlandse B2B-kopers prikken snel door algemene claims heen; bewijs en timing moeten kloppen."],
     ],
     fitTitle: "Past dit bij jou?",
@@ -845,7 +845,7 @@ const pages: PaidMarketPage[] = [
       {
         title: "Prioriteer op koopsignalen",
         body: "We rangschikken accounts op koopsignalen: groei, management changes, openstaande vacatures, nieuwe software of zichtbare groeipijn.",
-        artifact: "Resultaat: de accounts waar je nu het meeste kans maakt.",
+        artifact: "Resultaat: de accounts waar je nú het meeste kans maakt.",
       },
       {
         title: "Benader met bewijs",
@@ -903,12 +903,12 @@ const pages: PaidMarketPage[] = [
     riskTitle: "Wat we vermijden",
     riskIntro: "Nederlandse kopers reageren terughoudend op algemene of overdreven boodschappen.",
     riskRows: [
-      ["Te Amerikaanse toon", "Superlatieven en vage beloftes verlagen vertrouwen."],
+      ["Te Amerikaanse toon", "Superlatieven en loze beloftes wekken in Nederland geen vertrouwen."],
       ["Vage doelgroep", "Een campagne zonder duidelijke ICP, beslissers en kwalificatiecriteria levert weinig bruikbare signalen op."],
       ["Te vroeg opschalen", "We testen eerst segment, signaal en boodschap voordat er budget naar volume gaat."],
     ],
     deliverablesTitle: "Wat je krijgt",
-    deliverables: ["Lijst met prioriteitsaccounts", "Koopsignalen per account", "Pitch met bewijs per account", "Go/no-go voor betaalde zoekadvertenties en outbound"],
+    deliverables: ["Lijst met prioriteitsaccounts", "Koopsignalen per account", "Pitch met bewijs per account", "Go/no-go voor betaalde zoekadvertenties en uitgaande acquisitie"],
     faqTitle: "Vragen",
     faqs: [
       {
@@ -916,7 +916,7 @@ const pages: PaidMarketPage[] = [
         answer: "Voor teams met een duidelijke doelgroep, voldoende dealwaarde en behoefte aan betere accountselectie voordat sales tijd investeert.",
       },
       {
-        question: "Wanneer is paid traffic nog te vroeg?",
+        question: "Wanneer zijn betaalde campagnes nog te vroeg?",
         answer: "Als ICP, beslisserrollen of bewijs nog te vaag zijn. Dan testen we eerst de marktlogica voordat er budget naar volume gaat.",
       },
       {
