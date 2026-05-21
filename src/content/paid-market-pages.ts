@@ -155,7 +155,7 @@ const pages: PaidMarketPage[] = [
     description:
       "B2B prospecting for Australian teams that want cleaner target accounts, buying-signal prioritisation and qualified customer acquisition conversations.",
     eyebrow: "B2B prospecting for Australian teams",
-    h1: "Grow qualified B2B pipeline in Australia with signal-led outbound",
+    h1: "Grow qualified B2B pipeline for Australian teams with signal-led outbound",
     intro:
       "devlo helps B2B teams turn a broad addressable market into a focused list of accounts, prioritised by buying signals, then contacted with proof-led email, LinkedIn and phone outreach.",
     badges: ["TAM mapping", "Buying signals", "Proof-led outreach"],
@@ -173,7 +173,7 @@ const pages: PaidMarketPage[] = [
       ["Credible proof", "The outreach angle is built around verifiable value proof, not generic appointment-setting copy."],
     ],
     fitTitle: "Best fit",
-    fitIntro: "This is designed for B2B teams with enough deal value to justify careful account research and multichannel qualification.",
+    fitIntro: "This suits B2B teams whose deal size justifies careful account research and multichannel qualification.",
     fitItems: ["B2B SaaS and software", "Cybersecurity and IT services", "Professional services", "Industrial and technical services"],
     methodTitle: "The devlo methodology",
     methodIntro:
@@ -253,7 +253,7 @@ const pages: PaidMarketPage[] = [
       ["No qualification rule", "A meeting must be defined by fit, need and next step, not by calendar volume alone."],
     ],
     deliverablesTitle: "What you receive",
-    deliverables: ["TAM and first segment recommendation", "Buying-signal shortlist", "Proof-led sequence angles", "Paid-search and outbound risks to fix before launch"],
+    deliverables: ["TAM and first segment recommendation", "Buying-signal shortlist", "Proof-led sequence angles", "Paid-search and outbound gaps to address before scaling spend"],
     faqTitle: "Questions",
     faqs: [
       {
@@ -262,8 +262,8 @@ const pages: PaidMarketPage[] = [
           "No. devlo is a Swiss B2B outbound agency. The page does not claim local Australian case studies; it explains the method and proof used to build serious campaigns.",
       },
       {
-        question: "Can this help if we are already in Australia?",
-        answer: "Yes. The goal is to improve customer acquisition, whether you sell inside Australia or from Australia into other B2B markets.",
+        question: "We already sell in Australia — does this still apply?",
+        answer: "Yes. The goal is to improve customer acquisition, whether you sell within Australia or from Australia into other B2B markets.",
       },
       {
         question: "When should we not launch?",
@@ -288,7 +288,7 @@ const pages: PaidMarketPage[] = [
     description:
       "B2B prospecting for UK teams that need sharper target accounts, buying signals, proof-led outreach and qualified sales conversations.",
     eyebrow: "B2B prospecting for UK teams",
-    h1: "Turn the UK addressable market into qualified B2B conversations",
+    h1: "Turn your UK addressable market into qualified B2B conversations",
     intro:
       "devlo helps B2B sales and growth teams map the right accounts, prioritise them with buying signals and open conversations with proof instead of generic appointment-setting scripts.",
     badges: ["Account mapping", "Signal prioritisation", "Qualified meetings"],
@@ -306,7 +306,7 @@ const pages: PaidMarketPage[] = [
       ["Proof-led execution", "The first message should explain why the account is being approached now and why devlo can help."],
     ],
     fitTitle: "Best fit",
-    fitIntro: "The UK is a good fit when the target account profile is specific and the sales motion can absorb qualified conversations quickly.",
+    fitIntro: "This works best when the target account profile is specific and the sales motion can absorb qualified conversations quickly.",
     fitItems: ["B2B SaaS", "Cybersecurity", "Consulting and professional services", "High-value services with clear buyer roles"],
     methodTitle: "The devlo methodology",
     methodIntro:
@@ -329,7 +329,7 @@ const pages: PaidMarketPage[] = [
       },
     ],
     caseStudiesTitle: "Selected proof",
-    caseStudiesIntro: "The page should show enough evidence to make the method credible without turning into a sales deck.",
+    caseStudiesIntro: "Enough evidence to make the method credible, without turning into a sales deck.",
     caseStudies: [
       {
         client: "Saporo",
@@ -378,7 +378,7 @@ const pages: PaidMarketPage[] = [
       },
     ],
     riskTitle: "What we filter out",
-    riskIntro: "The UK can burn budget quickly when the landing page promises too much or targets too widely.",
+    riskIntro: "UK paid budget is burned quickly when the landing page promises too much or the targeting is too wide.",
     riskRows: [
       ["Broad wording", "Lead generation, appointment setting and outsourced SDR intent should not be mixed blindly."],
       ["Low-value deals", "Small deals rarely justify a careful multichannel setup in a competitive market."],
@@ -389,12 +389,12 @@ const pages: PaidMarketPage[] = [
     faqTitle: "Questions",
     faqs: [
       {
-        question: "Why not send UK traffic to the generic consultation page?",
-        answer: "High-intent UK clicks need a page that speaks to acquisition, account selection and proof-led outbound directly.",
+        question: "Why is this page separate from your general consultation page?",
+        answer: "High-intent UK clicks need a page focused on acquisition, account selection and proof-led outbound, not a generic intro.",
       },
       {
-        question: "Can devlo run UK outbound from Switzerland?",
-        answer: "Yes, when the ICP, buyer roles, message and proof are clear. The campaign should be tight enough to measure quality early.",
+        question: "Can devlo run UK outbound remotely?",
+        answer: "Yes, when the ICP, buyer roles, message and proof are clear. The campaign stays tight enough to measure quality early.",
       },
       {
         question: "What happens if search volume is low?",
@@ -415,16 +415,16 @@ const pages: PaidMarketPage[] = [
     reviewStatus: "needs-review",
     market: "France",
     marketLabel: "France",
-    title: "Prospection commerciale B2B en France | devlo",
+    title: "Prospection B2B en France : rendez-vous qualifiés | devlo",
     description:
       "Prospection commerciale B2B en France : cartographie du marché adressable, signaux d'achat, preuves de valeur et rendez-vous qualifiés.",
-    eyebrow: "Prospection commerciale B2B en France",
+    eyebrow: "Acquisition B2B — France",
     h1: "Générez plus de rendez-vous B2B qualifiés en France",
     intro:
       "devlo aide les équipes B2B à transformer un marché adressable en comptes prioritaires, puis en conversations commerciales grâce à une prospection fondée sur les signaux d'achat et les preuves de valeur.",
     badges: ["Marché adressable", "Signaux d'achat", "Rendez-vous qualifiés"],
-    primaryCta: "Évaluer mon plan d'acquisition",
-    formTitle: "Recevez une lecture concrète de votre acquisition en France",
+    primaryCta: "Obtenir un diagnostic d'acquisition",
+    formTitle: "Recevez une analyse concrète de votre acquisition en France",
     formIntro:
       "Décrivez votre offre, vos décideurs cibles et votre situation commerciale. Nous identifions le premier segment, les signaux à suivre et les preuves à utiliser.",
     postForm: "Nous revenons avec les segments à prioriser et les risques à corriger avant lancement.",
@@ -436,7 +436,7 @@ const pages: PaidMarketPage[] = [
       ["Priorisation", "La valeur vient de savoir quels comptes contacter maintenant, pas d'envoyer plus de messages à une cible floue."],
       ["Crédibilité", "devlo doit prouver sa méthode rapidement : comptes, signaux, preuves, puis conversations qualifiées."],
     ],
-    fitTitle: "Bon fit",
+    fitTitle: "À qui s'adresse cette méthode",
     fitIntro: "La méthode est pertinente lorsque votre offre B2B a des comptes identifiables, des décideurs précis et une valeur de deal suffisante.",
     fitItems: ["SaaS et logiciels B2B", "Cybersécurité et services IT", "Industrie et services techniques", "Conseil, formation et services professionnels"],
     methodTitle: "La méthode devlo",
@@ -451,7 +451,7 @@ const pages: PaidMarketPage[] = [
       {
         title: "Prioriser par signaux d'achat",
         body: "Nous classons les comptes selon des signaux concrets : recrutement, changement d'outil, croissance, nouvelle direction, pression réglementaire ou besoin métier.",
-        artifact: "Livrable : un premier batch de comptes où le timing commercial est plus plausible.",
+        artifact: "Livrable : une première liste de comptes priorisés où le timing commercial est plus plausible.",
       },
       {
         title: "Prospecter avec des preuves de valeur",
@@ -459,8 +459,8 @@ const pages: PaidMarketPage[] = [
         artifact: "Livrable : des conversations contextualisées, pas une séquence générique.",
       },
     ],
-    caseStudiesTitle: "Études de cas à afficher subtilement",
-    caseStudiesIntro: "L'objectif est de montrer assez de preuves pour crédibiliser devlo, sans transformer la page en catalogue.",
+    caseStudiesTitle: "Quelques résultats clients",
+    caseStudiesIntro: "Quelques exemples représentatifs de notre approche en B2B, sans transformer la page en catalogue.",
     caseStudies: [
       {
         client: "APIDAE",
@@ -507,14 +507,14 @@ const pages: PaidMarketPage[] = [
       },
     ],
     riskTitle: "Ce que nous filtrons",
-    riskIntro: "Ces filtres évitent de lancer une campagne visible mais commercialement faible.",
+    riskIntro: "Ces filtres évitent de lancer une campagne visible mais peu rentable commercialement.",
     riskRows: [
       ["ICP trop large", "Une cible France entière sans vertical ni décideur prioritaire n'est pas assez exploitable."],
-      ["Promesse générique", "La page doit parler d'acquisition client et de rendez-vous qualifiés, pas seulement de lead generation."],
+      ["Promesse générique", "La page doit parler d'acquisition client et de rendez-vous qualifiés, pas seulement de génération de leads."],
       ["Preuve insuffisante", "Un message sans preuve de valeur ressemble à toutes les autres agences de prospection."],
     ],
     deliverablesTitle: "Ce que vous recevez",
-    deliverables: ["Carte du marché adressable prioritaire", "Signaux d'achat à suivre", "Angles de séquence basés sur la preuve", "Go/no-go pour une campagne paid search ou outbound"],
+    deliverables: ["Carte du marché adressable prioritaire", "Signaux d'achat à suivre", "Angles de séquence basés sur la preuve", "Go/no-go pour une campagne SEA ou outbound"],
     faqTitle: "Questions",
     faqs: [
       {
@@ -547,16 +547,16 @@ const pages: PaidMarketPage[] = [
     marketLabel: "Deutschschweiz",
     title: "Leadgenerierung Schweiz | devlo",
     description:
-      "B2B-Leadgenerierung in der Deutschschweiz: Zielmarkt kartieren, Kaufsignale priorisieren und qualifizierte Termine mit Value Proof gewinnen.",
+      "B2B-Leadgenerierung in der Deutschschweiz: Zielmarkt kartieren, Kaufsignale priorisieren und qualifizierte Termine mit Wertnachweis gewinnen.",
     eyebrow: "B2B-Leadgenerierung in der Deutschschweiz",
-    h1: "Mehr qualifizierte B2B-Termine in der Deutschschweiz",
+    h1: "Mehr qualifizierte B2B-Gespräche in der Deutschschweiz",
     intro:
-      "devlo hilft B2B-Teams, ihren adressierbaren Markt sauber zu kartieren, Accounts nach Kaufsignalen zu priorisieren und Gespräche mit konkretem Value Proof zu eröffnen.",
+      "devlo hilft B2B-Teams, ihren adressierbaren Markt sauber zu kartieren, Accounts nach Kaufsignalen zu priorisieren und Gespräche mit konkretem Wertnachweis zu eröffnen.",
     badges: ["Adressierbarer Markt", "Kaufsignale", "Qualifizierte Termine"],
-    primaryCta: "Akquise-Plan prüfen",
-    formTitle: "Erhalten Sie eine Einschätzung für Ihre B2B-Akquise",
+    primaryCta: "Akquise-Plan anfordern",
+    formTitle: "Einschätzung zu Ihrer B2B-Akquise anfordern",
     formIntro:
-      "Teilen Sie Angebot, Zielkunden und aktuelle Vertriebssituation. Wir prüfen Segment, Kaufsignale und Proof-Ansatz für den ersten Kampagnenbatch.",
+      "Teilen Sie Angebot, Zielkunden und aktuelle Vertriebssituation. Wir prüfen Segment, Kaufsignale und Wertnachweis-Ansatz für die erste Kampagnengruppe.",
     postForm: "Wir melden uns mit einer kurzen Einschätzung und den nächsten sinnvollen Schritten.",
     logosTitle: "Ausgewählte B2B-Nachweise aus bestehenden Kampagnen",
     logos: ALL_CLIENT_LOGOS,
@@ -566,7 +566,7 @@ const pages: PaidMarketPage[] = [
       ["Lokale Präzision", "Die Deutschschweiz braucht saubere Segmentierung, natürliche Sprache und klare Qualifikationskriterien."],
       ["Nachweis vor Volumen", "Die Kampagne muss zeigen, warum ein Account jetzt angesprochen wird und welche Relevanz devlo belegen kann."],
     ],
-    fitTitle: "Guter Fit",
+    fitTitle: "Wann es passt",
     fitIntro: "Die Methode passt, wenn Ihr Angebot erklärungsbedürftig ist und klare Entscheiderrollen in identifizierbaren B2B-Accounts existieren.",
     fitItems: ["B2B-SaaS und Software", "Cybersecurity und IT-Services", "Industrie und technische Services", "Beratung, Training und Professional Services"],
     methodTitle: "Die devlo-Methode",
@@ -580,23 +580,23 @@ const pages: PaidMarketPage[] = [
       },
       {
         title: "Kaufsignale priorisieren",
-        body: "Wir gewichten Accounts nach konkreten Signalen wie Wachstum, Führungswechsel, Tool-Wechsel, Recruiting oder regulatorischem Druck.",
-        artifact: "Ergebnis: der erste Batch mit Accounts, bei denen ein Gespräch plausibler ist.",
+        body: "Wir gewichten Accounts nach konkreten Signalen wie Wachstum, Führungswechsel, Tool-Wechsel, Personalaufbau oder regulatorischem Druck.",
+        artifact: "Ergebnis: die erste Auswahl von Accounts, bei denen ein Gespräch plausibler ist.",
       },
       {
-        title: "Mit Value Proof prospecten",
+        title: "Mit Wertnachweis ansprechen",
         body: "Die Ansprache verbindet Signal, Business-Hypothese und relevanten Nachweis, bevor E-Mail, LinkedIn oder Telefon eingesetzt werden.",
-        artifact: "Ergebnis: Gespräche mit Kontext statt generischer Terminakquise.",
+        artifact: "Ergebnis: Gespräche mit Kontext statt generischer Kaltakquise.",
       },
     ],
     caseStudiesTitle: "Ausgewählte Nachweise",
-    caseStudiesIntro: "Die Seite zeigt wenige relevante Belege, damit Vertrauen entsteht, ohne den Sales Deck zu kopieren.",
+    caseStudiesIntro: "Die Seite zeigt wenige relevante Belege, damit Vertrauen entsteht, ohne die Verkaufsunterlagen zu kopieren.",
     caseStudies: [
       {
         client: "Abacus",
         sector: "Immobilien / Software",
-        title: "Teleprospecting und Leadgenerierung für qualifizierte Gespräche mit Immobilienagenturen in der Romandie.",
-        metrics: ["+30 interessierte Prospects"],
+        title: "Telefonakquise und Leadgenerierung für qualifizierte Gespräche mit Immobilienagenturen in der Romandie.",
+        metrics: ["+30 interessierte Interessenten"],
         logo: LOGOS.abacus.src,
         href: "/de/fallstudien/immobilien-30-interessenten",
       },
@@ -646,7 +646,7 @@ const pages: PaidMarketPage[] = [
       ["Unbelegte Claims", "Referenzen müssen relevant bleiben und dürfen keine lokale Wirkung vortäuschen."],
     ],
     deliverablesTitle: "Was Sie erhalten",
-    deliverables: ["Karte des priorisierten Zielmarkts", "Kaufsignale für den ersten Batch", "Messaging-Hypothesen mit Value Proof", "Empfehlung für Paid Search und Outbound"],
+    deliverables: ["Karte des priorisierten Zielmarkts", "Kaufsignale für die erste Auswahl", "Messaging-Hypothesen mit Wertnachweis", "Empfehlung für Suchanzeigen und Direktansprache"],
     faqTitle: "Fragen",
     faqs: [
       {
@@ -656,11 +656,11 @@ const pages: PaidMarketPage[] = [
       },
       {
         question: "Schreibt devlo auf Schweizerdeutsch?",
-        answer: "Schriftliche B2B-Kampagnen laufen in natürlichem Schweizer Hochdeutsch. Die finale Fassung wird vor Paid Traffic nativ geprüft.",
+        answer: "Schriftliche B2B-Kampagnen laufen in natürlichem Schweizer Hochdeutsch, nicht in Mundart. Die finale Fassung wird vor bezahltem Traffic nativ geprüft.",
       },
       {
         question: "Wann sollte die Kampagne pausiert bleiben?",
-        answer: "Wenn ICP, Proof oder Entscheiderdaten noch unklar sind, sollte zuerst die Grundlage verbessert werden.",
+        answer: "Wenn ICP, Wertnachweis oder Entscheiderdaten noch unklar sind, sollte zuerst die Grundlage verbessert werden.",
       },
     ],
     relatedLinks: [
@@ -679,27 +679,27 @@ const pages: PaidMarketPage[] = [
     marketLabel: "Deutschland",
     title: "B2B-Leadgenerierung Deutschland | devlo",
     description:
-      "B2B-Leadgenerierung in Deutschland: Zielaccounts kartieren, Kaufsignale priorisieren und qualifizierte Termine mit Value Proof gewinnen.",
+      "B2B-Leadgenerierung in Deutschland: Zielaccounts kartieren, Kaufsignale priorisieren und qualifizierte Termine mit Wertnachweis gewinnen.",
     eyebrow: "B2B-Leadgenerierung in Deutschland",
     h1: "Mehr qualifizierte B2B-Gespräche in Deutschland gewinnen",
     intro:
       "devlo hilft B2B-Teams, den deutschen Zielmarkt in klare Account-Segmente zu übersetzen, Kaufsignale zu priorisieren und Entscheider mit belegbarer Relevanz anzusprechen.",
-    badges: ["Account-Mapping", "Kaufsignale", "Value Proof"],
+    badges: ["Account-Mapping", "Kaufsignale", "Wertnachweis"],
     primaryCta: "Akquise-Plan prüfen",
-    formTitle: "Erhalten Sie eine Einschätzung für Deutschland",
+    formTitle: "Einschätzung für Deutschland anfordern",
     formIntro:
-      "Teilen Sie Zielkunden, Angebot und Vertriebssituation. Wir prüfen, welcher Account-Batch, welche Signale und welcher Proof für den Start sinnvoll sind.",
-    postForm: "Wir melden uns mit einer Empfehlung für den ersten realistischen Kampagnenbatch.",
+      "Teilen Sie Zielkunden, Angebot und Vertriebssituation. Wir prüfen, welche Account-Gruppe, welche Signale und welcher Wertnachweis für den Start sinnvoll sind.",
+    postForm: "Wir melden uns mit einer Empfehlung für die erste realistische Kampagnengruppe.",
     logosTitle: "Ausgewählte Nachweise aus B2B-Outbound-Kampagnen",
     logos: ALL_CLIENT_LOGOS,
     proofTitle: "Warum Deutschland präzise bearbeitet werden muss",
     proofRows: [
-      ["Grosser Markt", "Deutschland ist gross genug, um Budget zu verlieren, wenn Segment, Region und Buyer-Rolle nicht getrennt werden."],
+      ["Großer Markt", "Deutschland ist groß genug, um Budget zu verlieren, wenn Segment, Region und Entscheiderrolle nicht getrennt werden."],
       ["B2B-Logik", "Die Seite muss erklären, wie Kundengewinnung über Accounts, Timing-Signale und Nachweise verbessert wird."],
       ["Relevanz", "Entscheider reagieren eher, wenn Signal, Problem und Nachweis sauber zusammenpassen."],
     ],
-    fitTitle: "Guter Fit",
-    fitIntro: "Deutschland passt, wenn der Zielmarkt gross genug ist und die Buyer-Rolle klar identifiziert werden kann.",
+    fitTitle: "Gute Passung",
+    fitIntro: "Deutschland passt, wenn der Zielmarkt groß genug ist und die Entscheiderrolle klar identifiziert werden kann.",
     fitItems: ["B2B-SaaS", "Cybersecurity und IT", "Industrie und technische Lösungen", "Beratung und Professional Services"],
     methodTitle: "Die devlo-Methode",
     methodIntro:
@@ -713,15 +713,15 @@ const pages: PaidMarketPage[] = [
       {
         title: "Kaufsignale priorisieren",
         body: "Wir bewerten Accounts nach Signalen wie Wachstum, Führungswechsel, neuen Projekten, Tool-Wechseln oder Budgetdruck.",
-        artifact: "Ergebnis: ein erster Batch mit besserem Timing und klarer Begründung.",
+        artifact: "Ergebnis: eine erste Welle mit besserem Timing und klarer Begründung.",
       },
       {
-        title: "Mit Value Proof prospecten",
+        title: "Mit Wertnachweis ansprechen",
         body: "Die Sequenz verbindet das beobachtete Signal mit einer konkreten Hypothese und einem passenden Referenznachweis.",
         artifact: "Ergebnis: qualifizierte Gespräche statt generischer Reichweite.",
       },
     ],
-    caseStudiesTitle: "Ausgewählte Nachweise",
+    caseStudiesTitle: "Ausgewählte Referenzen",
     caseStudiesIntro: "Für Deutschland zeigen wir DACH-relevante und komplexe B2B-Kampagnen, ohne lokale Wirkung zu übertreiben.",
     caseStudies: [
       {
@@ -743,7 +743,7 @@ const pages: PaidMarketPage[] = [
       {
         client: "IDDI",
         sector: "Biotech / Pharma",
-        title: "Leadgenerierung für einen technischen B2B-Service mit spezialisierten Buying Committees.",
+        title: "Leadgenerierung für einen technischen B2B-Service mit spezialisierten Entscheidergremien.",
         metrics: ["52,7% Öffnungsrate", "12,9% Antwortquote", "Erste Termine nach 3 Wochen"],
         logo: LOGOS.iddi.src,
         href: "/de/fallstudien/iddi-leadgenerierung-biotech-pharma",
@@ -771,14 +771,14 @@ const pages: PaidMarketPage[] = [
       },
     ],
     riskTitle: "Was wir vermeiden",
-    riskIntro: "Deutschland lohnt sich nur, wenn Zielgruppe, Begründung und Proof sauber eingegrenzt sind.",
+    riskIntro: "Deutschland lohnt sich nur, wenn Zielgruppe, Begründung und Wertnachweis sauber eingegrenzt sind.",
     riskRows: [
       ["DACH-Vermischung", "Eine einzige Botschaft für Deutschland, Schweiz und Österreich ist meist zu ungenau."],
       ["Zu viel Volumen", "Mehr Reichweite hilft nicht, wenn Buyer-Rolle und Nutzenversprechen unklar sind."],
       ["Unbelegte Claims", "Ergebnisse und Referenzen dürfen nur genutzt werden, wenn sie belegbar und passend sind."],
     ],
     deliverablesTitle: "Was Sie erhalten",
-    deliverables: ["Priorisierte Zielmarkt-Karte", "Kaufsignal-Shortlist", "Value-Proof-Messaging für den ersten Batch", "Go/no-go für Paid Search und Outbound"],
+    deliverables: ["Priorisierte Account-Karte", "Kaufsignal-Shortlist", "Messaging mit Wertnachweis für die erste Welle", "Go/no-go für Paid Search und Outbound"],
     faqTitle: "Fragen",
     faqs: [
       {
@@ -791,7 +791,7 @@ const pages: PaidMarketPage[] = [
       },
       {
         question: "Wann ist Deutschland kein guter Start?",
-        answer: "Wenn das Angebot noch nicht klar positioniert ist oder die Zielgruppe zu breit definiert wurde.",
+        answer: "Wenn das Angebot noch nicht klar positioniert ist oder die Zielgruppe zu breit definiert ist.",
       },
     ],
     relatedLinks: [
@@ -810,14 +810,14 @@ const pages: PaidMarketPage[] = [
     marketLabel: "Nederland",
     title: "B2B prospectie Nederland | devlo",
     description:
-      "B2B-prospectie in Nederland: adresseerbare markt in kaart brengen, koopsignalen prioriteren en gekwalificeerde afspraken winnen.",
+      "B2B-prospectie in Nederland: adresseerbare markt in kaart brengen, koopsignalen prioriteren en gekwalificeerde afspraken plannen.",
     eyebrow: "B2B-prospectie in Nederland",
     h1: "Meer gekwalificeerde B2B-afspraken in Nederland",
     intro:
-      "devlo helpt B2B-teams hun adresseerbare markt te vertalen naar prioritaire accounts, koopsignalen te herkennen en gesprekken te openen met concrete value proof.",
-    badges: ["TAM-mapping", "Koopsignalen", "Gekwalificeerde afspraken"],
+      "devlo helpt B2B-teams hun adresseerbare markt te vertalen naar prioritaire accounts, koopsignalen te herkennen en gesprekken te openen met onderbouwd bewijs.",
+    badges: ["Marktafbakening", "Koopsignalen", "Gekwalificeerde afspraken"],
     primaryCta: "Bekijk mijn acquisitieplan",
-    formTitle: "Ontvang een concrete inschatting voor uw B2B-acquisitie",
+    formTitle: "Ontvang een concrete inschatting van uw B2B-acquisitiepotentieel",
     formIntro:
       "Deel uw aanbod, doelgroep en huidige salesaanpak. We bekijken welk segment, welke signalen en welk bewijs geschikt zijn voor de eerste campagne.",
     postForm: "We komen terug met een korte beoordeling en de meest logische volgende stap.",
@@ -839,21 +839,21 @@ const pages: PaidMarketPage[] = [
       {
         title: "Breng de adresseerbare markt in kaart",
         body: "We structureren bedrijven, sectoren, regio's en beslissersrollen die realistisch bij uw aanbod passen.",
-        artifact: "Output: een prioritaire accountkaart in plaats van een ruwe leadlijst.",
+        artifact: "Resultaat: een prioritaire accountkaart in plaats van een ruwe leadlijst.",
       },
       {
         title: "Prioriteer koopsignalen",
-        body: "We rangschikken accounts op signalen zoals groei, nieuwe leiding, hiring, toolwissels of operationele druk.",
-        artifact: "Output: de eerste batch accounts waar timing en relevantie sterker zijn.",
+        body: "We rangschikken accounts op signalen zoals groei, nieuwe leiding, aanwervingen, softwarewissels of operationele druk.",
+        artifact: "Resultaat: de eerste groep accounts waar timing en relevantie sterker zijn.",
       },
       {
-        title: "Prospecteer met value proof",
-        body: "Elke benadering verbindt het signaal met een businesshypothese en relevant bewijs uit cases of resultaten.",
-        artifact: "Output: gesprekken met context, geen generieke outreach.",
+        title: "Prospecteer met onderbouwd bewijs",
+        body: "Elke benadering verbindt het signaal met een commerciële hypothese en relevant bewijs uit cases of resultaten.",
+        artifact: "Resultaat: gesprekken met context, geen algemene benadering.",
       },
     ],
     caseStudiesTitle: "Geselecteerde cases",
-    caseStudiesIntro: "Voor Nederland tonen we vooral Benelux- en EU-bewijs, zonder te doen alsof elke case Nederlands is.",
+    caseStudiesIntro: "Voor de Nederlandse markt tonen we relevante cases uit de Benelux en Europa.",
     caseStudies: [
       {
         client: "Monizze",
@@ -866,7 +866,7 @@ const pages: PaidMarketPage[] = [
       {
         client: "Horus",
         sector: "Boekhoudsoftware",
-        title: "Een multichannel outbound-aanpak die commerciële pipeline creëerde in België.",
+        title: "Een multichannel-acquisitieaanpak die commerciële pipeline creëerde in België.",
         metrics: ["€200k aan getekende contracten"],
         logo: LOGOS.horus.src,
         href: "/nl/casestudy/boekhouding-200k-omzet",
@@ -874,8 +874,8 @@ const pages: PaidMarketPage[] = [
       {
         client: "CareerLunch",
         sector: "HR-tech",
-        title: "54 afspraken in DACH met hypergepersonaliseerde campagnes voor een complexe doelgroep.",
-        metrics: ["54 afspraken", "71% open rate", "19% reply rate"],
+        title: "54 afspraken in DACH met sterk gepersonaliseerde campagnes voor een complexe doelgroep.",
+        metrics: ["54 afspraken", "71% openratio", "19% antwoordratio"],
         logo: LOGOS.careerlunch.src,
         href: "/nl/casestudy/hr-54-afspraken-dach",
       },
@@ -883,7 +883,7 @@ const pages: PaidMarketPage[] = [
     testimonialsTitle: "Wat klanten benoemen",
     testimonials: [
       {
-        quote: "devlo hielp ons hypergepersonaliseerde salescampagnes op te zetten en gekwalificeerde afspraken te genereren.",
+        quote: "devlo hielp ons sterk gepersonaliseerde salescampagnes op te zetten en gekwalificeerde afspraken te genereren.",
         author: "Raphael",
         role: "Head of Business Development & Marketing",
         company: "CareerLunch",
@@ -902,14 +902,14 @@ const pages: PaidMarketPage[] = [
       },
     ],
     riskTitle: "Wat we vermijden",
-    riskIntro: "Nederlandse kopers reageren slecht op algemene of overdreven boodschappen.",
+    riskIntro: "Nederlandse kopers reageren terughoudend op algemene of overdreven boodschappen.",
     riskRows: [
       ["Te Amerikaanse toon", "Superlatieven en vage beloftes verlagen vertrouwen."],
       ["Vage doelgroep", "Een Nederland-campagne zonder ICP, beslisserrol en kwalificatieregel levert weinig bruikbare signalen op."],
       ["Geen lokale toets", "De Nederlandse toon moet concreet en natuurlijk blijven voordat er budget op komt."],
     ],
     deliverablesTitle: "Wat u ontvangt",
-    deliverables: ["Prioritaire accountkaart", "Koopsignalen voor de eerste batch", "Value-proof messaging", "Go/no-go voor paid search en outbound"],
+    deliverables: ["Prioritaire accountkaart", "Koopsignalen voor de eerste groep accounts", "Boodschap met onderbouwd bewijs", "Go/no-go voor betaalde zoekadvertenties en uitgaande acquisitie"],
     faqTitle: "Vragen",
     faqs: [
       {
@@ -918,7 +918,7 @@ const pages: PaidMarketPage[] = [
       },
       {
         question: "Werkt devlo in het Nederlands?",
-        answer: "devlo kan Nederlandstalige campagnes voorbereiden, maar de finale copy moet native worden gecontroleerd voor paid traffic.",
+        answer: "devlo bereidt Nederlandstalige campagnes voor; native eindredactie is standaard onderdeel voordat er budget naar betaalde campagnes gaat.",
       },
       {
         question: "Wanneer moeten we Nederland niet starten?",
@@ -926,8 +926,8 @@ const pages: PaidMarketPage[] = [
       },
     ],
     relatedLinks: [
-      { label: "Case studies", href: "/nl/case-studies" },
-      { label: "Consultatie", href: "/nl/adviesgesprek" },
+      { label: "Praktijkcases", href: "/nl/case-studies" },
+      { label: "Adviesgesprek", href: "/nl/adviesgesprek" },
     ],
   },
 ];
