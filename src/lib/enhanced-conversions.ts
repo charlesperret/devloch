@@ -16,7 +16,7 @@ type LeadConversionParams = {
 };
 
 const PAID_LEAD_VALUE = 1;
-const PAID_LEAD_CURRENCY = "CHF";
+const PAID_LEAD_CURRENCY = "USD";
 
 function firstField(fields: LeadFields | null | undefined, names: string[]) {
   if (!fields) return "";
