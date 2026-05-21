@@ -46,6 +46,8 @@ export type PaidMarketPage = {
   formTitle: string;
   formIntro: string;
   postForm: string;
+  appointmentLogosTitle?: string;
+  appointmentLogos?: LogoProof[];
   logosTitle: string;
   logos: LogoProof[];
   proofTitle: string;
@@ -115,7 +117,7 @@ const LOGOS = {
   implenia: { src: "/images/Logo_Implenia.webp", alt: "Implenia logo" },
 } as const;
 
-const ALL_CLIENT_LOGOS: LogoProof[] = [
+const CLIENT_LOGOS: LogoProof[] = [
   LOGOS.monizze,
   LOGOS.horus,
   LOGOS.careerlunch,
@@ -128,6 +130,9 @@ const ALL_CLIENT_LOGOS: LogoProof[] = [
   LOGOS.hiag,
   LOGOS.lemanvisio,
   LOGOS.manyWays,
+];
+
+const APPOINTMENT_LOGOS: LogoProof[] = [
   LOGOS.lafargeHolcim,
   LOGOS.abb,
   LOGOS.hublot,
@@ -165,7 +170,7 @@ const pages: PaidMarketPage[] = [
       "Share your offer, target buyers and current sales motion. We will review the first account segment, signal logic and proof angle before any budget is scaled.",
     postForm: "After the form, we come back with the first segment and the risks to fix before launch.",
     logosTitle: "Selected teams and case studies behind the method",
-    logos: ALL_CLIENT_LOGOS,
+    logos: CLIENT_LOGOS,
     proofTitle: "Why this matters for paid search",
     proofRows: [
       ["Pipeline, not geography", "Most buyers are not looking to 'open Australia'. They want more qualified opportunities from the accounts that matter."],
@@ -298,7 +303,7 @@ const pages: PaidMarketPage[] = [
       "Share your offer, buyer roles and current acquisition challenge. We will identify the first segment, the likely signals and the proof angle to use.",
     postForm: "We reply with the first segment, risks and recommended next step before budget is scaled.",
     logosTitle: "Selected proof from B2B outbound campaigns",
-    logos: ALL_CLIENT_LOGOS,
+    logos: CLIENT_LOGOS,
     proofTitle: "Why the UK page must be specific",
     proofRows: [
       ["Competitive demand", "UK clicks are expensive when the page sounds like a generic lead-generation agency."],
@@ -419,39 +424,41 @@ const pages: PaidMarketPage[] = [
     description:
       "Prospection commerciale B2B pour générer des rendez-vous qualifiés en France, en Europe ou sur vos marchés prioritaires grâce au TAM, aux signaux d'achat et à la preuve.",
     eyebrow: "Acquisition B2B — France et international",
-    h1: "Générez plus de rendez-vous B2B qualifiés en France et à l'étranger",
+    h1: "Générez plus de rendez-vous B2B qualifiés en France ou à l'étranger",
     intro:
-      "devlo aide les équipes B2B à identifier les bons comptes, à prioriser les entreprises qui montrent des signaux d'achat et à ouvrir des conversations avec une raison business crédible.",
+      "devlo aide les équipes B2B à identifier les entreprises les plus qualifiées, à prioriser le démarchage multicanal grâce aux signaux d'achat et à ouvrir des conversations avec une raison business crédible.",
     badges: ["TAM exploitable", "Signaux d'achat", "Rendez-vous qualifiés"],
     primaryCta: "Obtenir un diagnostic d'acquisition",
     formTitle: "Recevez une analyse concrète de votre acquisition B2B",
     formIntro:
       "Décrivez votre offre, vos décideurs cibles et votre situation commerciale. Nous identifions les segments à prioriser, les signaux d'achat à surveiller et les preuves à utiliser dans la première approche.",
     postForm: "Nous revenons avec les segments à prioriser, les signaux utiles et les risques à corriger avant lancement.",
-    logosTitle: "Ces entreprises nous font confiance",
-    logos: ALL_CLIENT_LOGOS,
+    appointmentLogosTitle: "Rendez-vous commerciaux obtenus avec",
+    appointmentLogos: APPOINTMENT_LOGOS,
+    logosTitle: "Nos clients",
+    logos: CLIENT_LOGOS,
     proofTitle: "Méthode avant exécution",
     proofRows: [
-      ["TAM exploitable", "Nous transformons votre marché cible en liste de comptes priorisables, avec secteurs, tailles, zones et exclusions claires."],
+      ["TAM exploitable", "Nous transformons votre marché cible en liste d'entreprises priorisables, avec secteurs, tailles, zones et exclusions claires."],
       ["Signaux d'achat", "Nous cherchons les changements qui rendent une approche pertinente maintenant : croissance, recrutement, nouvelle direction, outil remplacé, pression métier."],
       ["Approche prouvée", "Chaque message relie le signal à une hypothèse business et à une preuve concrète : résultat client, cas comparable ou angle sectoriel."],
     ],
     fitTitle: "Industries et offres où la méthode devlo s'applique",
-    fitIntro: "Nous intervenons lorsque la croissance ne dépend pas d'un simple formulaire entrant, mais d'une sélection rigoureuse des comptes, des décideurs et du bon moment de contact.",
+    fitIntro: "Nous intervenons lorsque la croissance ne dépend pas d'un simple formulaire entrant, mais d'une sélection rigoureuse des entreprises, des décideurs et du bon moment de contact.",
     fitItems: ["SaaS et logiciels B2B", "Cybersécurité et services IT", "Industrie et services techniques", "Conseil, formation et services professionnels"],
-    methodTitle: "La méthode devlo",
+    methodTitle: "Système de priorisation outbound",
     methodIntro:
-      "Nous ne partons pas d'un volume de leads à contacter. Nous construisons d'abord le TAM, nous identifions les décideurs, puis nous sélectionnons les comptes où le signal rend l'approche défendable.",
+      "Nous ne partons pas d'un volume de leads à contacter. Nous construisons d'abord le TAM, nous identifions les décideurs, puis nous sélectionnons les entreprises où le signal rend l'approche défendable.",
     methodSteps: [
       {
         title: "Cartographier le TAM et exclure le hors-cible",
         body: "Nous identifions les entreprises qui correspondent réellement à votre offre, en France, en Europe ou sur les zones prioritaires définies ensemble.",
-        artifact: "Livrable : une base de comptes cibles structurée avec segments, zones, exclusions et règles de qualification.",
+        artifact: "Livrable : une base d'entreprises cibles structurée avec segments, zones, exclusions et règles de qualification.",
       },
       {
-        title: "Prioriser les comptes sur signaux d'achat actifs",
+        title: "Prioriser les entreprises sur signaux d'achat actifs",
         body: "Nous sélectionnons les entreprises à contacter en premier grâce aux signaux d'achat : croissance, recrutement, changement d'outil, nouvelle direction, pression réglementaire ou besoin métier visible.",
-        artifact: "Livrable : une matrice de priorité qui explique pourquoi tel compte mérite d'être approché maintenant.",
+        artifact: "Livrable : une matrice de priorité qui explique pourquoi telle entreprise mérite d'être approchée maintenant.",
       },
       {
         title: "Prospecter avec raison business et preuve",
@@ -460,7 +467,7 @@ const pages: PaidMarketPage[] = [
       },
     ],
     caseStudiesTitle: "Résultats clients",
-    caseStudiesIntro: "Quelques campagnes où la sélection des comptes, le timing et la preuve ont compté davantage que le volume brut.",
+    caseStudiesIntro: "Quelques campagnes où la sélection des entreprises, le timing et la preuve ont compté davantage que le volume brut.",
     caseStudies: [
       {
         client: "APIDAE",
@@ -507,16 +514,16 @@ const pages: PaidMarketPage[] = [
       },
     ],
     riskTitle: "Ce que nous filtrons avant d'augmenter le volume",
-    riskIntro: "Une campagne performante ne commence pas par plus d'envois. Elle commence par moins de comptes hors ICP, moins de signaux faibles et moins de décideurs mal ciblés.",
+    riskIntro: "Une campagne performante ne commence pas par plus d'envois. Elle commence par moins d'entreprises hors ICP, moins de signaux faibles et moins de décideurs mal ciblés.",
     riskRows: [
-      ["Comptes hors ICP", "Nous écartons les entreprises qui ressemblent à votre marché mais n'ont pas le bon cas d'usage, la bonne taille ou le bon contexte d'achat."],
-      ["Timing faible", "Nous évitons d'approcher un compte simplement parce qu'il existe dans une base. Il faut un signal ou une hypothèse commerciale défendable."],
+      ["Entreprises hors ICP", "Nous écartons les entreprises qui ressemblent à votre marché mais n'ont pas le bon cas d'usage, la bonne taille ou le bon contexte d'achat."],
+      ["Timing faible", "Nous évitons d'approcher une entreprise simplement parce qu'elle existe dans une base. Il faut un signal ou une hypothèse commerciale défendable."],
       ["Message sans preuve", "Un message sans résultat, cas client ou preuve sectorielle ressemble à toutes les autres agences de prospection."],
     ],
     deliverablesTitle: "Ce que vous recevez",
     deliverables: [
       "Stratégie : portail de pilotage, ICP, zones prioritaires et exclusions",
-      "Données : liste TAM structurée, comptes cibles et décideurs à contacter",
+      "Données : liste TAM structurée, entreprises cibles et décideurs à contacter",
       "Priorisation : matrice de signaux d'achat et premier batch à approcher",
       "Exécution : angles de messages, email, LinkedIn et téléphone selon le plan validé",
       "Pilotage : gestion des réponses, qualification, reporting hebdomadaire et recommandations de scaling",
@@ -565,7 +572,7 @@ const pages: PaidMarketPage[] = [
       "Teilen Sie Angebot, Zielkunden und aktuelle Vertriebssituation. Wir prüfen Segment, Kaufsignale und Wertnachweis-Ansatz für die erste Kampagnengruppe.",
     postForm: "Wir melden uns mit einer kurzen Einschätzung und den nächsten sinnvollen Schritten.",
     logosTitle: "Ausgewählte B2B-Nachweise aus bestehenden Kampagnen",
-    logos: ALL_CLIENT_LOGOS,
+    logos: CLIENT_LOGOS,
     proofTitle: "Warum diese Seite anders sein muss",
     proofRows: [
       ["B2B-Akquise", "Viele Schweizer Käufer wollen ihre bestehende Kundengewinnung strukturierter und messbarer verbessern."],
@@ -697,7 +704,7 @@ const pages: PaidMarketPage[] = [
       "Teilen Sie Zielkunden, Angebot und Vertriebssituation. Wir prüfen, welche Account-Gruppe, welche Signale und welcher Wertnachweis für den Start sinnvoll sind.",
     postForm: "Wir melden uns mit einer Empfehlung für die erste realistische Kampagnengruppe.",
     logosTitle: "Ausgewählte Nachweise aus B2B-Outbound-Kampagnen",
-    logos: ALL_CLIENT_LOGOS,
+    logos: CLIENT_LOGOS,
     proofTitle: "Warum Deutschland präzise bearbeitet werden muss",
     proofRows: [
       ["Großer Markt", "Deutschland ist groß genug, um Budget zu verlieren, wenn Segment, Region und Entscheiderrolle nicht getrennt werden."],
@@ -828,7 +835,7 @@ const pages: PaidMarketPage[] = [
       "Vertel ons over je aanbod, doelgroep en huidige salesaanpak. Wij bekijken welk marktsegment, welke koopsignalen en welk type bewijs het meest kansrijk zijn voor je eerste campagne.",
     postForm: "We komen terug met een korte beoordeling en de meest logische volgende stap.",
     logosTitle: "Afspraken geboekt bij onder andere:",
-    logos: ALL_CLIENT_LOGOS,
+    logos: CLIENT_LOGOS,
     proofTitle: "Voor wie dit werkt",
     proofRows: [
       ["Acquisitie met concrete afspraken", "Concrete afspraken in je agenda, niet alleen funnels of brand awareness."],

@@ -31,6 +31,13 @@ const heroProofTitle = {
   nl: "Wat klanten benadrukken",
 } as const;
 
+const methodStepLabel = {
+  fr: "Étape",
+  en: "Step",
+  de: "Schritt",
+  nl: "Stap",
+} as const;
+
 const heroTestimonials = {
   fr: [
     {
@@ -255,10 +262,20 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
 
       <section className="border-b border-neutral-200 bg-white py-7">
         <div className="mx-auto w-full max-w-[1600px] px-6 lg:px-10">
-          <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.1em] text-neutral-500">
-            {page.logosTitle}
-          </p>
-          <InfiniteLogoRail logos={page.logos} duration="normal" pauseOnHover />
+          {page.appointmentLogos?.length ? (
+            <div>
+              <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.1em] text-neutral-500">
+                {page.appointmentLogosTitle}
+              </p>
+              <InfiniteLogoRail logos={page.appointmentLogos} duration="marathon" pauseOnHover />
+            </div>
+          ) : null}
+          <div className={page.appointmentLogos?.length ? "mt-6" : ""}>
+            <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.1em] text-neutral-500">
+              {page.logosTitle}
+            </p>
+            <InfiniteLogoRail logos={page.logos} duration="marathon" pauseOnHover />
+          </div>
         </div>
       </section>
 
@@ -326,7 +343,10 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
               return (
                 <div key={step.title} className="rounded-lg border border-neutral-200 bg-white p-6">
                   <Icon className="h-6 w-6 text-[#0b6c8f]" aria-hidden="true" />
-                  <h3 className="mt-5 text-lg font-extrabold text-[#153a54]">{step.title}</h3>
+                  <p className="mt-4 text-xs font-extrabold uppercase tracking-[0.1em] text-[#0b6c8f]">
+                    {methodStepLabel[page.locale]} {index + 1}
+                  </p>
+                  <h3 className="mt-2 text-lg font-extrabold text-[#153a54]">{step.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-neutral-600">{step.body}</p>
                   <p className="mt-4 rounded-md border border-[#0b6c8f]/15 bg-[#e8f4f7] px-3 py-3 text-xs font-semibold leading-5 text-[#153a54]">
                     {step.artifact}
