@@ -75,7 +75,7 @@ export const legalPages: Record<SupportedLocale, LegalBundle> = {
           heading: "1. Qui sommes-nous ?",
           paragraphs: [
             "devlo est une agence de prospection commerciale B2B qui aide des entreprises à définir leurs marchés cibles, construire des listes de comptes, lancer des campagnes outbound et suivre les rendez-vous qualifiés générés.",
-            "Cette politique couvre le site devlo.ch, le miroir paid devlosales.com, les formulaires de contact, les formulaires de consultation, les workflows internes d'acquisition payante et les services B2B fournis à nos clients.",
+            "Cette politique couvre le site devlo.ch, les miroirs paid devlosales.com et devlo.fr, les formulaires de contact, les formulaires de consultation, les workflows internes d'acquisition payante et les services B2B fournis à nos clients.",
           ],
         },
         {
@@ -164,7 +164,7 @@ export const legalPages: Record<SupportedLocale, LegalBundle> = {
         {
           heading: "1. Acceptation des conditions",
           paragraphs: [
-            "En accédant au site devlo.ch, devlosales.com ou à nos services, vous acceptez ces conditions, notre Politique de confidentialité et les lois applicables. Si vous n'acceptez pas ces conditions, vous ne devez pas utiliser le site ou les services.",
+            "En accédant au site devlo.ch, devlosales.com, devlo.fr ou à nos services, vous acceptez ces conditions, notre Politique de confidentialité et les lois applicables. Si vous n'acceptez pas ces conditions, vous ne devez pas utiliser le site ou les services.",
             "Sauf si un contrat client désigne une autre entité, les services sont exploités par devlo et devlo LLC aux adresses indiquées sur cette page.",
           ],
         },
@@ -252,7 +252,7 @@ export const legalPages: Record<SupportedLocale, LegalBundle> = {
           heading: "1. Who we are",
           paragraphs: [
             "devlo is a B2B sales prospecting agency that helps companies define target markets, build account lists, run outbound campaigns, and track qualified meetings.",
-            "This policy covers devlo.ch, the paid mirror devlosales.com, contact forms, consultation forms, internal paid acquisition workflows, and B2B services provided to clients.",
+            "This policy covers devlo.ch, the paid mirrors devlosales.com and devlo.fr, contact forms, consultation forms, internal paid acquisition workflows, and B2B services provided to clients.",
           ],
         },
         {
@@ -342,7 +342,7 @@ export const legalPages: Record<SupportedLocale, LegalBundle> = {
         {
           heading: "1. Acceptance of terms",
           paragraphs: [
-            "By accessing devlo.ch, devlosales.com, or our services, you agree to these Terms, our Privacy Policy, and applicable laws. If you do not agree, you must not use the site or services.",
+            "By accessing devlo.ch, devlosales.com, devlo.fr, or our services, you agree to these Terms, our Privacy Policy, and applicable laws. If you do not agree, you must not use the site or services.",
             "Unless a client agreement identifies a different contracting entity, the services are operated by devlo and devlo LLC at the addresses listed on this page.",
           ],
         },
@@ -430,7 +430,7 @@ export const legalPages: Record<SupportedLocale, LegalBundle> = {
           heading: "1. Wer wir sind",
           paragraphs: [
             "devlo ist eine B2B-Agentur für Vertriebsakquise. Wir helfen Unternehmen, Zielmärkte zu definieren, Account-Listen aufzubauen, Outbound-Kampagnen durchzuführen und qualifizierte Termine zu verfolgen.",
-            "Diese Erklärung gilt für devlo.ch, den Paid-Mirror devlosales.com, Kontaktformulare, Beratungsformulare, interne Paid-Acquisition-Workflows und B2B-Services für Kunden.",
+            "Diese Erklärung gilt für devlo.ch, den Paid-Mirror devlosales.com, devlo.fr, Kontaktformulare, Beratungsformulare, interne Paid-Acquisition-Workflows und B2B-Services für Kunden.",
           ],
         },
         {
@@ -514,7 +514,7 @@ export const legalPages: Record<SupportedLocale, LegalBundle> = {
       contact: { title: "Rechtskontakt", email: "legal@devlo.ch", phone: "+41 79 758 64 03" },
       addresses: addressesByLocale.de,
       sections: [
-        { heading: "1. Annahme der Bedingungen", paragraphs: ["Mit dem Zugriff auf devlo.ch, devlosales.com oder unsere Services stimmen Sie diesen Bedingungen, unserer Datenschutzerklärung und den geltenden Gesetzen zu. Wenn Sie nicht zustimmen, dürfen Sie Website und Services nicht nutzen.", "Sofern ein Kundenvertrag keine andere Vertragspartei nennt, werden die Services von devlo und devlo LLC an den auf dieser Seite aufgeführten Adressen betrieben."] },
+        { heading: "1. Annahme der Bedingungen", paragraphs: ["Mit dem Zugriff auf devlo.ch, devlosales.com, devlo.fr oder unsere Services stimmen Sie diesen Bedingungen, unserer Datenschutzerklärung und den geltenden Gesetzen zu. Wenn Sie nicht zustimmen, dürfen Sie Website und Services nicht nutzen.", "Sofern ein Kundenvertrag keine andere Vertragspartei nennt, werden die Services von devlo und devlo LLC an den auf dieser Seite aufgeführten Adressen betrieben."] },
         { heading: "2. devlo-Services", paragraphs: ["devlo erbringt B2B-Vertriebsakquise, Leadgenerierung, Qualifizierung, Terminbuchung, Reporting, AI Sales Ops und Beratung zur kommerziellen Akquise.", "Spezifische Leistungen, Budgets, Kanäle und Verantwortlichkeiten werden in Verträgen, Angeboten, Bestellformularen oder schriftlichen Vereinbarungen mit jedem Kunden definiert."] },
         { heading: "3. Verantwortlichkeiten von Nutzern und Kunden", bullets: ["Genaue, aktuelle und autorisierte Informationen bereitstellen.", "Eine ausreichende Rechtsgrundlage oder Erlaubnis für an devlo übermittelte Daten haben.", "Keine sensiblen, rechtswidrigen oder unnötigen Daten ohne vorherige schriftliche Vereinbarung übermitteln.", "Zielmärkte, Botschaften, Angebote, Ausschlüsse, CRM-Regeln und Kampagneninhalte prüfen, wenn dies verlangt wird.", "Die Bedingungen von Google, HubSpot, LinkedIn, Lemlist, Clay und anderen genutzten Plattformen einhalten.", "Zugangsdaten und Drittanbieter-Konten schützen und Sicherheitsvorfälle unverzüglich melden."] },
         { heading: "4. Datennutzung", paragraphs: ["An devlo übermittelte Daten können genutzt werden, um Services zu erbringen, Kampagnen durchzuführen, Termine vorzubereiten, Leistung zu messen, Berichte zu erstellen, Support zu leisten, Rechnungen zu stellen, Systeme zu sichern und rechtliche Pflichten zu erfüllen.", "Erhebung, Weitergabe, Aufbewahrung und Nutzerrechte werden in unserer Datenschutzerklärung beschrieben."] },
@@ -540,7 +540,7 @@ export const legalPages: Record<SupportedLocale, LegalBundle> = {
       contact: { title: "Privacycontact", email: "privacy@devlo.ch", phone: "+41 79 758 64 03" },
       addresses: addressesByLocale.nl,
       sections: [
-        { heading: "1. Wie wij zijn", paragraphs: ["devlo is een B2B sales prospecting bureau dat bedrijven helpt doelmarkten te definiëren, accountlijsten te bouwen, outbound campagnes uit te voeren en gekwalificeerde afspraken op te volgen.", "Dit beleid geldt voor devlo.ch, de betaalde mirror devlosales.com, contactformulieren, consultatieformulieren, interne paid acquisition workflows en B2B-diensten voor klanten."] },
+        { heading: "1. Wie wij zijn", paragraphs: ["devlo is een B2B sales prospecting bureau dat bedrijven helpt doelmarkten te definiëren, accountlijsten te bouwen, outbound campagnes uit te voeren en gekwalificeerde afspraken op te volgen.", "Dit beleid geldt voor devlo.ch, de betaalde mirror devlosales.com, devlo.fr, contactformulieren, consultatieformulieren, interne paid acquisition workflows en B2B-diensten voor klanten."] },
         { heading: "2. Gegevens die we verzamelen", bullets: ["Formuliergegevens: voornaam, achternaam, e-mail, telefoon, bedrijf, functie, land, bedrijfsgrootte, bericht en kwalificatie-informatie.", "Technische gegevens: IP-adres, user agent, apparaat, browser, bezochte pagina's, tijdstempels, verwijzende URL en toestemmingsvoorkeuren.", "Advertentie-attributiegegevens: UTMs, gclid, gbraid, wbraid, landingspagina, huidige URL, paid host, referrer, sessie-ID en eerste tijdstempel.", "Klantgegevens: ICP-criteria, targetinginstructies, doelaccounts, zakelijke B2B-contacten, campagneberichten, resultaten, antwoorden, afspraken en CRM-gegevens die nodig zijn voor de dienst.", "Google Ads API-gegevens voor onze eigen accounts: campagnes, advertentiegroepen, zoekwoorden, advertenties, budgetten, conversies, rapporten en klik-ID's die nodig zijn voor meting."] },
         { heading: "3. Waarom we gegevens gebruiken", bullets: ["Om inkomende aanvragen te beantwoorden en consultaties voor te bereiden.", "Om B2B prospectie, kwalificatie, rapportage en AI Sales Ops te leveren.", "Om marketingprestaties te meten via Google Ads, Google Analytics en HubSpot.", "Om de eigen Google Ads-campagnes van devlo te maken, valideren, auditen en meten via een gecontroleerde interne workflow.", "Om offline conversies in Google Ads te importeren wanneer klik-ID's zoals gclid, gbraid of wbraid beschikbaar zijn.", "Om de site te beveiligen, misbruik te voorkomen, systemen te onderhouden en wettelijke verplichtingen na te leven."] },
         { heading: "4. Delen met derden", paragraphs: ["Wij verkopen geen persoonsgegevens. We delen gegevens alleen met leveranciers die nodig zijn voor websitebeheer, klantendiensten, meting of compliance."], bullets: ["Google Ads, Google Analytics en Google Tag Manager voor advertentiemeting, toestemming en attributie.", "HubSpot voor formulieren, CRM, kwalificatiestatussen en commerciële opvolging.", "TidyCal voor het boeken van afspraken.", "Vercel voor websitehosting.", "Google Workspace, Slack en interne operationele tools voor samenwerking en support.", "Lemlist, Clay, LinkedIn Sales Navigator of vergelijkbare providers wanneer nodig voor een gecontracteerde klantcampagne.", "Professionele adviseurs, autoriteiten of rechtbanken wanneer wettelijk vereist."] },
@@ -563,7 +563,7 @@ export const legalPages: Record<SupportedLocale, LegalBundle> = {
       contact: { title: "Juridisch contact", email: "legal@devlo.ch", phone: "+41 79 758 64 03" },
       addresses: addressesByLocale.nl,
       sections: [
-        { heading: "1. Aanvaarding van voorwaarden", paragraphs: ["Door devlo.ch, devlosales.com of onze diensten te gebruiken, stemt u in met deze voorwaarden, ons privacybeleid en toepasselijke wetgeving. Als u niet akkoord gaat, mag u de site of diensten niet gebruiken.", "Tenzij een klantovereenkomst een andere contracterende entiteit noemt, worden de diensten geëxploiteerd door devlo en devlo LLC op de adressen die op deze pagina staan."] },
+        { heading: "1. Aanvaarding van voorwaarden", paragraphs: ["Door devlo.ch, devlosales.com, devlo.fr of onze diensten te gebruiken, stemt u in met deze voorwaarden, ons privacybeleid en toepasselijke wetgeving. Als u niet akkoord gaat, mag u de site of diensten niet gebruiken.", "Tenzij een klantovereenkomst een andere contracterende entiteit noemt, worden de diensten geëxploiteerd door devlo en devlo LLC op de adressen die op deze pagina staan."] },
         { heading: "2. devlo-diensten", paragraphs: ["devlo levert B2B sales prospecting, leadgeneratie, kwalificatie, afsprakenplanning, rapportage, AI Sales Ops en advies rond commerciële acquisitie.", "Specifieke deliverables, budgetten, kanalen en verantwoordelijkheden worden vastgelegd in contracten, voorstellen, orderformulieren of schriftelijke overeenkomsten met elke klant."] },
         { heading: "3. Verantwoordelijkheden van gebruikers en klanten", bullets: ["Nauwkeurige, actuele en geautoriseerde informatie verstrekken.", "Een voldoende rechtsgrond of toestemming hebben voor gegevens die aan devlo worden verstrekt.", "Geen gevoelige, onwettige of onnodige gegevens indienen zonder voorafgaande schriftelijke overeenkomst.", "Doelmarkten, berichten, aanbiedingen, uitsluitingen, CRM-regels en campagnecontent beoordelen wanneer daarom wordt gevraagd.", "De voorwaarden van Google, HubSpot, LinkedIn, Lemlist, Clay en andere gebruikte platforms naleven.", "Toegangsgegevens en externe accounts beschermen en beveiligingsincidenten snel melden."] },
         { heading: "4. Gebruik van gegevens", paragraphs: ["Gegevens die aan devlo worden verstrekt, kunnen worden gebruikt om diensten te leveren, campagnes uit te voeren, afspraken voor te bereiden, prestaties te meten, rapporten te maken, support te bieden, te factureren, systemen te beveiligen en wettelijke verplichtingen na te leven.", "Verzameling, delen, bewaring en gebruikersrechten worden beschreven in ons privacybeleid."] },

@@ -113,7 +113,7 @@ export function buildPaidStrategySelections(attribution: PaidAttribution) {
   const compact = compactPaidAttribution(attribution);
   const lines = [
     "=== PAID ACQUISITION ATTRIBUTION ===",
-    "Paid site strategy: same devlo.ch experience served on devlosales.com with noindex",
+    "Paid site strategy: same devlo.ch experience served on paid local domains with noindex",
     "Qualification threshold: EUR/CHF 22k-25k over 4 months",
     "",
     ...Object.entries(compact).map(([key, value]) => `${key}: ${value}`),
