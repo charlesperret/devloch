@@ -50,10 +50,12 @@ export function InfiniteLogoRail({
       : (reverse ? "animate-logo-scroll-reverse" : "animate-logo-scroll");
 
   return (
-    <div className="group w-full max-w-full overflow-hidden bg-white py-1">
+    <div className="group relative w-full max-w-full overflow-hidden bg-white py-2">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-14 bg-gradient-to-r from-white to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-14 bg-gradient-to-l from-white to-transparent" />
       <div
         className={[
-          "flex min-w-max items-center will-change-transform",
+          "flex min-w-max items-center gap-2 will-change-transform",
           animationClass,
           pauseOnHover ? "group-hover:[animation-play-state:paused]" : "",
         ]
@@ -63,16 +65,16 @@ export function InfiniteLogoRail({
         {doubled.map((logo, index) => (
           <div
             key={`${logo.alt}-${index}`}
-            className="flex h-11 w-[170px] shrink-0 items-center justify-center px-5"
+            className="flex h-14 w-[190px] shrink-0 items-center justify-center px-6"
           >
             <div
-              className={["relative h-10 w-full overflow-hidden", logoScaleClassByAlt[logo.alt] ?? ""].join(" ").trim()}
+              className={["relative h-11 w-full overflow-hidden", logoScaleClassByAlt[logo.alt] ?? ""].join(" ").trim()}
             >
               <Image
                 src={logo.src}
                 alt={logo.alt}
                 fill
-                className="object-contain opacity-70 grayscale transition duration-200 hover:opacity-100 hover:grayscale-0"
+                className="object-contain opacity-80 grayscale transition duration-200 hover:opacity-100 hover:grayscale-0"
                 loading="lazy"
                 sizes={railLogoSizesByAlt[logo.alt] ?? defaultRailLogoSizes}
                 quality={72}

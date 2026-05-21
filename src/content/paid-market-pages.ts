@@ -179,7 +179,7 @@ const pages: PaidMarketPage[] = [
     ],
     fitTitle: "Best fit",
     fitIntro: "This suits B2B teams whose deal size justifies careful account research and multichannel qualification.",
-    fitItems: ["B2B SaaS and software", "Cybersecurity and IT services", "Professional services", "Industrial and technical services"],
+    fitItems: ["B2B SaaS and software", "Cybersecurity and IT services", "Professional services", "Industrial and technical services", "Healthcare, biotech and medtech", "Real estate, facilities and field operations"],
     methodTitle: "The devlo methodology",
     methodIntro:
       "This is a simple operating system for improving B2B customer acquisition with clearer account selection, timing and proof.",
@@ -312,7 +312,7 @@ const pages: PaidMarketPage[] = [
     ],
     fitTitle: "Best fit",
     fitIntro: "This works best when the target account profile is specific and the sales motion can absorb qualified conversations quickly.",
-    fitItems: ["B2B SaaS", "Cybersecurity", "Consulting and professional services", "High-value services with clear buyer roles"],
+    fitItems: ["B2B SaaS", "Cybersecurity", "Consulting and professional services", "High-value services with clear buyer roles", "Healthcare, biotech and medtech", "Real estate, facilities and field operations"],
     methodTitle: "The devlo methodology",
     methodIntro:
       "We reduce waste by building the campaign around account quality, buying signals and value proof before channel volume.",
@@ -445,7 +445,7 @@ const pages: PaidMarketPage[] = [
     ],
     fitTitle: "Industries et offres où la méthode devlo s'applique",
     fitIntro: "Nous intervenons lorsque la croissance ne dépend pas d'un simple formulaire entrant, mais d'une sélection rigoureuse des entreprises, des décideurs et du bon moment de contact.",
-    fitItems: ["SaaS et logiciels B2B", "Cybersécurité et services IT", "Industrie et services techniques", "Conseil, formation et services professionnels"],
+    fitItems: ["SaaS et logiciels B2B", "Cybersécurité et services IT", "Industrie et services techniques", "Conseil, formation et services professionnels", "Santé, biotech et medtech", "Immobilier, facility management et opérations terrain"],
     methodTitle: "Système de priorisation outbound",
     methodIntro:
       "Nous ne partons pas d'un volume de leads à contacter. Nous construisons d'abord le TAM, nous identifions les décideurs, puis nous sélectionnons les entreprises où le signal rend l'approche défendable.",
@@ -497,20 +497,20 @@ const pages: PaidMarketPage[] = [
     testimonialsTitle: "Ce que les clients reconnaissent",
     testimonials: [
       {
-        quote: "devlo nous a aidés à mettre en place des campagnes de vente hyper-personnalisées et à obtenir des rendez-vous commerciaux qualifiés.",
-        author: "Raphael",
-        role: "Head of Business Development & Marketing",
-        company: "CareerLunch",
-        photo: "/images/Raphael-haut.webp",
-        photoAlt: "Raphael Haut, Head of Business Development and Marketing chez CareerLunch",
+        quote: "Les connaissances et l'expérience de devlo en développement des ventes nous ont permis d'avancer rapidement et de rencontrer des prospects qualifiés.",
+        author: "Tanguy Coustaline",
+        role: "Président",
+        company: "APIDAE",
+        photo: "/images/Tanguy_Coustaline.webp",
+        photoAlt: "Tanguy Coustaline, président d'APIDAE",
       },
       {
-        quote: "Le processus, de la génération de prospects à l'obtention de rendez-vous, a été professionnel, agréable et efficace.",
-        author: "Olivier Eyries",
-        role: "CEO",
-        company: "Saporo",
-        photo: "/images/Olivier-Eyries.webp",
-        photoAlt: "Olivier Eyries, CEO de Saporo",
+        quote: "Nous avons apprécié l'assiduité, la clarté de communication et le dévouement de devlo pour affiner notre ciblage et notre approche.",
+        author: "Xavier Leuthold",
+        role: "Fondateur",
+        company: "Many Ways SA",
+        photo: "/images/Xavier_Leuthold_Many_Ways.webp",
+        photoAlt: "Xavier Leuthold, fondateur de Many Ways SA",
       },
     ],
     riskTitle: "Ce que nous filtrons avant d'augmenter le volume",
@@ -581,7 +581,7 @@ const pages: PaidMarketPage[] = [
     ],
     fitTitle: "Wann es passt",
     fitIntro: "Die Methode passt, wenn Ihr Angebot erklärungsbedürftig ist und klare Entscheiderrollen in identifizierbaren B2B-Accounts existieren.",
-    fitItems: ["B2B-SaaS und Software", "Cybersecurity und IT-Services", "Industrie und technische Services", "Beratung, Training und Professional Services"],
+    fitItems: ["B2B-SaaS und Software", "Cybersecurity und IT-Services", "Industrie und technische Services", "Beratung, Training und Professional Services", "Healthcare, Biotech und Medtech", "Immobilien, Facility Management und operative Services"],
     methodTitle: "Die devlo-Methode",
     methodIntro:
       "Wir starten nicht mit einer grossen Leadliste. Wir strukturieren zuerst den Markt, priorisieren Timing-Signale und bauen dann eine begründete Ansprache.",
@@ -713,7 +713,7 @@ const pages: PaidMarketPage[] = [
     ],
     fitTitle: "Gute Passung",
     fitIntro: "Deutschland passt, wenn der Zielmarkt groß genug ist und die Entscheiderrolle klar identifiziert werden kann.",
-    fitItems: ["B2B-SaaS", "Cybersecurity und IT", "Industrie und technische Lösungen", "Beratung und Professional Services"],
+    fitItems: ["B2B-SaaS", "Cybersecurity und IT", "Industrie und technische Lösungen", "Beratung und Professional Services", "Healthcare, Biotech und Medtech", "Immobilien, Facility Management und operative Services"],
     methodTitle: "Die devlo-Methode",
     methodIntro:
       "Wir behandeln Deutschland nicht als ein Volumenproblem. Wir kartieren das Potenzial, priorisieren Timing-Signale und bauen dann die Ansprache mit Nachweis.",
@@ -845,7 +845,7 @@ const pages: PaidMarketPage[] = [
     fitTitle: "Past dit bij jou?",
     fitIntro:
       "Deze aanpak werkt het best als je B2B-aanbod een duidelijke doelgroep heeft, je weet wie de beslissers zijn en je dealwaarde groot genoeg is om gerichte outreach te rechtvaardigen.",
-    fitItems: ["B2B SaaS en software", "IT- en cybersecuritydiensten", "Professionele diensten", "E-commerce, fintech en zakelijke services"],
+    fitItems: ["B2B SaaS en software", "IT- en cybersecuritydiensten", "Professionele diensten", "E-commerce, fintech en zakelijke services", "Healthcare, biotech en medtech", "Vastgoed, facility management en field operations"],
     methodTitle: "De devlo-methode",
     methodIntro:
       "We beginnen niet bij volume. Eerst scherpen we doelgroep en accountcriteria aan, dan prioriteren we accounts op koopsignalen, en pas daarna openen we het gesprek, onderbouwd en relevant.",

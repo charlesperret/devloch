@@ -4,22 +4,7 @@ import { ArrowRight, BarChart3, CheckCircle2, ClipboardCheck, MapPin, Quote, Shi
 import { PaidAwareHubspotForm } from "@/components/shared/paid-aware-hubspot-form";
 import { InfiniteLogoRail } from "@/components/shared/logo-rail";
 import { paidMarketHubspot, type PaidMarketPage } from "@/content/paid-market-pages";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { PaidMarketCaseStudyGrid } from "@/components/pages/paid-market-case-study-grid";
-
-const homeLabel = {
-  fr: "Accueil",
-  en: "Home",
-  de: "Startseite",
-  nl: "Home",
-} as const;
-
-const pageLabel = {
-  fr: "Page campagne",
-  en: "Campaign page",
-  de: "Kampagnenseite",
-  nl: "Campagnepagina",
-} as const;
 
 const proofIcons = [MapPin, ShieldCheck, Users] as const;
 const stepIcons = [Target, ClipboardCheck, CheckCircle2] as const;
@@ -38,7 +23,21 @@ const methodStepLabel = {
   nl: "Stap",
 } as const;
 
-const logoRailTitleClass = "mb-4 text-center text-sm font-extrabold uppercase tracking-[0.12em] text-[#f47b5f] md:text-base";
+const logoRailTitleClass = "text-center text-sm font-extrabold uppercase tracking-[0.16em] text-[#f47b5f] md:text-base";
+
+const appointmentLogoIntro = {
+  fr: "Des conversations ouvertes auprès de décideurs dans des organisations reconnues.",
+  en: "Commercial conversations opened with decision-makers in recognised organisations.",
+  de: "Gespräche mit Entscheidern in anerkannten Unternehmen.",
+  nl: "Gesprekken geopend met besluitvormers bij herkenbare organisaties.",
+} as const;
+
+const clientLogoIntro = {
+  fr: "Des clients B2B accompagnés sur des campagnes où le ciblage, le timing et la preuve comptent.",
+  en: "B2B clients supported on campaigns where targeting, timing and proof matter.",
+  de: "B2B-Kunden in Kampagnen, bei denen Zielgruppe, Timing und Beweis zählen.",
+  nl: "B2B-klanten geholpen met campagnes waarin targeting, timing en bewijs tellen.",
+} as const;
 
 const heroTestimonials = {
   fr: [
@@ -181,17 +180,11 @@ const heroTestimonials = {
 
 export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
   const testimonialRail = [...heroTestimonials[page.locale], ...heroTestimonials[page.locale]];
-  const homePath = page.locale === "fr" ? "/" : `/${page.locale}`;
-  const breadcrumbItems = [
-    { name: homeLabel[page.locale], path: homePath },
-    { name: pageLabel[page.locale], path: page.path },
-  ];
 
   return (
     <main className="bg-white text-neutral-900">
       <section className="bg-[#08384d] pb-10 pt-2 text-white md:pb-12">
-        <Breadcrumb items={breadcrumbItems} variant="dark" />
-        <div className="mx-auto grid w-full max-w-[1600px] gap-8 px-6 pt-8 lg:grid-cols-[minmax(0,0.88fr)_minmax(560px,0.92fr)] xl:grid-cols-[minmax(0,0.9fr)_minmax(680px,0.92fr)] lg:px-10">
+        <div className="mx-auto grid w-full max-w-[1600px] gap-8 px-6 pt-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(560px,0.92fr)] xl:grid-cols-[minmax(0,0.9fr)_minmax(680px,0.92fr)] lg:px-10">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/70">
               {page.eyebrow}
@@ -263,21 +256,31 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
         </div>
       </section>
 
-      <section className="border-b border-neutral-200 bg-white py-7">
+      <section className="border-b border-neutral-200 bg-[#f7fafb] py-10">
         <div className="mx-auto w-full max-w-[1600px] px-6 lg:px-10">
           {page.appointmentLogos?.length ? (
-            <div>
+            <div className="rounded-2xl border border-neutral-200 bg-white px-4 py-6 shadow-sm md:px-6">
               <p className={logoRailTitleClass}>
                 {page.appointmentLogosTitle}
               </p>
-              <InfiniteLogoRail logos={page.appointmentLogos} duration="marathon" pauseOnHover />
+              <p className="mx-auto mt-2 max-w-2xl text-center text-sm font-semibold text-[#153a54]/70">
+                {appointmentLogoIntro[page.locale]}
+              </p>
+              <div className="mt-5">
+                <InfiniteLogoRail logos={page.appointmentLogos} duration="marathon" pauseOnHover />
+              </div>
             </div>
           ) : null}
-          <div className={page.appointmentLogos?.length ? "mt-6" : ""}>
+          <div className={page.appointmentLogos?.length ? "mt-5 rounded-2xl border border-neutral-200 bg-white px-4 py-6 shadow-sm md:px-6" : "rounded-2xl border border-neutral-200 bg-white px-4 py-6 shadow-sm md:px-6"}>
             <p className={logoRailTitleClass}>
               {page.logosTitle}
             </p>
-            <InfiniteLogoRail logos={page.logos} duration="marathon" pauseOnHover />
+            <p className="mx-auto mt-2 max-w-2xl text-center text-sm font-semibold text-[#153a54]/70">
+              {clientLogoIntro[page.locale]}
+            </p>
+            <div className="mt-5">
+              <InfiniteLogoRail logos={page.logos} duration="marathon" pauseOnHover />
+            </div>
           </div>
         </div>
       </section>
@@ -287,7 +290,9 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
           <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-[#f47b5f] md:text-base">
             {heroProofTitle[page.locale]}
           </p>
-          <div className="group mt-4 overflow-hidden">
+          <div className="group relative mt-4 overflow-hidden">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-28 bg-gradient-to-r from-[#08384d] via-[#08384d]/80 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-28 bg-gradient-to-l from-[#08384d] via-[#08384d]/80 to-transparent" />
             <div className="flex min-w-max gap-4 animate-logo-scroll-marathon will-change-transform group-hover:[animation-play-state:paused]">
               {testimonialRail.map((item, index) => (
                 <figure key={`${item.author}-${item.company}-${index}`} className="min-h-[126px] w-[min(82vw,440px)] shrink-0 rounded-md border border-white/12 bg-white/[0.08] p-4">
@@ -307,6 +312,11 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
                   </blockquote>
                 </figure>
               ))}
+            </div>
+          </div>
+          <div className="mt-6 flex justify-center">
+            <div className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#f47b5f]/35 bg-[#f47b5f] text-white shadow-sm">
+              <ArrowRight className="h-5 w-5 rotate-90" aria-hidden="true" />
             </div>
           </div>
         </div>

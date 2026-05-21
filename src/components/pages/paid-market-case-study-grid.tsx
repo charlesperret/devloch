@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
 
 import { caseStudiesCards, type CaseStudyCard } from "@/content/masterfile.fr";
 import { getLocalizedMasterfileContent } from "@/lib/i18n/masterfile-content";
@@ -40,11 +43,20 @@ export function PaidMarketCaseStudyGrid({ locale, featuredClients }: PaidMarketC
   const localizedCards = (getLocalizedMasterfileContent(locale).caseStudiesCards as CaseStudyCard[]) ?? caseStudiesCards;
   const cards = selectCards(localizedCards, featuredClients);
   const allCaseStudiesPath = resolvePathForLocale("/etudes-de-cas", locale).path;
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToNextCase = () => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const step = Math.min(420, scroller.clientWidth * 0.8);
+    const remaining = scroller.scrollWidth - scroller.clientWidth - scroller.scrollLeft;
+    scroller.scrollBy({ left: remaining < 40 ? -scroller.scrollWidth : step, behavior: "smooth" });
+  };
 
   return (
     <div>
       <div className="relative">
-        <div className="flex gap-4 overflow-x-auto pb-4 pr-16 [scrollbar-width:thin]">
+        <div ref={scrollerRef} className="flex gap-4 overflow-x-auto pb-4 pr-16 [scrollbar-width:thin]">
           {cards.map((card) => (
             <Link
               key={card.slug}
@@ -87,18 +99,16 @@ export function PaidMarketCaseStudyGrid({ locale, featuredClients }: PaidMarketC
               </div>
             </Link>
           ))}
-          <Link
-            href={allCaseStudiesPath}
-            aria-label={copy.all}
-            className="flex min-h-[360px] w-[96px] shrink-0 items-center justify-center rounded-lg border border-[#f47b5f]/50 bg-[#f47b5f] text-white shadow-md transition hover:bg-[#e3654d]"
-          >
-            <ArrowRight className="h-8 w-8" aria-hidden="true" />
-          </Link>
         </div>
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center bg-gradient-to-l from-white via-white/80 to-transparent pl-16 pr-2">
-          <div className="rounded-full bg-[#f47b5f] p-3 text-white shadow-lg">
+          <button
+            type="button"
+            onClick={scrollToNextCase}
+            aria-label={copy.all}
+            className="pointer-events-auto rounded-full bg-[#f47b5f] p-3 text-white shadow-lg transition hover:bg-[#e3654d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f47b5f] focus-visible:ring-offset-2"
+          >
             <ArrowRight className="h-6 w-6" aria-hidden="true" />
-          </div>
+          </button>
         </div>
       </div>
 
