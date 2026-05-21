@@ -22,14 +22,17 @@ export function SiteChrome({ children }: { children: ReactNode }) {
       <div className="relative flex min-h-screen flex-col bg-white">
         <div className="border-b border-neutral-200 bg-white">
           <div className="mx-auto flex h-16 w-full max-w-[1600px] items-center px-6 lg:px-10">
-            <Image
-              src="/images/devlo-logo.webp"
-              alt="devlo"
-              width={150}
-              height={50}
-              className="h-10 w-auto"
-              priority
-            />
+            <Link href="https://devlo.ch" aria-label="devlo">
+              <Image
+                src="/images/devlo-logo.webp"
+                alt="devlo"
+                width={108}
+                height={36}
+                sizes="108px"
+                className="h-10 w-auto"
+                priority
+              />
+            </Link>
           </div>
         </div>
         <main id="main-content" className="flex-1">
@@ -41,7 +44,7 @@ export function SiteChrome({ children }: { children: ReactNode }) {
             <div className="flex gap-4">
               <Link href="/privacy-policy" className="hover:text-[#0b6c8f]">Privacy</Link>
               <Link href="/terms-of-service" className="hover:text-[#0b6c8f]">Terms</Link>
-              <a href="mailto:emea@devlo.ch" className="hover:text-[#0b6c8f]">Contact</a>
+              <a href="#paid-market-form" className="hover:text-[#0b6c8f]">Contact</a>
             </div>
           </div>
         </footer>

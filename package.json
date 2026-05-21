@@ -12,6 +12,7 @@
     "lint": "eslint .",
     "check:hadoseo-metadata": "node scripts/verify-hadoseo-metadata.mjs",
     "check:public-copy-quality": "node scripts/check-public-copy-quality.mjs",
+    "check:paid-lp-parity": "node scripts/check-paid-lp-parity.mjs",
     "check:seo-quality": "node scripts/check-seo-quality.mjs",
     "check:header-locale-links": "node scripts/check_header_locale_links.mjs",
     "check:slug-map-navigation": "node scripts/check_slug_map_navigation.mjs",

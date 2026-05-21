@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
 
+import { ConsentModeManager } from "@/components/analytics/consent-mode-manager";
 import { PaidAttributionTracker } from "@/components/analytics/paid-attribution-tracker";
 import { SiteChrome } from "@/components/layout/site-chrome";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -319,14 +320,27 @@ export function RootLayoutShell({
       <body
         className={`${plusJakartaSans.variable} min-h-screen overflow-x-hidden bg-canvas font-sans text-ink antialiased`}
       >
+        <Script id="google-consent-mode-defaults" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              analytics_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              functionality_storage: 'granted',
+              security_storage: 'granted',
+              wait_for_update: 500
+            });
+          `}
+        </Script>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${gaMeasurementId}');
           `}
@@ -339,6 +353,7 @@ export function RootLayoutShell({
           />
         ) : null}
         <PaidAttributionTracker />
+        <ConsentModeManager locale={locale} />
         <JsonLd schema={buildLayoutSchemas(locale)} />
         <a
           href="#main-content"

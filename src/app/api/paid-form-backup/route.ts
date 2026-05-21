@@ -17,6 +17,8 @@ const allowedOrigins = new Set([
   "https://www.devlo.ch",
   "https://devlosales.com",
   "https://www.devlosales.com",
+  "https://devlo.fr",
+  "https://www.devlo.fr",
 ]);
 
 const contactFieldNames = new Set([
@@ -150,7 +152,12 @@ function resolvePageUri(properties: Record<string, string>) {
 
   try {
     const url = new URL(pageUri);
-    if (url.hostname === "devlosales.com" || url.hostname === "www.devlosales.com") {
+    if (
+      url.hostname === "devlosales.com" ||
+      url.hostname === "www.devlosales.com" ||
+      url.hostname === "devlo.fr" ||
+      url.hostname === "www.devlo.fr"
+    ) {
       url.hostname = "devlo.ch";
       return url.toString();
     }

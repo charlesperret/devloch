@@ -9,8 +9,10 @@ import {
   isPaidHostname,
   PAID_ATTRIBUTION_STORAGE_KEY,
   pushPaidAnalyticsEvent,
+  readPaidAttributionFromCookie,
   readPaidAttributionFromSearch,
   type PaidAttribution,
+  writePaidAttributionCookie,
 } from "@/lib/paid-attribution";
 
 function readStoredAttribution() {
@@ -34,7 +36,10 @@ export function PaidAttributionTracker() {
   useEffect(() => {
     const paidHost = isPaidHostname(window.location.hostname);
     const currentAttribution = readPaidAttributionFromSearch(new URLSearchParams(window.location.search));
-    const storedAttribution = readStoredAttribution();
+    const storedAttribution = {
+      ...readPaidAttributionFromCookie(),
+      ...readStoredAttribution(),
+    };
     const paidVisit = paidHost || hasPaidAttribution(currentAttribution) || hasPaidAttribution(storedAttribution);
 
     if (!paidVisit) return;
@@ -48,6 +53,7 @@ export function PaidAttributionTracker() {
     });
 
     writeStoredAttribution(attribution);
+    writePaidAttributionCookie(attribution);
     pushPaidAnalyticsEvent("paid_site_view", attribution);
   }, []);
 

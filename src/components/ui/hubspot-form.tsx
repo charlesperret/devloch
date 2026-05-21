@@ -41,6 +41,7 @@ type HubspotFormProps = {
   analyticsContext?: Record<string, string | number | boolean | null | undefined>;
   onFormSubmitCapture?: (fields: Record<string, string | string[]>) => void;
   onSubmitted?: () => void;
+  suppressGenerateLeadEvent?: boolean;
 };
 
 type HubSpotSubmittedField = {
@@ -255,6 +256,7 @@ export function HubspotForm({
   analyticsContext,
   onFormSubmitCapture,
   onSubmitted,
+  suppressGenerateLeadEvent = false,
 }: HubspotFormProps) {
   const copy = copyByLocale[locale];
   const initialized = useRef(false);
@@ -367,7 +369,9 @@ export function HubspotForm({
           setSubmitted(true);
           const params = buildAnalyticsParams();
           pushAnalyticsEvent("form_submit", params);
-          pushAnalyticsEvent("generate_lead", params);
+          if (!suppressGenerateLeadEvent) {
+            pushAnalyticsEvent("generate_lead", params);
+          }
           onSubmitted?.();
         },
       });
@@ -393,7 +397,7 @@ export function HubspotForm({
     return () => {
       cancelled = true;
     };
-  }, [buildAnalyticsParams, formId, isNearViewport, onFormSubmitCapture, onSubmitted, portalId, region, targetId]);
+  }, [buildAnalyticsParams, formId, isNearViewport, onFormSubmitCapture, onSubmitted, portalId, region, suppressGenerateLeadEvent, targetId]);
 
   useEffect(() => {
     if (!loaded || submitted) return;

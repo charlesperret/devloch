@@ -2,24 +2,9 @@ import Image from "next/image";
 import { ArrowRight, BarChart3, CheckCircle2, ClipboardCheck, MapPin, Quote, ShieldCheck, Target, Users } from "lucide-react";
 
 import { PaidAwareHubspotForm } from "@/components/shared/paid-aware-hubspot-form";
-import { InfiniteLogoRail } from "@/components/shared/logo-rail";
+import { LogoCloudRows } from "@/components/shared/logo-rail";
 import { paidMarketHubspot, type PaidMarketPage } from "@/content/paid-market-pages";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { PaidMarketCaseStudyGrid } from "@/components/pages/paid-market-case-study-grid";
-
-const homeLabel = {
-  fr: "Accueil",
-  en: "Home",
-  de: "Startseite",
-  nl: "Home",
-} as const;
-
-const pageLabel = {
-  fr: "Page campagne",
-  en: "Campaign page",
-  de: "Kampagnenseite",
-  nl: "Campagnepagina",
-} as const;
 
 const proofIcons = [MapPin, ShieldCheck, Users] as const;
 const stepIcons = [Target, ClipboardCheck, CheckCircle2] as const;
@@ -29,6 +14,43 @@ const heroProofTitle = {
   en: "What clients point out",
   de: "Was Kunden hervorheben",
   nl: "Wat klanten benadrukken",
+} as const;
+
+const methodStepLabel = {
+  fr: "Étape",
+  en: "Step",
+  de: "Schritt",
+  nl: "Stap",
+} as const;
+
+const appointmentMetric = {
+  fr: {
+    value: "4'615+",
+    label: "rendez-vous commerciaux obtenus",
+    sublabel: "avec des décideurs dans des organisations reconnues",
+  },
+  en: {
+    value: "4'615+",
+    label: "sales meetings booked",
+    sublabel: "with decision-makers at leading companies worldwide",
+  },
+  de: {
+    value: "4'615+",
+    label: "qualifizierte B2B-Termine gebucht",
+    sublabel: "mit Entscheidern in anerkannten Unternehmen",
+  },
+  nl: {
+    value: "4'615+",
+    label: "salesafspraken geboekt",
+    sublabel: "met beslissers bij erkende organisaties",
+  },
+} as const;
+
+const clientLogoIntro = {
+  fr: "Des clients B2B accompagnés sur des campagnes où le ciblage, le timing et la preuve comptent.",
+  en: "B2B clients supported on campaigns where targeting, timing and proof matter.",
+  de: "B2B-Kunden in Kampagnen, bei denen Zielgruppe, Timing und Beweis zählen.",
+  nl: "B2B-klanten geholpen met campagnes waarin targeting, timing en bewijs tellen.",
 } as const;
 
 const heroTestimonials = {
@@ -171,17 +193,12 @@ const heroTestimonials = {
 } as const;
 
 export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
-  const homePath = page.locale === "fr" ? "/" : `/${page.locale}`;
-  const breadcrumbItems = [
-    { name: homeLabel[page.locale], path: homePath },
-    { name: pageLabel[page.locale], path: page.path },
-  ];
+  const testimonialRail = [...heroTestimonials[page.locale], ...heroTestimonials[page.locale]];
 
   return (
     <main className="bg-white text-neutral-900">
       <section className="bg-[#08384d] pb-10 pt-2 text-white md:pb-12">
-        <Breadcrumb items={breadcrumbItems} variant="dark" />
-        <div className="mx-auto grid w-full max-w-[1600px] gap-8 px-6 pt-8 lg:grid-cols-[minmax(0,0.88fr)_minmax(560px,0.92fr)] xl:grid-cols-[minmax(0,0.9fr)_minmax(680px,0.92fr)] lg:px-10">
+        <div className="mx-auto grid w-full max-w-[1600px] gap-8 px-6 pt-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(560px,0.92fr)] xl:grid-cols-[minmax(0,0.9fr)_minmax(680px,0.92fr)] lg:px-10">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/70">
               {page.eyebrow}
@@ -253,39 +270,77 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
         </div>
       </section>
 
-      <section className="border-b border-neutral-200 bg-white py-7">
-        <div className="mx-auto w-full max-w-[1600px] px-6 lg:px-10">
-          <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.1em] text-neutral-500">
-            {page.logosTitle}
-          </p>
-          <InfiniteLogoRail logos={page.logos} duration="normal" pauseOnHover />
+      <section className="border-b border-neutral-200 bg-white py-14">
+        <div className="mx-auto w-full max-w-[1600px] px-6 text-center lg:px-10">
+          {page.appointmentLogos?.length ? (
+            <div>
+              <p className="text-6xl font-extrabold tracking-tight text-[#34415c] md:text-7xl">
+                {appointmentMetric[page.locale].value}
+              </p>
+              <h2 className="mt-3 text-2xl font-extrabold text-neutral-900 md:text-3xl">
+                {appointmentMetric[page.locale].label}
+              </h2>
+              <p className="mt-2 text-sm font-semibold text-neutral-500">
+                {appointmentMetric[page.locale].sublabel}
+              </p>
+              <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-[#b84434] md:text-sm">
+                {page.appointmentLogosTitle}
+              </p>
+              <div className="mt-5">
+                <LogoCloudRows logos={page.appointmentLogos} rows={4} />
+              </div>
+            </div>
+          ) : null}
         </div>
       </section>
 
       <section className="border-b border-neutral-200 bg-[#08384d] py-8 text-white">
-        <div className="mx-auto w-full max-w-screen-xl px-6 lg:px-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/58">
+        <div className="mx-auto w-full max-w-[1600px] px-6 lg:px-10">
+          <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-[#f47b5f] md:text-base">
             {heroProofTitle[page.locale]}
           </p>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {heroTestimonials[page.locale].map((item) => (
-              <figure key={`${item.author}-${item.company}`} className="min-h-[112px] rounded-md border border-white/10 bg-white/[0.07] p-3">
-                <div className="flex items-center gap-3">
-                  <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
-                    <Image src={item.photo} alt={item.photoAlt} fill className="object-cover" sizes="40px" />
+          <div className="group relative mt-4 overflow-hidden">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-28 bg-gradient-to-r from-[#08384d] via-[#08384d]/80 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-28 bg-gradient-to-l from-[#08384d] via-[#08384d]/80 to-transparent" />
+            <div className="flex min-w-max gap-4 animate-logo-scroll-marathon will-change-transform group-hover:[animation-play-state:paused]">
+              {testimonialRail.map((item, index) => (
+                <figure key={`${item.author}-${item.company}-${index}`} className="min-h-[150px] w-[min(82vw,440px)] shrink-0 rounded-md border border-white/16 bg-white/[0.09] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
+                  <div className="flex items-center gap-3">
+                    <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
+                      <Image src={item.photo} alt={item.photoAlt} fill className="object-cover" sizes="48px" />
+                    </div>
+                    <figcaption className="min-w-0">
+                      <p className="truncate text-base font-extrabold text-white">{item.author}</p>
+                      <p className="truncate text-sm font-semibold text-white/68">
+                        {item.role}, {item.company}
+                      </p>
+                    </figcaption>
                   </div>
-                  <figcaption className="min-w-0">
-                    <p className="truncate text-sm font-extrabold text-white">{item.author}</p>
-                    <p className="truncate text-xs font-semibold text-white/62">
-                      {item.role}, {item.company}
-                    </p>
-                  </figcaption>
-                </div>
-                <blockquote className="mt-3 text-xs font-semibold leading-5 text-white/78">
-                  &ldquo;{item.quote}&rdquo;
-                </blockquote>
-              </figure>
-            ))}
+                  <blockquote className="mt-4 text-sm font-semibold leading-6 text-white/82">
+                    &ldquo;{item.quote}&rdquo;
+                  </blockquote>
+                </figure>
+              ))}
+            </div>
+          </div>
+          <div className="mt-6 flex justify-center">
+            <div className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#f47b5f]/35 bg-[#f47b5f] text-white shadow-sm">
+              <ArrowRight className="h-5 w-5 rotate-90" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-neutral-200 bg-white py-12">
+        <div className="mx-auto w-full max-w-[1600px] px-6 text-center lg:px-10">
+          <h2 className="text-2xl font-extrabold leading-none text-neutral-900 md:text-3xl">
+            {page.logosTitle.split(" ").map((word) => <span key={word} className="block">{word}</span>)}
+          </h2>
+          <p className="mx-auto mt-2 max-w-2xl text-center text-sm font-semibold text-[#153a54]/70">
+            {clientLogoIntro[page.locale]}
+          </p>
+          <div className="mt-7">
+            <LogoCloudRows logos={page.logos} rows={1} />
           </div>
         </div>
       </section>
@@ -326,7 +381,10 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
               return (
                 <div key={step.title} className="rounded-lg border border-neutral-200 bg-white p-6">
                   <Icon className="h-6 w-6 text-[#0b6c8f]" aria-hidden="true" />
-                  <h3 className="mt-5 text-lg font-extrabold text-[#153a54]">{step.title}</h3>
+                  <p className="mt-4 text-xs font-extrabold uppercase tracking-[0.1em] text-[#0b6c8f]">
+                    {methodStepLabel[page.locale]} {index + 1}
+                  </p>
+                  <h3 className="mt-2 text-lg font-extrabold text-[#153a54]">{step.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-neutral-600">{step.body}</p>
                   <p className="mt-4 rounded-md border border-[#0b6c8f]/15 bg-[#e8f4f7] px-3 py-3 text-xs font-semibold leading-5 text-[#153a54]">
                     {step.artifact}
@@ -348,7 +406,7 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
           <div className="mt-8">
             <PaidMarketCaseStudyGrid
               locale={page.locale}
-              featuredClients={page.caseStudies.map((study) => study.client)}
+              caseStudies={page.caseStudies}
             />
           </div>
 

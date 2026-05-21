@@ -1,6 +1,8 @@
 import { isPaidHostname } from "@/lib/paid-hosts";
 
 export const PAID_ATTRIBUTION_STORAGE_KEY = "devlo_paid_attribution_v1";
+export const PAID_ATTRIBUTION_COOKIE_KEY = "devlo_paid_attr";
+const PAID_ATTRIBUTION_COOKIE_MAX_AGE_SECONDS = 60 * 60 * 24 * 90;
 
 export type PaidAttribution = {
   current_page_url?: string;
@@ -48,6 +50,48 @@ export function compactPaidAttribution(attribution: PaidAttribution): PaidAttrib
   ) as PaidAttribution;
 }
 
+function getCookieDomain() {
+  if (typeof window === "undefined") return "";
+
+  const hostname = window.location.hostname.toLowerCase();
+  if (hostname === "localhost" || /^[0-9.]+$/.test(hostname)) return "";
+
+  return `domain=${hostname.replace(/^www\./, "")}`;
+}
+
+export function readPaidAttributionFromCookie(): PaidAttribution {
+  if (typeof document === "undefined") return {};
+
+  const encoded = document.cookie
+    .split("; ")
+    .find((part) => part.startsWith(`${PAID_ATTRIBUTION_COOKIE_KEY}=`))
+    ?.split("=")[1];
+
+  if (!encoded) return {};
+
+  try {
+    return JSON.parse(decodeURIComponent(encoded)) as PaidAttribution;
+  } catch {
+    return {};
+  }
+}
+
+export function writePaidAttributionCookie(attribution: PaidAttribution) {
+  if (typeof document === "undefined") return;
+
+  const compact = compactPaidAttribution(attribution);
+  if (!hasPaidAttribution(compact)) return;
+
+  document.cookie = [
+    `${PAID_ATTRIBUTION_COOKIE_KEY}=${encodeURIComponent(JSON.stringify(compact))}`,
+    `max-age=${PAID_ATTRIBUTION_COOKIE_MAX_AGE_SECONDS}`,
+    "path=/",
+    "SameSite=Lax",
+    "Secure",
+    getCookieDomain(),
+  ].filter(Boolean).join("; ");
+}
+
 function createPaidSessionId() {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
     return crypto.randomUUID();
@@ -80,19 +124,20 @@ export function buildPaidAttributionSnapshot(params: {
   });
 }
 
-function buildAnalyticsPayload(attribution: PaidAttribution) {
+function buildAnalyticsPayload(attribution: PaidAttribution, params: Record<string, unknown> = {}) {
   return {
     event_category: "paid_acquisition",
     qualified_commitment_min_chf: 22000,
     qualified_commitment_max_chf: 25000,
     ...compactPaidAttribution(attribution),
+    ...params,
   };
 }
 
-export function pushPaidAnalyticsEvent(event: string, attribution: PaidAttribution) {
+export function pushPaidAnalyticsEvent(event: string, attribution: PaidAttribution, params: Record<string, unknown> = {}) {
   if (typeof window === "undefined" || !hasPaidAttribution(attribution)) return;
 
-  const payload = buildAnalyticsPayload(attribution);
+  const payload = buildAnalyticsPayload(attribution, params);
   window.dataLayer = window.dataLayer || [];
 
   // Object form keeps the event consumable by GTM / LinkedIn later.
@@ -113,7 +158,7 @@ export function buildPaidStrategySelections(attribution: PaidAttribution) {
   const compact = compactPaidAttribution(attribution);
   const lines = [
     "=== PAID ACQUISITION ATTRIBUTION ===",
-    "Paid site strategy: same devlo.ch experience served on devlosales.com with noindex",
+    "Paid site strategy: same devlo.ch experience served on paid local domains with noindex",
     "Qualification threshold: EUR/CHF 22k-25k over 4 months",
     "",
     ...Object.entries(compact).map(([key, value]) => `${key}: ${value}`),

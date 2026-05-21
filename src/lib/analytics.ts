@@ -3,7 +3,7 @@
 declare global {
   interface Window {
     dataLayer?: Array<Record<string, unknown> | IArguments | unknown[]>;
-    gtag?: (command: "event", eventName: string, params?: Record<string, unknown>) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
