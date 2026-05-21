@@ -12,6 +12,12 @@ type InfiniteLogoRailProps = {
   duration?: "normal" | "slow" | "marathon";
 };
 
+type LogoCloudRowsProps = {
+  logos: LogoItem[];
+  rows?: 1 | 2 | 3 | 4;
+  pauseOnHover?: boolean;
+};
+
 const logoScaleClassByAlt: Record<string, string> = {
   Apple: "scale-[0.82]",
   BCF: "scale-[0.82]",
@@ -77,6 +83,76 @@ export function InfiniteLogoRail({
                 className="object-contain opacity-80 grayscale transition duration-200 hover:opacity-100 hover:grayscale-0"
                 loading="lazy"
                 sizes={railLogoSizesByAlt[logo.alt] ?? defaultRailLogoSizes}
+                quality={72}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function LogoCloudRows({ logos, rows = 3, pauseOnHover = true }: LogoCloudRowsProps) {
+  const rowCount = Math.max(1, Math.min(rows, logos.length));
+  const logoRows = Array.from({ length: rowCount }, (_, rowIndex) =>
+    logos.filter((_, index) => index % rowCount === rowIndex),
+  );
+
+  return (
+    <div className="group relative left-1/2 w-screen -translate-x-1/2 overflow-hidden py-1">
+      <div className="space-y-2">
+        {logoRows.map((rowLogos, rowIndex) => (
+          <LogoCloudRow
+            key={`logo-cloud-row-${rowIndex}`}
+            logos={rowLogos}
+            reverse={rowIndex % 2 === 1}
+            pauseOnHover={pauseOnHover}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function LogoCloudRow({
+  logos,
+  reverse,
+  pauseOnHover,
+}: {
+  logos: LogoItem[];
+  reverse: boolean;
+  pauseOnHover: boolean;
+}) {
+  const repeated = [...logos, ...logos];
+  const animationClass = reverse ? "animate-logo-scroll-marathon-reverse" : "animate-logo-scroll-marathon";
+
+  return (
+    <div className="relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-white via-white/90 to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-white via-white/90 to-transparent" />
+      <div
+        className={[
+          "flex w-max gap-2 will-change-transform",
+          animationClass,
+          pauseOnHover ? "group-hover:[animation-play-state:paused]" : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
+        {repeated.map((logo, index) => (
+          <div
+            key={`${logo.alt}-${index}`}
+            className="flex h-14 w-[112px] shrink-0 items-center justify-center rounded-md border border-neutral-200/70 bg-white px-3 py-2 shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition hover:scale-[1.02]"
+          >
+            <div className={["relative h-10 w-full overflow-hidden", logoScaleClassByAlt[logo.alt] ?? ""].join(" ").trim()}>
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                fill
+                className="object-contain opacity-45 saturate-[0.7] transition duration-200 hover:opacity-100 hover:saturate-100"
+                loading="lazy"
+                sizes={railLogoSizesByAlt[logo.alt] ?? "112px"}
                 quality={72}
               />
             </div>

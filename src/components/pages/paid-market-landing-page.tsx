@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowRight, BarChart3, CheckCircle2, ClipboardCheck, MapPin, Quote, ShieldCheck, Target, Users } from "lucide-react";
 
 import { PaidAwareHubspotForm } from "@/components/shared/paid-aware-hubspot-form";
-import { InfiniteLogoRail } from "@/components/shared/logo-rail";
+import { LogoCloudRows } from "@/components/shared/logo-rail";
 import { paidMarketHubspot, type PaidMarketPage } from "@/content/paid-market-pages";
 import { PaidMarketCaseStudyGrid } from "@/components/pages/paid-market-case-study-grid";
 
@@ -25,11 +25,27 @@ const methodStepLabel = {
 
 const logoRailTitleClass = "text-center text-sm font-extrabold uppercase tracking-[0.16em] text-[#f47b5f] md:text-base";
 
-const appointmentLogoIntro = {
-  fr: "Des conversations ouvertes auprès de décideurs dans des organisations reconnues.",
-  en: "Commercial conversations opened with decision-makers in recognised organisations.",
-  de: "Gespräche mit Entscheidern in anerkannten Unternehmen.",
-  nl: "Gesprekken geopend met besluitvormers bij herkenbare organisaties.",
+const appointmentMetric = {
+  fr: {
+    value: "4'615+",
+    label: "rendez-vous commerciaux obtenus",
+    sublabel: "avec des décideurs dans des organisations reconnues",
+  },
+  en: {
+    value: "4,615+",
+    label: "meetings successfully booked",
+    sublabel: "with decision-makers at recognised organisations",
+  },
+  de: {
+    value: "4'615+",
+    label: "erfolgreich gebuchte Gespräche",
+    sublabel: "mit Entscheidern in anerkannten Unternehmen",
+  },
+  nl: {
+    value: "4.615+",
+    label: "succesvol geboekte afspraken",
+    sublabel: "met beslissers bij herkenbare organisaties",
+  },
 } as const;
 
 const clientLogoIntro = {
@@ -256,32 +272,27 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
         </div>
       </section>
 
-      <section className="border-b border-neutral-200 bg-[#f7fafb] py-10">
-        <div className="mx-auto w-full max-w-[1600px] px-6 lg:px-10">
+      <section className="border-b border-neutral-200 bg-white py-14">
+        <div className="mx-auto w-full max-w-[1600px] px-6 text-center lg:px-10">
           {page.appointmentLogos?.length ? (
-            <div className="rounded-2xl border border-neutral-200 bg-white px-4 py-6 shadow-sm md:px-6">
-              <p className={logoRailTitleClass}>
+            <div>
+              <p className="text-6xl font-extrabold tracking-tight text-[#153a54] md:text-7xl">
+                {appointmentMetric[page.locale].value}
+              </p>
+              <h2 className="mt-3 text-2xl font-extrabold text-neutral-800 md:text-3xl">
+                {appointmentMetric[page.locale].label}
+              </h2>
+              <p className="mt-2 text-sm font-semibold text-neutral-500">
+                {appointmentMetric[page.locale].sublabel}
+              </p>
+              <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-300 md:text-sm">
                 {page.appointmentLogosTitle}
               </p>
-              <p className="mx-auto mt-2 max-w-2xl text-center text-sm font-semibold text-[#153a54]/70">
-                {appointmentLogoIntro[page.locale]}
-              </p>
               <div className="mt-5">
-                <InfiniteLogoRail logos={page.appointmentLogos} duration="marathon" pauseOnHover />
+                <LogoCloudRows logos={page.appointmentLogos} rows={4} />
               </div>
             </div>
           ) : null}
-          <div className={page.appointmentLogos?.length ? "mt-5 rounded-2xl border border-neutral-200 bg-white px-4 py-6 shadow-sm md:px-6" : "rounded-2xl border border-neutral-200 bg-white px-4 py-6 shadow-sm md:px-6"}>
-            <p className={logoRailTitleClass}>
-              {page.logosTitle}
-            </p>
-            <p className="mx-auto mt-2 max-w-2xl text-center text-sm font-semibold text-[#153a54]/70">
-              {clientLogoIntro[page.locale]}
-            </p>
-            <div className="mt-5">
-              <InfiniteLogoRail logos={page.logos} duration="marathon" pauseOnHover />
-            </div>
-          </div>
         </div>
       </section>
 
@@ -318,6 +329,20 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
             <div className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#f47b5f]/35 bg-[#f47b5f] text-white shadow-sm">
               <ArrowRight className="h-5 w-5 rotate-90" aria-hidden="true" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-neutral-200 bg-white py-12">
+        <div className="mx-auto w-full max-w-[1600px] px-6 text-center lg:px-10">
+          <p className={logoRailTitleClass}>
+            {page.logosTitle}
+          </p>
+          <p className="mx-auto mt-2 max-w-2xl text-center text-sm font-semibold text-[#153a54]/70">
+            {clientLogoIntro[page.locale]}
+          </p>
+          <div className="mt-7">
+            <LogoCloudRows logos={page.logos} rows={1} />
           </div>
         </div>
       </section>
