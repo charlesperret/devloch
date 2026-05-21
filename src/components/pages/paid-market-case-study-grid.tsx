@@ -9,6 +9,15 @@ import { caseStudiesCards, type CaseStudyCard } from "@/content/masterfile.fr";
 import { getLocalizedMasterfileContent } from "@/lib/i18n/masterfile-content";
 import { resolvePathForLocale, type SupportedLocale } from "@/lib/i18n/slug-map";
 
+type PaidCaseStudy = {
+  client: string;
+  sector: string;
+  title: string;
+  metrics: string[];
+  logo?: string;
+  href?: string;
+};
+
 const copyByLocale: Record<SupportedLocale, { all: string }> = {
   fr: { all: "Voir toutes les études de cas" },
   en: { all: "View all case studies" },
@@ -20,28 +29,39 @@ function normalise(value: string): string {
   return value.trim().toLowerCase();
 }
 
-function selectCards(cards: CaseStudyCard[], featuredClients: string[]): CaseStudyCard[] {
-  const featured = new Set(featuredClients.map(normalise));
-  const ordered = [...cards]
-    .filter((card) => card.banner)
-    .sort((a, b) => {
-      const aFeatured = featured.has(normalise(a.client)) ? 0 : 1;
-      const bFeatured = featured.has(normalise(b.client)) ? 0 : 1;
-      return aFeatured - bFeatured;
-    });
+function selectCards(cards: CaseStudyCard[], caseStudies: PaidCaseStudy[]): Array<CaseStudyCard & Partial<PaidCaseStudy>> {
+  const cardsWithBanners = cards.filter((card) => card.banner);
+  const featuredByName = new Map(cardsWithBanners.map((card) => [normalise(card.client), card]));
+  const featured = caseStudies
+    .map((study): CaseStudyCard | null => {
+      const card = featuredByName.get(normalise(study.client));
+      if (!card) return null;
+
+      return {
+        ...card,
+        sector: study.sector,
+        title: study.title,
+        metrics: study.metrics,
+        logo: study.logo ?? card.logo,
+      };
+    })
+    .filter((card): card is CaseStudyCard => Boolean(card));
+  const featuredSlugs = new Set(featured.map((card) => card.slug));
+  const remaining = cardsWithBanners.filter((card) => !featuredSlugs.has(card.slug));
+  const ordered = [...featured, ...remaining];
 
   return ordered.slice(0, 6);
 }
 
 type PaidMarketCaseStudyGridProps = {
   locale: SupportedLocale;
-  featuredClients: string[];
+  caseStudies: PaidCaseStudy[];
 };
 
-export function PaidMarketCaseStudyGrid({ locale, featuredClients }: PaidMarketCaseStudyGridProps) {
+export function PaidMarketCaseStudyGrid({ locale, caseStudies }: PaidMarketCaseStudyGridProps) {
   const copy = copyByLocale[locale];
   const localizedCards = (getLocalizedMasterfileContent(locale).caseStudiesCards as CaseStudyCard[]) ?? caseStudiesCards;
-  const cards = selectCards(localizedCards, featuredClients);
+  const cards = selectCards(localizedCards, caseStudies);
   const allCaseStudiesPath = resolvePathForLocale("/etudes-de-cas", locale).path;
   const scrollerRef = useRef<HTMLDivElement | null>(null);
 

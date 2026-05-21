@@ -26,23 +26,23 @@ const methodStepLabel = {
 const appointmentMetric = {
   fr: {
     value: "4'615+",
-    label: "meetings successfully booked",
-    sublabel: "with decision-makers at leading companies worldwide",
+    label: "rendez-vous commerciaux obtenus",
+    sublabel: "avec des décideurs dans des organisations reconnues",
   },
   en: {
     value: "4'615+",
-    label: "meetings successfully booked",
+    label: "sales meetings booked",
     sublabel: "with decision-makers at leading companies worldwide",
   },
   de: {
     value: "4'615+",
-    label: "meetings successfully booked",
-    sublabel: "with decision-makers at leading companies worldwide",
+    label: "qualifizierte B2B-Termine gebucht",
+    sublabel: "mit Entscheidern in anerkannten Unternehmen",
   },
   nl: {
     value: "4'615+",
-    label: "meetings successfully booked",
-    sublabel: "with decision-makers at leading companies worldwide",
+    label: "salesafspraken geboekt",
+    sublabel: "met beslissers bij erkende organisaties",
   },
 } as const;
 
@@ -334,9 +334,7 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
       <section className="border-b border-neutral-200 bg-white py-12">
         <div className="mx-auto w-full max-w-[1600px] px-6 text-center lg:px-10">
           <h2 className="text-2xl font-extrabold leading-none text-neutral-900 md:text-3xl">
-            {page.locale === "fr"
-              ? page.logosTitle.split(" ").map((word) => <span key={word} className="block">{word}</span>)
-              : page.logosTitle}
+            {page.logosTitle.split(" ").map((word) => <span key={word} className="block">{word}</span>)}
           </h2>
           <p className="mx-auto mt-2 max-w-2xl text-center text-sm font-semibold text-[#153a54]/70">
             {clientLogoIntro[page.locale]}
@@ -408,7 +406,7 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
           <div className="mt-8">
             <PaidMarketCaseStudyGrid
               locale={page.locale}
-              featuredClients={page.caseStudies.map((study) => study.client)}
+              caseStudies={page.caseStudies}
             />
           </div>
 
