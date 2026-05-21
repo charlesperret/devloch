@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } fro
 
 import { HubspotForm } from "@/components/ui/hubspot-form";
 import { pushAnalyticsEvent } from "@/lib/analytics";
+import { pushLeadConversion } from "@/lib/enhanced-conversions";
 import type { SupportedLocale } from "@/lib/i18n/slug-map";
 import {
   buildPaidAttributionSnapshot,
@@ -13,8 +14,10 @@ import {
   isPaidHostname,
   PAID_ATTRIBUTION_STORAGE_KEY,
   pushPaidAnalyticsEvent,
+  readPaidAttributionFromCookie,
   readPaidAttributionFromSearch,
   type PaidAttribution,
+  writePaidAttributionCookie,
 } from "@/lib/paid-attribution";
 
 type PaidAwareHubspotFormProps = {
@@ -43,7 +46,10 @@ function resolveAttribution() {
     currentUrl: window.location.href,
     paidHost,
     referrer: document.referrer,
-    storedAttribution: readStoredAttribution(),
+    storedAttribution: {
+      ...readPaidAttributionFromCookie(),
+      ...readStoredAttribution(),
+    },
   });
 }
 
@@ -238,9 +244,12 @@ export function PaidAwareHubspotForm({
   const trackedFormStart = useRef(false);
   const trackedLeadSubmitted = useRef(false);
   const backedUpSubmission = useRef(false);
+  const lastSubmissionFields = useRef<Record<string, string | string[]> | null>(null);
 
   useEffect(() => {
-    setAttribution(resolveAttribution());
+    const nextAttribution = resolveAttribution();
+    setAttribution(nextAttribution);
+    writePaidAttributionCookie(nextAttribution);
   }, []);
 
   const hiddenFields = useMemo(() => {
@@ -255,17 +264,24 @@ export function PaidAwareHubspotForm({
     pushPaidAnalyticsEvent("paid_form_start", attribution);
   }, [attribution]);
 
-  const trackLeadSubmitted = useCallback(() => {
-    if (trackedLeadSubmitted.current || !hasPaidAttribution(attribution)) return;
+  const trackLeadSubmitted = useCallback((fields?: Record<string, string | string[]> | null) => {
+    if (trackedLeadSubmitted.current) return;
     trackedLeadSubmitted.current = true;
     trackFormStart();
-    pushPaidAnalyticsEvent("paid_lead_submitted", attribution);
-  }, [attribution, trackFormStart]);
+    void pushLeadConversion({
+      attribution,
+      fields: fields ?? lastSubmissionFields.current,
+      formId,
+      formType: mode === "native" ? "paid_native" : "consultation",
+      locale,
+    });
+  }, [attribution, formId, locale, mode, trackFormStart]);
 
   const handleFormSubmitCapture = useCallback((fields: Record<string, string | string[]>) => {
+    lastSubmissionFields.current = fields;
     if (backedUpSubmission.current) return;
     backedUpSubmission.current = true;
-    trackLeadSubmitted();
+    trackLeadSubmitted(fields);
     sendPaidSubmissionBackup(fields, formId);
   }, [formId, trackLeadSubmitted]);
 
@@ -275,6 +291,7 @@ export function PaidAwareHubspotForm({
       ...buildPaidHiddenFields(attribution),
       ...readNativeFormFields(event.currentTarget),
     };
+    lastSubmissionFields.current = fields;
 
     setNativeStatus("submitting");
     trackFormStart();
@@ -290,7 +307,7 @@ export function PaidAwareHubspotForm({
       return;
     }
 
-    trackLeadSubmitted();
+    trackLeadSubmitted(fields);
     pushAnalyticsEvent("demo_requested", {
       form_id: formId,
       form_type: "paid_native",
@@ -311,8 +328,9 @@ export function PaidAwareHubspotForm({
       const fields = serializeHubSpotMessageFields(payload.data);
       if (!fields) return;
 
+      lastSubmissionFields.current = fields;
       backedUpSubmission.current = true;
-      trackLeadSubmitted();
+      trackLeadSubmitted(fields);
       sendPaidSubmissionBackup(fields, formId);
     };
 
@@ -400,6 +418,7 @@ export function PaidAwareHubspotForm({
           form_location: "consultation_page",
         }}
         onFormSubmitCapture={handleFormSubmitCapture}
+        suppressGenerateLeadEvent
         onSubmitted={() => {
           pushAnalyticsEvent("demo_requested", {
             form_id: formId,
@@ -407,7 +426,7 @@ export function PaidAwareHubspotForm({
             locale,
             page_path: window.location.pathname,
           });
-          trackLeadSubmitted();
+          trackLeadSubmitted(lastSubmissionFields.current);
         }}
       />
     </div>
