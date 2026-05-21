@@ -15,7 +15,7 @@ type LeadConversionParams = {
   locale: SupportedLocale;
 };
 
-const PAID_LEAD_VALUE = 22000;
+const PAID_LEAD_VALUE = 1;
 const PAID_LEAD_CURRENCY = "CHF";
 
 function firstField(fields: LeadFields | null | undefined, names: string[]) {
@@ -109,7 +109,7 @@ function buildLeadEventParams(params: LeadConversionParams, enhancedConversionRe
     event_category: "lead",
     form_id: params.formId,
     form_type: params.formType,
-    lead_value_basis: "qualified_commitment_minimum",
+    lead_value_basis: "nominal_tracking_value_until_closed_loop_model",
     locale: params.locale,
     page_path: window.location.pathname,
     value: PAID_LEAD_VALUE,
