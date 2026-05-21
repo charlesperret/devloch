@@ -810,12 +810,12 @@ const pages: PaidMarketPage[] = [
     marketLabel: "Nederland",
     title: "B2B-leadgeneratie in Nederland | devlo",
     description:
-      "B2B-leadgeneratie in Nederland: addressable market scherp maken, koopsignalen prioriteren en gekwalificeerde afspraken plannen.",
+      "B2B-leadgeneratie in Nederland: je doelgroep aanscherpen, koopsignalen prioriteren en gekwalificeerde afspraken plannen.",
     eyebrow: "B2B-leadgeneratie in Nederland",
-    h1: "B2B-afspraken in Nederland zonder vage funnels",
+    h1: "Meer gekwalificeerde B2B-afspraken in Nederland",
     intro:
-      "devlo helpt B2B-teams hun addressable market terug te brengen tot de juiste accounts, koopsignalen te herkennen en gesprekken te openen met een concrete businesscase.",
-    badges: ["Marktafbakening", "Koopsignalen", "Gekwalificeerde afspraken"],
+      "We helpen je B2B-team de doelgroep terug te brengen tot de juiste accounts, koopsignalen te herkennen en gesprekken te openen met een concrete businesscase.",
+    badges: ["Accountselectie", "Koopsignalen", "Gekwalificeerde afspraken"],
     primaryCta: "Laat mijn acquisitieplan beoordelen",
     formTitle: "Ontvang een concrete inschatting van je B2B-acquisitiepotentieel",
     formIntro:
@@ -825,7 +825,7 @@ const pages: PaidMarketPage[] = [
     logos: ALL_CLIENT_LOGOS,
     proofTitle: "Voor wie dit werkt",
     proofRows: [
-      ["Acquisitie, geen marketingverhaal", "Concrete afspraken in je agenda, geen vage funnels of brand awareness."],
+      ["Acquisitie met concrete afspraken", "Concrete afspraken in je agenda, niet alleen funnels of brand awareness."],
       ["Directe relevantie", "Maak meteen duidelijk waarom je deze prospect nú benadert."],
       ["Kwaliteit, geen massa", "Nederlandse B2B-kopers prikken snel door algemene claims heen; bewijs en timing moeten kloppen."],
     ],
@@ -835,11 +835,11 @@ const pages: PaidMarketPage[] = [
     fitItems: ["B2B SaaS en software", "IT- en cybersecuritydiensten", "Professionele diensten", "E-commerce, fintech en zakelijke services"],
     methodTitle: "De devlo-methode",
     methodIntro:
-      "We beginnen niet bij volume. Eerst brengen we de markt in kaart, dan prioriteren we accounts op koopsignalen, en pas daarna openen we het gesprek, onderbouwd en relevant.",
+      "We beginnen niet bij volume. Eerst scherpen we doelgroep en accountcriteria aan, dan prioriteren we accounts op koopsignalen, en pas daarna openen we het gesprek, onderbouwd en relevant.",
     methodSteps: [
       {
-        title: "Breng je markt in kaart",
-        body: "We segmenteren bedrijven, sectoren, regio's en beslissers die echt bij je aanbod passen.",
+        title: "Scherp je accountselectie aan",
+        body: "We segmenteren bedrijven, sectoren, regio's en beslissers die echt bij je aanbod en salescapaciteit passen.",
         artifact: "Resultaat: een lijst met prioriteitsaccounts in plaats van een generieke leadlijst.",
       },
       {
@@ -908,7 +908,7 @@ const pages: PaidMarketPage[] = [
       ["Te vroeg opschalen", "We testen eerst segment, signaal en boodschap voordat er budget naar volume gaat."],
     ],
     deliverablesTitle: "Wat je krijgt",
-    deliverables: ["Lijst met prioriteitsaccounts", "Koopsignalen per account", "Pitch met bewijs per account", "Go/no-go voor betaalde zoekadvertenties en uitgaande acquisitie"],
+    deliverables: ["Lijst met prioriteitsaccounts", "Koopsignalen per account", "Pitch met bewijs per account", "Go/no-go op uitgaande acquisitie per segment"],
     faqTitle: "Vragen",
     faqs: [
       {
@@ -916,8 +916,8 @@ const pages: PaidMarketPage[] = [
         answer: "Voor teams met een duidelijke doelgroep, voldoende dealwaarde en behoefte aan betere accountselectie voordat sales tijd investeert.",
       },
       {
-        question: "Wanneer zijn betaalde campagnes nog te vroeg?",
-        answer: "Als ICP, beslisserrollen of bewijs nog te vaag zijn. Dan testen we eerst de marktlogica voordat er budget naar volume gaat.",
+        question: "Hoe bepalen jullie welke accounts prioriteit krijgen?",
+        answer: "We combineren ICP, beslisserrollen, koopsignalen en bewijs uit vergelijkbare cases. Zo krijgt sales eerst de accounts met de beste timing en relevantie.",
       },
       {
         question: "Wat maakt dit anders dan een generieke leadlijst?",
