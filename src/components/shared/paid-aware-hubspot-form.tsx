@@ -377,7 +377,7 @@ export function PaidAwareHubspotForm({
         <button
           type="submit"
           disabled={nativeStatus === "submitting"}
-          className="inline-flex h-12 items-center justify-center rounded-md bg-[#f47b5f] px-6 text-sm font-extrabold text-[#153a54] transition hover:bg-[#e3654d] disabled:cursor-not-allowed disabled:opacity-70"
+          className="inline-flex h-12 items-center justify-center rounded-md bg-[#f47b5f] px-6 text-sm font-extrabold text-[#0f2b3c] transition hover:bg-[#e3654d] disabled:cursor-not-allowed disabled:opacity-70"
         >
           {nativeStatus === "submitting" ? copy.submitting : copy.submit}
         </button>
