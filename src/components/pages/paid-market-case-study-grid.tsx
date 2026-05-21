@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 import { caseStudiesCards, type CaseStudyCard } from "@/content/masterfile.fr";
 import { getLocalizedMasterfileContent } from "@/lib/i18n/masterfile-content";
@@ -26,7 +27,7 @@ function selectCards(cards: CaseStudyCard[], featuredClients: string[]): CaseStu
       return aFeatured - bFeatured;
     });
 
-  return ordered.slice(0, 3);
+  return ordered.slice(0, 6);
 }
 
 type PaidMarketCaseStudyGridProps = {
@@ -41,12 +42,12 @@ export function PaidMarketCaseStudyGrid({ locale, featuredClients }: PaidMarketC
 
   return (
     <div>
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="flex gap-4 overflow-x-auto pb-3 [scrollbar-width:thin]">
         {cards.map((card) => (
           <Link
             key={card.slug}
             href={resolvePathForLocale(`/etudes-de-cas/${card.slug}`, locale).path}
-            className="group overflow-hidden rounded-lg border border-neutral-200 bg-white transition hover:border-[#0b6c8f]/40"
+            className="group w-[min(82vw,380px)] shrink-0 overflow-hidden rounded-lg border border-neutral-200 bg-white transition hover:border-[#0b6c8f]/40"
           >
             <div className="relative aspect-[16/9] overflow-hidden bg-neutral-100">
               <Image
@@ -84,6 +85,13 @@ export function PaidMarketCaseStudyGrid({ locale, featuredClients }: PaidMarketC
             </div>
           </Link>
         ))}
+        <Link
+          href={resolvePathForLocale("/etudes-de-cas", locale).path}
+          aria-label={copy.all}
+          className="flex min-h-[360px] w-[92px] shrink-0 items-center justify-center rounded-lg border border-dashed border-[#0b6c8f]/30 bg-[#e8f4f7] text-[#0b6c8f] transition hover:border-[#0b6c8f]/60 hover:bg-[#dff0f5]"
+        >
+          <ArrowRight className="h-7 w-7" aria-hidden="true" />
+        </Link>
       </div>
 
       <div className="mt-5">
