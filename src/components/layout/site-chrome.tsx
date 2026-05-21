@@ -26,8 +26,9 @@ export function SiteChrome({ children }: { children: ReactNode }) {
               <Image
                 src="/images/devlo-logo.webp"
                 alt="devlo"
-                width={150}
-                height={50}
+                width={108}
+                height={36}
+                sizes="108px"
                 className="h-10 w-auto"
                 priority
               />

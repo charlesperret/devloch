@@ -23,28 +23,26 @@ const methodStepLabel = {
   nl: "Stap",
 } as const;
 
-const logoRailTitleClass = "text-center text-sm font-extrabold uppercase tracking-[0.16em] text-[#f47b5f] md:text-base";
-
 const appointmentMetric = {
   fr: {
     value: "4'615+",
-    label: "rendez-vous commerciaux obtenus",
-    sublabel: "avec des décideurs dans des organisations reconnues",
+    label: "meetings successfully booked",
+    sublabel: "with decision-makers at leading companies worldwide",
   },
   en: {
-    value: "4,615+",
+    value: "4'615+",
     label: "meetings successfully booked",
-    sublabel: "with decision-makers at recognised organisations",
+    sublabel: "with decision-makers at leading companies worldwide",
   },
   de: {
     value: "4'615+",
-    label: "erfolgreich gebuchte Gespräche",
-    sublabel: "mit Entscheidern in anerkannten Unternehmen",
+    label: "meetings successfully booked",
+    sublabel: "with decision-makers at leading companies worldwide",
   },
   nl: {
-    value: "4.615+",
-    label: "succesvol geboekte afspraken",
-    sublabel: "met beslissers bij herkenbare organisaties",
+    value: "4'615+",
+    label: "meetings successfully booked",
+    sublabel: "with decision-makers at leading companies worldwide",
   },
 } as const;
 
@@ -276,10 +274,10 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
         <div className="mx-auto w-full max-w-[1600px] px-6 text-center lg:px-10">
           {page.appointmentLogos?.length ? (
             <div>
-              <p className="text-6xl font-extrabold tracking-tight text-[#153a54] md:text-7xl">
+              <p className="text-6xl font-extrabold tracking-tight text-[#34415c] md:text-7xl">
                 {appointmentMetric[page.locale].value}
               </p>
-              <h2 className="mt-3 text-2xl font-extrabold text-neutral-800 md:text-3xl">
+              <h2 className="mt-3 text-2xl font-extrabold text-neutral-900 md:text-3xl">
                 {appointmentMetric[page.locale].label}
               </h2>
               <p className="mt-2 text-sm font-semibold text-neutral-500">
@@ -306,7 +304,7 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
             <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-28 bg-gradient-to-l from-[#08384d] via-[#08384d]/80 to-transparent" />
             <div className="flex min-w-max gap-4 animate-logo-scroll-marathon will-change-transform group-hover:[animation-play-state:paused]">
               {testimonialRail.map((item, index) => (
-                <figure key={`${item.author}-${item.company}-${index}`} className="min-h-[126px] w-[min(82vw,440px)] shrink-0 rounded-md border border-white/12 bg-white/[0.08] p-4">
+                <figure key={`${item.author}-${item.company}-${index}`} className="min-h-[150px] w-[min(82vw,440px)] shrink-0 rounded-md border border-white/16 bg-white/[0.09] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
                   <div className="flex items-center gap-3">
                     <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
                       <Image src={item.photo} alt={item.photoAlt} fill className="object-cover" sizes="48px" />
@@ -335,9 +333,11 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
 
       <section className="border-b border-neutral-200 bg-white py-12">
         <div className="mx-auto w-full max-w-[1600px] px-6 text-center lg:px-10">
-          <p className={logoRailTitleClass}>
-            {page.logosTitle}
-          </p>
+          <h2 className="text-2xl font-extrabold leading-none text-neutral-900 md:text-3xl">
+            {page.locale === "fr"
+              ? page.logosTitle.split(" ").map((word) => <span key={word} className="block">{word}</span>)
+              : page.logosTitle}
+          </h2>
           <p className="mx-auto mt-2 max-w-2xl text-center text-sm font-semibold text-[#153a54]/70">
             {clientLogoIntro[page.locale]}
           </p>

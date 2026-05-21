@@ -416,7 +416,7 @@ const pages: PaidMarketPage[] = [
     description:
       "Prospection commerciale B2B pour générer des rendez-vous qualifiés en France, en Europe ou sur vos marchés prioritaires grâce au TAM, aux signaux d'achat et à la preuve.",
     eyebrow: "Acquisition B2B — France et international",
-    h1: "Générez plus de rendez-vous B2B qualifiés en France ou à l'étranger",
+    h1: "Générez plus de rendez-vous B2B qualifiés en France et à l'étranger",
     intro:
       "devlo aide les équipes B2B à identifier les entreprises les plus qualifiées, à prioriser le démarchage multicanal grâce aux signaux d'achat et à ouvrir des conversations avec une raison business crédible.",
     badges: ["TAM exploitable", "Signaux d'achat", "Rendez-vous qualifiés"],
@@ -512,13 +512,14 @@ const pages: PaidMarketPage[] = [
       ["Timing faible", "Nous évitons d'approcher une entreprise simplement parce qu'elle existe dans une base. Il faut un signal ou une hypothèse commerciale défendable."],
       ["Message sans preuve", "Un message sans résultat, cas client ou preuve sectorielle ressemble à toutes les autres agences de prospection."],
     ],
-    deliverablesTitle: "Ce que vous recevez",
+    deliverablesTitle: "Ce que vous recevez concrètement",
     deliverables: [
-      "Stratégie : portail de pilotage, ICP, zones prioritaires et exclusions",
-      "Données : liste TAM structurée, entreprises cibles et décideurs à contacter",
-      "Priorisation : matrice de signaux d'achat et premier batch à approcher",
-      "Exécution : angles de messages, email, LinkedIn et téléphone selon le plan validé",
-      "Pilotage : gestion des réponses, qualification, reporting hebdomadaire et recommandations de scaling",
+      "Portail de pilotage : ICP, TAM, exclusions, campagnes, métriques et apprentissages centralisés",
+      "Données : liste TAM structurée, entreprises cibles, décideurs à contacter et comptes à exclure",
+      "Priorisation : matrice de signaux d'achat, scoring et premier batch des entreprises les plus qualifiées",
+      "Preuve : angles de messages, cas clients comparables, pages de valeur et hypothèses business par segment",
+      "Exécution : email, LinkedIn et téléphone selon le plan validé, avec qualification des réponses",
+      "Pilotage : synchronisation HubSpot, reporting hebdomadaire et recommandations de scaling ou d'arrêt",
     ],
     faqTitle: "Questions",
     faqs: [

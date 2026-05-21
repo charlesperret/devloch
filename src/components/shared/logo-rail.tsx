@@ -16,6 +16,7 @@ type LogoCloudRowsProps = {
   logos: LogoItem[];
   rows?: 1 | 2 | 3 | 4;
   pauseOnHover?: boolean;
+  imageLoading?: "lazy" | "eager";
 };
 
 const logoScaleClassByAlt: Record<string, string> = {
@@ -93,7 +94,7 @@ export function InfiniteLogoRail({
   );
 }
 
-export function LogoCloudRows({ logos, rows = 3, pauseOnHover = true }: LogoCloudRowsProps) {
+export function LogoCloudRows({ logos, rows = 3, pauseOnHover = true, imageLoading = "lazy" }: LogoCloudRowsProps) {
   const rowCount = Math.max(1, Math.min(rows, logos.length));
   const logoRows = Array.from({ length: rowCount }, (_, rowIndex) =>
     logos.filter((_, index) => index % rowCount === rowIndex),
@@ -108,6 +109,7 @@ export function LogoCloudRows({ logos, rows = 3, pauseOnHover = true }: LogoClou
             logos={rowLogos}
             reverse={rowIndex % 2 === 1}
             pauseOnHover={pauseOnHover}
+            imageLoading={imageLoading}
           />
         ))}
       </div>
@@ -119,10 +121,12 @@ function LogoCloudRow({
   logos,
   reverse,
   pauseOnHover,
+  imageLoading,
 }: {
   logos: LogoItem[];
   reverse: boolean;
   pauseOnHover: boolean;
+  imageLoading: "lazy" | "eager";
 }) {
   const repeated = [...logos, ...logos];
   const animationClass = reverse ? "animate-logo-scroll-marathon-reverse" : "animate-logo-scroll-marathon";
@@ -145,15 +149,17 @@ function LogoCloudRow({
             key={`${logo.alt}-${index}`}
             className="flex h-14 w-[112px] shrink-0 items-center justify-center rounded-md border border-neutral-200/70 bg-white px-3 py-2 shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition hover:scale-[1.02]"
           >
-            <div className={["relative h-10 w-full overflow-hidden", logoScaleClassByAlt[logo.alt] ?? ""].join(" ").trim()}>
-              <Image
+            <div className={["flex h-10 w-full items-center justify-center overflow-hidden", logoScaleClassByAlt[logo.alt] ?? ""].join(" ").trim()}>
+              {/* Plain img avoids creating hundreds of Next image optimizer requests for decorative logo rails. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={logo.src}
                 alt={logo.alt}
-                fill
-                className="object-contain opacity-45 saturate-[0.7] transition duration-200 hover:opacity-100 hover:saturate-100"
-                loading="lazy"
-                sizes={railLogoSizesByAlt[logo.alt] ?? "112px"}
-                quality={72}
+                className="max-h-10 max-w-full object-contain opacity-60 saturate-[0.75] transition duration-200 hover:opacity-100 hover:saturate-100"
+                loading={imageLoading}
+                decoding="async"
+                width={112}
+                height={40}
               />
             </div>
           </div>
