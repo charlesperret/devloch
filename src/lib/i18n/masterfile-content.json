@@ -365,7 +365,7 @@
           }
         ]
       },
-      "clientsTitle": "Nos clients",
+      "clientsTitle": "Nos clients nous font confiance",
       "clientsLogos": [
         "StrongNetwork_logo.webp",
         "Abacus_logo.webp",
@@ -466,7 +466,7 @@
         },
         {
           "title": "Stratégie globale sur mesure",
-          "text": "Nous créons des Profils Clients Idéaux stricts et des approches personnalisées par secteur et par langue. Nous maîtrisons le français, l'allemand et l'anglais. Votre message s'adapte à votre audience et à ses réglementations."
+          "text": "Nous créons des Profils Clients Idéaux stricts et des approches personnalisées par secteur, pays et langue. Nos équipes opèrent en français, allemand, anglais et néerlandais, avec des messages natifs adaptés à la Romandie, à la Suisse alémanique, au DACH, à la Belgique et aux marchés internationaux."
         },
         {
           "title": "Fiabilité prouvée",
@@ -615,7 +615,7 @@
       "homeSummaryTitle": "Prospection B2B : ce que montrent les études",
       "homeSummaryPoints": [
         "**60% du temps des commerciaux** est absorbé par des tâches non commerciales selon [Salesforce State of Sales](https://www.salesforce.com/resources/research-reports/state-of-sales/) — devlo automatise ces tâches répétitives.",
-        "**Prospection multicanal** : combiner email froid, LinkedIn et téléphone génère jusqu'à 3× plus de réponses qualifiées que le canal unique selon [RAIN Group Research](https://www.rainsalestraining.com/blog/stats-on-sales-prospecting).",
+        "**+3'000 rendez-vous qualifiés** bookés pour des entreprises B2B en Suisse, Belgique, France et DACH. De plus, devlo couvre 4 langues avec une exécution native : FR, DE, EN, NL.",
         "**Personnalisation IA** : les équipes qui personnalisent leurs séquences avec l'IA voient leur taux de conversion augmenter de 50% selon [McKinsey & Company](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/next-in-personalization-2021).",
         "**Réactivité décisive** : contacter un prospect dans les [5 premières minutes](https://hbr.org/2011/03/the-short-life-of-online-sales-leads) après un signal d'intérêt multiplie les chances de conversion par 100× (Harvard Business Review)."
       ],
@@ -690,6 +690,26 @@
           "label": "Recevoir une analyse de fit",
           "href": "/consultation"
         }
+      },
+      "nativeSwissSection": {
+        "eyebrow": "Exécution native Suisse",
+        "title": "Des campagnes suisses rédigées et opérées par des SDR natifs",
+        "answer": "devlo ne traduit pas vos campagnes mot à mot. Nous séparons Romandie, Suisse alémanique et marchés internationaux avec des messages rédigés par des profils natifs ou réellement bilingues.",
+        "cards": [
+          {
+            "title": "Français natif pour la Romandie",
+            "text": "Prospection en français naturel pour Genève, Lausanne, Vaud, Fribourg, Neuchâtel et les comptes romands, avec des références locales et un ton professionnel suisse."
+          },
+          {
+            "title": "Allemand natif pour la Deutschschweiz",
+            "text": "Séquences adaptées à Zurich, Bâle, Berne et la Suisse alémanique : allemand professionnel, ton plus factuel, preuves pertinentes et qualification locale."
+          },
+          {
+            "title": "Un seul partenaire multilingue",
+            "text": "Votre pipeline reste coordonné dans un seul système, même si la campagne couvre plusieurs langues, pays, filiales ou segments B2B."
+          }
+        ],
+        "proof": "Cette capacité répond directement aux questions fréquentes des prospects suisses : qui écrit, qui appelle, dans quelle langue, et comment éviter une prospection qui sonne traduite."
       }
     },
     "consultationSeo": {
@@ -816,7 +836,7 @@
         "label": "Accédez gratuitement à la plateforme →",
         "href": "https://academy.devlo.ch/invitation?code=GE7JA6"
       },
-      "logosTitle": "Ces entreprises nous font confiance",
+      "logosTitle": "Nos clients nous font confiance",
       "testimonialsTitle": "Section témoignages Academy",
       "testimonials": [
         {
@@ -1244,8 +1264,8 @@
       ],
       "mission": "Notre mission : permettre aux entreprises B2B de rencontrer leurs prospects grâce à des campagnes de prospection commerciale ultra-ciblées et personnalisées, et une téléprospection digitale innovante.",
       "swissOffice": [
-        "Ruelle des Dolles 1",
-        "CH-1071 Rivaz",
+        "Lausanne",
+        "Vaud",
         "Suisse",
         "+41 79 758 64 03",
         "emea@devlo.ch"
@@ -1631,7 +1651,7 @@
           }
         ]
       },
-      "clientsTitle": "Our customers",
+      "clientsTitle": "Trusted by our clients",
       "clientsLogos": [
         "StrongNetwork_logo.webp",
         "Abacus_logo.webp",
@@ -1732,7 +1752,7 @@
         },
         {
           "title": "Tailor-made global strategy",
-          "text": "We create strict Ideal Customer Profiles and personalised approaches by sector and language. We are fluent in French, German and English. Your message is adapted to your audience and its regulations."
+          "text": "We create strict Ideal Customer Profiles and tailored approaches by sector, country and language. Our teams operate in French, German, English and Dutch, with native messages adapted to Romandy, German-speaking Switzerland, DACH, Belgium and international markets."
         },
         {
           "title": "Proven reliability",
@@ -1881,7 +1901,7 @@
       "homeSummaryTitle": "In a nutshell: why devlo?",
       "homeSummaryPoints": [
         "**B2B prospecting is defined as** the process of identifying and contacting professional decision-makers to generate qualified appointments. devlo has been the exclusive specialist in this discipline since 2020.",
-        "**+3,000+ qualified appointments** booked for B2B companies in Switzerland, Belgium, France and DACH. What's more, devlo covers 4 languages: FR, DE, EN, NL.",
+        "**+3,000 qualified appointments** booked for B2B companies in Switzerland, Belgium, France and DACH. devlo also covers 4 languages with native execution: FR, DE, EN, NL.",
         "**First results from the 3rd week** thanks to a proven methodology based on +1,000 campaigns - however, results vary depending on the target market.",
         "**Average opening rate of 70-80%** - according to HubSpot, the [industry average is 21%](https://blog.hubspot.com/sales/average-email-open-rate). devlo achieves 70-80% thanks to native FR/DE/EN/NL copywriting.",
         "**Multi-channel prospecting**: according to RAIN Group Research, combining email, LinkedIn and telephone generates up to [3× more responses](https://www.rainsalestraining.com/blog/stats-on-sales-prospecting) than a single channel.",
@@ -1959,6 +1979,26 @@
           "label": "Get a fit analysis",
           "href": "/consultation"
         }
+      },
+      "nativeSwissSection": {
+        "eyebrow": "Native Swiss execution",
+        "title": "Swiss campaigns written and operated by native SDRs",
+        "answer": "devlo does not translate campaigns word for word. We separate French-speaking Switzerland, German-speaking Switzerland and international markets with messages written by native or truly bilingual profiles.",
+        "cards": [
+          {
+            "title": "Native French for Romandy",
+            "text": "Natural French prospecting for Geneva, Lausanne, Vaud, Fribourg, Neuchatel and French-speaking accounts, with local references and a professional Swiss tone."
+          },
+          {
+            "title": "Native German for Deutschschweiz",
+            "text": "Sequences adapted to Zurich, Basel, Bern and German-speaking Switzerland: professional German, a more factual tone, relevant proof and local qualification."
+          },
+          {
+            "title": "One multilingual partner",
+            "text": "Your pipeline stays coordinated in one system, even when the campaign covers several languages, countries, subsidiaries or B2B segments."
+          }
+        ],
+        "proof": "This answers recurring questions from Swiss prospects: who writes, who calls, in which language, and how to avoid outreach that sounds translated."
       }
     },
     "consultationSeo": {
@@ -2085,7 +2125,7 @@
         "label": "Access the platform free of charge →",
         "href": "https://academy.devlo.ch/invitation?code=GE7JA6"
       },
-      "logosTitle": "These companies put their trust in us",
+      "logosTitle": "Trusted by our clients",
       "testimonialsTitle": "Academy testimonials section",
       "testimonials": [
         {
@@ -2513,8 +2553,8 @@
       ],
       "mission": "Our mission: to enable B2B companies to meet their prospects through ultra-targeted, personalised sales prospecting campaigns and innovative digital telemarketing.",
       "swissOffice": [
-        "Ruelle des Dolles 1",
-        "CH-1071 Rivaz",
+        "Lausanne",
+        "Vaud",
         "Switzerland",
         "+41 79 758 64 03",
         "emea@devlo.ch"
@@ -2900,7 +2940,7 @@
           }
         ]
       },
-      "clientsTitle": "Unsere Klienten",
+      "clientsTitle": "Unsere Kunden vertrauen uns",
       "clientsLogos": [
         "StrongNetwork_logo.webp",
         "Abacus_logo.webp",
@@ -3001,7 +3041,7 @@
         },
         {
           "title": "Maßgeschneiderte globale Strategie",
-          "text": "Wir erstellen strenge Idealkundenprofile und maßgeschneiderte Ansätze nach Branche und Sprache. Wir beherrschen Deutsch, Französisch und Englisch. Ihre Botschaft passt sich an Ihre Zielgruppe und deren Vorschriften an."
+          "text": "Wir erstellen präzise Idealkundenprofile und maßgeschneiderte Ansätze nach Branche, Land und Sprache. Unsere Teams arbeiten auf Französisch, Deutsch, Englisch und Niederländisch, mit nativen Botschaften für Romandie, Deutschschweiz, DACH, Belgien und internationale Märkte."
         },
         {
           "title": "Bewährte Zuverlässigkeit",
@@ -3150,7 +3190,7 @@
       "homeSummaryTitle": "Zusammenfassend: Warum devlo?",
       "homeSummaryPoints": [
         "**B2B-Akquise ist definiert als** der Prozess der Identifizierung und Ansprache von Geschäftsentscheidern, um qualifizierte Termine zu generieren. devlo ist seit 2020 exklusiver Spezialist in dieser Disziplin.",
-        "**+3'000 qualifizierte Termine** gebucht für B2B-Unternehmen in der Schweiz, Belgien, Frankreich und DACH. Darüber hinaus deckt devlo 4 Sprachen ab: FR, DE, EN, NL.",
+        "**+3.000 qualifizierte Termine** für B2B-Unternehmen in der Schweiz, Belgien, Frankreich und DACH gebucht. devlo deckt außerdem 4 Sprachen mit nativer Umsetzung ab: FR, DE, EN, NL.",
         "**Erste Ergebnisse ab der 3. Woche** dank einer Methodik, die sich in +1'000 Kampagnen bewährt hat - allerdings variieren die Ergebnisse je nach Zielmarkt.",
         "**Durchschnittliche Öffnungsrate von 70-80%** - laut HubSpot liegt der [Branchendurchschnitt bei 21%](https://blog.hubspot.com/sales/average-email-open-rate). devlo erreicht 70-80% dank nativem FR/DE/EN/NL-Copywriting.",
         "**Multi-Channel-Werbung**: Laut RAIN Group Research führt die Kombination von E-Mail, LinkedIn und Telefon zu bis zu [3× mehr Antworten](https://www.rainsalestraining.com/blog/stats-on-sales-prospecting) als ein einzelner Kanal.",
@@ -3228,6 +3268,26 @@
           "label": "Fit-Analyse erhalten",
           "href": "/consultation"
         }
+      },
+      "nativeSwissSection": {
+        "eyebrow": "Native Schweizer Umsetzung",
+        "title": "Schweizer Kampagnen, geschrieben und umgesetzt von nativen SDRs",
+        "answer": "devlo übersetzt Kampagnen nicht Wort für Wort. Wir trennen Romandie, Deutschschweiz und internationale Märkte mit Botschaften, die von nativen oder wirklich zweisprachigen Profilen geschrieben werden.",
+        "cards": [
+          {
+            "title": "Natives Französisch für die Romandie",
+            "text": "Natürliche französische Akquise für Genf, Lausanne, Waadt, Freiburg, Neuenburg und französischsprachige Accounts, mit lokalen Referenzen und professionellem Schweizer Ton."
+          },
+          {
+            "title": "Natives Deutsch für die Deutschschweiz",
+            "text": "Sequenzen für Zürich, Basel, Bern und die Deutschschweiz: professionelles Deutsch, faktischer Ton, relevante Nachweise und lokale Qualifizierung."
+          },
+          {
+            "title": "Ein mehrsprachiger Partner",
+            "text": "Ihre Pipeline bleibt in einem System koordiniert, auch wenn die Kampagne mehrere Sprachen, Länder, Tochtergesellschaften oder B2B-Segmente abdeckt."
+          }
+        ],
+        "proof": "Das beantwortet typische Fragen Schweizer Interessenten: Wer schreibt, wer ruft an, in welcher Sprache, und wie vermeiden wir Akquise, die nach Übersetzung klingt?"
       }
     },
     "consultationSeo": {
@@ -3354,7 +3414,7 @@
         "label": "Greifen Sie kostenlos auf die Plattform zu →",
         "href": "https://academy.devlo.ch/invitation?code=GE7JA6"
       },
-      "logosTitle": "Diese Unternehmen vertrauen uns",
+      "logosTitle": "Unsere Kunden vertrauen uns",
       "testimonialsTitle": "Abschnitt Zeugnisse Academy",
       "testimonials": [
         {
@@ -3782,8 +3842,8 @@
       ],
       "mission": "Unsere Mission: B2B-Unternehmen durch ultra-gezielte und personalisierte Geschäftsanbahnungskampagnen und innovatives digitales Teleprospecting mit potenziellen Kunden zusammenzubringen.",
       "swissOffice": [
-        "Ruelle des Dolles 1",
-        "CH-1071 Rivaz",
+        "Lausanne",
+        "Waadt",
         "Schweiz",
         "+41 79 758 64 03",
         "emea@devlo.ch"
@@ -4169,7 +4229,7 @@
           }
         ]
       },
-      "clientsTitle": "Onze klanten",
+      "clientsTitle": "Onze klanten vertrouwen ons",
       "clientsLogos": [
         "StrongNetwork_logo.webp",
         "Abacus_logo.webp",
@@ -4270,7 +4330,7 @@
         },
         {
           "title": "Wereldwijde strategie op maat",
-          "text": "We creëren strikte profielen van ideale klanten en een gepersonaliseerde aanpak per sector en taal. We spreken vloeiend Frans, Duits en Engels. Uw boodschap wordt aangepast aan uw publiek en de regelgeving."
+          "text": "We maken strikte ideale klantprofielen en een aanpak op maat per sector, land en taal. Onze teams werken in het Frans, Duits, Engels en Nederlands, met native boodschappen voor Romandië, Duitstalig Zwitserland, DACH, België en internationale markten."
         },
         {
           "title": "Bewezen betrouwbaarheid",
@@ -4419,7 +4479,7 @@
       "homeSummaryTitle": "In een notendop: waarom devlo?",
       "homeSummaryPoints": [
         "**B2B prospectie wordt gedefinieerd als** het proces van het identificeren en contacteren van professionele beslissers om gekwalificeerde afspraken te genereren. devlo is sinds 2020 de exclusieve specialist in deze discipline.",
-        "**+Meer dan 3.000 gekwalificeerde afspraken** geboekt voor B2B-bedrijven in Zwitserland, België, Frankrijk en DACH. Bovendien dekt devlo 4 talen: FR, DE, EN, NL.",
+        "**+3.000 gekwalificeerde afspraken** geboekt voor B2B-bedrijven in Zwitserland, België, Frankrijk en DACH. devlo dekt ook 4 talen met native uitvoering: FR, DE, EN, NL.",
         "**Eerste resultaten vanaf de 3e week** dankzij een bewezen methodologie gebaseerd op +1.000 campagnes - resultaten variëren echter afhankelijk van de doelmarkt.",
         "**Gemiddeld openingspercentage van 70-80%** - volgens HubSpot is het [sectorgemiddelde 21%] (https://blog.hubspot.com/sales/average-email-open-rate). devlo behaalt 70-80% dankzij native FR/DE/EN/NL copywriting.",
         "**Multi-channel prospectie**: volgens RAIN Group Research genereert het combineren van e-mail, LinkedIn en telefoon tot [3× meer reacties] (https://www.rainsalestraining.com/blog/stats-on-sales-prospecting) dan een enkel kanaal.",
@@ -4497,6 +4557,26 @@
           "label": "Ontvang een fitanalyse",
           "href": "/consultation"
         }
+      },
+      "nativeSwissSection": {
+        "eyebrow": "Native Zwitserse uitvoering",
+        "title": "Zwitserse campagnes geschreven en uitgevoerd door native SDRs",
+        "answer": "devlo vertaalt campagnes niet woord voor woord. We scheiden Franstalig Zwitserland, Duitstalig Zwitserland en internationale markten met boodschappen geschreven door native of echt tweetalige profielen.",
+        "cards": [
+          {
+            "title": "Native Frans voor Romandië",
+            "text": "Natuurlijke Franstalige prospectie voor Genève, Lausanne, Vaud, Fribourg, Neuchatel en Franstalige accounts, met lokale referenties en een professionele Zwitserse toon."
+          },
+          {
+            "title": "Native Duits voor Deutschschweiz",
+            "text": "Sequences aangepast aan Zürich, Basel, Bern en Duitstalig Zwitserland: professioneel Duits, een feitelijkere toon, relevante proof en lokale kwalificatie."
+          },
+          {
+            "title": "Een meertalige partner",
+            "text": "Uw pipeline blijft in één systeem gecoördineerd, ook wanneer de campagne meerdere talen, landen, filialen of B2B-segmenten bestrijkt."
+          }
+        ],
+        "proof": "Dit beantwoordt terugkerende vragen van Zwitserse prospects: wie schrijft, wie belt, in welke taal, en hoe vermijden we outreach die vertaald klinkt?"
       }
     },
     "consultationSeo": {
@@ -4623,7 +4703,7 @@
         "label": "Gratis toegang tot het platform →",
         "href": "https://academy.devlo.ch/invitation?code=GE7JA6"
       },
-      "logosTitle": "Deze bedrijven vertrouwen op ons",
+      "logosTitle": "Onze klanten vertrouwen ons",
       "testimonialsTitle": "Academy getuigenissen",
       "testimonials": [
         {
@@ -5051,8 +5131,8 @@
       ],
       "mission": "Onze missie: B2B-bedrijven in staat stellen hun prospects te ontmoeten door middel van ultra-gerichte, gepersonaliseerde sales prospectiecampagnes en innovatieve digitale telemarketing.",
       "swissOffice": [
-        "Ruelle des Dolles 1",
-        "CH-1071 Rivaz",
+        "Lausanne",
+        "Vaud",
         "Zwitserland",
         "+41 79 758 64 03",
         "emea@devlo.ch"

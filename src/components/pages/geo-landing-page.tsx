@@ -373,7 +373,30 @@ export function GeoLandingPage({ data, locale = "fr" }: { data: GeoPageData; loc
       {data.country === "ch" && (
         <section className="bg-white py-12">
           <div className="mx-auto w-full max-w-screen-xl space-y-8 px-6 lg:px-10">
-            <div className="w-full max-w-full min-w-0 overflow-x-auto rounded-xl border border-neutral-200 bg-white">
+            <div className="grid gap-3 md:hidden">
+              <p className="sr-only">{marketTable.caption}</p>
+              {marketTable.rows.map(([region, adaptation, execution]) => (
+                <article key={region} className="rounded-xl border border-neutral-200 bg-white p-4">
+                  <h2 className="text-sm font-bold text-[#153a54]">{region}</h2>
+                  <dl className="mt-3 space-y-3 text-sm leading-6 text-neutral-700">
+                    <div>
+                      <dt className="text-xs font-semibold uppercase tracking-[0.08em] text-[#074f74]">
+                        {marketTable.headers[1]}
+                      </dt>
+                      <dd className="mt-1">{adaptation}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs font-semibold uppercase tracking-[0.08em] text-[#074f74]">
+                        {marketTable.headers[2]}
+                      </dt>
+                      <dd className="mt-1">{execution}</dd>
+                    </div>
+                  </dl>
+                </article>
+              ))}
+            </div>
+
+            <div className="hidden w-full max-w-full min-w-0 overflow-hidden rounded-xl border border-neutral-200 bg-white md:block">
               <table className="w-full min-w-[720px] border-collapse text-left text-sm">
                 <caption className="sr-only">{marketTable.caption}</caption>
                 <thead className="bg-neutral-50 text-xs font-semibold uppercase tracking-[0.08em] text-[#074f74]">

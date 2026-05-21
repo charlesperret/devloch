@@ -127,6 +127,28 @@ export const homeContent = {
     ],
     cta: { label: "Recevoir une analyse de fit", href: "/consultation" },
   },
+  nativeSwissSection: {
+    eyebrow: "Exécution native Suisse",
+    title: "Des campagnes suisses rédigées et opérées par des SDR natifs",
+    answer:
+      "devlo ne traduit pas vos campagnes mot à mot. Nous séparons Romandie, Suisse alémanique et marchés internationaux avec des messages rédigés par des profils natifs ou réellement bilingues.",
+    cards: [
+      {
+        title: "Français natif pour la Romandie",
+        text: "Prospection en français naturel pour Genève, Lausanne, Vaud, Fribourg, Neuchâtel et les comptes romands, avec des références locales et un ton professionnel suisse.",
+      },
+      {
+        title: "Allemand natif pour la Deutschschweiz",
+        text: "Séquences adaptées à Zurich, Bâle, Berne et la Suisse alémanique : allemand professionnel, ton plus factuel, preuves pertinentes et qualification locale.",
+      },
+      {
+        title: "Un seul partenaire multilingue",
+        text: "Votre pipeline reste coordonné dans un seul système, même si la campagne couvre plusieurs langues, pays, filiales ou segments B2B.",
+      },
+    ],
+    proof:
+      "Cette capacité répond directement aux questions fréquentes des prospects suisses : qui écrit, qui appelle, dans quelle langue, et comment éviter une prospection qui sonne traduite.",
+  },
   rendezVousTitle: "Rendez-vous commerciaux obtenus avec",
   rendezVousLogos: [
     // Row 1
@@ -240,7 +262,7 @@ export const homeContent = {
       },
     ],
   },
-  clientsTitle: "Nos clients",
+  clientsTitle: "Nos clients nous font confiance",
   clientsLogos: [
     "StrongNetwork_logo.webp",
     "Abacus_logo.webp",
@@ -379,7 +401,7 @@ export const homeContent = {
     },
     {
       title: "Stratégie globale sur mesure",
-      text: "Nous créons des Profils Clients Idéaux stricts et des approches personnalisées par secteur et par langue. Nous maîtrisons le français, l'allemand et l'anglais. Votre message s'adapte à votre audience et à ses réglementations.",
+      text: "Nous créons des Profils Clients Idéaux stricts et des approches personnalisées par secteur, pays et langue. Nos équipes opèrent en français, allemand, anglais et néerlandais, avec des messages natifs adaptés à la Romandie, à la Suisse alémanique, au DACH, à la Belgique et aux marchés internationaux.",
     },
     {
       title: "Fiabilité prouvée",
@@ -503,7 +525,7 @@ export const homeContent = {
     {
       question: "Comment fonctionne concrètement le développement commercial externalisé avec devlo ?",
       answer:
-        "Avec devlo, le développement commercial externalisé suit un processus structuré. Premièrement, devlo travaille avec le client pour définir le marché cible, les profils de prospects idéaux, les messages clés et la proposition de valeur. Deuxièmement, l'agence construit ou enrichit la base de données de leads et prépare des séquences de prospection multicanal pour le cold email, LinkedIn et les appels. Troisièmement, devlo lance les campagnes, monitore les performances, gère les réponses et qualifie les leads. Enfin, l'équipe planifie les rendez-vous qualifiés et les démos dans le calendrier du client et partage des rapports réguliers sur les taux d'ouverture, de réponse, d'intérêt et la valeur du pipeline.",
+        "Avec devlo, le développement commercial externalisé suit un processus structuré. Premièrement, devlo travaille avec le client pour définir le marché cible, les profils de prospects idéaux, les messages clés et la proposition de valeur. Deuxièmement, l'agence construit ou enrichit une liste de comptes et contacts B2B alignés avec l'ICP, puis prépare des séquences de prospection multicanal pour le cold email, LinkedIn et les appels. Troisièmement, devlo lance les campagnes, monitore les performances, gère les réponses et qualifie les leads. Enfin, l'équipe planifie les rendez-vous qualifiés et les démos dans le calendrier du client et partage des rapports réguliers sur les taux d'ouverture, de réponse, d'intérêt et la valeur du pipeline.",
     },
     {
       question: "devlo peut-elle m'aider à générer des leads B2B sans recruter d'équipe SDR interne ?",
@@ -549,7 +571,7 @@ export const homeContent = {
   homeSummaryTitle: "En résumé : pourquoi devlo ?",
   homeSummaryPoints: [
     "**La prospection B2B est définie comme** le processus d'identification et de contact des décideurs professionnels pour générer des rendez-vous qualifiés. devlo est spécialiste exclusif de cette discipline depuis 2020.",
-    "**+3'000 rendez-vous qualifiés** bookés pour des entreprises B2B en Suisse, Belgique, France et DACH. De plus, devlo couvre 4 langues : FR, DE, EN, NL.",
+    "**+3'000 rendez-vous qualifiés** bookés pour des entreprises B2B en Suisse, Belgique, France et DACH. De plus, devlo couvre 4 langues avec une exécution native : FR, DE, EN, NL.",
     "**Premiers résultats dès la 3e semaine** grâce à une méthodologie éprouvée sur +1'000 campagnes — cependant, les résultats varient selon le marché cible.",
     "**Taux d'ouverture moyen de 70-80%** — selon HubSpot, la [moyenne secteur est de 21%](https://blog.hubspot.com/sales/average-email-open-rate). devlo atteint 70-80% grâce au copywriting natif FR/DE/EN/NL.",
     "**Prospection multicanal** : selon RAIN Group Research, combiner email, LinkedIn et téléphone génère jusqu'à [3× plus de réponses](https://www.rainsalestraining.com/blog/stats-on-sales-prospecting) que le canal unique.",
@@ -758,7 +780,7 @@ export const academyContent = {
     label: "Accédez gratuitement à la plateforme →",
     href: "https://academy.devlo.ch/invitation?code=GE7JA6",
   },
-  logosTitle: "Ces entreprises nous font confiance",
+  logosTitle: "Nos clients nous font confiance",
   testimonialsTitle: "Ils ont transformé leur prospection B2B",
   testimonials: [
     {
@@ -1101,8 +1123,8 @@ export const footerContent = {
   mission:
     "Notre mission : permettre aux entreprises B2B de rencontrer leurs prospects grâce à des campagnes de prospection commerciale ultra-ciblées et personnalisées, et une téléprospection digitale innovante.",
   swissOffice: [
-    "Ruelle des Dolles 1",
-    "CH-1071 Rivaz",
+    "Lausanne",
+    "Vaud",
     "Suisse",
     "+41 79 758 64 03",
     "emea@devlo.ch",

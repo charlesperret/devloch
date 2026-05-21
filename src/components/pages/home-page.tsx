@@ -47,6 +47,7 @@ const whyIcons = [
   Languages,
   ShieldCheck,
 ] as const;
+const nativeSwissIcons = [Languages, Globe, Handshake] as const;
 const methodIconMap = {
   Target,
   PenTool,
@@ -89,6 +90,13 @@ type HomeContentData = typeof homeContent & {
     headers: string[];
     rows: Array<{ criterion: string; signal: string; qualification: string }>;
     cta: { label: string; href: string };
+  };
+  nativeSwissSection?: {
+    eyebrow: string;
+    title: string;
+    answer: string;
+    cards: Array<{ title: string; text: string }>;
+    proof: string;
   };
 };
 
@@ -133,6 +141,7 @@ export function HomePage({
     content.rendezVousLogos.slice(index * rendezVousPerRow, (index + 1) * rendezVousPerRow),
   ).filter((row) => row.length > 0);
   const qualifiedLeadSection = content.qualifiedLeadSection;
+  const nativeSwissSection = content.nativeSwissSection;
 
   return (
     <>
@@ -286,6 +295,42 @@ export function HomePage({
                 </table>
               </div>
             </FadeInOnScroll>
+          </div>
+        </SectionWrapper>
+      ) : null}
+
+      {nativeSwissSection ? (
+        <SectionWrapper background="white" className="py-[64px] md:py-[96px]">
+          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+            <FadeInOnScroll className="min-w-0">
+              <p className="text-sm font-semibold uppercase tracking-[0.1em] text-devlo-700">
+                {nativeSwissSection.eyebrow}
+              </p>
+              <h2 className="mt-3 max-w-full break-words text-[28px] font-bold leading-[1.2] text-devlo-900 md:text-4xl">
+                {nativeSwissSection.title}
+              </h2>
+              <p className="mt-4 max-w-full break-words rounded-xl border border-devlo-100 bg-devlo-50 p-4 text-base font-semibold leading-7 text-devlo-800">
+                {nativeSwissSection.answer}
+              </p>
+              <p className="mt-4 text-sm font-semibold leading-6 text-neutral-600">
+                {nativeSwissSection.proof}
+              </p>
+            </FadeInOnScroll>
+
+            <div className="grid min-w-0 gap-4 md:grid-cols-3 lg:grid-cols-1">
+              {nativeSwissSection.cards.map((card, index) => {
+                const Icon = nativeSwissIcons[index] ?? Languages;
+                return (
+                  <FadeInOnScroll key={card.title} delay={index * 0.1}>
+                    <article className="h-full rounded-xl border border-neutral-200 bg-white p-5 shadow-soft">
+                      <Icon className="h-6 w-6 text-devlo-700" aria-hidden />
+                      <h3 className="mt-3 text-lg font-semibold leading-snug text-devlo-900">{card.title}</h3>
+                      <p className="mt-2 text-sm leading-6 text-neutral-600">{card.text}</p>
+                    </article>
+                  </FadeInOnScroll>
+                );
+              })}
+            </div>
           </div>
         </SectionWrapper>
       ) : null}

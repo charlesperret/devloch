@@ -79,12 +79,12 @@ export const aiSalesOpsContent = {
     },
     {
       number: "04",
-      title: "Bibliothèque d'objections et battle cards en temps réel",
+      title: "Fiches de réponse aux objections et concurrents",
       fit: "Équipes 5+ commerciaux",
       shortDescription:
-        "Les objections gagnantes et les réponses qui closent sont capturées automatiquement à partir de vos deals. Dès qu'un concurrent revient, une battle card est générée et diffusée à l'équipe.",
+        "Quand un prospect cite un concurrent, bloque sur le prix ou demande une preuve, l'IA prépare une fiche claire : réponse recommandée, preuve client, risque à éviter et prochaine action.",
       longDescription:
-        "Au lieu de laisser le savoir commercial dans la tête de deux seniors, le système collecte les objections remontées en call, les réponses qui ont marché et les signaux concurrentiels. Chaque nouvelle information renforce la bibliothèque. Les juniors accèdent aux meilleurs arguments en quelques secondes, directement dans leur environnement de travail.",
+        "Au lieu de laisser le savoir commercial dans la tête de deux seniors, le système collecte les objections remontées en call, les réponses qui ont marché et les signaux concurrentiels. Chaque nouvelle information renforce la bibliothèque. Les commerciaux accèdent aux meilleurs arguments en quelques secondes, directement dans leur environnement de travail.",
       result:
         "Le niveau d'argumentation des juniors converge vers celui des seniors, sans dépendre d'une seule personne.",
       stack: ["Automation Platform", "Claude API", "Google Docs", "Slack", "Teams"],
@@ -134,7 +134,7 @@ export const aiSalesOpsContent = {
     eyebrow: "Par où commencer",
     title: "Commencez par le workflow qui fait déjà perdre du temps aujourd'hui",
     description:
-      "Dans la majorité des cas, nous commençons par l'inbox, la préparation de rendez-vous ou le CRM. Ensuite, nous ajoutons les briques qui font monter la qualité de pilotage : knowledge bot, battle cards, reporting ou sales writer.",
+      "Dans la majorité des cas, nous commençons par l'inbox, la préparation de rendez-vous ou le CRM. Ensuite, nous ajoutons les briques qui font monter la qualité de pilotage : bot de connaissance, fiches d'objections, reporting ou assistant de rédaction commerciale.",
   },
 
   processSection: {
@@ -271,7 +271,7 @@ export const aiSalesOpsContent = {
     {
       criterion: "Onboarding d'un nouveau commercial",
       withoutDevlo: "3 à 6 mois avant autonomie réelle.",
-      withDevlo: "4 à 6 semaines avec bot de connaissance et battle cards.",
+      withDevlo: "4 à 6 semaines avec bot de connaissance et fiches d'objections.",
     },
     {
       criterion: "Propositions commerciales",

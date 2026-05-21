@@ -81,6 +81,17 @@ body {
   font-family: var(--font-plus-jakarta), "Avenir Next", "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
 }
 
+#main-content {
+  max-width: 100vw;
+  overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  #main-content {
+    overflow-x: hidden;
+  }
+}
+
 /* Ensure the final content block before footer ends on pure white,
    but skip elements that explicitly declare a dark background (e.g. dark CTA sections). */
 #main-content > :last-child:not([data-dark]),

@@ -95,10 +95,10 @@
       },
       {
         "number": "04",
-        "title": "Bibliothèque d'objections et battle cards en temps réel",
+        "title": "Fiches de réponse aux objections et concurrents",
         "fit": "Équipes 5+ commerciaux",
-        "shortDescription": "Les objections gagnantes et les réponses qui closent sont capturées automatiquement à partir de vos deals. Dès qu'un concurrent revient, une battle card est générée et diffusée à l'équipe.",
-        "longDescription": "Au lieu de laisser le savoir commercial dans la tête de deux seniors, le système collecte les objections remontées en call, les réponses qui ont marché et les signaux concurrentiels. Chaque nouvelle information renforce la bibliothèque. Les juniors accèdent aux meilleurs arguments en quelques secondes, directement dans leur environnement de travail.",
+        "shortDescription": "Quand un prospect cite un concurrent, bloque sur le prix ou demande une preuve, l'IA prépare une fiche claire : réponse recommandée, preuve client, risque à éviter et prochaine action.",
+        "longDescription": "Au lieu de laisser le savoir commercial dans la tête de deux seniors, le système collecte les objections remontées en call, les réponses qui ont marché et les signaux concurrentiels. Chaque nouvelle information renforce la bibliothèque. Les commerciaux accèdent aux meilleurs arguments en quelques secondes, directement dans leur environnement de travail.",
         "result": "Le niveau d'argumentation des juniors converge vers celui des seniors, sans dépendre d'une seule personne.",
         "stack": [
           "Automation Platform",
@@ -169,7 +169,7 @@
     "startSection": {
       "eyebrow": "Par où commencer",
       "title": "Commencez par le workflow qui fait déjà perdre du temps aujourd'hui",
-      "description": "Dans la majorité des cas, nous commençons par l'inbox, la préparation de rendez-vous ou le CRM. Ensuite, nous ajoutons les briques qui font monter la qualité de pilotage : knowledge bot, battle cards, reporting ou sales writer."
+      "description": "Dans la majorité des cas, nous commençons par l'inbox, la préparation de rendez-vous ou le CRM. Ensuite, nous ajoutons les briques qui font monter la qualité de pilotage : bot de connaissance, fiches d'objections, reporting ou assistant de rédaction commerciale."
     },
     "processSection": {
       "eyebrow": "Comment ça marche",
@@ -290,7 +290,7 @@
     ],
     "comparisonSection": {
       "eyebrow": "Comparaison",
-      "title": "Que se passe-t-il quand vous gardez le statu quo ?",
+      "title": "Que se passe-t-il si vous ne changez rien ?",
       "description": "Pendant que vous hésitez, vos concurrents répondent plus vite, préparent mieux leurs rendez-vous et capitalisent déjà leur savoir commercial."
     },
     "comparisonRows": [
@@ -312,7 +312,7 @@
       {
         "criterion": "Onboarding d'un nouveau commercial",
         "withoutDevlo": "3 à 6 mois avant autonomie réelle.",
-        "withDevlo": "4 à 6 semaines avec bot de connaissance et battle cards."
+        "withDevlo": "4 à 6 semaines avec bot de connaissance et fiches d'objections."
       },
       {
         "criterion": "Propositions commerciales",
@@ -502,10 +502,10 @@
       },
       {
         "number": "04",
-        "title": "Real-time objection library and battle cards",
+        "title": "Objection and competitor response sheets",
         "fit": "5+ sales teams",
-        "shortDescription": "Winning objections and closing responses are captured automatically from your deals. As soon as a competitor returns, a battle card is generated and distributed to the team.",
-        "longDescription": "Instead of leaving the commercial knowledge in the heads of two senior people, the system collects the objections raised in the call, the answers that have worked and the competitive signals. Each new piece of information adds to the library. The juniors have access to the best arguments in a matter of seconds, directly in their working environment.",
+        "shortDescription": "When a prospect mentions a competitor, blocks on price or asks for proof, AI prepares a clear response sheet: recommended answer, client proof, risk to avoid and next action.",
+        "longDescription": "Instead of leaving commercial knowledge in the heads of two senior people, the system collects objections raised during calls, answers that worked and competitive signals. Each new piece of information strengthens the library. Salespeople access the best arguments in seconds, directly in their working environment.",
         "result": "The level of argumentation of the juniors converges with that of the seniors, without depending on a single person.",
         "stack": [
           "Automation Platform",
@@ -576,7 +576,7 @@
     "startSection": {
       "eyebrow": "Where to start",
       "title": "Start with the workflow that is already wasting time today",
-      "description": "In most cases, we start with inbox, appointment preparation or CRM. Then we add the building blocks that raise the quality of management: knowledge bot, battle cards, reporting or sales writer."
+      "description": "In most cases, we start with inbox, appointment preparation or CRM. Then we add the building blocks that improve sales management quality: knowledge bot, objection sheets, reporting or sales writing assistant."
     },
     "processSection": {
       "eyebrow": "How it works",
@@ -697,7 +697,7 @@
     ],
     "comparisonSection": {
       "eyebrow": "Comparaison",
-      "title": "What happens when you maintain the status quo?",
+      "title": "What happens if you change nothing?",
       "description": "While you're hesitating, your competitors are responding faster, preparing their meetings better and already capitalising on their commercial knowledge."
     },
     "comparisonRows": [
@@ -719,7 +719,7 @@
       {
         "criterion": "Onboarding a new salesperson",
         "withoutDevlo": "3 to 6 months before real autonomy.",
-        "withDevlo": "4 to 6 weeks with bot de connaissance and battle cards."
+        "withDevlo": "4 to 6 weeks with a knowledge bot and objection sheets."
       },
       {
         "criterion": "Commercial proposals",
@@ -909,10 +909,10 @@
       },
       {
         "number": "04",
-        "title": "Bibliothek von Einwänden und Battle Cards in Echtzeit",
+        "title": "Antwortblätter für Einwände und Wettbewerber",
         "fit": "Teams 5+ kommerzielle",
-        "shortDescription": "Die siegreichen Einwände und die abschließenden Antworten werden automatisch aus Ihren Deals erfasst. Sobald ein Konkurrent zurückkommt, wird eine Battle Card generiert und an das Team verteilt.",
-        "longDescription": "Anstatt das Geschäftswissen in den Köpfen zweier Senioren zu belassen, sammelt das System Einwände, die im Callcenter hochgekommen sind, Antworten, die funktioniert haben, und Wettbewerbssignale. Jede neue Information stärkt die Bibliothek. Die Juniors greifen in Sekundenschnelle auf die besten Argumente zu, direkt in ihrer Arbeitsumgebung.",
+        "shortDescription": "Wenn ein Interessent einen Wettbewerber nennt, beim Preis blockiert oder einen Nachweis verlangt, erstellt die KI ein klares Antwortblatt: empfohlene Antwort, Kundennachweis, zu vermeidendes Risiko und nächster Schritt.",
+        "longDescription": "Anstatt kommerzielles Wissen im Kopf von zwei Seniors zu lassen, sammelt das System Einwände aus Calls, erfolgreiche Antworten und Wettbewerbssignale. Jede neue Information stärkt die Bibliothek. Vertriebsteams greifen in Sekunden auf die besten Argumente zu, direkt in ihrer Arbeitsumgebung.",
         "result": "Das Argumentationsniveau der Junioren konvergiert mit dem der Senioren, ohne von einer einzelnen Person abhängig zu sein.",
         "stack": [
           "Automation Platform",
@@ -983,7 +983,7 @@
     "startSection": {
       "eyebrow": "Wo soll ich anfangen",
       "title": "Beginnen Sie mit dem Workflow, der heute schon Zeit kostet",
-      "description": "In den meisten Fällen beginnen wir mit der Inbox, der Terminvorbereitung oder dem CRM. Dann fügen wir die Bausteine hinzu, die die Steuerungsqualität erhöhen: knowledge bot, battle cards, reporting oder sales writer."
+      "description": "In den meisten Fällen beginnen wir mit Inbox, Terminvorbereitung oder CRM. Danach ergänzen wir Bausteine, die die Steuerungsqualität erhöhen: Wissensbot, Einwandblätter, Reporting oder Sales-Writing-Assistent."
     },
     "processSection": {
       "eyebrow": "Wie es funktioniert",
@@ -1104,7 +1104,7 @@
     ],
     "comparisonSection": {
       "eyebrow": "Comparaison",
-      "title": "Was passiert, wenn Sie den Status quo beibehalten?",
+      "title": "Was passiert, wenn Sie nichts ändern?",
       "description": "Während Sie zögern, antworten Ihre Konkurrenten schneller, bereiten sich besser auf Termine vor und kapitalisieren bereits ihr Verkaufswissen."
     },
     "comparisonRows": [
@@ -1126,7 +1126,7 @@
       {
         "criterion": "Onboarding eines neuen Vertriebsmitarbeiters",
         "withoutDevlo": "3-6 Monate bis zur tatsächlichen Selbstständigkeit",
-        "withDevlo": "4 bis 6 Wochen mit Wissensbot und Battle Cards."
+        "withDevlo": "4 bis 6 Wochen mit Wissensbot und Einwandblättern."
       },
       {
         "criterion": "Kommerzielle Vorschläge",
@@ -1316,10 +1316,10 @@
       },
       {
         "number": "04",
-        "title": "Real-time bezwaarbibliotheek en gevechtskaarten",
+        "title": "Antwoordfiches voor bezwaren en concurrenten",
         "fit": "5+ verkoopteams",
-        "shortDescription": "Winnende bezwaren en afsluitende reacties worden automatisch vastgelegd vanuit je deals. Zodra een concurrent terugkomt, wordt er een strijdkaart gegenereerd en uitgedeeld aan het team.",
-        "longDescription": "In plaats van de commerciële kennis in de hoofden van twee senior mensen te laten zitten, verzamelt het systeem de bezwaren die in het gesprek naar voren komen, de antwoorden die hebben gewerkt en de signalen van de concurrentie. Elk nieuw stukje informatie vult de bibliotheek aan. De juniors hebben binnen enkele seconden toegang tot de beste argumenten, direct in hun werkomgeving.",
+        "shortDescription": "Wanneer een prospect een concurrent noemt, vastloopt op prijs of bewijs vraagt, maakt AI een duidelijke antwoordfiche: aanbevolen antwoord, klantbewijs, te vermijden risico en volgende actie.",
+        "longDescription": "In plaats van commerciële kennis in het hoofd van twee seniors te laten zitten, verzamelt het systeem bezwaren uit calls, antwoorden die werkten en concurrentiesignalen. Elk nieuw inzicht versterkt de bibliotheek. Salesmensen krijgen binnen enkele seconden toegang tot de beste argumenten, direct in hun werkomgeving.",
         "result": "Het argumentatieniveau van de juniors convergeert met dat van de seniors, zonder afhankelijk te zijn van één persoon.",
         "stack": [
           "Automation Platform",
@@ -1390,7 +1390,7 @@
     "startSection": {
       "eyebrow": "Waar te beginnen",
       "title": "Begin met de werkstroom die vandaag al tijd verspilt",
-      "description": "In de meeste gevallen beginnen we met inbox, afspraakvoorbereiding of CRM. Daarna voegen we de bouwstenen toe die de kwaliteit van het beheer verhogen: kennisbots, slagkaarten, rapportage of verkoopschrijver."
+      "description": "In de meeste gevallen beginnen we met inbox, afspraakvoorbereiding of CRM. Daarna voegen we bouwstenen toe die de kwaliteit van salessturing verhogen: kennisbot, bezwaarfiches, rapportage of sales writing assistant."
     },
     "processSection": {
       "eyebrow": "Hoe het werkt",
@@ -1511,7 +1511,7 @@
     ],
     "comparisonSection": {
       "eyebrow": "Comparaison",
-      "title": "Wat gebeurt er als je de status quo handhaaft?",
+      "title": "Wat gebeurt er als je niets verandert?",
       "description": "Terwijl jij aarzelt, reageren je concurrenten sneller, bereiden ze hun vergaderingen beter voor en maken ze al gebruik van hun commerciële kennis."
     },
     "comparisonRows": [
@@ -1533,7 +1533,7 @@
       {
         "criterion": "Een nieuwe verkoper inwerken",
         "withoutDevlo": "3 tot 6 maanden voor echte autonomie.",
-        "withDevlo": "4 tot 6 weken met bot de connaissance en gevechtskaarten."
+        "withDevlo": "4 tot 6 weken met een kennisbot en bezwaarfiches."
       },
       {
         "criterion": "Commerciële voorstellen",

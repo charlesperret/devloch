@@ -154,9 +154,9 @@ export function AgencyMasterPage({ locale = "fr" }: AgencyMasterPageProps) {
       address: [
         {
           "@type": "PostalAddress",
-          streetAddress: "Ruelle des Dolles 1",
-          addressLocality: "Rivaz",
-          postalCode: "1071",
+          streetAddress: "Lausanne",
+          addressLocality: "Lausanne",
+          postalCode: "1000",
           addressRegion: "Vaud",
           addressCountry: "CH",
         },

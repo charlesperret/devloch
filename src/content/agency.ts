@@ -1,10 +1,10 @@
 export const agencyContent = {
   metaTitle: "L'agence — devlo",
   metaDescription:
-    "devlo est une agence de prospection commerciale B2B fondée en 2020, avec une adresse suisse à Rivaz, Vaud, et une présence US via devlo LLC.",
+    "devlo est une agence de prospection commerciale B2B fondée en 2020 à Lausanne, avec une présence suisse et une présence US via devlo LLC.",
   h1: "L'agence devlo",
   intro:
-    "devlo est une agence de prospection commerciale B2B fondée en 2020 à Lausanne, avec une adresse suisse à Rivaz dans le canton de Vaud et une présence US via devlo LLC à Albuquerque. Nous accompagnons les entreprises dans leur développement commercial via des campagnes outbound multicanales : cold email, LinkedIn et cold calling.",
+    "devlo est une agence de prospection commerciale B2B fondée en 2020 à Lausanne, avec une présence suisse dans le canton de Vaud et une présence US via devlo LLC à Albuquerque. Nous accompagnons les entreprises dans leur développement commercial via des campagnes outbound multicanales : cold email, LinkedIn et cold calling.",
   stats: [
     { value: "+1000", label: "campagnes déployées" },
     { value: "5/5", label: "satisfaction client (Outbound Experts)" },
@@ -15,7 +15,7 @@ export const agencyContent = {
   founderRole: "Fondateur & CEO",
   founderLinkedIn: "https://www.linkedin.com/in/charlesperret/",
   story: [
-    "devlo a été fondée en 2020 à Lausanne avec une conviction simple : la prospection B2B externalisée doit produire des résultats mesurables, pas des promesses vagues. L'adresse suisse publique de devlo est à Rivaz, dans le canton de Vaud, et devlo LLC dispose d'une adresse aux États-Unis. Depuis, nous avons déployé plus de 1000 campagnes pour des clients en Suisse, Belgique, France, DACH et Amérique du Nord.",
+    "devlo a été fondée en 2020 à Lausanne avec une conviction simple : la prospection B2B externalisée doit produire des résultats mesurables, pas des promesses vagues. Notre ancrage suisse est dans le canton de Vaud, et devlo LLC dispose d'une adresse aux États-Unis. Depuis, nous avons déployé plus de 1000 campagnes pour des clients en Suisse, Belgique, France, DACH et Amérique du Nord.",
     "Notre équipe maîtrise les trois canaux outbound qui convertissent le mieux en B2B : le cold email, le LinkedIn outreach et le cold calling. Nous ne sommes pas une agence full-service — nous sommes spécialistes de l'outbound, et uniquement de l'outbound.",
     "Notre méthode combine la rigueur suisse avec une connaissance approfondie des marchés locaux. Chaque campagne démarre par un workshop ICP, suivi d'une phase de test de deux semaines, puis d'un déploiement à l'échelle. Les résultats sont mesurables dès la troisième semaine.",
   ],
@@ -45,7 +45,7 @@ export const agencyContent = {
     {
       question: "Où est basée devlo ?",
       answer:
-        "devlo a été fondée à Lausanne et affiche aujourd'hui une adresse suisse à Ruelle des Dolles 1, 1071 Rivaz, Vaud, Suisse. devlo LLC dispose aussi d'une adresse à 500 4TH ST NW SUITE 102 #1591, Albuquerque, NM 87102, USA. Nous sommes une équipe distribuée avec des collaborateurs en Suisse, Belgique, France et DACH.",
+        "devlo a été fondée à Lausanne et garde un ancrage suisse dans le canton de Vaud. devlo LLC dispose aussi d'une adresse à 500 4TH ST NW SUITE 102 #1591, Albuquerque, NM 87102, USA. Nous sommes une équipe distribuée avec des collaborateurs en Suisse, Belgique, France et DACH.",
     },
     {
       question: "Depuis quand devlo existe-t-elle ?",

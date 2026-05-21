@@ -17,7 +17,7 @@ const addressesByLocale: Record<SupportedLocale, LegalPageContent["addresses"]> 
   fr: [
     {
       title: "Adresse suisse",
-      lines: ["devlo", "Ruelle des Dolles 1", "1071 Rivaz, Vaud", "Suisse"],
+      lines: ["devlo", "Lausanne", "Vaud", "Suisse"],
     },
     {
       title: "Adresse US",
@@ -27,7 +27,7 @@ const addressesByLocale: Record<SupportedLocale, LegalPageContent["addresses"]> 
   en: [
     {
       title: "Swiss address",
-      lines: ["devlo", "Ruelle des Dolles 1", "1071 Rivaz, Vaud", "Switzerland"],
+      lines: ["devlo", "Lausanne", "Vaud", "Switzerland"],
     },
     {
       title: "US address",
@@ -37,7 +37,7 @@ const addressesByLocale: Record<SupportedLocale, LegalPageContent["addresses"]> 
   de: [
     {
       title: "Schweizer Adresse",
-      lines: ["devlo", "Ruelle des Dolles 1", "1071 Rivaz, Waadt", "Schweiz"],
+      lines: ["devlo", "Lausanne", "Waadt", "Schweiz"],
     },
     {
       title: "US-Adresse",
@@ -47,7 +47,7 @@ const addressesByLocale: Record<SupportedLocale, LegalPageContent["addresses"]> 
   nl: [
     {
       title: "Zwitsers adres",
-      lines: ["devlo", "Ruelle des Dolles 1", "1071 Rivaz, Vaud", "Zwitserland"],
+      lines: ["devlo", "Lausanne", "Vaud", "Zwitserland"],
     },
     {
       title: "Adres in de VS",

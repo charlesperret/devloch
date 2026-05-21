@@ -33,7 +33,7 @@ export function FeedbackLoopDiagram({
   return (
     <div className="flex flex-col items-center gap-4">
       {/* Compact circular loop — sized to fit viewport */}
-      <div className="relative mx-auto h-[220px] w-[220px]">
+      <div className="relative mx-auto h-[220px] w-full max-w-[220px] overflow-hidden">
         {/* Outer ring — animated dashed circle */}
         <svg
           className="absolute inset-0 h-full w-full"
@@ -79,10 +79,10 @@ export function FeedbackLoopDiagram({
         {/* 4 step nodes positioned around the circle */}
         {steps.map((step, i) => {
           const positions = [
-            { top: "-4px", left: "50%", tx: "-50%", ty: "0" },
-            { top: "50%", right: "-14px", tx: "45%", ty: "-50%" },
-            { bottom: "-4px", left: "50%", tx: "-50%", ty: "0" },
-            { top: "50%", left: "-14px", tx: "-45%", ty: "-50%" },
+            { top: "0", left: "50%", tx: "-50%", ty: "0" },
+            { top: "50%", right: "0", tx: "0", ty: "-50%" },
+            { bottom: "0", left: "50%", tx: "-50%", ty: "0" },
+            { top: "50%", left: "0", tx: "0", ty: "-50%" },
           ];
           const pos = positions[i];
           const colors = LOOP_COLORS[i];
@@ -92,7 +92,7 @@ export function FeedbackLoopDiagram({
             <button
               key={step.title}
               type="button"
-              className={`absolute z-10 flex items-center gap-1.5 rounded-lg ${colors.bg} ${colors.border} border px-2 py-1.5 shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-panel ${isActive ? "scale-105 shadow-panel ring-2 ring-white/30" : ""} ${colors.text}`}
+              className={`absolute z-10 flex max-w-[92px] items-center gap-1.5 rounded-lg ${colors.bg} ${colors.border} border px-2 py-1.5 shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-panel ${isActive ? "scale-105 shadow-panel ring-2 ring-white/30" : ""} ${colors.text}`}
               style={{
                 top: "top" in pos ? pos.top : undefined,
                 bottom: "bottom" in pos ? pos.bottom : undefined,
@@ -107,7 +107,7 @@ export function FeedbackLoopDiagram({
               <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/20 text-[10px] font-bold">
                 {i + 1}
               </span>
-              <span className="text-xs font-semibold whitespace-nowrap">{step.title}</span>
+              <span className="truncate text-xs font-semibold">{step.title}</span>
             </button>
           );
         })}

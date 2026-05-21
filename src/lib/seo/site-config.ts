@@ -37,9 +37,9 @@ export const seoConfig = {
 
     /** Swiss headquarters */
     addressCH: {
-      streetAddress: "Ruelle des Dolles 1",
-      addressLocality: "Rivaz",
-      postalCode: "1071",
+      streetAddress: "Lausanne",
+      addressLocality: "Lausanne",
+      postalCode: "1000",
       addressRegion: "Vaud",
       addressCountry: "CH",
     },
@@ -59,7 +59,7 @@ export const seoConfig = {
         telephone: "+41-79-758-64-03",
         email: "emea@devlo.ch",
         areaServed: ["CH", "BE", "FR", "DE", "LU"],
-        availableLanguage: ["French", "German", "English"],
+        availableLanguage: ["French", "German", "English", "Dutch"],
       },
       {
         contactType: "customer service",

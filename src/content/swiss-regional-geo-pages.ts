@@ -5,9 +5,9 @@ const swissLocalBusiness: GeoPageData["localBusiness"] = {
   telephone: "+41-79-758-64-03",
   email: "emea@devlo.ch",
   address: {
-    streetAddress: "Ruelle des Dolles 1",
-    addressLocality: "Rivaz",
-    postalCode: "1071",
+    streetAddress: "Lausanne",
+    addressLocality: "Lausanne",
+    postalCode: "1000",
     addressRegion: "Vaud",
     addressCountry: "CH",
   },
