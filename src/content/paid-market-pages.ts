@@ -1,6 +1,6 @@
 import type { SlugMapEntry, SupportedLocale } from "@/lib/i18n/slug-map";
 
-type Reviewer = "Charles" | "Janis" | "Victor";
+type Reviewer = "Charles" | "Janis" | "Viktor";
 type ReviewStatus = "needs-review" | "approved-for-test";
 
 type LogoProof = {
@@ -804,56 +804,57 @@ const pages: PaidMarketPage[] = [
     pageId: "paid-market:netherlands-nl",
     locale: "nl",
     path: "/nl/lp/b2b-prospectie-nederland",
-    reviewer: "Victor",
+    reviewer: "Viktor",
     reviewStatus: "needs-review",
     market: "Nederland",
     marketLabel: "Nederland",
-    title: "B2B prospectie Nederland | devlo",
+    title: "B2B leadgeneratie Nederland | devlo",
     description:
-      "B2B-prospectie in Nederland: adresseerbare markt in kaart brengen, koopsignalen prioriteren en gekwalificeerde afspraken plannen.",
-    eyebrow: "B2B-prospectie in Nederland",
-    h1: "Meer gekwalificeerde B2B-afspraken in Nederland",
+      "B2B-leadgeneratie in Nederland: addressable market scherp maken, koopsignalen prioriteren en gekwalificeerde afspraken plannen.",
+    eyebrow: "B2B-leadgeneratie in Nederland",
+    h1: "B2B-afspraken in Nederland zonder vage funnels",
     intro:
-      "devlo helpt B2B-teams hun adresseerbare markt te vertalen naar prioritaire accounts, koopsignalen te herkennen en gesprekken te openen met onderbouwd bewijs.",
+      "devlo helpt B2B-teams hun addressable market terug te brengen tot de juiste accounts, koopsignalen te herkennen en gesprekken te openen met een concrete businesscase.",
     badges: ["Marktafbakening", "Koopsignalen", "Gekwalificeerde afspraken"],
-    primaryCta: "Bekijk mijn acquisitieplan",
-    formTitle: "Ontvang een concrete inschatting van uw B2B-acquisitiepotentieel",
+    primaryCta: "Laat mijn acquisitieplan beoordelen",
+    formTitle: "Ontvang een concrete inschatting van je B2B-acquisitiepotentieel",
     formIntro:
-      "Deel uw aanbod, doelgroep en huidige salesaanpak. We bekijken welk segment, welke signalen en welk bewijs geschikt zijn voor de eerste campagne.",
+      "Vertel ons over je aanbod, doelgroep en huidige salesaanpak. Wij bekijken welk marktsegment, welke koopsignalen en welk type bewijs het meest kansrijk zijn voor je eerste campagne.",
     postForm: "We komen terug met een korte beoordeling en de meest logische volgende stap.",
-    logosTitle: "Geselecteerde bewijzen uit B2B-campagnes",
+    logosTitle: "Afspraken geboekt bij onder andere:",
     logos: ALL_CLIENT_LOGOS,
-    proofTitle: "Waarom deze pagina anders moet zijn",
+    proofTitle: "Voor wie dit werkt",
     proofRows: [
-      ["Acquisitie, geen marktopening", "Veel Nederlandse bezoekers willen hun klantenwerving verbeteren, niet Nederland als nieuwe markt ontdekken."],
-      ["Directe relevantie", "De boodschap moet concreet uitleggen waarom een account nu benaderd wordt."],
-      ["Bewijs voor volume", "Nederlandse B2B-kopers prikken snel door algemene claims heen; bewijs en timing moeten kloppen."],
+      ["Acquisitie, geen marketingverhaal", "Concrete afspraken in je agenda, geen vage funnels of brand awareness."],
+      ["Directe relevantie", "Maak meteen duidelijk waarom je deze prospect nu benadert."],
+      ["Kwaliteit, geen massa", "Nederlandse B2B-kopers prikken snel door algemene claims heen; bewijs en timing moeten kloppen."],
     ],
-    fitTitle: "Goede fit",
-    fitIntro: "De methode past wanneer uw B2B-aanbod duidelijke accounts, beslissers en voldoende dealwaarde heeft.",
+    fitTitle: "Past dit bij jou?",
+    fitIntro:
+      "Deze aanpak werkt het best als je B2B-aanbod een duidelijke doelgroep heeft, je weet wie de beslissers zijn en je dealwaarde groot genoeg is om gerichte outreach te rechtvaardigen.",
     fitItems: ["B2B SaaS en software", "IT- en cybersecuritydiensten", "Professionele diensten", "E-commerce, fintech en zakelijke services"],
     methodTitle: "De devlo-methode",
     methodIntro:
-      "We starten niet met zoveel mogelijk leads. We brengen eerst de markt in kaart, prioriteren accounts op signalen en bouwen daarna een onderbouwde benadering.",
+      "We beginnen niet bij volume. Eerst brengen we de markt in kaart, dan prioriteren we accounts op koopsignalen, en pas daarna openen we het gesprek, onderbouwd en relevant.",
     methodSteps: [
       {
-        title: "Breng de adresseerbare markt in kaart",
-        body: "We structureren bedrijven, sectoren, regio's en beslissersrollen die realistisch bij uw aanbod passen.",
-        artifact: "Resultaat: een prioritaire accountkaart in plaats van een ruwe leadlijst.",
+        title: "Breng je markt in kaart",
+        body: "We segmenteren bedrijven, sectoren, regio's en beslissers die echt bij je aanbod passen.",
+        artifact: "Resultaat: een lijst met prioriteitsaccounts in plaats van een generieke leadlijst.",
       },
       {
-        title: "Prioriteer koopsignalen",
-        body: "We rangschikken accounts op signalen zoals groei, nieuwe leiding, aanwervingen, softwarewissels of operationele druk.",
-        artifact: "Resultaat: de eerste groep accounts waar timing en relevantie sterker zijn.",
+        title: "Prioriteer op koopsignalen",
+        body: "We rangschikken accounts op koopsignalen: groei, management changes, openstaande vacatures, nieuwe software of zichtbare groeipijn.",
+        artifact: "Resultaat: de accounts waar je nu het meeste kans maakt.",
       },
       {
-        title: "Prospecteer met onderbouwd bewijs",
-        body: "Elke benadering verbindt het signaal met een commerciële hypothese en relevant bewijs uit cases of resultaten.",
-        artifact: "Resultaat: gesprekken met context, geen algemene benadering.",
+        title: "Benader met bewijs",
+        body: "Elke outreach koppelt het koopsignaal aan een concreet idee over hun situatie, met bewijs uit vergelijkbare klantcases.",
+        artifact: "Resultaat: gesprekken met context, geen algemene pitch.",
       },
     ],
-    caseStudiesTitle: "Geselecteerde cases",
-    caseStudiesIntro: "Voor de Nederlandse markt tonen we relevante cases uit de Benelux en Europa.",
+    caseStudiesTitle: "Voorbeelden uit de praktijk",
+    caseStudiesIntro: "Selectie van B2B-campagnes waar accountkeuze, timing en proof belangrijker waren dan massale outreach.",
     caseStudies: [
       {
         client: "Monizze",
@@ -889,7 +890,6 @@ const pages: PaidMarketPage[] = [
         company: "CareerLunch",
         photo: "/images/Raphael-haut.webp",
         photoAlt: "Raphael Haut, Head of Business Development and Marketing bij CareerLunch",
-        note: "Vertaald uit Franse testimonial; finale NL-check door Victor",
       },
       {
         quote: "We waardeerden de zorgvuldigheid, heldere communicatie en toewijding van devlo.",
@@ -898,31 +898,30 @@ const pages: PaidMarketPage[] = [
         company: "Many Ways SA",
         photo: "/images/Xavier_Leuthold_Many_Ways.webp",
         photoAlt: "Xavier Leuthold, Founder bij Many Ways SA",
-        note: "Vertaald uit Franse testimonial; finale NL-check door Victor",
       },
     ],
     riskTitle: "Wat we vermijden",
     riskIntro: "Nederlandse kopers reageren terughoudend op algemene of overdreven boodschappen.",
     riskRows: [
       ["Te Amerikaanse toon", "Superlatieven en vage beloftes verlagen vertrouwen."],
-      ["Vage doelgroep", "Een Nederland-campagne zonder ICP, beslisserrol en kwalificatieregel levert weinig bruikbare signalen op."],
-      ["Geen lokale toets", "De Nederlandse toon moet concreet en natuurlijk blijven voordat er budget op komt."],
+      ["Vage doelgroep", "Een campagne zonder duidelijke ICP, beslissers en kwalificatiecriteria levert weinig bruikbare signalen op."],
+      ["Te vroeg opschalen", "We testen eerst segment, signaal en boodschap voordat er budget naar volume gaat."],
     ],
-    deliverablesTitle: "Wat u ontvangt",
-    deliverables: ["Prioritaire accountkaart", "Koopsignalen voor de eerste groep accounts", "Boodschap met onderbouwd bewijs", "Go/no-go voor betaalde zoekadvertenties en uitgaande acquisitie"],
+    deliverablesTitle: "Wat je krijgt",
+    deliverables: ["Lijst met prioriteitsaccounts", "Koopsignalen per account", "Pitch met bewijs per account", "Go/no-go voor betaalde zoekadvertenties en outbound"],
     faqTitle: "Vragen",
     faqs: [
       {
-        question: "Is dit relevant als we al in Nederland actief zijn?",
-        answer: "Ja. De pagina is bedoeld voor teams die hun B2B-klantenwerving in Nederland willen verbeteren.",
+        question: "Voor welke Nederlandse B2B-teams is dit relevant?",
+        answer: "Voor teams met een duidelijke doelgroep, voldoende dealwaarde en behoefte aan betere accountselectie voordat sales tijd investeert.",
       },
       {
-        question: "Werkt devlo in het Nederlands?",
-        answer: "devlo bereidt Nederlandstalige campagnes voor; native eindredactie is standaard onderdeel voordat er budget naar betaalde campagnes gaat.",
+        question: "Wanneer is paid traffic nog te vroeg?",
+        answer: "Als ICP, beslisserrollen of bewijs nog te vaag zijn. Dan testen we eerst de marktlogica voordat er budget naar volume gaat.",
       },
       {
-        question: "Wanneer moeten we Nederland niet starten?",
-        answer: "Wanneer de doelgroep te breed is, de dealwaarde te laag is of de boodschap nog niet concreet genoeg is.",
+        question: "Wat maakt dit anders dan een generieke leadlijst?",
+        answer: "De selectie begint bij accounts, koopsignalen en bewijs. Daardoor krijgt sales minder ruis en betere redenen om contact op te nemen.",
       },
     ],
     relatedLinks: [

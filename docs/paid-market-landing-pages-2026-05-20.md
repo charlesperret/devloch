@@ -29,7 +29,7 @@ nofollow` header.
 | France | `/lp/prospection-commerciale-france` | French | Charles | Needs review | Hold until Charles validates copy |
 | Deutschschweiz | `/de/lp/leadgenerierung-schweiz` | German | Janis | Needs review | Hold until Janis validates native German |
 | Deutschland | `/de/lp/b2b-leadgenerierung-deutschland` | German | Janis | Needs review | Hold until Janis validates native German |
-| Nederland | `/nl/lp/b2b-prospectie-nederland` | Dutch | Victor | Needs review | Hold until Victor validates Dutch |
+| Nederland | `/nl/lp/b2b-prospectie-nederland` | Dutch | Viktor | Needs review | Viktor revisions applied; hold until Viktor validates final Dutch |
 
 ## Conversion Guardrails
 
