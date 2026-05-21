@@ -38,6 +38,8 @@ const methodStepLabel = {
   nl: "Stap",
 } as const;
 
+const logoRailTitleClass = "mb-4 text-center text-sm font-extrabold uppercase tracking-[0.12em] text-[#f47b5f] md:text-base";
+
 const heroTestimonials = {
   fr: [
     {
@@ -178,6 +180,7 @@ const heroTestimonials = {
 } as const;
 
 export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
+  const testimonialRail = [...heroTestimonials[page.locale], ...heroTestimonials[page.locale]];
   const homePath = page.locale === "fr" ? "/" : `/${page.locale}`;
   const breadcrumbItems = [
     { name: homeLabel[page.locale], path: homePath },
@@ -264,14 +267,14 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
         <div className="mx-auto w-full max-w-[1600px] px-6 lg:px-10">
           {page.appointmentLogos?.length ? (
             <div>
-              <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.1em] text-neutral-500">
+              <p className={logoRailTitleClass}>
                 {page.appointmentLogosTitle}
               </p>
               <InfiniteLogoRail logos={page.appointmentLogos} duration="marathon" pauseOnHover />
             </div>
           ) : null}
           <div className={page.appointmentLogos?.length ? "mt-6" : ""}>
-            <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.1em] text-neutral-500">
+            <p className={logoRailTitleClass}>
               {page.logosTitle}
             </p>
             <InfiniteLogoRail logos={page.logos} duration="marathon" pauseOnHover />
@@ -280,29 +283,31 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
       </section>
 
       <section className="border-b border-neutral-200 bg-[#08384d] py-8 text-white">
-        <div className="mx-auto w-full max-w-screen-xl px-6 lg:px-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/58">
+        <div className="mx-auto w-full max-w-[1600px] px-6 lg:px-10">
+          <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-[#f47b5f] md:text-base">
             {heroProofTitle[page.locale]}
           </p>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {heroTestimonials[page.locale].map((item) => (
-              <figure key={`${item.author}-${item.company}`} className="min-h-[112px] rounded-md border border-white/10 bg-white/[0.07] p-3">
-                <div className="flex items-center gap-3">
-                  <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
-                    <Image src={item.photo} alt={item.photoAlt} fill className="object-cover" sizes="40px" />
+          <div className="group mt-4 overflow-hidden">
+            <div className="flex min-w-max gap-4 animate-logo-scroll-marathon will-change-transform group-hover:[animation-play-state:paused]">
+              {testimonialRail.map((item, index) => (
+                <figure key={`${item.author}-${item.company}-${index}`} className="min-h-[126px] w-[min(82vw,440px)] shrink-0 rounded-md border border-white/12 bg-white/[0.08] p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-white/20 bg-white/10">
+                      <Image src={item.photo} alt={item.photoAlt} fill className="object-cover" sizes="48px" />
+                    </div>
+                    <figcaption className="min-w-0">
+                      <p className="truncate text-base font-extrabold text-white">{item.author}</p>
+                      <p className="truncate text-sm font-semibold text-white/68">
+                        {item.role}, {item.company}
+                      </p>
+                    </figcaption>
                   </div>
-                  <figcaption className="min-w-0">
-                    <p className="truncate text-sm font-extrabold text-white">{item.author}</p>
-                    <p className="truncate text-xs font-semibold text-white/62">
-                      {item.role}, {item.company}
-                    </p>
-                  </figcaption>
-                </div>
-                <blockquote className="mt-3 text-xs font-semibold leading-5 text-white/78">
-                  &ldquo;{item.quote}&rdquo;
-                </blockquote>
-              </figure>
-            ))}
+                  <blockquote className="mt-4 text-sm font-semibold leading-6 text-white/82">
+                    &ldquo;{item.quote}&rdquo;
+                  </blockquote>
+                </figure>
+              ))}
+            </div>
           </div>
         </div>
       </section>
