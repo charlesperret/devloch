@@ -113,7 +113,7 @@ export function PaidMarketCaseStudyGrid({ locale, featuredClients }: PaidMarketC
       </div>
 
       <div className="mt-6 flex justify-center">
-        <Link href={allCaseStudiesPath} className="inline-flex h-12 items-center justify-center rounded-md bg-[#f47b5f] px-6 text-base font-extrabold text-white shadow-sm transition hover:bg-[#e3654d]">
+        <Link href={allCaseStudiesPath} className="inline-flex h-12 items-center justify-center rounded-md bg-[#f47b5f] px-6 text-base font-extrabold text-[#153a54] shadow-sm transition hover:bg-[#e3654d]">
           {copy.all}
           <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
         </Link>

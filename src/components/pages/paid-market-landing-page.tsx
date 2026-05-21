@@ -283,7 +283,7 @@ export function PaidMarketLandingPage({ page }: { page: PaidMarketPage }) {
               <p className="mt-2 text-sm font-semibold text-neutral-500">
                 {appointmentMetric[page.locale].sublabel}
               </p>
-              <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-300 md:text-sm">
+              <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-[#c94f3c] md:text-sm">
                 {page.appointmentLogosTitle}
               </p>
               <div className="mt-5">
