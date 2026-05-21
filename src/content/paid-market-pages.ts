@@ -1,4 +1,5 @@
 import type { SlugMapEntry, SupportedLocale } from "@/lib/i18n/slug-map";
+import { homeContent } from "@/content/masterfile.fr";
 
 type Reviewer = "Charles" | "Janis" | "Viktor";
 type ReviewStatus = "needs-review" | "approved-for-test";
@@ -117,34 +118,25 @@ const LOGOS = {
   implenia: { src: "/images/Logo_Implenia.webp", alt: "Implenia logo" },
 } as const;
 
-const CLIENT_LOGOS: LogoProof[] = [
-  LOGOS.monizze,
-  LOGOS.horus,
-  LOGOS.careerlunch,
-  LOGOS.saporo,
-  LOGOS.cegos,
-  LOGOS.abacus,
-  LOGOS.apidae,
-  LOGOS.iddi,
-  LOGOS.locky,
-  LOGOS.hiag,
-  LOGOS.lemanvisio,
-  LOGOS.manyWays,
-];
+function logoFromFileName(fileName: string): LogoProof {
+  const label = fileName
+    .replace(/\.[a-z0-9]+$/i, "")
+    .replace(/[_-]logo$/i, "")
+    .replace(/[_-]/g, " ")
+    .trim();
 
-const APPOINTMENT_LOGOS: LogoProof[] = [
-  LOGOS.lafargeHolcim,
-  LOGOS.abb,
-  LOGOS.hublot,
-  LOGOS.longines,
-  LOGOS.lombardOdier,
-  LOGOS.bhp,
-  LOGOS.adecco,
-  LOGOS.bcf,
-  LOGOS.merck,
-  LOGOS.apple,
-  LOGOS.implenia,
-];
+  return {
+    src: `/images/${fileName}`,
+    alt: `${label} logo`,
+  };
+}
+
+const CLIENT_LOGOS: LogoProof[] = homeContent.clientsLogos.map(logoFromFileName);
+
+const APPOINTMENT_LOGOS: LogoProof[] = homeContent.rendezVousLogos.map(({ src, alt }) => ({
+  src,
+  alt,
+}));
 
 const pages: PaidMarketPage[] = [
   {
