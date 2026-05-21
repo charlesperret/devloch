@@ -15,7 +15,7 @@ export function Breadcrumb({ items, variant = "light" }: BreadcrumbProps) {
 
   return (
     <nav aria-label="Breadcrumb" className="mx-auto w-full max-w-screen-xl px-6 pt-5 lg:px-10">
-      <ol className={`flex flex-wrap items-center gap-1.5 text-[13px] ${isDark ? "text-white/50" : "text-neutral-500"}`}>
+      <ol className={`flex flex-wrap items-center gap-1.5 text-[13px] ${isDark ? "text-white/75" : "text-neutral-500"}`}>
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
@@ -28,7 +28,7 @@ export function Breadcrumb({ items, variant = "light" }: BreadcrumbProps) {
               ) : (
                 <Link
                   href={item.path}
-                  className={`rounded-full px-2.5 py-0.5 transition ${isDark ? "hover:bg-white/10 hover:text-white/80" : "hover:bg-neutral-100 hover:text-neutral-700"}`}
+                  className={`rounded-full px-2.5 py-0.5 transition ${isDark ? "text-white/80 hover:bg-white/10 hover:text-white" : "hover:bg-neutral-100 hover:text-neutral-700"}`}
                 >
                   {item.name}
                 </Link>
